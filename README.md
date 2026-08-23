@@ -1,10 +1,15 @@
 # CalcPath — AP Calculus Roadmap
 
+[![Validate](https://github.com/les2/calcpath-ap-calculus/actions/workflows/ci.yml/badge.svg)](https://github.com/les2/calcpath-ap-calculus/actions/workflows/ci.yml)
+[![Deploy GitHub Pages](https://github.com/les2/calcpath-ap-calculus/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/les2/calcpath-ap-calculus/actions/workflows/deploy-pages.yml)
+
 An offline-ready study guide for AP Calculus AB and BC. CalcPath organizes all 111 curriculum topics into a searchable roadmap with curated video lessons, authoritative references, free math tools, local progress tracking, and a printable formula sheet.
 
 ## Live website
 
 **[Open CalcPath](https://calcpath-ap-calculus.les2.chatgpt.site/)**
+
+[GitHub Pages mirror](https://les2.github.io/calcpath-ap-calculus/) — rebuilt and deployed automatically from `main`.
 
 The guide itself works offline after the first visit. External videos, references, and calculator tools require an internet connection.
 
@@ -39,6 +44,8 @@ npm install
 npm run dev
 npm run build
 ```
+
+`npm run build` runs the unit tests and curriculum-data validation before producing the production site. Pull requests and pushes are checked by GitHub Actions; pushes to `main` also deploy the GitHub Pages mirror.
 
 ## Curriculum source
 

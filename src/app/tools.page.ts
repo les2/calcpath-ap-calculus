@@ -12,5 +12,5 @@ type Tool = { name: string; category: string; url: string; description: string; 
 })
 export class ToolsPage {
   readonly tools = signal<Tool[]>([]);
-  constructor(http: HttpClient) { http.get<{tools: Tool[]}>('/data/tools.json').subscribe((data) => this.tools.set(data.tools)); }
+  constructor(http: HttpClient) { http.get<{tools: Tool[]}>('data/tools.json').subscribe((data) => this.tools.set(data.tools)); }
 }
