@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { Location } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,7 +26,7 @@ export class RoadmapPage {
   readonly units = signal<Unit[]>([]); readonly query = signal(''); readonly course = signal('ALL'); readonly expanded = signal<number | null>(1); readonly completed = signal<string[]>(this.readProgress());
   readonly progress = computed(() => { const total = this.units().reduce((sum, unit) => sum + unit.topics.length, 0); return total ? Math.round(this.completed().length / total * 100) : 0; });
   readonly visibleUnits = computed(() => this.units().map((unit) => ({...unit, topics: unit.topics.filter((topic) => `${unit.title} ${topic.title}`.toLowerCase().includes(this.query().toLowerCase()))})).filter((unit) => (this.course() === 'ALL' || this.course() === 'BC' || unit.course === 'AB + BC') && unit.topics.length));
-  constructor(http: HttpClient, private readonly route: ActivatedRoute, private readonly router: Router) {
+  constructor(http: HttpClient, private readonly route: ActivatedRoute, private readonly router: Router, private readonly location: Location) {
     http.get<{units: Unit[]}>('/data/topics.json').subscribe((data) => this.units.set(data.units));
     route.queryParamMap.subscribe((params) => { this.query.set(params.get('q') ?? ''); this.course.set(params.get('course') ?? 'ALL'); const unit = Number(params.get('unit')); this.expanded.set(unit || null); });
   }
@@ -34,5 +35,12 @@ export class RoadmapPage {
   setUnit(unit: number) { this.navigate({ unit: this.expanded() === unit ? null : unit }); }
   toggleTopic(id: string) { this.completed.update((items) => items.includes(id) ? items.filter((item) => item !== id) : [...items, id]); localStorage.setItem('calcpath-progress', JSON.stringify(this.completed())); }
   private readProgress(): string[] { try { return JSON.parse(localStorage.getItem('calcpath-progress') ?? '[]') as string[]; } catch { return []; } }
-  private navigate(queryParams: Record<string, string | number | null>) { this.router.navigate([], { relativeTo: this.route, queryParams, queryParamsHandling: 'merge', replaceUrl: true }); }
+  private navigate(queryParams: Record<string, string | number | null>) {
+    const urlTree = this.router.createUrlTree([], { relativeTo: this.route, queryParams, queryParamsHandling: 'merge' });
+    this.location.replaceState(this.router.serializeUrl(urlTree));
+
+    if ('q' in queryParams) this.query.set(String(queryParams['q'] ?? ''));
+    if ('course' in queryParams) this.course.set(String(queryParams['course'] ?? 'ALL'));
+    if ('unit' in queryParams) this.expanded.set(queryParams['unit'] === null ? null : Number(queryParams['unit']));
+  }
 }
