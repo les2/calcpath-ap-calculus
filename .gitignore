@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/.angular/
 
 # next.js
 /.next/

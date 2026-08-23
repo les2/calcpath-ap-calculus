@@ -1,0 +1,16 @@
+@import "../app/globals.css";
+
+html, body { min-height: 100%; }
+.route-shell { min-height: calc(100vh - 76px); }
+.page-hero { padding: 70px 7vw 42px; border-bottom: 1px solid var(--line); }
+.page-hero h1 { font-size: clamp(48px, 7vw, 84px); margin-bottom: 18px; }
+.page-hero p { max-width: 680px; color: var(--muted); line-height: 1.6; }
+.nav-link.active { color: var(--ink); border-color: var(--orange); }
+.standalone-tools { padding-top: 54px; }
+.standalone-tools .tools-grid { margin-top: 0; }
+.reference-hero { position: relative; }
+.reference-hero .print-button { margin-top: 18px; background: var(--ink); color: var(--paper); }
+.reference-page { padding-top: 42px; }
+.formula-group h2 { font-size: 20px; margin: 0 0 18px; color: var(--orange); }
+@media(max-width:800px){.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding-bottom:10px}.topbar nav{display:flex;order:3;width:100%;justify-content:space-between;gap:8px}.topbar nav a{padding:10px 0 8px;font-size:12px}.route-shell{min-height:calc(100vh - 120px)}}
+@media print{.reference-hero{display:block!important;padding:0 0 12px;border:0}.reference-hero h1{font-size:30px}.reference-hero p,.reference-hero button{display:none}.reference-page{padding:0}.reference-page .formula-grid{display:grid}.route-shell{min-height:0}}

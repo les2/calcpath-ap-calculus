@@ -1,47 +1,35 @@
 {
-  "name": "site-creator-vinext-starter",
-  "version": "0.1.0",
+  "name": "calcpath-ap-calculus",
+  "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": ">=22.13.0"
-  },
+  "type": "module",
+  "engines": { "node": ">=22.22.3" },
   "scripts": {
-    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
-    "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
-    "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+    "ng": "ng",
+    "dev": "ng serve --host 127.0.0.1",
+    "build": "ng build && node scripts/prepare-sites-build.mjs && vite build --config vite.worker.config.ts",
+    "test": "ng test --watch=false"
   },
   "dependencies": {
-    "drizzle-orm": "0.45.2",
-    "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "@angular/animations": "^22.1.0",
+    "@angular/cdk": "^22.1.0",
+    "@angular/common": "^22.1.0",
+    "@angular/compiler": "^22.1.0",
+    "@angular/core": "^22.1.0",
+    "@angular/forms": "^22.1.0",
+    "@angular/material": "^22.1.0",
+    "@angular/platform-browser": "^22.1.0",
+    "@angular/router": "^22.1.0",
+    "@angular/service-worker": "^22.1.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.37.1",
-    "@eslint/js": "9.39.4",
-    "@next/eslint-plugin-next": "16.2.6",
+    "@angular/build": "^22.1.5",
+    "@angular/cli": "^22.1.5",
+    "@angular/compiler-cli": "^22.1.0",
     "@openai/sites-vite-plugin": "0.1.0",
-    "@tailwindcss/postcss": "4.2.1",
-    "@types/node": "22.19.19",
-    "@types/react": "19.2.14",
-    "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.2",
-    "@vitejs/plugin-rsc": "0.5.26",
-    "drizzle-kit": "0.31.10",
-    "eslint": "9.39.4",
-    "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "7.1.1",
-    "globals": "16.4.0",
-    "react-server-dom-webpack": "19.2.6",
-    "tailwindcss": "4.2.1",
-    "typescript": "5.9.3",
-    "typescript-eslint": "8.59.3",
-    "vinext": "1.0.0-beta.2",
-    "vite": "8.0.13",
-    "wrangler": "4.92.0"
-  },
-  "type": "module"
+    "typescript": "~6.0.2",
+    "vite": "^8.0.0"
+  }
 }

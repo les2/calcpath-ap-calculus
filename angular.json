@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": false,
+    "cache": { "enabled": false }
+  },
+  "projects": {
+    "calcpath": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
+            "serviceWorker": "ngsw-config.json"
+          },
+          "configurations": {
+            "production": { "outputHashing": "all", "budgets": [{ "type": "initial", "maximumWarning": "750kB", "maximumError": "1.5MB" }] },
+            "development": { "optimization": false, "extractLicenses": false, "sourceMap": true }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": { "buildTarget": "calcpath:build:production" },
+            "development": { "buildTarget": "calcpath:build:development" }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": { "builder": "@angular/build:unit-test" }
+      }
+    }
+  }
+}
