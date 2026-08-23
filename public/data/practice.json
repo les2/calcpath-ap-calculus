@@ -1,0 +1,100 @@
+{
+  "challenges": [
+    {
+      "id": "limits-algebra-3",
+      "topicId": "1.6",
+      "topic": "Limits using algebra",
+      "unit": "Unit 1 · Limits",
+      "problemNumber": "Problem 3",
+      "source": "Paul's Online Math Notes · Lamar University",
+      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/ComputingLimits.aspx",
+      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/computinglimits/prob3.aspx",
+      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Limit_of_a_function"
+    },
+    {
+      "id": "chain-rule-1",
+      "topicId": "3.1",
+      "topic": "The chain rule",
+      "unit": "Unit 3 · Advanced derivatives",
+      "problemNumber": "Problem 1",
+      "source": "Paul's Online Math Notes · Lamar University",
+      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/ChainRule.aspx",
+      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/chainrule/prob1.aspx",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule"
+    },
+    {
+      "id": "related-rates-4",
+      "topicId": "4.5",
+      "topic": "Related rates",
+      "unit": "Unit 4 · Rates of change",
+      "problemNumber": "Problem 4",
+      "source": "Paul's Online Math Notes · Lamar University",
+      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/RelatedRates.aspx",
+      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/relatedrates/prob4.aspx",
+      "videoUrl": "https://www.youtube.com/watch?v=I9mVUo-bhM8",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Related_rates"
+    },
+    {
+      "id": "optimization-1",
+      "topicId": "5.11",
+      "topic": "Optimization",
+      "unit": "Unit 5 · Function analysis",
+      "problemNumber": "Problem 1",
+      "source": "Paul's Online Math Notes · Lamar University",
+      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/Optimization.aspx",
+      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/optimization/prob1.aspx",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+calculus+optimization",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Mathematical_optimization"
+    },
+    {
+      "id": "integration-parts-1",
+      "topicId": "6.11",
+      "topic": "Integration by parts",
+      "unit": "Unit 6 · Integrals",
+      "problemNumber": "Problem 1",
+      "source": "Paul's Online Math Notes · Lamar University",
+      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcII/IntegrationByParts.aspx",
+      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calcii/integrationbyparts/prob1.aspx",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+integration+by+parts",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Integration_by_parts"
+    },
+    {
+      "id": "area-curves-1",
+      "topicId": "8.4",
+      "topic": "Area between curves",
+      "unit": "Unit 8 · Integral applications",
+      "problemNumber": "Problem 1",
+      "source": "Paul's Online Math Notes · Lamar University",
+      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/AreaBetweenCurves.aspx",
+      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/areabetweencurves/prob1.aspx",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+area+between+curves",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Integral#Area_between_curves"
+    },
+    {
+      "id": "washers-1",
+      "topicId": "8.11",
+      "topic": "Volumes with washers",
+      "unit": "Unit 8 · Integral applications",
+      "problemNumber": "Problem 1",
+      "source": "Paul's Online Math Notes · Lamar University",
+      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/VolumeWithRings.aspx",
+      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/volumewithrings/prob1.aspx",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+washer+method+calculus",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Solid_of_revolution"
+    },
+    {
+      "id": "ratio-test-1",
+      "topicId": "10.8",
+      "topic": "The ratio test",
+      "unit": "Unit 10 · Sequences + series",
+      "problemNumber": "Problem 1",
+      "source": "Paul's Online Math Notes · Lamar University",
+      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcII/RatioTest.aspx",
+      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calcii/ratiotest/prob1.aspx",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+ratio+test+series",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Ratio_test"
+    }
+  ]
+}

@@ -24,6 +24,7 @@ interface BuildInfo {
         <a class="nav-link" routerLink="/roadmap" routerLinkActive="active">Roadmap</a>
         <a class="nav-link" routerLink="/tools" routerLinkActive="active">Tools</a>
         <a class="nav-link" routerLink="/reference" routerLinkActive="active">Reference guide</a>
+        <a class="nav-link" routerLink="/grade-maxxing" routerLinkActive="active">Grade Maxxing</a>
         <a class="github-link" href="https://github.com/les2/calcpath-ap-calculus" target="_blank" rel="noopener noreferrer" aria-label="View CalcPath on GitHub (opens in a new tab)">GitHub ↗</a>
       </nav>
       <div class="header-actions">

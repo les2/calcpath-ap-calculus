@@ -10,7 +10,7 @@ await copyFile(path.join(output, 'index.html'), path.join(output, '404.html'));
 
 // Emit entry points for known routes as well. GitHub Pages redirects these
 // directory paths to a trailing slash and serves a real 200 response.
-for (const route of ['roadmap', 'tools', 'reference']) {
+for (const route of ['roadmap', 'tools', 'reference', 'grade-maxxing']) {
   const routeDirectory = path.join(output, route);
   await mkdir(routeDirectory, { recursive: true });
   await copyFile(path.join(output, 'index.html'), path.join(routeDirectory, 'index.html'));

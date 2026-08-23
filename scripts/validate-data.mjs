@@ -7,10 +7,11 @@ const isHttpsUrl = (value) => {
 };
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
-const [{ units }, { tools }, { groups }] = await Promise.all([
+const [{ units }, { tools }, { groups }, { challenges }] = await Promise.all([
   readJson('topics.json'),
   readJson('tools.json'),
-  readJson('formulas.json')
+  readJson('formulas.json'),
+  readJson('practice.json')
 ]);
 
 assert(Array.isArray(units) && units.length === 10, 'Expected all 10 AP Calculus units.');
@@ -36,4 +37,12 @@ for (const group of groups) {
   }
 }
 
-console.log(`Validated ${units.length} units, ${topics.length} topics, ${tools.length} tools, and ${groups.length} formula groups.`);
+assert(Array.isArray(challenges) && challenges.length > 0, 'At least one practice challenge is required.');
+assert(new Set(challenges.map((challenge) => challenge.id)).size === challenges.length, 'Practice challenge IDs must be unique.');
+const topicIds = new Set(topics.map((topic) => topic.id));
+for (const challenge of challenges) {
+  assert(challenge.id && challenge.topic && topicIds.has(challenge.topicId), `Practice challenge ${challenge.id} needs a valid topic mapping.`);
+  for (const field of ['problemUrl', 'solutionUrl', 'videoUrl', 'referenceUrl']) assert(isHttpsUrl(challenge[field]), `${challenge.id} ${field} must use HTTPS.`);
+}
+
+console.log(`Validated ${units.length} units, ${topics.length} topics, ${tools.length} tools, ${groups.length} formula groups, and ${challenges.length} practice challenges.`);
