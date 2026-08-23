@@ -168,6 +168,8 @@ footer { flex-wrap: wrap; gap: 22px; }
 .topic-choice::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 6px; background: var(--challenge-accent); }
 .topic-choice.selected { border-color: var(--challenge-accent); box-shadow: inset 0 0 0 1px var(--challenge-accent); }
 .topic-choice input { position: absolute; opacity: 0; }
+.topic-choice.selected .choice-check { background: var(--challenge-accent); border-color: var(--challenge-accent); color: #fff; }
+.topic-choice input:focus-visible + .choice-check { outline: 3px solid color-mix(in srgb, var(--challenge-accent) 45%, transparent); outline-offset: 3px; }
 .topic-choice > div { min-width: 0; display: grid; gap: 6px; }
 .topic-choice small, .topic-choice em { overflow: hidden; color: var(--muted); font-size: 9px; font-style: normal; font-weight: 900; letter-spacing: .08em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
 .topic-choice b { font-size: 16px; }
