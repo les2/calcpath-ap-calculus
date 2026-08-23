@@ -27,6 +27,51 @@ html, body { min-height: 100%; }
 .topbar nav .github-link:hover { border-color: var(--lime); }
 .footer-links { display: flex; align-items: center; gap: 22px; }
 .footer-links a:last-child { color: var(--ink); font-weight: 800; }
+
+/* Dark mode needs explicit surfaces for elements whose light-mode artwork is
+   intentionally white or uses a bright accent background. */
+[data-theme="dark"] .brand-mark {
+  background: #080d0e;
+  border: 1px solid #526164;
+  color: #c9ff3d;
+}
+[data-theme="dark"] .icon-button {
+  background: #1b2527;
+  border-color: #526164;
+  color: #edf2ef;
+}
+[data-theme="dark"] .formula-card,
+[data-theme="dark"] .mini-card {
+  background: #1b2527;
+  border-color: #526164;
+  color: #edf2ef;
+  box-shadow: 0 16px 40px #0008;
+}
+[data-theme="dark"] .formula-card small { color: #b9c4c1; }
+[data-theme="dark"] .mini-card b { color: #c5b8ff; }
+[data-theme="dark"] .topic-item > a {
+  background: #293638;
+  border: 1px solid #526164;
+  color: #f7faf8;
+}
+[data-theme="dark"] .resource-strip .video-link {
+  background: #3a211c;
+  border-color: #9e4e36;
+  color: #ffbea8;
+}
+[data-theme="dark"] .empty-state,
+[data-theme="dark"] .unit-card { background: #1b2527; }
+[data-theme="dark"] .exam-note {
+  background: #c9ff3d;
+  color: #172022;
+}
+[data-theme="dark"] .exam-note span { color: #172022; }
+[data-theme="dark"] .update-toast {
+  background: #080d0e;
+  border: 1px solid #526164;
+  color: #edf2ef;
+}
+[data-theme="dark"] .update-toast button { color: #172022; }
 @media(max-width:800px){.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding-bottom:10px}.topbar nav{display:flex;order:3;width:100%;justify-content:space-between;gap:8px}.topbar nav a{padding:10px 0 8px;font-size:12px}.route-shell{min-height:calc(100vh - 120px)}}
 @media(max-width:650px){.footer-links{align-items:flex-start;flex-direction:column;gap:12px}.formula-group .formula-line{grid-template-columns:1fr;gap:9px}.math-formula .katex{font-size:1.04em}}
 @media print{.reference-hero{display:block!important;padding:0 0 12px;border:0}.reference-hero h1{font-size:30px}.reference-hero p,.reference-hero button{display:none}.reference-page{padding:0}.reference-page .formula-grid{display:grid}.route-shell{min-height:0}.formula-group{box-shadow:none;padding:0}.formula-group::before{height:2px}.formula-group header{padding:12px 14px 8px}.formula-group h2{font-size:14px}.formula-group .formula-line{margin:0 14px;padding:7px 0;grid-template-columns:78px minmax(0,1fr);gap:8px}.formula-group .formula-line>span{font-size:7px}.math-formula{overflow:visible}.math-formula .katex{font-size:8.5pt}.exam-note{break-inside:avoid}}
