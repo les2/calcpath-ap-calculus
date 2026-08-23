@@ -27,6 +27,14 @@ html, body { min-height: 100%; }
 .topbar nav .github-link:hover { border-color: var(--lime); }
 .footer-links { display: flex; align-items: center; gap: 22px; }
 .footer-links a:last-child { color: var(--ink); font-weight: 800; }
+.version-panel { display: grid; justify-items: end; gap: 4px; min-width: 210px; }
+.version-panel span { color: var(--ink); font-weight: 800; }
+.version-panel small { color: var(--muted); }
+.version-panel button { margin-top: 4px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink); padding: 7px 11px; font: inherit; font-weight: 800; cursor: pointer; }
+.version-panel button:hover { border-color: var(--orange); }
+.version-panel button:disabled { cursor: wait; opacity: .65; }
+.version-panel .update-status { max-width: 230px; text-align: right; line-height: 1.4; }
+footer { flex-wrap: wrap; gap: 22px; }
 
 /* Dark mode needs explicit surfaces for elements whose light-mode artwork is
    intentionally white or uses a bright accent background. */
@@ -72,6 +80,7 @@ html, body { min-height: 100%; }
   color: #edf2ef;
 }
 [data-theme="dark"] .update-toast button { color: #172022; }
+[data-theme="dark"] .version-panel button { background: #1b2527; border-color: #526164; color: #edf2ef; }
 @media(max-width:800px){.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding-bottom:10px}.topbar nav{display:flex;order:3;width:100%;justify-content:space-between;gap:8px}.topbar nav a{padding:10px 0 8px;font-size:12px}.route-shell{min-height:calc(100vh - 120px)}}
-@media(max-width:650px){.footer-links{align-items:flex-start;flex-direction:column;gap:12px}.formula-group .formula-line{grid-template-columns:1fr;gap:9px}.math-formula .katex{font-size:1.04em}}
+@media(max-width:650px){.footer-links{align-items:flex-start;flex-direction:column;gap:12px}.version-panel{justify-items:start}.version-panel .update-status{text-align:left}.formula-group .formula-line{grid-template-columns:1fr;gap:9px}.math-formula .katex{font-size:1.04em}}
 @media print{.reference-hero{display:block!important;padding:0 0 12px;border:0}.reference-hero h1{font-size:30px}.reference-hero p,.reference-hero button{display:none}.reference-page{padding:0}.reference-page .formula-grid{display:grid}.route-shell{min-height:0}.formula-group{box-shadow:none;padding:0}.formula-group::before{height:2px}.formula-group header{padding:12px 14px 8px}.formula-group h2{font-size:14px}.formula-group .formula-line{margin:0 14px;padding:7px 0;grid-template-columns:78px minmax(0,1fr);gap:8px}.formula-group .formula-line>span{font-size:7px}.math-formula{overflow:visible}.math-formula .katex{font-size:8.5pt}.exam-note{break-inside:avoid}}
