@@ -83,4 +83,54 @@ footer { flex-wrap: wrap; gap: 22px; }
 [data-theme="dark"] .version-panel button { background: #1b2527; border-color: #526164; color: #edf2ef; }
 @media(max-width:800px){.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding-bottom:10px}.topbar nav{display:flex;order:3;width:100%;justify-content:space-between;gap:8px}.topbar nav a{padding:10px 0 8px;font-size:12px}.route-shell{min-height:calc(100vh - 120px)}}
 @media(max-width:650px){.footer-links{align-items:flex-start;flex-direction:column;gap:12px}.version-panel{justify-items:start}.version-panel .update-status{text-align:left}.formula-group .formula-line{grid-template-columns:1fr;gap:9px}.math-formula .katex{font-size:1.04em}}
-@media print{.reference-hero{display:block!important;padding:0 0 12px;border:0}.reference-hero h1{font-size:30px}.reference-hero p,.reference-hero button{display:none}.reference-page{padding:0}.reference-page .formula-grid{display:grid}.route-shell{min-height:0}.formula-group{box-shadow:none;padding:0}.formula-group::before{height:2px}.formula-group header{padding:12px 14px 8px}.formula-group h2{font-size:14px}.formula-group .formula-line{margin:0 14px;padding:7px 0;grid-template-columns:78px minmax(0,1fr);gap:8px}.formula-group .formula-line>span{font-size:7px}.math-formula{overflow:visible}.math-formula .katex{font-size:8.5pt}.exam-note{break-inside:avoid}}
+@media print {
+  /* Printing is always a light, ink-friendly experience, even when the saved
+     screen preference is dark. Explicit colors prevent dark-mode selectors
+     from leaking into the browser's print preview. */
+  html,
+  html[data-theme="dark"] {
+    color-scheme: light !important;
+    --paper: #fff;
+    --ink: #000;
+    --muted: #3f3f3f;
+    --line: #aaa;
+    --orange: #8a2f18;
+    background: #fff !important;
+  }
+  body { background: #fff !important; color: #000 !important; }
+  .reference-hero { display: block !important; padding: 0 0 12px; border: 0; background: #fff !important; color: #000 !important; }
+  .reference-hero h1 { font-size: 30px; color: #000 !important; }
+  .reference-hero p,
+  .reference-hero button { display: none; }
+  .reference-page { padding: 0; background: #fff !important; }
+  .reference-page .formula-grid { display: grid; }
+  .route-shell { min-height: 0; }
+  .formula-group,
+  html[data-theme="dark"] .formula-group {
+    background: #fff !important;
+    border-color: #aaa !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    padding: 0;
+  }
+  .formula-group::before { height: 2px; background: #333 !important; }
+  .formula-group header { padding: 12px 14px 8px; }
+  .formula-group header > span { color: #444 !important; }
+  .formula-group h2 { color: #000 !important; font-size: 14px; }
+  .formula-group .formula-line { border-color: #bbb !important; margin: 0 14px; padding: 7px 0; grid-template-columns: 78px minmax(0,1fr); gap: 8px; }
+  .formula-group .formula-line > span { color: #702611 !important; font-size: 7px; }
+  .math-formula,
+  .math-formula .katex { color: #000 !important; }
+  .math-formula { overflow: visible; }
+  .math-formula .katex { font-size: 8.5pt; }
+  .exam-note,
+  html[data-theme="dark"] .exam-note {
+    background: #eee !important;
+    color: #000 !important;
+    border: 1px solid #aaa;
+    break-inside: avoid;
+  }
+  .exam-note b,
+  .exam-note span,
+  html[data-theme="dark"] .exam-note span { color: #000 !important; }
+}
