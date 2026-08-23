@@ -134,6 +134,106 @@ footer { flex-wrap: wrap; gap: 22px; }
 .summary-grid small { color: var(--muted); font-size: 9px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .summary-actions { justify-content: center; }
 
+/* Grade Maxxing v2: persistent study runs and a worksheet-first practice UI. */
+.sessions-home, .session-builder, .study-workspace { max-width: 1180px; margin: 0 auto; }
+.session-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.session-list article { padding: 27px; background: color-mix(in srgb, var(--paper) 82%, white); border: 1px solid var(--line); border-top: 6px solid var(--orange); }
+.session-card-top, .session-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.session-card-top > span { color: var(--muted); font-size: 10px; font-weight: 900; letter-spacing: .1em; }
+.session-list h3 { margin: 24px 0; font-size: 31px; letter-spacing: -.045em; }
+.session-metrics { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line); }
+.session-metrics span { min-height: 84px; display: grid; align-content: center; gap: 5px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
+.session-metrics span + span { padding-left: 15px; border-left: 1px solid var(--line); }
+.session-metrics b { color: var(--ink); font-size: 22px; text-transform: none; }
+.session-card-actions { margin-top: 20px; }
+.session-card-actions small { color: var(--muted); }
+.session-card-actions .maxxing-primary { min-width: 130px; }
+.no-sessions { min-height: 330px; display: grid; place-content: center; justify-items: center; padding: 45px; text-align: center; border: 1px dashed var(--line); }
+.no-sessions > span { color: var(--orange); font-size: 46px; font-weight: 900; }
+.no-sessions h3 { margin: 12px 0 4px; font-size: 30px; }
+.no-sessions p { color: var(--muted); }
+.no-sessions button { margin-top: 16px; }
+.dismissed-sessions { margin-top: 35px; border-top: 1px solid var(--line); }
+.dismissed-sessions summary { padding: 22px 0; cursor: pointer; font-weight: 900; }
+.dismissed-sessions > div { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); }
+.dismissed-sessions > div > span { display: grid; gap: 3px; margin-right: auto; }
+.dismissed-sessions small { color: var(--muted); }
+.dismissed-sessions button { border: 0; background: transparent; color: var(--ink); cursor: pointer; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.dismissed-sessions button:last-child { color: var(--orange); }
+.session-name { max-width: 720px; display: grid; gap: 9px; margin-bottom: 28px; color: var(--muted); font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.session-name input { width: 100%; min-height: 66px; padding: 0 20px; border: 1px solid var(--line); background: color-mix(in srgb, var(--paper) 82%, white); color: var(--ink); font-size: 24px; font-weight: 800; letter-spacing: -.02em; text-transform: none; }
+.session-name input:focus { outline: 3px solid color-mix(in srgb, var(--orange) 30%, transparent); border-color: var(--orange); }
+.topic-bank { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.topic-choice { --challenge-accent: var(--orange); position: relative; min-height: 106px; display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: 15px; overflow: hidden; padding: 19px 22px; cursor: pointer; background: color-mix(in srgb, var(--paper) 82%, white); border: 1px solid var(--line); }
+.topic-choice::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 6px; background: var(--challenge-accent); }
+.topic-choice.selected { border-color: var(--challenge-accent); box-shadow: inset 0 0 0 1px var(--challenge-accent); }
+.topic-choice input { position: absolute; opacity: 0; }
+.topic-choice > div { min-width: 0; display: grid; gap: 6px; }
+.topic-choice small, .topic-choice em { overflow: hidden; color: var(--muted); font-size: 9px; font-style: normal; font-weight: 900; letter-spacing: .08em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.topic-choice b { font-size: 16px; }
+.study-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.study-toolbar .eyebrow { margin: 20px 0 6px; color: var(--orange); }
+.study-toolbar h2 { margin: 0; font-size: 24px; }
+.study-clock { min-width: 240px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 5px 20px; padding: 16px 18px; background: #172022; color: #f7f4ed; border-left: 6px solid var(--orange); }
+.study-clock.running { border-color: var(--lime); }
+.study-clock small { color: #aeb9b6; font-size: 9px; font-weight: 900; letter-spacing: .12em; }
+.study-clock b { grid-row: 1 / 3; grid-column: 2; font-size: 34px; font-variant-numeric: tabular-nums; letter-spacing: -.05em; }
+.study-clock > div { display: flex; gap: 13px; }
+.study-clock button { padding: 0; border: 0; background: transparent; color: var(--lime); cursor: pointer; font-size: 10px; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
+.timer-editor { display: flex; align-items: end; gap: 10px; padding: 18px; background: color-mix(in srgb, var(--lime) 14%, var(--paper)); border: 1px solid var(--line); border-top: 0; }
+.timer-editor label { display: grid; gap: 6px; margin-right: auto; color: var(--muted); font-size: 10px; font-weight: 900; text-transform: uppercase; }
+.timer-editor input { width: 150px; min-height: 46px; padding: 0 12px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 18px; font-weight: 900; }
+.timer-editor .maxxing-primary, .timer-editor .secondary-action { min-width: 120px; }
+.own-work-note { margin: 18px 0 30px; padding: 15px 18px; background: color-mix(in srgb, var(--lime) 18%, var(--paper)); border-left: 5px solid var(--lime); color: var(--muted); font-size: 13px; line-height: 1.5; }
+.own-work-note b { color: var(--ink); }
+.study-layout { display: grid; grid-template-columns: 285px minmax(0, 1fr); align-items: start; gap: 18px; }
+.question-rail { max-height: 720px; overflow-y: auto; border: 1px solid var(--line); background: color-mix(in srgb, var(--paper) 82%, white); }
+.question-rail button { width: 100%; min-height: 72px; display: grid; grid-template-columns: 32px 1fr; align-items: center; gap: 11px; padding: 11px 13px; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; text-align: left; }
+.question-rail button:hover { background: color-mix(in srgb, var(--lime) 11%, transparent); }
+.question-rail button.current { background: var(--ink); color: var(--paper); }
+.question-rail button > span { width: 27px; height: 27px; display: grid; place-items: center; border: 1px solid var(--line); font-size: 11px; font-weight: 900; }
+.question-rail button.done > span { background: var(--lime); border-color: var(--lime); color: #172022; }
+.question-rail button > div { min-width: 0; display: grid; gap: 5px; }
+.question-rail b, .question-rail small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.question-rail b { font-size: 12px; }
+.question-rail small { color: var(--muted); font-size: 9px; font-weight: 800; }
+.question-rail button.current small { color: #b9c1bf; }
+.question-sheet { overflow: hidden; background: color-mix(in srgb, var(--paper) 82%, white); border: 1px solid var(--line); box-shadow: 0 18px 42px color-mix(in srgb, var(--ink) 8%, transparent); }
+.question-sheet > header { display: flex; align-items: start; justify-content: space-between; gap: 25px; padding: 28px 30px 24px; border-bottom: 1px solid var(--line); }
+.question-sheet > header > div { display: grid; gap: 8px; }
+.question-sheet > header small { color: var(--muted); font-size: 9px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.question-sheet > header h2 { margin: 0; font-size: clamp(27px, 4vw, 40px); letter-spacing: -.045em; }
+.question-sheet > header strong { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.format-badge { width: max-content; padding: 5px 7px; background: var(--lime); color: #172022; font-size: 9px; font-weight: 900; letter-spacing: .1em; }
+.format-badge.external { background: #c5b8ff; }
+.question-body { min-height: 270px; display: grid; align-content: center; padding: 42px 40px; }
+.question-body > p { color: var(--muted); font-size: 15px; }
+.practice-math { padding: 18px 0; overflow-x: auto; }
+.practice-math .katex { font-size: clamp(1.35em, 3vw, 2em); }
+.practice-math .katex-display { text-align: center; }
+.external-question { display: grid; grid-template-columns: 70px 1fr; gap: 22px; align-items: start; }
+.external-question > span { width: 64px; height: 64px; display: grid; place-items: center; background: #c5b8ff; color: #172022; font-size: 30px; font-weight: 900; }
+.external-question h3 { margin: 0 0 10px; font-size: 25px; }
+.external-question p { max-width: 580px; color: var(--muted); line-height: 1.55; }
+.solution-panel { padding: 30px 40px; background: color-mix(in srgb, var(--lime) 13%, var(--paper)); border-top: 1px solid var(--line); }
+.solution-panel > p:not(.eyebrow) { color: var(--muted); }
+.solution-panel > a { color: var(--orange); font-weight: 900; text-decoration: underline; text-underline-offset: 4px; }
+.answer-math .katex { color: color-mix(in srgb, var(--ink) 86%, #008f7a); }
+.question-source { display: flex; align-items: start; justify-content: space-between; gap: 20px; padding: 18px 30px; background: color-mix(in srgb, var(--ink) 5%, var(--paper)); border-top: 1px solid var(--line); }
+.question-source > div:first-child { display: grid; gap: 4px; }
+.question-source b { font-size: 11px; }
+.question-source span, .question-source em { color: var(--muted); font-size: 9px; font-style: normal; line-height: 1.45; }
+.question-source > div:last-child { display: flex; gap: 14px; }
+.question-source a { font-size: 10px; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.question-nav { display: flex; align-items: center; gap: 18px; padding: 20px 30px; border-top: 1px solid var(--line); }
+.question-nav a { color: var(--muted); font-size: 10px; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
+.question-nav .maxxing-primary { margin-left: auto; }
+.question-nav button:disabled { cursor: not-allowed; opacity: .35; }
+.end-session-bar { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 26px; padding: 25px 28px; background: #172022; color: #f7f4ed; }
+.end-session-bar p { color: var(--lime); }
+.end-session-bar h3 { max-width: 690px; margin: 7px 0 0; font-size: 18px; }
+.end-session-bar .maxxing-primary { background: var(--lime); color: #172022; }
+
 /* Dark mode needs explicit surfaces for elements whose light-mode artwork is
    intentionally white or uses a bright accent background. */
 [data-theme="dark"] .brand-mark {
@@ -190,8 +290,18 @@ footer { flex-wrap: wrap; gap: 22px; }
 [data-theme="dark"] .maxxing-primary,
 [data-theme="dark"] .source-button { background: #edf2ef; color: #12191b; }
 [data-theme="dark"] .secondary-action { color: #edf2ef; }
-@media(max-width:800px){.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding-bottom:10px}.topbar nav{display:flex;order:3;width:100%;justify-content:flex-start;gap:20px;overflow-x:auto;scrollbar-width:none}.topbar nav::-webkit-scrollbar{display:none}.topbar nav a{flex:0 0 auto;padding:10px 0 8px;font-size:12px}.route-shell{min-height:calc(100vh - 120px)}.maxxing-hero{grid-template-columns:1fr;padding:62px 24px 58px}.maxxing-score{display:none}.maxxing-page{padding:58px 24px 86px}.practice-heading{align-items:flex-start;flex-direction:column;gap:16px}.challenge-picker{grid-template-columns:1fr}.topic-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:650px){.support-link{padding-right:10px}.footer-links{align-items:flex-start;flex-direction:column;gap:12px}.version-panel{justify-items:start}.version-panel .update-status{text-align:left}.formula-group .formula-line{grid-template-columns:1fr;gap:9px}.math-formula .katex{font-size:1.04em}.maxxing-hero h1{font-size:58px}.practice-card>header{align-items:stretch;flex-direction:column;padding:22px}.card-timer{grid-template-columns:1fr auto auto;align-items:center;justify-items:start;min-width:0}.card-timer b{font-size:23px}.problem-stage,.answer-stage{grid-template-columns:1fr;padding:27px 22px}.stage-number{font-size:24px}.reveal-button{width:calc(100% - 44px);margin:0 22px 24px}.grade-actions{grid-template-columns:1fr}.grade-actions button{min-height:80px}.card-help{align-items:flex-start;flex-wrap:wrap;padding:18px 22px}.card-help span{width:100%}.topic-stats{grid-template-columns:1fr}.setup-actions,.summary-actions{align-items:stretch;flex-direction:column-reverse}.maxxing-primary,.secondary-action{width:100%}.summary-grid{grid-template-columns:1fr}.summary-grid article{min-height:118px}}
+[data-theme="dark"] .session-list article,
+[data-theme="dark"] .session-name input,
+[data-theme="dark"] .topic-choice,
+[data-theme="dark"] .question-rail,
+[data-theme="dark"] .question-sheet { background: #1b2527; }
+[data-theme="dark"] .question-rail button.current { background: #edf2ef; color: #12191b; }
+[data-theme="dark"] .question-rail button.current small { color: #526164; }
+[data-theme="dark"] .question-source { background: #131c1e; }
+[data-theme="dark"] .solution-panel { background: #202f2b; }
+@media(max-width:900px){.study-layout{grid-template-columns:1fr}.question-rail{max-height:none;display:flex;overflow-x:auto}.question-rail button{min-width:220px;border-right:1px solid var(--line);border-bottom:0}.session-list{grid-template-columns:1fr}.topic-bank{grid-template-columns:1fr}}
+@media(max-width:800px){.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding-bottom:10px}.topbar nav{display:flex;order:3;width:100%;justify-content:flex-start;gap:20px;overflow-x:auto;scrollbar-width:none}.topbar nav::-webkit-scrollbar{display:none}.topbar nav a{flex:0 0 auto;padding:10px 0 8px;font-size:12px}.route-shell{min-height:calc(100vh - 120px)}.maxxing-hero{grid-template-columns:1fr;padding:62px 24px 58px}.maxxing-score{display:none}.maxxing-page{padding:58px 24px 86px}.practice-heading{align-items:flex-start;flex-direction:column;gap:16px}.challenge-picker{grid-template-columns:1fr}.topic-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.study-toolbar{align-items:stretch;flex-direction:column}.study-clock{width:100%}}
+@media(max-width:650px){.support-link{padding-right:10px}.footer-links{align-items:flex-start;flex-direction:column;gap:12px}.version-panel{justify-items:start}.version-panel .update-status{text-align:left}.formula-group .formula-line{grid-template-columns:1fr;gap:9px}.math-formula .katex{font-size:1.04em}.maxxing-hero h1{font-size:58px}.practice-card>header{align-items:stretch;flex-direction:column;padding:22px}.card-timer{grid-template-columns:1fr auto auto;align-items:center;justify-items:start;min-width:0}.card-timer b{font-size:23px}.problem-stage,.answer-stage{grid-template-columns:1fr;padding:27px 22px}.stage-number{font-size:24px}.reveal-button{width:calc(100% - 44px);margin:0 22px 24px}.grade-actions{grid-template-columns:1fr}.grade-actions button{min-height:80px}.card-help{align-items:flex-start;flex-wrap:wrap;padding:18px 22px}.card-help span{width:100%}.topic-stats{grid-template-columns:1fr}.setup-actions,.summary-actions{align-items:stretch;flex-direction:column-reverse}.maxxing-primary,.secondary-action{width:100%}.summary-grid{grid-template-columns:1fr}.summary-grid article{min-height:118px}.session-metrics{grid-template-columns:1fr}.session-metrics span{min-height:62px}.session-metrics span+span{padding-left:0;border-left:0;border-top:1px solid var(--line)}.timer-editor{align-items:stretch;flex-direction:column}.timer-editor label{margin:0}.timer-editor input{width:100%}.question-sheet>header{padding:22px}.question-body{min-height:230px;padding:30px 22px}.external-question{grid-template-columns:1fr}.solution-panel{padding:26px 22px}.question-source{flex-direction:column;padding:17px 22px}.question-nav{align-items:stretch;flex-direction:column;padding:18px 22px}.question-nav .maxxing-primary{margin-left:0}.end-session-bar{align-items:stretch;flex-direction:column}.dismissed-sessions>div{align-items:flex-start;flex-wrap:wrap}.dismissed-sessions>div>span{width:100%}}
 @media print {
   /* Printing is always a light, ink-friendly experience, even when the saved
      screen preference is dark. Explicit colors prevent dark-mode selectors

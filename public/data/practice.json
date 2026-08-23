@@ -1,100 +1,92 @@
 {
-  "challenges": [
+  "schemaVersion": 2,
+  "licenseNotice": "Each question carries its own source and license metadata. Embedded adaptations remain available under their listed Creative Commons license; link-only questions are not reproduced.",
+  "questions": [
     {
-      "id": "limits-algebra-3",
-      "topicId": "1.6",
-      "topic": "Limits using algebra",
-      "unit": "Unit 1 · Limits",
-      "problemNumber": "Problem 3",
-      "source": "Paul's Online Math Notes · Lamar University",
-      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/ComputingLimits.aspx",
-      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/computinglimits/prob3.aspx",
-      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU",
-      "referenceUrl": "https://en.wikipedia.org/wiki/Limit_of_a_function"
+      "id": "ac-limit-direct-product", "type": "embedded", "topicId": "1.5", "topic": "Determining Limits Using Algebraic Properties", "unit": "Unit 1 · Limits and Continuity", "title": "Direct substitution warm-up",
+      "promptText": "Evaluate the limit.", "promptTex": "\\lim_{t \\to -1}(t-2)^3(t^2+1)^3", "answerText": "Direct substitution works here.", "answerTex": "(-3)^3(2)^3=-216",
+      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU", "referenceUrl": "https://en.wikipedia.org/wiki/Limit_of_a_function",
+      "source": { "title": "Active Calculus · The notion of limit", "author": "Matthew Boelkins et al.", "url": "https://activecalculus.org/single-alt/sec-1-2-lim.html", "attribution": "Exercise 2 from Active Calculus Single Variable", "license": { "code": "CC-BY-SA-4.0", "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Reformatted for a single-question study card; mathematical content unchanged." }
     },
     {
-      "id": "chain-rule-1",
-      "topicId": "3.1",
-      "topic": "The chain rule",
-      "unit": "Unit 3 · Advanced derivatives",
-      "problemNumber": "Problem 1",
-      "source": "Paul's Online Math Notes · Lamar University",
-      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/ChainRule.aspx",
-      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/chainrule/prob1.aspx",
-      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule",
-      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule"
+      "id": "ac-limit-factor-rational", "type": "embedded", "topicId": "1.6", "topic": "Determining Limits Using Algebraic Manipulation", "unit": "Unit 1 · Limits and Continuity", "title": "Factor and cancel",
+      "promptText": "Evaluate the limit. Enter DNE only if it does not exist.", "promptTex": "\\lim_{y \\to 1}\\frac{y^3-y}{y^2-1}", "answerText": "Factor the numerator and denominator, then cancel the common factors.", "answerTex": "\\frac{y(y-1)(y+1)}{(y-1)(y+1)}=y\\quad\\Longrightarrow\\quad 1",
+      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU", "referenceUrl": "https://en.wikipedia.org/wiki/Limit_of_a_function",
+      "source": { "title": "Active Calculus · The notion of limit", "author": "Matthew Boelkins et al.", "url": "https://activecalculus.org/single-alt/sec-1-2-lim.html", "attribution": "Exercise 3 from Active Calculus Single Variable", "license": { "code": "CC-BY-SA-4.0", "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Reformatted for a single-question study card; mathematical content unchanged." }
     },
     {
-      "id": "related-rates-4",
-      "topicId": "4.5",
-      "topic": "Related rates",
-      "unit": "Unit 4 · Rates of change",
-      "problemNumber": "Problem 4",
-      "source": "Paul's Online Math Notes · Lamar University",
-      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/RelatedRates.aspx",
-      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/relatedrates/prob4.aspx",
-      "videoUrl": "https://www.youtube.com/watch?v=I9mVUo-bhM8",
-      "referenceUrl": "https://en.wikipedia.org/wiki/Related_rates"
+      "id": "ac-limit-radical", "type": "embedded", "topicId": "1.6", "topic": "Determining Limits Using Algebraic Manipulation", "unit": "Unit 1 · Limits and Continuity", "title": "Use the conjugate",
+      "promptText": "Evaluate the limit.", "promptTex": "\\lim_{h \\to 0}\\frac{\\sqrt{4+h}-2}{h}", "answerText": "Multiply by the conjugate and simplify.", "answerTex": "\\frac{1}{\\sqrt{4+h}+2}\\quad\\Longrightarrow\\quad\\frac14",
+      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU", "referenceUrl": "https://en.wikipedia.org/wiki/Conjugate_(square_roots)",
+      "source": { "title": "Active Calculus · The notion of limit", "author": "Matthew Boelkins et al.", "url": "https://activecalculus.org/single-alt/sec-1-2-lim.html", "attribution": "Exercise 4 from Active Calculus Single Variable", "license": { "code": "CC-BY-SA-4.0", "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Reformatted for a single-question study card; mathematical content unchanged." }
     },
     {
-      "id": "optimization-1",
-      "topicId": "5.11",
-      "topic": "Optimization",
-      "unit": "Unit 5 · Function analysis",
-      "problemNumber": "Problem 1",
-      "source": "Paul's Online Math Notes · Lamar University",
-      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/Optimization.aspx",
-      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/optimization/prob1.aspx",
-      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+calculus+optimization",
-      "referenceUrl": "https://en.wikipedia.org/wiki/Mathematical_optimization"
+      "id": "ac-derivative-difference-quotient", "type": "embedded", "topicId": "2.2", "topic": "Defining the Derivative of a Function and Using Derivative Notation", "unit": "Unit 2 · Basic Derivatives", "title": "Difference quotient",
+      "promptText": "Evaluate the limit.", "promptTex": "\\lim_{h \\to 0}\\frac{(3+h)^2-9}{h}", "answerText": "Expand, cancel h, and take the limit.", "answerTex": "\\frac{6h+h^2}{h}=6+h\\quad\\Longrightarrow\\quad 6",
+      "videoUrl": "https://www.youtube.com/watch?v=5yfh5cf4-0w", "referenceUrl": "https://en.wikipedia.org/wiki/Derivative",
+      "source": { "title": "Active Calculus · The notion of limit", "author": "Matthew Boelkins et al.", "url": "https://activecalculus.org/single-alt/sec-1-2-lim.html", "attribution": "Exercise 5 from Active Calculus Single Variable", "license": { "code": "CC-BY-SA-4.0", "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Reformatted for a single-question study card; mathematical content unchanged." }
     },
     {
-      "id": "integration-parts-1",
-      "topicId": "6.11",
-      "topic": "Integration by parts",
-      "unit": "Unit 6 · Integrals",
-      "problemNumber": "Problem 1",
-      "source": "Paul's Online Math Notes · Lamar University",
-      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcII/IntegrationByParts.aspx",
-      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calcii/integrationbyparts/prob1.aspx",
-      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+integration+by+parts",
-      "referenceUrl": "https://en.wikipedia.org/wiki/Integration_by_parts"
+      "id": "ac-limit-quadratic-variant", "type": "embedded", "topicId": "1.6", "topic": "Determining Limits Using Algebraic Manipulation", "unit": "Unit 1 · Limits and Continuity", "title": "Removable hole",
+      "promptText": "Evaluate the limit.", "promptTex": "\\lim_{x \\to 2}\\frac{x^2-4}{x-2}", "answerText": "Factor the difference of squares.", "answerTex": "\\frac{(x-2)(x+2)}{x-2}=x+2\\quad\\Longrightarrow\\quad 4",
+      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU", "referenceUrl": "https://en.wikipedia.org/wiki/Removable_discontinuity",
+      "source": { "title": "Active Calculus · The notion of limit", "author": "Matthew Boelkins et al.", "url": "https://activecalculus.org/single-alt/sec-1-2-lim.html", "attribution": "Adapted from the algebraic limit exercise set in Active Calculus Single Variable", "license": { "code": "CC-BY-SA-4.0", "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Constants fixed and prompt shortened for focused practice." }
     },
     {
-      "id": "area-curves-1",
-      "topicId": "8.4",
-      "topic": "Area between curves",
-      "unit": "Unit 8 · Integral applications",
-      "problemNumber": "Problem 1",
-      "source": "Paul's Online Math Notes · Lamar University",
-      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/AreaBetweenCurves.aspx",
-      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/areabetweencurves/prob1.aspx",
-      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+area+between+curves",
-      "referenceUrl": "https://en.wikipedia.org/wiki/Integral#Area_between_curves"
+      "id": "ac-limit-cubic-variant", "type": "embedded", "topicId": "1.6", "topic": "Determining Limits Using Algebraic Manipulation", "unit": "Unit 1 · Limits and Continuity", "title": "Factor a difference of cubes",
+      "promptText": "Evaluate the limit.", "promptTex": "\\lim_{x \\to 2}\\frac{x^3-8}{x-2}", "answerText": "Use the difference-of-cubes factorization.", "answerTex": "x^3-8=(x-2)(x^2+2x+4)\\quad\\Longrightarrow\\quad 12",
+      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU", "referenceUrl": "https://en.wikipedia.org/wiki/Factorization",
+      "source": { "title": "Active Calculus · The notion of limit", "author": "Matthew Boelkins et al.", "url": "https://activecalculus.org/single-alt/sec-1-2-lim.html", "attribution": "Adapted from the algebraic limit exercise set in Active Calculus Single Variable", "license": { "code": "CC-BY-SA-4.0", "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Constants fixed and prompt shortened for focused practice." }
     },
     {
-      "id": "washers-1",
-      "topicId": "8.11",
-      "topic": "Volumes with washers",
-      "unit": "Unit 8 · Integral applications",
-      "problemNumber": "Problem 1",
-      "source": "Paul's Online Math Notes · Lamar University",
-      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/VolumeWithRings.aspx",
-      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/volumewithrings/prob1.aspx",
-      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+washer+method+calculus",
-      "referenceUrl": "https://en.wikipedia.org/wiki/Solid_of_revolution"
+      "id": "ac-limit-trinomial-variant", "type": "embedded", "topicId": "1.6", "topic": "Determining Limits Using Algebraic Manipulation", "unit": "Unit 1 · Limits and Continuity", "title": "Factor a trinomial",
+      "promptText": "Evaluate the limit.", "promptTex": "\\lim_{x \\to 2}\\frac{x^2+x-6}{x-2}", "answerText": "Factor the numerator.", "answerTex": "\\frac{(x+3)(x-2)}{x-2}=x+3\\quad\\Longrightarrow\\quad 5",
+      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU", "referenceUrl": "https://en.wikipedia.org/wiki/Factorization",
+      "source": { "title": "Active Calculus · The notion of limit", "author": "Matthew Boelkins et al.", "url": "https://activecalculus.org/single-alt/sec-1-2-lim.html", "attribution": "Adapted from the algebraic limit exercise set in Active Calculus Single Variable", "license": { "code": "CC-BY-SA-4.0", "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Constants fixed and prompt shortened for focused practice." }
     },
     {
-      "id": "ratio-test-1",
-      "topicId": "10.8",
-      "topic": "The ratio test",
-      "unit": "Unit 10 · Sequences + series",
-      "problemNumber": "Problem 1",
-      "source": "Paul's Online Math Notes · Lamar University",
-      "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcII/RatioTest.aspx",
-      "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calcii/ratiotest/prob1.aspx",
-      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+ratio+test+series",
-      "referenceUrl": "https://en.wikipedia.org/wiki/Ratio_test"
+      "id": "ac-limit-complex-fraction-variant", "type": "embedded", "topicId": "1.6", "topic": "Determining Limits Using Algebraic Manipulation", "unit": "Unit 1 · Limits and Continuity", "title": "Simplify a compound fraction",
+      "promptText": "Evaluate the limit.", "promptTex": "\\lim_{x \\to 3}\\frac{\\frac1x-\\frac13}{x-3}", "answerText": "Combine the numerator before cancelling.", "answerTex": "\\frac{3-x}{3x(x-3)}=-\\frac{1}{3x}\\quad\\Longrightarrow\\quad-\\frac19",
+      "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU", "referenceUrl": "https://en.wikipedia.org/wiki/Limit_of_a_function",
+      "source": { "title": "Active Calculus · The notion of limit", "author": "Matthew Boelkins et al.", "url": "https://activecalculus.org/single-alt/sec-1-2-lim.html", "attribution": "Adapted from the algebraic limit exercise set in Active Calculus Single Variable", "license": { "code": "CC-BY-SA-4.0", "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Constants fixed and prompt shortened for focused practice." }
+    },
+    {
+      "id": "opl-differentiability-piecewise", "type": "embedded", "topicId": "2.4", "topic": "Connecting Differentiability and Continuity", "unit": "Unit 2 · Basic Derivatives", "title": "Make it differentiable",
+      "promptText": "Find a and b so the piecewise function is differentiable everywhere.", "promptTex": "f(x)=\\begin{cases}x^2-2x+2,&x\\le 2\\\\ax+b,&x>2\\end{cases}", "answerText": "Match both the function values and derivatives at x = 2.", "answerTex": "a=2,\\qquad b=-2",
+      "videoUrl": "https://www.youtube.com/watch?v=5yfh5cf4-0w", "referenceUrl": "https://en.wikipedia.org/wiki/Differentiable_function",
+      "source": { "title": "WeBWorK Open Problem Library", "author": "University of Rochester contributor; curated by the WeBWorK OPL Editorial Board", "url": "https://github.com/openwebwork/webwork-open-problem-library/blob/main/OpenProblemLibrary/270/setDerivatives1/ur_dr_1_1.pg", "attribution": "Adapted from OPL problem ur_dr_1_1.pg", "license": { "code": "CC-BY-NC-SA-3.0", "name": "CC BY-NC-SA 3.0", "url": "https://creativecommons.org/licenses/by-nc-sa/3.0/", "usage": "embedded" }, "modified": true, "modificationNote": "Random parameters replaced with a fixed valid instance and the prompt reformatted." }
+    },
+    {
+      "id": "limits-algebra-3", "type": "external", "topicId": "1.6", "topic": "Determining Limits Using Algebraic Manipulation", "unit": "Unit 1 · Limits and Continuity", "title": "Paul’s Limits · Problem 3", "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/ComputingLimits.aspx", "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/computinglimits/prob3.aspx", "videoUrl": "https://www.youtube.com/watch?v=YNstP0ESndU", "referenceUrl": "https://en.wikipedia.org/wiki/Limit_of_a_function",
+      "source": { "title": "Paul’s Online Math Notes · Computing Limits", "author": "Paul Dawkins · Lamar University", "url": "https://tutorial.math.lamar.edu/Problems/CalcI/ComputingLimits.aspx", "attribution": "Linked to the publisher; question text is not reproduced", "license": { "code": "LINK-ONLY", "name": "Source terms apply", "url": "https://tutorial.math.lamar.edu/Terms.aspx", "usage": "link-only" } }
+    },
+    {
+      "id": "chain-rule-1", "type": "external", "topicId": "3.1", "topic": "The Chain Rule", "unit": "Unit 3 · Advanced Derivatives", "title": "Paul’s Chain Rule · Problem 1", "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/ChainRule.aspx", "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/chainrule/prob1.aspx", "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule", "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "source": { "title": "Paul’s Online Math Notes · Chain Rule", "author": "Paul Dawkins · Lamar University", "url": "https://tutorial.math.lamar.edu/Problems/CalcI/ChainRule.aspx", "attribution": "Linked to the publisher; question text is not reproduced", "license": { "code": "LINK-ONLY", "name": "Source terms apply", "url": "https://tutorial.math.lamar.edu/Terms.aspx", "usage": "link-only" } }
+    },
+    {
+      "id": "related-rates-4", "type": "external", "topicId": "4.5", "topic": "Solving Related Rates Problems", "unit": "Unit 4 · Rates of Change", "title": "Paul’s Related Rates · Problem 4", "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/RelatedRates.aspx", "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/relatedrates/prob4.aspx", "videoUrl": "https://www.youtube.com/watch?v=I9mVUo-bhM8", "referenceUrl": "https://en.wikipedia.org/wiki/Related_rates",
+      "source": { "title": "Paul’s Online Math Notes · Related Rates", "author": "Paul Dawkins · Lamar University", "url": "https://tutorial.math.lamar.edu/Problems/CalcI/RelatedRates.aspx", "attribution": "Linked to the publisher; question text is not reproduced", "license": { "code": "LINK-ONLY", "name": "Source terms apply", "url": "https://tutorial.math.lamar.edu/Terms.aspx", "usage": "link-only" } }
+    },
+    {
+      "id": "optimization-1", "type": "external", "topicId": "5.11", "topic": "Solving Optimization Problems", "unit": "Unit 5 · Function Analysis", "title": "Paul’s Optimization · Problem 1", "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/Optimization.aspx", "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/optimization/prob1.aspx", "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+calculus+optimization", "referenceUrl": "https://en.wikipedia.org/wiki/Mathematical_optimization",
+      "source": { "title": "Paul’s Online Math Notes · Optimization", "author": "Paul Dawkins · Lamar University", "url": "https://tutorial.math.lamar.edu/Problems/CalcI/Optimization.aspx", "attribution": "Linked to the publisher; question text is not reproduced", "license": { "code": "LINK-ONLY", "name": "Source terms apply", "url": "https://tutorial.math.lamar.edu/Terms.aspx", "usage": "link-only" } }
+    },
+    {
+      "id": "integration-parts-1", "type": "external", "topicId": "6.11", "topic": "Integrating Using Integration by Parts", "unit": "Unit 6 · Integrals", "title": "Paul’s Integration by Parts · Problem 1", "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcII/IntegrationByParts.aspx", "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calcii/integrationbyparts/prob1.aspx", "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+integration+by+parts", "referenceUrl": "https://en.wikipedia.org/wiki/Integration_by_parts",
+      "source": { "title": "Paul’s Online Math Notes · Integration by Parts", "author": "Paul Dawkins · Lamar University", "url": "https://tutorial.math.lamar.edu/Problems/CalcII/IntegrationByParts.aspx", "attribution": "Linked to the publisher; question text is not reproduced", "license": { "code": "LINK-ONLY", "name": "Source terms apply", "url": "https://tutorial.math.lamar.edu/Terms.aspx", "usage": "link-only" } }
+    },
+    {
+      "id": "area-curves-1", "type": "external", "topicId": "8.4", "topic": "Finding the Area Between Curves Expressed as Functions of x", "unit": "Unit 8 · Integral Applications", "title": "Paul’s Area Between Curves · Problem 1", "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/AreaBetweenCurves.aspx", "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/areabetweencurves/prob1.aspx", "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+area+between+curves", "referenceUrl": "https://en.wikipedia.org/wiki/Integral#Area_between_curves",
+      "source": { "title": "Paul’s Online Math Notes · Area Between Curves", "author": "Paul Dawkins · Lamar University", "url": "https://tutorial.math.lamar.edu/Problems/CalcI/AreaBetweenCurves.aspx", "attribution": "Linked to the publisher; question text is not reproduced", "license": { "code": "LINK-ONLY", "name": "Source terms apply", "url": "https://tutorial.math.lamar.edu/Terms.aspx", "usage": "link-only" } }
+    },
+    {
+      "id": "washers-1", "type": "external", "topicId": "8.11", "topic": "Volume with Washer Method: Revolving Around the x- or y-Axis", "unit": "Unit 8 · Integral Applications", "title": "Paul’s Washer Method · Problem 1", "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcI/VolumeWithRings.aspx", "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calci/volumewithrings/prob1.aspx", "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+washer+method+calculus", "referenceUrl": "https://en.wikipedia.org/wiki/Solid_of_revolution",
+      "source": { "title": "Paul’s Online Math Notes · Volume with Rings", "author": "Paul Dawkins · Lamar University", "url": "https://tutorial.math.lamar.edu/Problems/CalcI/VolumeWithRings.aspx", "attribution": "Linked to the publisher; question text is not reproduced", "license": { "code": "LINK-ONLY", "name": "Source terms apply", "url": "https://tutorial.math.lamar.edu/Terms.aspx", "usage": "link-only" } }
+    },
+    {
+      "id": "ratio-test-1", "type": "external", "topicId": "10.8", "topic": "Ratio Test for Convergence", "unit": "Unit 10 · Sequences and Series", "title": "Paul’s Ratio Test · Problem 1", "problemUrl": "https://tutorial.math.lamar.edu/Problems/CalcII/RatioTest.aspx", "solutionUrl": "https://tutorial.math.lamar.edu/solutions/calcii/ratiotest/prob1.aspx", "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+ratio+test+series", "referenceUrl": "https://en.wikipedia.org/wiki/Ratio_test",
+      "source": { "title": "Paul’s Online Math Notes · Ratio Test", "author": "Paul Dawkins · Lamar University", "url": "https://tutorial.math.lamar.edu/Problems/CalcII/RatioTest.aspx", "attribution": "Linked to the publisher; question text is not reproduced", "license": { "code": "LINK-ONLY", "name": "Source terms apply", "url": "https://tutorial.math.lamar.edu/Terms.aspx", "usage": "link-only" } }
     }
   ]
 }

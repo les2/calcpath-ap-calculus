@@ -1,19 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { gradePoints, levelLabel, type Attempt } from './grade-maxxing.page';
+import { completionCount, gradePoints, sessionScore, type StudySession } from './grade-maxxing.page';
 
-const attempt = (grade: Attempt['grade']): Attempt => ({ id: crypto.randomUUID(), sessionId: 's', challengeId: 'c', topicId: '1.1', topic: 'Limits', grade, seconds: 60, completedAt: new Date().toISOString() });
+const session = (results: StudySession['results']): Pick<StudySession, 'results'> => ({ results });
 
-describe('Grade Maxxing scoring', () => {
-  it('gives partial work half credit', () => {
-    expect(gradePoints('cooked')).toBe(1);
-    expect(gradePoints('almost')).toBe(0.5);
-    expect(gradePoints('got-cooked')).toBe(0);
-  });
-
-  it('requires repeated evidence before showing a strong level', () => {
-    expect(levelLabel([])).toBe('New');
-    expect(levelLabel([attempt('cooked')])).toBe('Warming up');
-    expect(levelLabel([attempt('cooked'), attempt('cooked'), attempt('cooked')])).toBe('Leveled up');
-    expect(levelLabel([attempt('got-cooked'), attempt('almost'), attempt('cooked')])).toBe('In the lab');
-  });
+describe('Grade Maxxing study sessions', () => {
+  it('uses a simple three-level self grade', () => { expect(gradePoints('cooked')).toBe(1); expect(gradePoints('close')).toBe(0.5); expect(gradePoints('reps')).toBe(0); });
+  it('calculates progress and score from saved results', () => { const value = session({ q1: 'cooked', q2: 'close', q3: 'reps' }); expect(completionCount(value)).toBe(3); expect(sessionScore(value)).toBe(50); });
+  it('keeps an untouched session at zero', () => { expect(sessionScore(session({}))).toBe(0); });
 });

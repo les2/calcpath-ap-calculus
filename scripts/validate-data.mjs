@@ -7,7 +7,7 @@ const isHttpsUrl = (value) => {
 };
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
-const [{ units }, { tools }, { groups }, { challenges }] = await Promise.all([
+const [{ units }, { tools }, { groups }, practice] = await Promise.all([
   readJson('topics.json'),
   readJson('tools.json'),
   readJson('formulas.json'),
@@ -37,12 +37,28 @@ for (const group of groups) {
   }
 }
 
-assert(Array.isArray(challenges) && challenges.length > 0, 'At least one practice challenge is required.');
-assert(new Set(challenges.map((challenge) => challenge.id)).size === challenges.length, 'Practice challenge IDs must be unique.');
+const { schemaVersion, questions } = practice;
+assert(schemaVersion === 2, 'Practice data must use schema version 2.');
+assert(Array.isArray(questions) && questions.length > 0, 'At least one practice question is required.');
+assert(new Set(questions.map((question) => question.id)).size === questions.length, 'Practice question IDs must be unique.');
 const topicIds = new Set(topics.map((topic) => topic.id));
-for (const challenge of challenges) {
-  assert(challenge.id && challenge.topic && topicIds.has(challenge.topicId), `Practice challenge ${challenge.id} needs a valid topic mapping.`);
-  for (const field of ['problemUrl', 'solutionUrl', 'videoUrl', 'referenceUrl']) assert(isHttpsUrl(challenge[field]), `${challenge.id} ${field} must use HTTPS.`);
+for (const question of questions) {
+  assert(question.id && question.title && question.topic && topicIds.has(question.topicId), `Practice question ${question.id} needs a valid topic mapping.`);
+  assert(['embedded', 'external'].includes(question.type), `${question.id} has an invalid question type.`);
+  for (const field of ['videoUrl', 'referenceUrl']) assert(isHttpsUrl(question[field]), `${question.id} ${field} must use HTTPS.`);
+  assert(question.source?.title && question.source?.author && isHttpsUrl(question.source?.url), `${question.id} needs complete source attribution.`);
+  assert(question.source?.license?.code && question.source?.license?.name && isHttpsUrl(question.source?.license?.url), `${question.id} needs complete license metadata.`);
+  if (question.type === 'embedded') {
+    assert(question.promptTex && question.answerTex, `${question.id} needs embedded question and answer TeX.`);
+    assert(question.source.license.usage === 'embedded' && question.source.license.code.startsWith('CC-'), `${question.id} must be covered by an embeddable Creative Commons license.`);
+    for (const [label, formula] of [['prompt', question.promptTex], ['answer', question.answerTex]]) {
+      try { katex.renderToString(formula, { strict: 'error', throwOnError: true }); }
+      catch (error) { throw new Error(`Invalid ${label} TeX for ${question.id}: ${error.message}`); }
+    }
+  } else {
+    assert(isHttpsUrl(question.problemUrl) && isHttpsUrl(question.solutionUrl), `${question.id} external links must use HTTPS.`);
+    assert(question.source.license.usage === 'link-only', `${question.id} must identify link-only source usage.`);
+  }
 }
 
-console.log(`Validated ${units.length} units, ${topics.length} topics, ${tools.length} tools, ${groups.length} formula groups, and ${challenges.length} practice challenges.`);
+console.log(`Validated ${units.length} units, ${topics.length} topics, ${tools.length} tools, ${groups.length} formula groups, and ${questions.length} licensed practice questions.`);

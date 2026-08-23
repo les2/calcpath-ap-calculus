@@ -26,7 +26,7 @@ CalcPath is free to use and fork. If it helped you, you can optionally [leave a 
 - An installable Progressive Web App with offline caching and update notifications
 - Free, ad-free graphing, symbolic algebra, solver, and scientific tools
 - A print-optimized reference guide with real TeX mathematics and accessible MathML
-- A private, self-graded Grade Maxxing practice beta using educator-published problems and solutions
+- Private, named Grade Maxxing study runs with a user-controlled timer, in-app Creative Commons questions, intentional external practice links, and local-only progress
 - Clean, shareable routes, responsive layouts, and dark mode
 
 ## How this was made with ChatGPT
@@ -197,7 +197,7 @@ There is intentionally no `db/`, `drizzle/`, or D1 example code. The app does no
 - `/roadmap` — searchable curriculum with URL-backed `q`, `course`, and `unit` state
 - `/tools` — curated calculators, solvers, and computer algebra systems
 - `/reference` — standalone printable formula and identity guide
-- `/grade-maxxing` — topic-based practice sessions with a timer, self-grading, and device-local stats
+- `/grade-maxxing` — persistent named study runs with a total timer, self-grading, licensed question attribution, and device-local progress
 
 ## Automated quality checks
 
