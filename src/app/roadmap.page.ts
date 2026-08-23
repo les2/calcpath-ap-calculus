@@ -43,7 +43,7 @@ export class RoadmapPage {
   readonly progress = computed(() => calculateProgress(this.units(), this.completed()));
   readonly visibleUnits = computed(() => filterUnits(this.units(), this.query(), this.course()));
   constructor(http: HttpClient, private readonly route: ActivatedRoute, private readonly router: Router, private readonly location: Location) {
-    http.get<{units: Unit[]}>('data/topics.json').subscribe((data) => this.units.set(data.units));
+    http.get<{units: Unit[]}>(new URL('data/topics.json', document.baseURI).toString()).subscribe((data) => this.units.set(data.units));
     route.queryParamMap.subscribe((params) => { this.query.set(params.get('q') ?? ''); this.course.set(params.get('course') ?? 'ALL'); const unit = Number(params.get('unit')); this.expanded.set(unit || null); });
   }
   setQuery(query: string) { this.navigate({ q: query || null }); }

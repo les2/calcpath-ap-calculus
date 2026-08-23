@@ -15,6 +15,6 @@ type FormulaGroup = { title: string; items: [string, string][] };
 })
 export class ReferencePage {
   readonly groups = signal<FormulaGroup[]>([]);
-  constructor(http: HttpClient) { http.get<{groups: FormulaGroup[]}>('data/formulas.json').subscribe((data) => this.groups.set(data.groups)); }
+  constructor(http: HttpClient) { http.get<{groups: FormulaGroup[]}>(new URL('data/formulas.json', document.baseURI).toString()).subscribe((data) => this.groups.set(data.groups)); }
   print() { window.print(); }
 }
