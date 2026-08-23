@@ -10,7 +10,7 @@
     "ng": "ng",
     "dev": "ng serve --host 127.0.0.1",
     "build": "npm run validate && ng build && node scripts/prepare-sites-build.mjs && vite build --config vite.worker.config.ts",
-    "build:pages": "npm run validate && ng build --base-href /calcpath-ap-calculus/",
+    "build:pages": "npm run validate && ng build --base-href /calcpath-ap-calculus/ && node scripts/prepare-pages.mjs",
     "test": "ng test --watch=false",
     "validate": "npm run test && npm run validate:data",
     "validate:data": "node scripts/validate-data.mjs"
