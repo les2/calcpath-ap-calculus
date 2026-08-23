@@ -15,11 +15,12 @@ import { filter } from 'rxjs';
         <a class="nav-link" routerLink="/roadmap" routerLinkActive="active">Roadmap</a>
         <a class="nav-link" routerLink="/tools" routerLinkActive="active">Tools</a>
         <a class="nav-link" routerLink="/reference" routerLinkActive="active">Reference guide</a>
+        <a class="github-link" href="https://github.com/les2/calcpath-ap-calculus" target="_blank" rel="noopener noreferrer" aria-label="View CalcPath on GitHub (opens in a new tab)">GitHub ↗</a>
       </nav>
       <button class="icon-button" (click)="toggleTheme()" aria-label="Toggle theme">{{ dark() ? '☀' : '◐' }}</button>
     </header>
     <div class="route-shell"><router-outlet /></div>
-    <footer><a class="brand" routerLink="/roadmap"><span class="brand-mark">∫</span><span>CalcPath</span></a><p>Built for focused learning. Not affiliated with College Board.</p><a routerLink="/reference">Reference guide →</a></footer>
+    <footer><a class="brand" routerLink="/roadmap"><span class="brand-mark">∫</span><span>CalcPath</span></a><p>Built for focused learning. Not affiliated with College Board.</p><div class="footer-links"><a routerLink="/reference">Reference guide →</a><a href="https://github.com/les2/calcpath-ap-calculus" target="_blank" rel="noopener noreferrer">Fork or extend on GitHub ↗</a></div></footer>
     @if (updateReady()) { <div class="update-toast" role="status"><span><b>A fresh version is ready.</b><small>Your progress is saved.</small></span><button (click)="activateUpdate()">Update now</button></div> }
   `
 })
