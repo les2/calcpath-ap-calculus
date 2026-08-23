@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import katex from 'katex';
 
 const readJson = async (name) => JSON.parse(await readFile(new URL(`../public/data/${name}`, import.meta.url), 'utf8'));
 const isHttpsUrl = (value) => {
@@ -26,6 +27,13 @@ for (const unit of units) {
 assert(Array.isArray(tools) && tools.length > 0, 'At least one free tool is required.');
 for (const tool of tools) assert(tool.name && isHttpsUrl(tool.url), 'Every tool needs a name and HTTPS URL.');
 assert(Array.isArray(groups) && groups.length > 0, 'At least one formula group is required.');
-for (const group of groups) assert(group.title && Array.isArray(group.items) && group.items.length > 0, 'Every formula group needs titled entries.');
+for (const group of groups) {
+  assert(group.title && Array.isArray(group.items) && group.items.length > 0, 'Every formula group needs titled entries.');
+  for (const [label, formula] of group.items) {
+    assert(label && formula, `Formula entries in ${group.title} need a label and TeX expression.`);
+    try { katex.renderToString(formula, { strict: 'error', throwOnError: true }); }
+    catch (error) { throw new Error(`Invalid TeX for ${group.title} / ${label}: ${error.message}`); }
+  }
+}
 
 console.log(`Validated ${units.length} units, ${topics.length} topics, ${tools.length} tools, and ${groups.length} formula groups.`);

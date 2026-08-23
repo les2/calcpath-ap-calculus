@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
   "assetGroups": [
-    { "name": "app", "installMode": "prefetch", "resources": { "files": ["/index.html", "/manifest.webmanifest", "/icon-192.png", "/icon-512.png", "/og.png", "/*.css", "/*.js"] } },
+    { "name": "app", "installMode": "prefetch", "resources": { "files": ["/index.html", "/manifest.webmanifest", "/icon-192.png", "/icon-512.png", "/og.png", "/*.css", "/*.js", "/media/**"] } },
     { "name": "study-data", "installMode": "prefetch", "updateMode": "prefetch", "resources": { "files": ["/data/**"] } }
   ]
 }

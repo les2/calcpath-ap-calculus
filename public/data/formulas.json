@@ -1,8 +1,62 @@
-{"groups":[
-  {"title":"Derivative rules","items":[["Power","d/dx(xⁿ) = nxⁿ⁻¹"],["Product","(fg)′ = f′g + fg′"],["Quotient","(f/g)′ = (f′g − fg′)/g²"],["Chain","d/dx f(g(x)) = f′(g(x))g′(x)"],["Inverse","(f⁻¹)′(x) = 1 / f′(f⁻¹(x))"]]},
-  {"title":"Common derivatives","items":[["Trig","(sin x)′=cos x · (cos x)′=−sin x · (tan x)′=sec²x"],["Exponential","(eˣ)′=eˣ · (aˣ)′=aˣ ln a"],["Logarithmic","(ln x)′=1/x · (logₐx)′=1/(x ln a)"],["Inverse trig","(arcsin x)′=1/√(1−x²) · (arctan x)′=1/(1+x²)"]]},
-  {"title":"Core integrals","items":[["Power","∫xⁿ dx = xⁿ⁺¹/(n+1) + C, n≠−1"],["Log","∫1/x dx = ln|x| + C"],["Exponential","∫eˣ dx = eˣ + C"],["Trig","∫cos x dx=sin x+C · ∫sin x dx=−cos x+C"],["Parts","∫u dv = uv − ∫v du"]]},
-  {"title":"Theorems + applications","items":[["FTC","d/dx ∫ₐˣ f(t)dt = f(x)"],["Average value","favg = (1/(b−a))∫ₐᵇ f(x)dx"],["Linearization","L(x)=f(a)+f′(a)(x−a)"],["Euler","yₙ₊₁ = yₙ + f(xₙ,yₙ)Δx"],["Arc length","L=∫ₐᵇ √(1+(dy/dx)²) dx"]]},
-  {"title":"Trig identities","items":[["Pythagorean","sin²x+cos²x=1 · 1+tan²x=sec²x"],["Double angle","sin 2x=2sin x cos x · cos 2x=cos²x−sin²x"],["Half angle","sin²x=(1−cos 2x)/2 · cos²x=(1+cos 2x)/2"],["Reciprocal","csc x=1/sin x · sec x=1/cos x · cot x=1/tan x"]]},
-  {"title":"Algebra essentials","items":[["Quadratic formula","x = (−b ± √(b²−4ac)) / 2a"],["Exponent rules","aᵐaⁿ=aᵐ⁺ⁿ · (aᵐ)ⁿ=aᵐⁿ · a⁻ⁿ=1/aⁿ"],["Log rules","ln(ab)=ln a+ln b · ln(aᵖ)=p ln a"],["Distance","d=√((x₂−x₁)²+(y₂−y₁)²)"],["Circle","(x−h)²+(y−k)²=r²"]]}
-]}
+{
+  "groups": [
+    {
+      "title": "Derivative rules",
+      "items": [
+        ["Power", "\\frac{d}{dx}x^n = nx^{n-1}"],
+        ["Product", "\\frac{d}{dx}[f(x)g(x)] = f'(x)g(x)+f(x)g'(x)"],
+        ["Quotient", "\\frac{d}{dx}\\left[\\frac{f(x)}{g(x)}\\right] = \\frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}"],
+        ["Chain", "\\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)"],
+        ["Inverse", "(f^{-1})'(x) = \\frac{1}{f'(f^{-1}(x))}"]
+      ]
+    },
+    {
+      "title": "Common derivatives",
+      "items": [
+        ["Trigonometric", "\\begin{aligned}(\\sin x)'&=\\cos x & (\\cos x)'&=-\\sin x \\\\ (\\tan x)'&=\\sec^2 x & (\\cot x)'&=-\\csc^2 x \\\\ (\\sec x)'&=\\sec x\\tan x & (\\csc x)'&=-\\csc x\\cot x\\end{aligned}"],
+        ["Exponential", "\\begin{aligned}(e^x)'&=e^x \\\\ (a^x)'&=a^x\\ln a\\end{aligned}"],
+        ["Logarithmic", "\\begin{aligned}(\\ln x)'&=\\frac{1}{x} \\\\ (\\log_a x)'&=\\frac{1}{x\\ln a}\\end{aligned}"],
+        ["Inverse trig", "\\begin{aligned}(\\arcsin x)'&=\\frac{1}{\\sqrt{1-x^2}} \\\\ (\\arctan x)'&=\\frac{1}{1+x^2}\\end{aligned}"]
+      ]
+    },
+    {
+      "title": "Core integrals",
+      "items": [
+        ["Power", "\\int x^n\\,dx = \\frac{x^{n+1}}{n+1}+C,\\quad n\\ne-1"],
+        ["Logarithmic", "\\int \\frac{1}{x}\\,dx = \\ln|x|+C"],
+        ["Exponential", "\\int e^x\\,dx = e^x+C"],
+        ["Trigonometric", "\\begin{aligned}\\int\\cos x\\,dx&=\\sin x+C \\\\ \\int\\sin x\\,dx&=-\\cos x+C\\end{aligned}"],
+        ["By parts", "\\int u\\,dv = uv-\\int v\\,du"]
+      ]
+    },
+    {
+      "title": "Theorems + applications",
+      "items": [
+        ["FTC", "\\frac{d}{dx}\\int_a^x f(t)\\,dt=f(x)"],
+        ["Average value", "f_{\\mathrm{avg}}=\\frac{1}{b-a}\\int_a^b f(x)\\,dx"],
+        ["Linearization", "L(x)=f(a)+f'(a)(x-a)"],
+        ["Euler's method", "y_{n+1}=y_n+f(x_n,y_n)\\,\\Delta x"],
+        ["Arc length", "L=\\int_a^b\\sqrt{1+\\left(\\frac{dy}{dx}\\right)^2}\\,dx"]
+      ]
+    },
+    {
+      "title": "Trigonometric identities",
+      "items": [
+        ["Pythagorean", "\\begin{aligned}\\sin^2x+\\cos^2x&=1 \\\\ 1+\\tan^2x&=\\sec^2x\\end{aligned}"],
+        ["Double angle", "\\begin{aligned}\\sin(2x)&=2\\sin x\\cos x \\\\ \\cos(2x)&=\\cos^2x-\\sin^2x\\end{aligned}"],
+        ["Half angle", "\\begin{aligned}\\sin^2x&=\\frac{1-\\cos(2x)}{2} \\\\ \\cos^2x&=\\frac{1+\\cos(2x)}{2}\\end{aligned}"],
+        ["Reciprocal", "\\begin{aligned}\\csc x&=\\frac{1}{\\sin x} & \\sec x&=\\frac{1}{\\cos x} & \\cot x&=\\frac{1}{\\tan x}\\end{aligned}"]
+      ]
+    },
+    {
+      "title": "Algebra essentials",
+      "items": [
+        ["Quadratic", "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}"],
+        ["Exponents", "\\begin{aligned}a^ma^n&=a^{m+n} & (a^m)^n&=a^{mn} & a^{-n}&=\\frac{1}{a^n}\\end{aligned}"],
+        ["Logarithms", "\\begin{aligned}\\ln(ab)&=\\ln a+\\ln b \\\\ \\ln(a^p)&=p\\ln a\\end{aligned}"],
+        ["Distance", "d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}"],
+        ["Circle", "(x-h)^2+(y-k)^2=r^2"]
+      ]
+    }
+  ]
+}
