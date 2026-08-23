@@ -25,6 +25,11 @@ html, body { min-height: 100%; }
 .math-formula .katex { font-size: 1.12em; }
 .topbar nav .github-link { color: var(--ink); border-color: var(--line); }
 .topbar nav .github-link:hover { border-color: var(--lime); }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.support-link { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--lime) 14%, var(--paper)); color: var(--ink); padding: 0 13px 0 8px; font-size: 12px; font-weight: 900; letter-spacing: .01em; white-space: nowrap; transition: border-color .16s ease, background .16s ease, transform .16s ease; }
+.support-link:hover { border-color: var(--lime); background: color-mix(in srgb, var(--lime) 26%, var(--paper)); transform: translateY(-1px); }
+.support-link:focus-visible { outline: 3px solid color-mix(in srgb, var(--orange) 55%, transparent); outline-offset: 2px; }
+.support-icon { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 13px; line-height: 1; }
 .footer-links { display: flex; align-items: center; gap: 22px; }
 .footer-links a:last-child { color: var(--ink); font-weight: 800; }
 .version-panel { display: grid; justify-items: end; gap: 4px; min-width: 210px; }
@@ -81,8 +86,11 @@ footer { flex-wrap: wrap; gap: 22px; }
 }
 [data-theme="dark"] .update-toast button { color: #172022; }
 [data-theme="dark"] .version-panel button { background: #1b2527; border-color: #526164; color: #edf2ef; }
+[data-theme="dark"] .support-link { background: #1b2527; border-color: #526164; color: #edf2ef; }
+[data-theme="dark"] .support-link:hover { background: #293638; border-color: #c9ff3d; }
+[data-theme="dark"] .support-icon { background: #c9ff3d; color: #172022; }
 @media(max-width:800px){.topbar{height:auto;min-height:76px;flex-wrap:wrap;padding-bottom:10px}.topbar nav{display:flex;order:3;width:100%;justify-content:space-between;gap:8px}.topbar nav a{padding:10px 0 8px;font-size:12px}.route-shell{min-height:calc(100vh - 120px)}}
-@media(max-width:650px){.footer-links{align-items:flex-start;flex-direction:column;gap:12px}.version-panel{justify-items:start}.version-panel .update-status{text-align:left}.formula-group .formula-line{grid-template-columns:1fr;gap:9px}.math-formula .katex{font-size:1.04em}}
+@media(max-width:650px){.support-link{padding-right:10px}.footer-links{align-items:flex-start;flex-direction:column;gap:12px}.version-panel{justify-items:start}.version-panel .update-status{text-align:left}.formula-group .formula-line{grid-template-columns:1fr;gap:9px}.math-formula .katex{font-size:1.04em}}
 @media print {
   /* Printing is always a light, ink-friendly experience, even when the saved
      screen preference is dark. Explicit colors prevent dark-mode selectors
@@ -102,6 +110,7 @@ footer { flex-wrap: wrap; gap: 22px; }
   .reference-hero h1 { font-size: 30px; color: #000 !important; }
   .reference-hero p,
   .reference-hero button { display: none; }
+  .support-link { display: none !important; }
   .reference-page { padding: 0; background: #fff !important; }
   .reference-page .formula-grid { display: grid; }
   .route-shell { min-height: 0; }

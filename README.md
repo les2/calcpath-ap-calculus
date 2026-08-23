@@ -2,6 +2,7 @@
 
 [![Validate](https://github.com/les2/calcpath-ap-calculus/actions/workflows/ci.yml/badge.svg)](https://github.com/les2/calcpath-ap-calculus/actions/workflows/ci.yml)
 [![Deploy GitHub Pages](https://github.com/les2/calcpath-ap-calculus/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/les2/calcpath-ap-calculus/actions/workflows/deploy-pages.yml)
+[![Support CalcPath on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/5reason)
 
 CalcPath is an installable, offline-ready study guide for AP Calculus AB and BC. It organizes all 111 curriculum topics into a searchable roadmap with video lessons, authoritative references, free math tools, local progress tracking, and a printable formula guide.
 
@@ -12,6 +13,8 @@ CalcPath is an installable, offline-ready study guide for AP Calculus AB and BC.
 [GitHub Pages mirror](https://les2.github.io/calcpath-ap-calculus/) — rebuilt and published automatically after every push to `main`.
 
 The guide works offline after the first successful visit. Videos, references, and external calculator tools still require an internet connection.
+
+CalcPath is free to use and fork. If it helped you, you can optionally [leave a tip on Ko-fi](https://ko-fi.com/5reason).
 
 ## What CalcPath includes
 
@@ -134,6 +137,39 @@ The architecture starts with what the app should do, not with fashionable tools.
 | Let anyone inspect and improve it | Public [GitHub](https://github.com/) repository | The full history is visible, forks are easy to create, and contributions can be reviewed as pull requests. |
 | Publish every approved change automatically | [GitHub Actions](https://docs.github.com/en/actions) and [GitHub Pages](https://docs.github.com/en/pages) | Pull requests are checked automatically; pushes to `main` rebuild and publish the public mirror without manual file uploads. |
 | Provide a managed public home | [ChatGPT Sites](https://learn.chatgpt.com/docs/sites) | Sites handles the hosted project, public URL, versions, deployments, access settings, and analytics while the same source remains on GitHub. |
+
+### Optional creator support without a third-party widget
+
+CalcPath's header includes a small **Leave a tip** link to [Ko-fi](https://ko-fi.com/5reason). Ko-fi supplies floating widgets and embedded panels, but it also explicitly supports creating a button in your own style and linking it directly to your Ko-fi page. CalcPath uses that simpler approach:
+
+- No third-party JavaScript is loaded while students study.
+- The PWA shell remains fully available offline.
+- Ko-fi opens only when someone deliberately follows the link.
+- The control automatically matches CalcPath's light and dark themes.
+- The support link is isolated in a reusable Angular component.
+
+The essential Angular template is ordinary accessible HTML:
+
+```html
+<a
+  class="support-link"
+  href="https://ko-fi.com/5reason"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Leave a tip for CalcPath on Ko-fi (opens in a new tab)"
+>
+  <span aria-hidden="true">☕</span>
+  <span>Leave a tip</span>
+</a>
+```
+
+Replace `5reason` with your Ko-fi username and style the link like any other component. For a GitHub README, Ko-fi provides a hosted badge:
+
+```markdown
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/yourusername)
+```
+
+See Ko-fi's official guides to its [tip widgets and custom buttons](https://help.ko-fi.com/hc/en-us/articles/360018381678-Ko-fi-tip-widget) and [brand assets](https://help.ko-fi.com/hc/en-us/articles/360007169493-Can-I-use-the-Ko-fi-logo-to-promote-my-page).
 
 ### Why there is no database
 

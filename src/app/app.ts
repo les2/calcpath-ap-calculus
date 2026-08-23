@@ -5,6 +5,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { SwUpdate } from '@angular/service-worker';
 import { filter, first, fromEvent, interval, merge } from 'rxjs';
+import { SupportLinkComponent } from './support-link.component';
 
 interface BuildInfo {
   version: string;
@@ -15,7 +16,7 @@ interface BuildInfo {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule, SupportLinkComponent],
   template: `
     <header class="topbar">
       <a class="brand" routerLink="/roadmap" aria-label="CalcPath home"><span class="brand-mark">∫</span><span>CalcPath</span></a>
@@ -25,7 +26,10 @@ interface BuildInfo {
         <a class="nav-link" routerLink="/reference" routerLinkActive="active">Reference guide</a>
         <a class="github-link" href="https://github.com/les2/calcpath-ap-calculus" target="_blank" rel="noopener noreferrer" aria-label="View CalcPath on GitHub (opens in a new tab)">GitHub ↗</a>
       </nav>
-      <button class="icon-button" (click)="toggleTheme()" aria-label="Toggle theme">{{ dark() ? '☀' : '◐' }}</button>
+      <div class="header-actions">
+        <calc-support-link />
+        <button class="icon-button" (click)="toggleTheme()" aria-label="Toggle theme">{{ dark() ? '☀' : '◐' }}</button>
+      </div>
     </header>
     <div class="route-shell"><router-outlet /></div>
     <footer>
