@@ -22,9 +22,9 @@ The guide itself works offline after the first visit. External videos, reference
 
 ## Application routes
 
-- `/roadmap` — searchable AP curriculum with URL-backed `q`, `course`, and `unit` state
-- `/tools` — curated calculators, solvers, and computer algebra systems
-- `/reference` — standalone printable formula and identity guide
+- `/#/roadmap` — searchable AP curriculum with URL-backed `q`, `course`, and `unit` state
+- `/#/tools` — curated calculators, solvers, and computer algebra systems
+- `/#/reference` — standalone printable formula and identity guide
 
 ## Data
 
