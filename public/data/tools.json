@@ -1,0 +1,8 @@
+{"tools":[
+  {"name":"Desmos Graphing Calculator","category":"Graphing","url":"https://www.desmos.com/calculator","description":"Fast 2D graphing, tables, sliders, regressions, and numerical derivatives/integrals.","best":"Best everyday graphing"},
+  {"name":"GeoGebra Graphing","category":"Graphing","url":"https://www.geogebra.org/graphing","description":"Graph functions, inequalities, parametric curves, and interactive geometry.","best":"Best geometry + graphs"},
+  {"name":"GeoGebra CAS","category":"Symbolic algebra","url":"https://www.geogebra.org/cas","description":"Solve, factor, differentiate, and integrate symbolically in a clean worksheet.","best":"Best browser CAS"},
+  {"name":"SymPy Gamma","category":"Solver","url":"https://gamma.sympy.org/","description":"Open-source symbolic solving powered by SymPy, with exact and numeric results.","best":"Best open-source solver"},
+  {"name":"SageMath Cell","category":"Computer algebra","url":"https://sagecell.sagemath.org/","description":"Run SageMath calculations in the browser without installing anything.","best":"Most powerful"},
+  {"name":"Desmos Scientific","category":"Scientific","url":"https://www.desmos.com/scientific","description":"A focused scientific calculator for quick arithmetic, trig, logs, and statistics.","best":"Best quick calculator"}
+]}

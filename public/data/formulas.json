@@ -1,0 +1,8 @@
+{"groups":[
+  {"title":"Derivative rules","items":[["Power","d/dx(xⁿ) = nxⁿ⁻¹"],["Product","(fg)′ = f′g + fg′"],["Quotient","(f/g)′ = (f′g − fg′)/g²"],["Chain","d/dx f(g(x)) = f′(g(x))g′(x)"],["Inverse","(f⁻¹)′(x) = 1 / f′(f⁻¹(x))"]]},
+  {"title":"Common derivatives","items":[["Trig","(sin x)′=cos x · (cos x)′=−sin x · (tan x)′=sec²x"],["Exponential","(eˣ)′=eˣ · (aˣ)′=aˣ ln a"],["Logarithmic","(ln x)′=1/x · (logₐx)′=1/(x ln a)"],["Inverse trig","(arcsin x)′=1/√(1−x²) · (arctan x)′=1/(1+x²)"]]},
+  {"title":"Core integrals","items":[["Power","∫xⁿ dx = xⁿ⁺¹/(n+1) + C, n≠−1"],["Log","∫1/x dx = ln|x| + C"],["Exponential","∫eˣ dx = eˣ + C"],["Trig","∫cos x dx=sin x+C · ∫sin x dx=−cos x+C"],["Parts","∫u dv = uv − ∫v du"]]},
+  {"title":"Theorems + applications","items":[["FTC","d/dx ∫ₐˣ f(t)dt = f(x)"],["Average value","favg = (1/(b−a))∫ₐᵇ f(x)dx"],["Linearization","L(x)=f(a)+f′(a)(x−a)"],["Euler","yₙ₊₁ = yₙ + f(xₙ,yₙ)Δx"],["Arc length","L=∫ₐᵇ √(1+(dy/dx)²) dx"]]},
+  {"title":"Trig identities","items":[["Pythagorean","sin²x+cos²x=1 · 1+tan²x=sec²x"],["Double angle","sin 2x=2sin x cos x · cos 2x=cos²x−sin²x"],["Half angle","sin²x=(1−cos 2x)/2 · cos²x=(1+cos 2x)/2"],["Reciprocal","csc x=1/sin x · sec x=1/cos x · cot x=1/tan x"]]},
+  {"title":"Algebra essentials","items":[["Quadratic formula","x = (−b ± √(b²−4ac)) / 2a"],["Exponent rules","aᵐaⁿ=aᵐ⁺ⁿ · (aᵐ)ⁿ=aᵐⁿ · a⁻ⁿ=1/aⁿ"],["Log rules","ln(ab)=ln a+ln b · ln(aᵖ)=p ln a"],["Distance","d=√((x₂−x₁)²+(y₂−y₁)²)"],["Circle","(x−h)²+(y−k)²=r²"]]}
+]}
