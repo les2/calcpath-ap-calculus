@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { completionCount, filterPracticeQuestions, gradePoints, reconcileSessionQuestions, selectBalancedQuestions, sessionScore, toggleUnitSelection, unitSelectionState, type PracticeDifficulty, type PracticeDisplay, type PracticeQuestion, type StudySession } from './grade-maxxing.page';
+import { completionCount, filterPracticeQuestions, gradePoints, reconcileSessionQuestions, selectBalancedQuestions, sessionScore, toggleExpandedUnitIds, toggleUnitSelection, unitSelectionState, type PracticeDifficulty, type PracticeDisplay, type PracticeQuestion, type StudySession } from './grade-maxxing.page';
 
 const session = (results: StudySession['results']): Pick<StudySession, 'results'> => ({ results });
 
@@ -33,5 +33,10 @@ describe('Grade Maxxing study sessions', () => {
     expect(unitSelectionState(topics, ['1.2'])).toBe('partial');
     expect(toggleUnitSelection(topics, ['1.2', '2.1'])).toEqual(['1.2', '2.1', '1.1', '1.3']);
     expect(toggleUnitSelection(topics, ['1.1', '1.2', '1.3', '2.1'])).toEqual(['2.1']);
+  });
+  it('expands units independently and collapses only the chosen unit', () => {
+    expect(toggleExpandedUnitIds('1', [])).toEqual(['1']);
+    expect(toggleExpandedUnitIds('2', ['1'])).toEqual(['1', '2']);
+    expect(toggleExpandedUnitIds('1', ['1', '2'])).toEqual(['2']);
   });
 });

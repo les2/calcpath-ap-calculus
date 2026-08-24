@@ -66,6 +66,9 @@ export function toggleUnitSelection(topicIds: string[], selectedTopicIds: string
   else topicIds.forEach((id) => selected.add(id));
   return [...selected];
 }
+export function toggleExpandedUnitIds(unitId: string, expandedUnitIds: string[]): string[] {
+  return expandedUnitIds.includes(unitId) ? expandedUnitIds.filter((id) => id !== unitId) : [...expandedUnitIds, unitId];
+}
 
 @Component({
   standalone: true,
@@ -148,17 +151,24 @@ export function toggleUnitSelection(topicIds: string[], selectedTopicIds: string
           <section class="session-size"><label>Maximum questions per topic <input type="number" min="1" max="25" step="1" [ngModel]="questionLimit()" (ngModelChange)="setQuestionLimit($event)"></label><div><b>{{plannedQuestionCount()}} questions in this run</b><span>We rotate between publishers when a topic has multiple sources.</span></div></section>
           <div class="unit-bank">
             @for (unit of availableUnits(); track unit.id) {
-              <section class="unit-group" [style.--challenge-accent]="accentFor(unit.id)">
-                <label class="unit-choice" [class.selected]="unitSelectionState(unit.topicIds) === 'all'" [class.partial]="unitSelectionState(unit.topicIds) === 'partial'">
-                  <input type="checkbox" [checked]="unitSelectionState(unit.topicIds) === 'all'" [indeterminate]="unitSelectionState(unit.topicIds) === 'partial'" (change)="toggleUnit(unit.topicIds)">
-                  <span class="choice-check" aria-hidden="true">{{unitSelectionState(unit.topicIds) === 'partial' ? '–' : '✓'}}</span>
-                  <div><small>Select every topic</small><b>{{unit.title}}</b><em>{{unitSelectedCount(unit.topicIds)}} of {{unit.topicIds.length}} topics selected</em></div>
-                </label>
-                <div class="unit-topics">
-                  @for (topic of unit.topics; track topic.id) {
-                    <label class="topic-choice" [class.selected]="selectedTopics().includes(topic.id)"><input type="checkbox" [checked]="selectedTopics().includes(topic.id)" (change)="toggleTopic(topic.id)"><span class="choice-check">✓</span><div><small>Topic</small><b>{{topic.id}} · {{topic.title}}</b><em>{{topic.count}} available · {{topic.sources}} {{topic.sources === 1 ? 'source' : 'sources'}}</em></div></label>
-                  }
+              <section class="unit-group" [class.expanded]="isUnitExpanded(unit.id)" [style.--challenge-accent]="accentFor(unit.id)">
+                <div class="unit-header">
+                  <label class="unit-choice" [class.selected]="unitSelectionState(unit.topicIds) === 'all'" [class.partial]="unitSelectionState(unit.topicIds) === 'partial'">
+                    <input type="checkbox" [checked]="unitSelectionState(unit.topicIds) === 'all'" [indeterminate]="unitSelectionState(unit.topicIds) === 'partial'" (change)="toggleUnit(unit.topicIds)">
+                    <span class="choice-check" aria-hidden="true">{{unitSelectionState(unit.topicIds) === 'partial' ? '–' : '✓'}}</span>
+                    <div><small>Select all topics</small><b>{{unit.title}}</b><em>{{unitSelectedCount(unit.topicIds)}} of {{unit.topicIds.length}} topics selected</em></div>
+                  </label>
+                  <button class="unit-disclosure" type="button" [attr.aria-expanded]="isUnitExpanded(unit.id)" [attr.aria-controls]="'unit-topics-' + unit.id" (click)="toggleUnitExpanded(unit.id)">
+                    <span>{{isUnitExpanded(unit.id) ? 'Hide topics' : 'Choose topics'}}</span><b aria-hidden="true">⌄</b>
+                  </button>
                 </div>
+                @if (isUnitExpanded(unit.id)) {
+                  <div class="unit-topics" [id]="'unit-topics-' + unit.id">
+                    @for (topic of unit.topics; track topic.id) {
+                      <label class="topic-choice" [class.selected]="selectedTopics().includes(topic.id)"><input type="checkbox" [checked]="selectedTopics().includes(topic.id)" (change)="toggleTopic(topic.id)"><span class="choice-check">✓</span><div><small>Topic</small><b>{{topic.id}} · {{topic.title}}</b><em>{{topic.count}} available · {{topic.sources}} {{topic.sources === 1 ? 'source' : 'sources'}}</em></div></label>
+                    }
+                  </div>
+                }
               </section>
             }
           </div>
@@ -183,6 +193,7 @@ export class GradeMaxxingPage {
   readonly creating = signal(false);
   readonly draftName = signal('Unit 1 test');
   readonly selectedTopics = signal<string[]>([]);
+  readonly expandedUnitIds = signal<string[]>([]);
   readonly questionLimit = signal(5);
   readonly selectedSources = signal<string[]>([]);
   readonly selectedFilterTags = signal<string[]>([...PRACTICE_FILTER_TAGS]);
@@ -228,6 +239,8 @@ export class GradeMaxxingPage {
 
   toggleTopic(id: string) { this.selectedTopics.update((items) => items.includes(id) ? items.filter((item) => item !== id) : [...items, id]); }
   toggleUnit(topicIds: string[]) { this.selectedTopics.update((items) => toggleUnitSelection(topicIds, items)); }
+  toggleUnitExpanded(unitId: string) { this.expandedUnitIds.update((ids) => toggleExpandedUnitIds(unitId, ids)); }
+  isUnitExpanded(unitId: string) { return this.expandedUnitIds().includes(unitId); }
   unitSelectionState(topicIds: string[]) { return unitSelectionState(topicIds, this.selectedTopics()); }
   unitSelectedCount(topicIds: string[]) { return topicIds.filter((id) => this.selectedTopics().includes(id)).length; }
   toggleSource(source: string) { this.selectedSources.update((items) => items.includes(source) ? items.filter((item) => item !== source) : [...items, source]); }
@@ -236,7 +249,7 @@ export class GradeMaxxingPage {
   toggleDisplay(display: PracticeDisplay) { this.selectedDisplays.update((items) => items.includes(display) ? items.filter((item) => item !== display) : [...items, display]); }
   resetQuestionFilters() { this.selectedSources.set([...this.sourceSites()]); this.selectedFilterTags.set([...PRACTICE_FILTER_TAGS]); this.selectedDifficulties.set([...PRACTICE_DIFFICULTIES]); this.selectedDisplays.set([...PRACTICE_DISPLAYS]); }
   setQuestionLimit(value: number) { this.questionLimit.set(Math.max(1, Math.min(25, Math.floor(Number(value) || 1)))); }
-  openCreate() { this.draftName.set(`Test ${this.openSessions().length + 1}`); this.selectedTopics.set([]); this.creating.set(true); }
+  openCreate() { this.draftName.set(`Test ${this.openSessions().length + 1}`); this.selectedTopics.set([]); this.expandedUnitIds.set([]); this.creating.set(true); }
   cancelCreate() { this.creating.set(false); }
   createSession() {
     const name = this.draftName().trim(), topicIds = this.selectedTopics(), selectionSeed = crypto.getRandomValues(new Uint32Array(1))[0], questionIds = selectBalancedQuestions(this.filteredQuestions(), topicIds, this.questionLimit(), selectionSeed).map((question) => question.id);
