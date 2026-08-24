@@ -213,10 +213,11 @@ const sourceRecords = [
   { id: 'umich-exam-archive', title: 'University of Michigan Calculus Exam Archive', author: 'University of Michigan Mathematics', url: 'https://dhsp.math.lsa.umich.edu/examshops.html', attribution: 'Linked to the publisher’s exact problem PDF and matching solution PDF; question text is not reproduced.', license: linkLicense('https://dhsp.math.lsa.umich.edu/examshops.html') },
   { id: 'college-board-ap-frq', title: 'College Board Released AP Calculus FRQs', author: 'College Board', url: 'https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam/past-exam-questions', attribution: 'Linked to the released question and official scoring guidelines; question text is not reproduced.', license: linkLicense('https://privacy.collegeboard.org/terms-of-use') }
   ,{ id: 'openstax-calculus-volume-1', title: 'OpenStax Calculus Volume 1', author: 'OpenStax', url: 'https://openstax.org/details/books/calculus-volume-1', attribution: 'Transcribed from OpenStax Calculus Volume 1; each question records its exact pinned exercise and publisher solution.', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
+  ,{ id: 'openstax-calculus-volume-2', title: 'OpenStax Calculus Volume 2', author: 'OpenStax', url: 'https://openstax.org/details/books/calculus-volume-2', attribution: 'Transcribed from OpenStax Calculus Volume 2; each question records its exact pinned exercise and publisher solution.', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
 ];
 const normalizedQuestions = questions.map(({ source, ...question }) => ({
   ...question,
-  sourceId: sourceIds.get(source.author),
+  sourceId: source.sourceId ?? sourceIds.get(source.author),
   locator: {
     exerciseId: source.exerciseId ?? question.metadata.sourceQuestionId,
     promptUrl: source.promptUrl ?? question.problemUrl,
@@ -240,4 +241,4 @@ const output = {
   questions: normalizedQuestions
 };
 await writeFile(new URL('../public/data/practice.json', import.meta.url), `${JSON.stringify(output, null, 2)}\n`);
-console.log(`Mined ${normalizedQuestions.length} questions from ${sourceRecords.length} publisher groups.`);
+console.log(`Mined ${normalizedQuestions.length} questions from ${sourceRecords.length} source collections.`);

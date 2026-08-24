@@ -228,11 +228,11 @@ answer. Link-only questions remain on the publisher's site. The complete rules
 for people and coding agents are in [AGENTS.md](AGENTS.md), and the data
 validator enforces the required provenance fields.
 
-The beta practice catalog currently contains 864 records from five publisher
-groups: University of Michigan Mathematics, Active Calculus, College Board
-released free-response questions, Paul’s Online Math Notes, and OpenStax. The
-255 embedded OpenStax records provide five publisher-authored questions and
-publisher-supplied answers for every Unit 1 through Unit 5 roadmap topic.
+The beta practice catalog currently contains 934 records from six source
+collections published by University of Michigan Mathematics, Active Calculus,
+College Board, Paul’s Online Math Notes, and OpenStax. The 325 embedded OpenStax
+records provide five publisher-authored questions and publisher-supplied
+answers for every Unit 1 through Unit 6 roadmap topic.
 They are mechanically converted from a pinned revision of the openly licensed
 source CNXML, including tables and referenced figures; CalcPath does not
 rewrite the mathematics.
