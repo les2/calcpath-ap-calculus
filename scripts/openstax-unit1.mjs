@@ -9,7 +9,12 @@ const MODULES = {
   m53491: { title: '2.2 The Limit of a Function', page: '2-2-the-limit-of-a-function' },
   m53492: { title: '2.3 The Limit Laws', page: '2-3-the-limit-laws' },
   m53489: { title: '2.4 Continuity', page: '2-4-continuity' },
-  m53596: { title: '4.6 Limits at Infinity and Asymptotes', page: '4-6-limits-at-infinity-and-asymptotes' }
+  m53596: { title: '4.6 Limits at Infinity and Asymptotes', page: '4-6-limits-at-infinity-and-asymptotes' },
+  m53495: { title: '3.1 Defining the Derivative', page: '3-1-defining-the-derivative' },
+  m53573: { title: '3.2 The Derivative as a Function', page: '3-2-the-derivative-as-a-function' },
+  m53575: { title: '3.3 Differentiation Rules', page: '3-3-differentiation-rules' },
+  m53578: { title: '3.5 Derivatives of Trigonometric Functions', page: '3-5-derivatives-of-trigonometric-functions' },
+  m53586: { title: '3.9 Derivatives of Exponential and Logarithmic Functions', page: '3-9-derivatives-of-exponential-and-logarithmic-functions' }
 };
 
 // This is an editorial topic map only. The importer never changes the selected
@@ -30,13 +35,27 @@ export const TOPIC_EXERCISES = {
   '1.13': [['m53489','fs-id1170573750411'],['m53489','fs-id1170573580625'],['m53489','fs-id1170573413991'],['m53489','fs-id1170573575226'],['m53489','fs-id1170573449551']],
   '1.14': [['m53491','fs-id1170571611153'],['m53491','fs-id1170571596334'],['m53491','fs-id1170571656617'],['m53491','fs-id1170571652136'],['m53596','fs-id1165043197447']],
   '1.15': [['m53596','fs-id1165042947732'],['m53596','fs-id1165042320884'],['m53596','fs-id1165043219128'],['m53596','fs-id1165042638555'],['m53596','fs-id1165042660292']],
-  '1.16': [['m53489','fs-id1170571120883'],['m53489','fs-id1170573439388'],['m53489','fs-id1170573586870'],['m53489','fs-id1170571100303'],['m53489','fs-id1170570982565']]
+  '1.16': [['m53489','fs-id1170571120883'],['m53489','fs-id1170573439388'],['m53489','fs-id1170573586870'],['m53489','fs-id1170571100303'],['m53489','fs-id1170570982565']],
+  '2.1': [['m53495','fs-id1169736611315'],['m53495','fs-id1169736589136'],['m53495','fs-id1169739348491'],['m53495','fs-id1169739179206'],['m53495','fs-id1169739187345']],
+  '2.2': [['m53495','fs-id1169739033980'],['m53495','fs-id1169738893708'],['m53495','fs-id1169739129042'],['m53495','fs-id1169739236874'],['m53573','fs-id1169737836812']],
+  '2.3': [['m53495','fs-id1169739198958'],['m53495','fs-id1169739187794'],['m53495','fs-id1169739269671'],['m53495','fs-id1169739190079'],['m53573','fs-id1169738039259']],
+  '2.4': [['m53573','fs-id1169738218188'],['m53573','fs-id1169738185319'],['m53573','fs-id1169738071477'],['m53573','fs-id1169737954177'],['m53495','fs-id1169739347174']],
+  '2.5': [['m53575','fs-id1169738954753'],['m53575','fs-id1169736611688'],['m53575','fs-id1169736616196'],['m53575','fs-id1169739199743'],['m53575','fs-id1169736614310']],
+  '2.6': [['m53575','fs-id1169738888884'],['m53575','fs-id1169738923828'],['m53575','fs-id1169739269766'],['m53575','fs-id1169739300389'],['m53575','fs-id1169739299465']],
+  '2.7': [['m53578','fs-id1169739303829'],['m53578','fs-id1169739298012'],['m53578','fs-id1169738907624'],['m53586','fs-id1169738235136'],['m53586','fs-id1169737904496']],
+  '2.8': [['m53575','fs-id1169736659560'],['m53575','fs-id1169739273814'],['m53575','fs-id1169736654824'],['m53575','fs-id1169739273725'],['m53575','fs-id1169739275301']],
+  '2.9': [['m53575','fs-id1169739305227'],['m53575','fs-id1169739304919'],['m53575','fs-id1169739303722'],['m53575','fs-id1169739303900'],['m53575','fs-id1169739341415']],
+  '2.10': [['m53578','fs-id1169736589201'],['m53578','fs-id1169739273066'],['m53578','fs-id1169736597649'],['m53578','fs-id1169739303429'],['m53578','fs-id1169736655848']]
 };
 
 const escapeHtml = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const localName = (node) => node.localName?.replace(/^m:/, '') ?? '';
+const localName = (node) => node?.localName?.replace(/^m:/, '') ?? '';
+const FORCE_GROUP_INSTRUCTIONS = new Set([
+  'fs-id1169739275301',
+  'fs-id1169739303722'
+]);
 
-export async function mineOpenStaxUnit1(topicIndex) {
+export async function mineOpenStaxPractice(topicIndex) {
   const documents = new Map();
   for (const moduleId of Object.keys(MODULES)) {
     const localPath = `/private/tmp/openstax-calculus-source/modules/${moduleId}/index.cnxml`;
@@ -49,6 +68,14 @@ export async function mineOpenStaxUnit1(topicIndex) {
   const mediaDir = new URL('../public/media/openstax/', import.meta.url);
   await mkdir(mediaDir, { recursive: true });
   const mediaFiles = new Set();
+  const resolveLink = (node) => {
+    const targetId = node.getAttribute('target-id');
+    if (!targetId) return null;
+    const targetModule = node.getAttribute('document');
+    return targetModule
+      ? documents.get(targetModule)?.document.getElementById(targetId) ?? null
+      : node.ownerDocument.getElementById(targetId);
+  };
   const serialize = (node) => {
     if (node.nodeType === 3) return escapeHtml(node.nodeValue ?? '');
     if (node.nodeType !== 1) return '';
@@ -79,9 +106,9 @@ export async function mineOpenStaxUnit1(topicIndex) {
     if (name === 'link') {
       const content = children();
       if (content.trim()) return content;
-      const target = node.ownerDocument.getElementById(node.getAttribute('target-id'));
+      const target = resolveLink(node);
       const targetType = localName(target);
-      const label = targetType === 'figure' ? 'source figure below' : targetType === 'table' ? 'source table below' : targetType === 'equation' ? 'source equation' : targetType === 'example' ? 'source example' : targetType === 'exercise' ? 'source exercise' : 'referenced source item';
+      const label = targetType === 'figure' ? 'source figure below' : targetType === 'table' ? 'source table below' : targetType === 'equation' ? 'source equation' : targetType === 'note' ? 'source result below' : targetType === 'example' ? 'source example' : targetType === 'exercise' ? 'source exercise' : 'referenced source item';
       return `<span class="source-reference">${label}</span>`;
     }
     return children();
@@ -103,15 +130,27 @@ export async function mineOpenStaxUnit1(topicIndex) {
       const sourceKind = parentClass.includes('checkpoint') ? 'Check Your Understanding' : parentClass.includes('section-exercises') ? 'Section Exercise' : 'Practice Example';
       const title = suppliedTitle?.textContent?.trim() || `${topicId} · ${sourceKind} ${position}`;
       suppliedTitle?.remove();
-      let instruction = '';
+      let instructionNodes = [];
       if (exercise.parentElement?.getAttribute('class')?.includes('section-exercises')) {
-        let sibling = exercise.previousElementSibling;
-        while (sibling && localName(sibling) !== 'para') sibling = sibling.previousElementSibling;
-        if (sibling) instruction = serialize(sibling);
+        const problemText = problemClone.textContent.replace(/\s+/g, ' ').trim();
+        const isStandalone = !FORCE_GROUP_INSTRUCTIONS.has(exerciseId) && /^(?:\[T\]\s*)?(?:A\b|An\b|The\b|Two\b|Find\b|Use\b|For\b|Let\b|Suppose\b|Consider\b|Determine\b|Evaluate\b|Sketch\b|Calculate\b)/i.test(problemText);
+        if (!isStandalone) {
+          let instructionStart = exercise.previousElementSibling;
+          while (instructionStart && !(localName(instructionStart) === 'para' && /(?:for|in) the following/i.test(instructionStart.textContent))) instructionStart = instructionStart.previousElementSibling;
+          if (instructionStart) {
+            instructionNodes.push(instructionStart);
+            let sibling = instructionStart.nextElementSibling;
+            while (sibling && localName(sibling) !== 'exercise') { instructionNodes.push(sibling); sibling = sibling.nextElementSibling; }
+          }
+        }
       }
-      const referenced = [...problem.querySelectorAll('link[target-id]')].map((link) => document.getElementById(link.getAttribute('target-id'))).filter((node) => ['figure','table'].includes(localName(node)));
-      const promptHtml = `${instruction}${serialize(problemClone)}${referenced.map(serialize).join('')}`;
-      const answerHtml = serialize(solution);
+      const roots = [...instructionNodes, problem];
+      const referenced = [...new Set(roots.flatMap((root) => [...root.querySelectorAll('link[target-id]')].map(resolveLink)))]
+        .filter((node) => ['figure','table','equation','note'].includes(localName(node)) && !roots.some((root) => root.contains(node)));
+      const promptHtml = `${instructionNodes.map(serialize).join('')}${serialize(problemClone)}${referenced.map(serialize).join('')}`;
+      const answerReferenced = [...new Set([...solution.querySelectorAll('link[target-id]')].map(resolveLink))]
+        .filter((node) => ['figure','table','equation','note'].includes(localName(node)) && !solution.contains(node));
+      const answerHtml = `${serialize(solution)}${answerReferenced.map(serialize).join('')}`;
       const problemLine = xml.slice(0, xml.indexOf(`<exercise id="${exerciseId}"`)).split('\n').length;
       const solutionId = solution.id;
       const solutionLine = xml.slice(0, xml.indexOf(`<solution id="${solutionId}"`)).split('\n').length;

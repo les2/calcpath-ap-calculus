@@ -90,7 +90,8 @@ assert(practice.catalogStats?.questionCount === questions.length, 'Practice cata
 assert(practice.catalogStats?.sourceCount === sources.length && sources.length >= 3, 'Practice catalog stats must match the normalized publisher registry.');
 const embeddedQuestions = questions.filter((question) => question.type === 'embedded');
 assert(practice.catalogStats?.deliveryCounts?.embedded === embeddedQuestions.length, 'Embedded catalog stats must match the question records.');
-for (const topic of topics.filter((topic) => topic.id.startsWith('1.'))) {
-  assert(embeddedQuestions.filter((question) => question.topicId === topic.id).length >= 5, `Unit 1 topic ${topic.id} needs at least five embedded publisher-authored questions.`);
+assert(embeddedQuestions.every((question) => !`${question.promptHtml}${question.answerHtml}`.includes('referenced source item')), 'Embedded questions must resolve every source reference to a specific source item.');
+for (const topic of topics.filter((topic) => /^(1|2)\./.test(topic.id))) {
+  assert(embeddedQuestions.filter((question) => question.topicId === topic.id).length >= 5, `Unit 1 or 2 topic ${topic.id} needs at least five embedded publisher-authored questions.`);
 }
 console.log(`Validated ${units.length} units, ${topics.length} topics, ${tools.length} tools, ${groups.length} formula groups, and ${questions.length} sourced practice questions from ${practice.catalogStats.sourceCount} publisher groups.`);

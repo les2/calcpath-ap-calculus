@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { mineOpenStaxUnit1 } from './openstax-unit1.mjs';
+import { mineOpenStaxPractice } from './openstax-unit1.mjs';
 
 const topicsData = JSON.parse(await readFile(new URL('../public/data/topics.json', import.meta.url), 'utf8'));
 const topicIndex = new Map();
@@ -197,7 +197,7 @@ for (const [exam, topicIds] of Object.entries(apTopics)) {
   });
 }
 
-for (const record of await mineOpenStaxUnit1(topicIndex)) addQuestion(record);
+for (const record of await mineOpenStaxPractice(topicIndex)) addQuestion(record);
 
 questions.sort((a, b) => a.topicId.localeCompare(b.topicId, undefined, { numeric: true }) || a.source.title.localeCompare(b.source.title) || a.id.localeCompare(b.id));
 const sourceIds = new Map([
