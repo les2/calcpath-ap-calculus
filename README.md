@@ -230,8 +230,8 @@ to refresh the reproducible catalog from the curated source map; review the
 result before committing it.
 
 The Grade Maxxing builder can filter that catalog by publisher site, broad
-problem type, whether a problem displays in CalcPath or opens on its source
-site, and four beta difficulty bands: easy, medium, hard, and ridiculous.
+problem type, content delivery (`Embedded` or `External`), and four beta
+difficulty bands: easy, medium, hard, and ridiculous.
 Difficulty is CalcPath editorial metadata, not a rating supplied by
 the publishers. The reproducible catalog script assigns it from each problem’s
 source context and relative placement within its published set; it never edits
