@@ -14,6 +14,9 @@ const MODULES = {
   m53573: { title: '3.2 The Derivative as a Function', page: '3-2-the-derivative-as-a-function' },
   m53575: { title: '3.3 Differentiation Rules', page: '3-3-differentiation-rules' },
   m53578: { title: '3.5 Derivatives of Trigonometric Functions', page: '3-5-derivatives-of-trigonometric-functions' },
+  m53581: { title: '3.6 The Chain Rule', page: '3-6-the-chain-rule' },
+  m53584: { title: '3.7 Derivatives of Inverse Functions', page: '3-7-derivatives-of-inverse-functions' },
+  m53585: { title: '3.8 Implicit Differentiation', page: '3-8-implicit-differentiation' },
   m53586: { title: '3.9 Derivatives of Exponential and Logarithmic Functions', page: '3-9-derivatives-of-exponential-and-logarithmic-functions' }
 };
 
@@ -45,7 +48,13 @@ export const TOPIC_EXERCISES = {
   '2.7': [['m53578','fs-id1169739303829'],['m53578','fs-id1169739298012'],['m53578','fs-id1169738907624'],['m53586','fs-id1169738235136'],['m53586','fs-id1169737904496']],
   '2.8': [['m53575','fs-id1169736659560'],['m53575','fs-id1169739273814'],['m53575','fs-id1169736654824'],['m53575','fs-id1169739273725'],['m53575','fs-id1169739275301']],
   '2.9': [['m53575','fs-id1169739305227'],['m53575','fs-id1169739304919'],['m53575','fs-id1169739303722'],['m53575','fs-id1169739303900'],['m53575','fs-id1169739341415']],
-  '2.10': [['m53578','fs-id1169736589201'],['m53578','fs-id1169739273066'],['m53578','fs-id1169736597649'],['m53578','fs-id1169739303429'],['m53578','fs-id1169736655848']]
+  '2.10': [['m53578','fs-id1169736589201'],['m53578','fs-id1169739273066'],['m53578','fs-id1169736597649'],['m53578','fs-id1169739303429'],['m53578','fs-id1169736655848']],
+  '3.1': [['m53581','fs-id1169739274625'],['m53581','fs-id1169736662942'],['m53581','fs-id1169739301539'],['m53581','fs-id1169739333923'],['m53581','fs-id1169739190029']],
+  '3.2': [['m53585','fs-id1169738015312'],['m53585','fs-id1169738149878'],['m53585','fs-id1169738220221'],['m53585','fs-id1169737142258'],['m53585','fs-id1169738186788']],
+  '3.3': [['m53584','fs-id1169739299944'],['m53584','fs-id1169736612521'],['m53584','fs-id1169738937013'],['m53584','fs-id1169739270336'],['m53584','fs-id1169739062472']],
+  '3.4': [['m53584','fs-id1169736609244'],['m53584','fs-id1169739303914'],['m53584','fs-id1169739282717'],['m53584','fs-id1169738894988'],['m53584','fs-id1169736656490']],
+  '3.5': [['m53581','fs-id1169739298049'],['m53581','fs-id1169736658582'],['m53581','fs-id1169739264202'],['m53586','fs-id1169737140881'],['m53586','fs-id1169738238115']],
+  '3.6': [['m53573','fs-id1169738217348'],['m53573','fs-id1169738099445'],['m53578','fs-id1169739301937'],['m53578','fs-id1169739298088'],['m53578','fs-id1169739376127']]
 };
 
 const escapeHtml = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

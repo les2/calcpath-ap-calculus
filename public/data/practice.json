@@ -1,10 +1,10 @@
 {
   "schemaVersion": 5,
-  "revision": "5261cd3d779b27e2",
-  "generatedAt": "2026-08-24T11:23:48.187Z",
+  "revision": "61131493f814b278",
+  "generatedAt": "2026-08-24T13:23:52.454Z",
   "licenseNotice": "CalcPath links to publisher-hosted problems and answers without reproducing them. Embedded questions may be added only as source-faithful, format-only transcriptions with exact question and answer locators.",
   "catalogStats": {
-    "questionCount": 739,
+    "questionCount": 769,
     "sourceCount": 5,
     "sources": [
       "Matthew Boelkins et al.",
@@ -14,13 +14,13 @@
       "OpenStax"
     ],
     "difficultyCounts": {
-      "easy": 75,
-      "medium": 274,
-      "hard": 283,
+      "easy": 87,
+      "medium": 286,
+      "hard": 289,
       "ridiculous": 107
     },
     "deliveryCounts": {
-      "embedded": 130,
+      "embedded": 160,
       "external": 609
     },
     "unit1EmbeddedCounts": {
@@ -7736,6 +7736,181 @@
       }
     },
     {
+      "id": "openstax-fs-id1169736662942",
+      "type": "embedded",
+      "topicId": "3.1",
+      "topic": "The Chain Rule",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "3.1 · Check Your Understanding 2",
+      "promptHtml": "\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup><mrow><mo>(</mo><mrow><mn>6</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>8</mn><mrow><mo>(</mo><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup></mrow></math></p>",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169736662942",
+        "collection": "3.6 The Chain Rule",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "The Chain Rule",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169736662942",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L83",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L87",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739190029",
+      "type": "embedded",
+      "topicId": "3.1",
+      "topic": "The Chain Rule",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Finding the Equation of a Tangent Line",
+      "promptHtml": "\n\n<p>Find the equation of a line tangent to the graph of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mrow><mo stretchy=\"false\">(</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></msup></mrow></mfrac></mrow></math> at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mn>2</mn><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Because we are finding an equation of a line, we need a point. The <em>x</em>-coordinate of the point is 2. To find the <em>y</em>-coordinate, substitute 2 into <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math> Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>1</mn><mo>,</mo></mrow></math> the point is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></p>\n<p>For the slope, we need <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math> To find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>,</mo></mrow></math> first we rewrite <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>−2</mn></mrow></msup></mrow></math> and apply the power rule to obtain</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>−2</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>−3</mn></mrow></msup><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow><mo>=</mo><mn>−6</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>−3</mn></mrow></msup><mo>.</mo></mrow></math></div>\n<p>By substituting, we have <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>−6</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>−3</mn></mrow></msup><mo>=</mo><mn>−6</mn><mo>.</mo></mrow></math> Therefore, the line has equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>−</mo><mn>1</mn><mo>=</mo><mn>−6</mn><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math> Rewriting, the equation of the line is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>−6</mn><mi>x</mi><mo>+</mo><mn>13</mn><mo>.</mo></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739190029",
+        "collection": "3.6 The Chain Rule",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "The Chain Rule",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739190029",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L109",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L114",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739274625",
+      "type": "embedded",
+      "topicId": "3.1",
+      "topic": "The Chain Rule",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Using the Chain and Power Rules",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>First, rewrite <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>−2</mn></mrow></msup><mo>.</mo></mrow></math></p>\n<p>Applying the power rule with <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>,</mo></mrow></math> we have</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>−2</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>−3</mn></mrow></msup><mrow><mo>(</mo><mrow><mn>6</mn><mi>x</mi></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></div>\n<p>Rewriting back to the original form gives us</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>−12</mn><mi>x</mi></mrow><mrow><msup><mrow><mo stretchy=\"false\">(</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mn>3</mn></msup></mrow></mfrac><mo>.</mo></mrow></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739274625",
+        "collection": "3.6 The Chain Rule",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "The Chain Rule",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739274625",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L68",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L73",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739301539",
+      "type": "embedded",
+      "topicId": "3.1",
+      "topic": "The Chain Rule",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Using the Chain Rule on a Cosine Function",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>5</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Let <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>5</mn><msup><mi>x</mi><mn>2</mn></msup><mo>.</mo></mrow></math> Then <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>10</mn><mi>x</mi><mo>.</mo></mrow></math> Using the result from the previous example,</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><mtext>−</mtext><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>5</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>·</mo><mn>10</mn><mi>x</mi></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>−10</mn><mi>x</mi><mspace width=\"0.1em\"></mspace><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>5</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>.</mo></mtd></mtr></mtable></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739301539",
+        "collection": "3.6 The Chain Rule",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "The Chain Rule",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739301539",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L155",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L160",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739333923",
+      "type": "embedded",
+      "topicId": "3.1",
+      "topic": "The Chain Rule",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Using the Chain Rule on Another Trigonometric Function",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mtext>sec</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>4</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Apply the chain rule to <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mtext>sec</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math> to obtain</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mtext>sec</mtext><mo stretchy=\"false\">(</mo><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>.</mo></mrow></math></div>\n<p>In this problem, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>,</mo></mrow></math> so we have <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>20</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>2</mn><mo>.</mo></mrow></math> Therefore, we obtain</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><mtext>sec</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>4</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>4</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>20</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mo stretchy=\"false\">(</mo><mn>20</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mtext>sec</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>4</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>4</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mo>.</mo></mtd></mtr></mtable></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739333923",
+        "collection": "3.6 The Chain Rule",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "The Chain Rule",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739333923",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L167",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L172",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
       "id": "pauls-chainrule-1",
       "type": "external",
       "topicId": "3.1",
@@ -8903,6 +9078,181 @@
       }
     },
     {
+      "id": "openstax-fs-id1169737142258",
+      "type": "embedded",
+      "topicId": "3.2",
+      "topic": "Implicit Differentiation",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Finding the Equation of the Tangent Line to a Curve",
+      "promptHtml": "\n\n<p>Find an equation of the line tangent to the graph of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> at the point <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math> (<span class=\"source-reference\">source figure below</span>). This curve is known as the folium (or leaf) of Descartes.</p>\n<figure>\n\n<img src=\"media/openstax/CNX_Calc_Figure_03_08_003.jpg\" alt=\"A folium is shown, which is a line that creates a loop that crosses over itself. In this graph, it crosses over itself at (0, 0). Its tangent line from (3/2, 3/2) is shown.\">\n\n<figcaption>Finding the tangent line to the folium of Descartes at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></figcaption>\n</figure>\n",
+      "answerHtml": "\n<p>Begin by finding <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>.</mo></mrow></math></p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>y</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mi>y</mi></mrow><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mtd></mtr><mtr><mtd columnalign=\"right\"><mn>3</mn><msup><mi>y</mi><mn>2</mn></msup><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mn>3</mn><mi>x</mi></mrow><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>0</mn></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mrow><mn>3</mn><mi>y</mi><mo>−</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>3</mn><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi></mrow></mfrac><mo>.</mo></mtd></mtr></mtable></math></div>\n<p>Next, substitute <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math> into <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn><mi>y</mi><mo>−</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>3</mn><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi></mrow></mfrac></mrow></math> to find the slope of the tangent line:</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>|</mo><mtable columnalign=\"left\"><mtr><mtd><mrow></mrow></mtd></mtr><mtr><mtd><msub><mrow></mrow><mrow><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></msub></mtd></mtr></mtable></mrow><mo>=</mo><mn>−1</mn><mo>.</mo></mrow></math></div>\n<p>Finally, substitute into the point-slope equation of the line to obtain</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mtext>−</mtext><mi>x</mi><mo>+</mo><mn>3</mn><mo>.</mo></mrow></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169737142258",
+        "collection": "3.8 Implicit Differentiation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Implicit Differentiation",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169737142258",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L116",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L127",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738015312",
+      "type": "embedded",
+      "topicId": "3.2",
+      "topic": "Implicit Differentiation",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Using Implicit Differentiation",
+      "promptHtml": "\n\n<p>Assuming that <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math> is defined implicitly by the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>25</mn><mo>,</mo></mrow></math> find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Follow the steps in the problem-solving strategy.</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mn>25</mn></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Step 1. Differentiate both sides of the equation.</mtext></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>+</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>0</mn></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 1.1. Use the sum rule on the left.</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>On the right</mtext><mspace width=\"0.2em\"></mspace><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mn>25</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn><mo>.</mo></mtd></mtr></mtable></mtd></mtr><mtr><mtd columnalign=\"right\"><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>0</mn></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 1.2. Take the derivatives, so</mtext><mspace width=\"0.2em\"></mspace><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>and</mtext><mspace width=\"0.2em\"></mspace><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>y</mi><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>.</mo></mtd></mtr></mtable></mtd></mtr><mtr><mtd columnalign=\"right\"><mn>2</mn><mi>y</mi><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>−2</mn><mi>x</mi></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 2. Keep the terms with</mtext><mspace width=\"0.2em\"></mspace><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mspace width=\"0.2em\"></mspace><mtext>on the left.</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>Move the remaining terms to the right.</mtext></mtd></mtr></mtable></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mo>−</mo><mfrac><mi>x</mi><mi>y</mi></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 4. Divide both sides of the equation by</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mn>2</mn><mi>y</mi><mo>.</mo><mspace width=\"0.2em\"></mspace><mtext>(Step 3 does not apply in this case.)</mtext></mtd></mtr></mtable></mtd></mtr></mtable></math></div>",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738015312",
+        "collection": "3.8 Implicit Differentiation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Implicit Differentiation",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738015312",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L40",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L45",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738149878",
+      "type": "embedded",
+      "topicId": "3.2",
+      "topic": "Implicit Differentiation",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Using Implicit Differentiation and the Product Rule",
+      "promptHtml": "\n\n<p>Assuming that <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math> is defined implicitly by the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>x</mi><mn>3</mn></msup><mspace width=\"0.1em\"></mspace><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mo>+</mo><mi>y</mi><mo>=</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn><mo>,</mo></mrow></math> find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Step 1: Differentiate both sides of the equation.</mtext></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mrow><mo>)</mo></mrow><mo>+</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>4</mn></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 1.1: Apply the sum rule on the left.</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>On the right,</mtext><mspace width=\"0.2em\"></mspace><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mo>.</mo></mtd></mtr></mtable></mtd></mtr><mtr><mtd columnalign=\"right\"><mrow><mo>(</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>)</mo></mrow><mo>·</mo><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mo>+</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mrow><mo>)</mo></mrow><mo>·</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>)</mo></mrow><mo>+</mo><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>4</mn></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 1.2: Use the product rule to find</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mrow><mo>)</mo></mrow><mo>.</mo><mspace width=\"0.2em\"></mspace><mtext>Observe that</mtext><mspace width=\"0.2em\"></mspace><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mi>y</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>.</mo></mtd></mtr></mtable></mtd></mtr><mtr><mtd columnalign=\"right\"><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mo>+</mo><mrow><mo>(</mo><mrow><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mrow><mo>)</mo></mrow><mo>·</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>4</mn></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 1.3: We know</mtext><mspace width=\"0.2em\"></mspace><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>.</mo><mspace width=\"0.2em\"></mspace><mtext>Use the</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>chain rule to obtain</mtext><mspace width=\"0.2em\"></mspace><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mrow><mo>)</mo></mrow><mo>=</mo><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>.</mo></mtd></mtr></mtable></mtd></mtr><mtr><mtd columnalign=\"right\"><msup><mtext>x</mtext><mn>3</mn></msup><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>4</mn><mo>−</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 2: Keep all terms containing</mtext><mspace width=\"0.2em\"></mspace><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mspace width=\"0.2em\"></mspace><mtext>on the</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>left. Move all other terms to the right.</mtext></mtd></mtr></mtable></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mtext>x</mtext><mn>3</mn></msup><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>4</mn><mo>−</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Step 3: Factor out</mtext><mspace width=\"0.2em\"></mspace><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mspace width=\"0.2em\"></mspace><mtext>on the left.</mtext></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mrow><mn>4</mn><mo>−</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 4: Solve for</mtext><mspace width=\"0.2em\"></mspace><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mspace width=\"0.2em\"></mspace><mtext>by dividing both sides of</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>the equation by</mtext><mspace width=\"0.2em\"></mspace><msup><mtext>x</mtext><mn>3</mn></msup><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mo>+</mo><mn>1</mn><mo>.</mo></mtd></mtr></mtable></mtd></mtr></mtable></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738149878",
+        "collection": "3.8 Implicit Differentiation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Implicit Differentiation",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738149878",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L55",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L60",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738186788",
+      "type": "embedded",
+      "topicId": "3.2",
+      "topic": "Implicit Differentiation",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "3.2 · Check Your Understanding 5",
+      "promptHtml": "\n<p>Find an equation of the line tangent to the hyperbola <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>16</mn></mrow></math> at the point <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo>(</mo><mrow><mn>5</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mn>5</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mfrac><mrow><mn>16</mn></mrow><mn>3</mn></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738186788",
+        "collection": "3.8 Implicit Differentiation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Implicit Differentiation",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738186788",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L152",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L156",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738220221",
+      "type": "embedded",
+      "topicId": "3.2",
+      "topic": "Implicit Differentiation",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "3.2 · Check Your Understanding 3",
+      "promptHtml": "\n<p>Find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mrow></math> for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math> defined implicitly by the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>4</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn><mi>x</mi><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>5</mn><mo>−</mo><mn>20</mn><msup><mi>x</mi><mn>4</mn></msup></mrow><mrow><msup><mrow><mtext>sec</mtext></mrow><mn>2</mn></msup><mi>y</mi><mo>−</mo><mn>2</mn><mi>y</mi></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738220221",
+        "collection": "3.8 Implicit Differentiation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Implicit Differentiation",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738220221",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L79",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53585/index.cnxml#L83",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
       "id": "umich-implicit-differentiation-115exam2-f23-p7",
       "type": "external",
       "topicId": "3.2",
@@ -9179,6 +9529,181 @@
         "promptUrl": "https://dhsp.math.lsa.umich.edu/exams/115exam3/w24/p9.pdf",
         "answerUrl": "https://dhsp.math.lsa.umich.edu/exams/115exam3/w24/s9.pdf",
         "transcription": "link-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169736612521",
+      "type": "embedded",
+      "topicId": "3.3",
+      "topic": "Differentiating Inverse Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "3.3 · Check Your Understanding 2",
+      "promptHtml": "\n<p>Use the inverse function theorem to find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfrac><mo>.</mo></mrow></math> Compare the result obtained by differentiating <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math> directly.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mrow><msup><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></msup></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169736612521",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169736612521",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L55",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L59",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738937013",
+      "type": "embedded",
+      "topicId": "3.3",
+      "topic": "Differentiating Inverse Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Applying the Inverse Function Theorem",
+      "promptHtml": "\n\n<p>Use the inverse function theorem to find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>The function <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></math> is the inverse of the function <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>.</mo></mrow></math> Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac><mo>,</mo></mrow></math> begin by finding <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>.</mo></mrow></math> Thus,</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mspace width=\"0.2em\"></mspace><mtext>and</mtext><mspace width=\"0.2em\"></mspace><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn><msup><mrow><mrow><mo>(</mo><mrow><mroot><mi>x</mi><mn>3</mn></mroot></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup><mo>=</mo><mn>3</mn><msup><mi>x</mi><mrow><mn>2</mn><mtext>/</mtext><mn>3</mn></mrow></msup><mo>.</mo></mrow></math></div>\n<p>Finally,</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>3</mn><msup><mi>x</mi><mrow><mn>2</mn><mtext>/</mtext><mn>3</mn></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mrow><mn>−2</mn><mtext>/</mtext><mn>3</mn></mrow></msup><mo>.</mo></mrow></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738937013",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738937013",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L69",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L74",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739062472",
+      "type": "embedded",
+      "topicId": "3.3",
+      "topic": "Differentiating Inverse Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Applying the Power Rule to a Rational Power",
+      "promptHtml": "\n\n<p>Find an equation of the line tangent to the graph of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mrow><mn>2</mn><mtext>/</mtext><mn>3</mn></mrow></msup></mrow></math> at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mn>8</mn><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>First find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mrow></math> and evaluate it at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mn>8</mn><mo>.</mo></mrow></math> Since</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><msup><mi>x</mi><mrow><mn>−1</mn><mtext>/</mtext><mn>3</mn></mrow></msup><mspace width=\"0.2em\"></mspace><mtext>and</mtext><mspace width=\"0.2em\"></mspace><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mrow><mrow><mo>|</mo><mtable columnalign=\"left\"><mtr><mtd><mrow></mrow></mtd></mtr><mtr><mtd><msub><mrow></mrow><mrow><mrow><mi>x</mi><mo>=</mo><mn>8</mn></mrow></mrow></msub></mtd></mtr></mtable></mrow><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow></math></div>\n<p>the slope of the tangent line to the graph at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mn>8</mn></mrow></math> is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>.</mo></mrow></math></p>\n<p>Substituting <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mn>8</mn></mrow></math> into the original function, we obtain <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>4</mn><mo>.</mo></mrow></math> Thus, the tangent line passes through the point <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(</mo><mn>8</mn><mo>,</mo><mn>4</mn><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math> Substituting into the point-slope formula for a line, we obtain the tangent line</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>+</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mo>.</mo></mrow></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739062472",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739062472",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L114",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L119",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739270336",
+      "type": "embedded",
+      "topicId": "3.3",
+      "topic": "Differentiating Inverse Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "3.3 · Section Exercise 4",
+      "promptHtml": "<p>For the following exercises, use the functions <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math> to find</p><ol>\n<li><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>f</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mrow></math> at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mi>a</mi></mrow></math> and</li>\n<li><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><msup><mi>f</mi><mrow><mn>−1</mn></mrow></msup><mrow><mo>(</mo><mi>y</mi><mo>)</mo></mrow><mo>.</mo></mrow></math></li>\n<li>Then use part b. to find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><msup><mi>f</mi><mrow><mn>−1</mn></mrow></msup></mrow><mrow><mi>d</mi><mi>y</mi></mrow></mfrac></mrow></math> at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo>(</mo><mi>a</mi><mo>)</mo></mrow><mo>.</mo></mrow></math></li>\n</ol>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mo>,</mo><mi>a</mi><mo>=</mo><mn>0</mn></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mn>1</mn><mn>5</mn></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739270336",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739270336",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L416",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L420",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739299944",
+      "type": "embedded",
+      "topicId": "3.3",
+      "topic": "Differentiating Inverse Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Applying the Inverse Function Theorem",
+      "promptHtml": "\n\n<p>Use the inverse function theorem to find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mi>x</mi></mfrac><mo>.</mo></mrow></math> Compare the resulting derivative to that obtained by differentiating the function directly.</p>\n",
+      "answerHtml": "\n<p>The inverse of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mi>x</mi></mfrac></mrow></math> is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>2</mn><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>.</mo></mrow></math> Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac><mo>,</mo></mrow></math> begin by finding <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>.</mo></mrow></math> Thus,</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>−2</mn></mrow><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac><mspace width=\"0.2em\"></mspace><mtext>and</mtext><mspace width=\"0.2em\"></mspace><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>−2</mn></mrow><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>−2</mn></mrow><mrow><msup><mrow><mrow><mo>(</mo><mrow><mfrac><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mi>x</mi></mfrac><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac><mo>.</mo></mrow></math></div>\n<p>Finally,</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mn>2</mn><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>.</mo></mrow></math></div>\n<p>We can verify that this is the correct derivative by applying the quotient rule to <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math> to obtain</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><mn>2</mn><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>.</mo></mrow></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739299944",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739299944",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L39",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L44",
+        "transcription": "format-only",
         "verifiedAt": "2026-08-23"
       }
     },
@@ -9463,6 +9988,356 @@
       }
     },
     {
+      "id": "openstax-fs-id1169736609244",
+      "type": "embedded",
+      "topicId": "3.4",
+      "topic": "Differentiating Inverse Trigonometric Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Derivative of the Inverse Sine Function",
+      "promptHtml": "\n\n<p>Use the inverse function theorem to find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mtext>sin</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mi>x</mi><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Since for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math> in the interval <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>,</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><mo>]</mo></mrow><mo>,</mo><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow></math> is the inverse of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mtext>sin</mtext><mrow><mn>−1</mn></mrow></msup><mi>x</mi><mo>,</mo></mrow></math> begin by finding <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math> Since</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi><mspace width=\"0.2em\"></mspace><mtext>and</mtext><mspace width=\"0.2em\"></mspace><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><msup><mrow><mtext>sin</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt><mo>,</mo></mrow></math></div>\n<p>we see that</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mrow><mtext>sin</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></mfrac><mo>.</mo></mrow></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169736609244",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Trigonometric Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169736609244",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L148",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L153",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169736656490",
+      "type": "embedded",
+      "topicId": "3.4",
+      "topic": "Differentiating Inverse Trigonometric Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "3.4 · Check Your Understanding 5",
+      "promptHtml": "\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mtext>cos</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>−3</mn></mrow><mrow><msqrt><mrow><mn>6</mn><mi>x</mi><mo>−</mo><mn>9</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169736656490",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Trigonometric Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169736656490",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L240",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L244",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738894988",
+      "type": "embedded",
+      "topicId": "3.4",
+      "topic": "Differentiating Inverse Trigonometric Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Applying Differentiation Formulas to an Inverse Sine Function",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><msup><mrow><mtext>sin</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mi>x</mi><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>By applying the product rule, we have</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mspace width=\"0.1em\"></mspace><msup><mrow><mtext>sin</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mrow><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></mfrac><mo>·</mo><msup><mi>x</mi><mn>2</mn></msup><mo>.</mo></mrow></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738894988",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Trigonometric Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738894988",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L228",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L233",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739282717",
+      "type": "embedded",
+      "topicId": "3.4",
+      "topic": "Differentiating Inverse Trigonometric Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Applying Differentiation Formulas to an Inverse Tangent Function",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mtext>tan</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Let <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>,</mo></mrow></math> so <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mo>.</mo></mrow></math> Substituting into <span class=\"source-reference\">source equation</span>, we obtain</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac><mo>·</mo><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></div>\n<p>Simplifying, we have</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mi>x</mi></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>4</mn></msup></mrow></mfrac><mo>.</mo></mrow></math></div>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mspace width=\"0.1em\"></mspace><msup><mrow><mtext>tan</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mrow><mrow><mi>x</mi></mrow></mrow><mn>2</mn></msup></mrow></mfrac></mrow></math></div>",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739282717",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Trigonometric Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739282717",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L214",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L219",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739303914",
+      "type": "embedded",
+      "topicId": "3.4",
+      "topic": "Differentiating Inverse Trigonometric Functions",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "3.4 · Check Your Understanding 2",
+      "promptHtml": "\n<p>Use the inverse function theorem to find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mtext>tan</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mi>x</mi><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>g</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739303914",
+        "collection": "3.7 Derivatives of Inverse Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Differentiating Inverse Trigonometric Functions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739303914",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L190",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53584/index.cnxml#L194",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169736658582",
+      "type": "embedded",
+      "topicId": "3.5",
+      "topic": "Selecting Procedures for Calculating Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Differentiating a Composite of Three Functions",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>k</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mtext>cos</mtext></mrow><mn>4</mn></msup><mrow><mo>(</mo><mrow><msup><mrow><mn>7</mn><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>First, rewrite <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>k</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math> as</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>k</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup><mo>.</mo></mrow></math></div>\n<p>Then apply the power rule several times.</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>k</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>4</mn><msup><mrow><mrow><mo>(</mo><mrow><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup><mrow><mo>(</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Apply the chain rule.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>4</mn><msup><mrow><mrow><mo>(</mo><mrow><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup><mrow><mo>(</mo><mrow><mtext>−</mtext><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Apply the chain rule.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>4</mn><msup><mrow><mrow><mo>(</mo><mrow><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup><mrow><mo>(</mo><mrow><mtext>−</mtext><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>14</mn><mi>x</mi></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Apply the chain rule.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>−56</mn><mi>x</mi><mspace width=\"0.1em\"></mspace><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mo stretchy=\"false\">(</mo><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo><msup><mrow><mtext>cos</mtext></mrow><mn>3</mn></msup><mo stretchy=\"false\">(</mo><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Simplify.</mtext></mtd></mtr></mtable></math></div>",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169736658582",
+        "collection": "3.6 The Chain Rule",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Selecting Procedures for Calculating Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169736658582",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L748",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L753",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739264202",
+      "type": "embedded",
+      "topicId": "3.5",
+      "topic": "Selecting Procedures for Calculating Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Taking a Derivative Using Leibniz’s Notation, Example 1",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mfrac><mi>x</mi><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>First, let <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>u</mi><mo>=</mo><mfrac><mi>x</mi><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfrac><mo>.</mo></mrow></math> Thus, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><msup><mi>u</mi><mn>5</mn></msup><mo>.</mo></mrow></math> Next, find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>u</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>u</mi></mrow></mfrac><mo>.</mo></mrow></math> Using the quotient rule,</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>u</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mn>2</mn><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac></mrow></math></div>\n<p>and</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>u</mi></mrow></mfrac><mo>=</mo><mn>5</mn><msup><mi>u</mi><mn>4</mn></msup><mo>.</mo></mrow></math></div>\n<p>Finally, we put it all together.</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>u</mi></mrow></mfrac><mo>·</mo><mfrac><mrow><mi>d</mi><mi>u</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Apply the chain rule.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>5</mn><msup><mi>u</mi><mn>4</mn></msup><mo>·</mo><mfrac><mn>2</mn><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac></mtd>\n<mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Substitute</mtext><mspace width=\"0.2em\"></mspace><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>u</mi></mrow></mfrac><mo>=</mo><mn>5</mn><msup><mi>u</mi><mn>4</mn></msup><mspace width=\"0.2em\"></mspace><mtext>and</mtext><mspace width=\"0.2em\"></mspace><mfrac><mrow><mi>d</mi><mi>u</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mn>2</mn><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac><mo>.</mo></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>5</mn><msup><mrow><mrow><mo>(</mo><mrow><mfrac><mi>x</mi><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup><mo>·</mo><mfrac><mn>2</mn><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Substitute</mtext><mspace width=\"0.2em\"></mspace><mi>u</mi><mo>=</mo><mfrac><mi>x</mi><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfrac><mo>.</mo></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mfrac><mrow><mn>10</mn><msup><mi>x</mi><mn>4</mn></msup></mrow><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup></mrow></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Simplify.</mtext></mtd></mtr></mtable></math></div>\n<p>It is important to remember that, when using the Leibniz form of the chain rule, the final answer must be expressed entirely in terms of the original variable given in the problem.</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739264202",
+        "collection": "3.6 The Chain Rule",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Selecting Procedures for Calculating Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739264202",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L859",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L864",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739298049",
+      "type": "embedded",
+      "topicId": "3.5",
+      "topic": "Selecting Procedures for Calculating Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Combining the Chain Rule with the Product Rule",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>7</mn></msup><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>First apply the product rule, then apply the chain rule to each term of the product.</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>h</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mn>5</mn></msup></mrow><mo>)</mo></mrow><mo>·</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>7</mn></msup><mo>+</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mrow><mo stretchy=\"false\">(</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow><mn>7</mn></msup></mrow><mo>)</mo></mrow><mo>·</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Apply the product rule.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>5</mn><msup><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mn>4</mn></msup><mo>·</mo><mn>2</mn><mo>·</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>7</mn></msup><mo>+</mo><mn>7</mn><msup><mrow><mo stretchy=\"false\">(</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow><mn>6</mn></msup><mo>·</mo><mn>3</mn><mo>·</mo><msup><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mn>5</mn></msup></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Apply the chain rule.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>10</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>7</mn></msup><mo>+</mo><mn>21</mn><msup><mrow><mo stretchy=\"false\">(</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow><mn>6</mn></msup><msup><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mn>5</mn></msup></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Simplify.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup><mrow><mo>(</mo><mrow><mn>10</mn><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>+</mo><mn>21</mn><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Factor out</mtext><mspace width=\"0.2em\"></mspace><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup><mo>.</mo></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup><mo stretchy=\"false\">(</mo><mn>72</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Simplify.</mtext></mtd></mtr></mtable></math></div>",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739298049",
+        "collection": "3.6 The Chain Rule",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Selecting Procedures for Calculating Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739298049",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L704",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53581/index.cnxml#L709",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169737140881",
+      "type": "embedded",
+      "topicId": "3.5",
+      "topic": "Selecting Procedures for Calculating Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Combining Differentiation Rules",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><mi>x</mi></mfrac><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Use the derivative of the natural exponential function, the quotient rule, and the chain rule.</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>y</mi><mo>′</mo></msup></mtd><mtd columnalign=\"left\"><mo>=</mo><mfrac><mrow><mrow><mo>(</mo><mrow><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mo>·</mo><mn>2</mn></mrow><mo>)</mo></mrow><mi>x</mi><mo>·</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo>·</mo><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Apply the quotient rule.</mtext></mtd></mtr>\n<mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Simplify.</mtext></mtd></mtr></mtable></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169737140881",
+        "collection": "3.9 Derivatives of Exponential and Logarithmic Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Selecting Procedures for Calculating Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169737140881",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53586/index.cnxml#L175",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53586/index.cnxml#L180",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738238115",
+      "type": "embedded",
+      "topicId": "3.5",
+      "topic": "Selecting Procedures for Calculating Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Using Logarithmic Differentiation",
+      "promptHtml": "\n\n<p>Find the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow></msup><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Use logarithmic differentiation to find this derivative.</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mtext>ln</mtext><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow></msup></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Step 1. Take the natural logarithm of both sides.</mtext></mtd></mtr><mtr><mtd columnalign=\"right\"><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi><mspace width=\"0.1em\"></mspace><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Step 2. Expand using properties of logarithms.</mtext></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mn>1</mn><mi>y</mi></mfrac><mspace width=\"0.2em\"></mspace><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msup><mrow><mtext>sec</mtext></mrow><mn>2</mn></msup><mi>x</mi><mspace width=\"0.1em\"></mspace><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mfrac><mrow><mn>8</mn><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>·</mo><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Step 3. Differentiate both sides. Use the</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>product rule on the right.</mtext></mtd></mtr></mtable></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mi>y</mi><mo>·</mo><mrow><mo>(</mo><mrow><msup><mrow><mtext>sec</mtext></mrow><mn>2</mn></msup><mi>x</mi><mspace width=\"0.1em\"></mspace><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mfrac><mrow><mn>8</mn><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>·</mo><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Step 4. Multiply by</mtext><mspace width=\"0.2em\"></mspace><mi>y</mi><mspace width=\"0.2em\"></mspace><mtext>on both sides.</mtext></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow></msup><mrow><mo>(</mo><mrow><msup><mrow><mtext>sec</mtext></mrow><mn>2</mn></msup><mi>x</mi><mspace width=\"0.1em\"></mspace><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mfrac><mrow><mn>8</mn><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>·</mo><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Step 5. Substitute</mtext><mspace width=\"0.2em\"></mspace><mi>y</mi><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow></msup><mo>.</mo></mtd></mtr></mtable></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738238115",
+        "collection": "3.9 Derivatives of Exponential and Logarithmic Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Selecting Procedures for Calculating Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738238115",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53586/index.cnxml#L378",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53586/index.cnxml#L383",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
       "id": "umich-derivatives-formula-115exam2-f13-p10",
       "type": "external",
       "topicId": "3.5",
@@ -9739,6 +10614,181 @@
         "promptUrl": "https://dhsp.math.lsa.umich.edu/exams/115exam3/w13/p5.pdf",
         "answerUrl": "https://dhsp.math.lsa.umich.edu/exams/115exam3/w13/s5.pdf",
         "transcription": "link-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738099445",
+      "type": "embedded",
+      "topicId": "3.6",
+      "topic": "Calculating Higher-Order Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Finding Acceleration",
+      "promptHtml": "\n\n<p>The position of a particle along a coordinate axis at time <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>t</mi></math> (in seconds) is given by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>s</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>t</mi><mo>+</mo><mn>1</mn></mrow></math> (in meters). Find the function that describes its acceleration at time <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>s</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>v</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>s</mi><mo>″</mo></msup><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>,</mo></mrow></math> we begin by finding the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>s</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>:</mo></mrow></math></p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>s</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>s</mi><mrow><mo>(</mo><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>s</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mn>3</mn><msup><mrow><mrow><mo>(</mo><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup><mo>−</mo><mn>4</mn><mrow><mo>(</mo><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mn>1</mn><mo>−</mo><mrow><mo>(</mo><mrow><mn>3</mn><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>t</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mi>h</mi></mfrac></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>6</mn><mi>t</mi><mo>−</mo><mn>4.</mn></mtd></mtr></mtable></math></div>\n<p>Next,</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>s</mi><mo>″</mo></msup><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><msup><mi>s</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><msup><mi>s</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mn>6</mn><mrow><mo>(</mo><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mn>4</mn><mo>−</mo><mo stretchy=\"false\">(</mo><mn>6</mn><mi>t</mi><mo>−</mo><mn>4</mn><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>6.</mn></mtd></mtr></mtable></math></div>\n<p>Thus, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mo>=</mo><mn>6</mn><msup><mrow><mspace width=\"0.2em\"></mspace><mtext>m/s</mtext></mrow><mn>2</mn></msup><mo>.</mo></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738099445",
+        "collection": "3.2 The Derivative as a Function",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Calculating Higher-Order Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738099445",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53573/index.cnxml#L254",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53573/index.cnxml#L259",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169738217348",
+      "type": "embedded",
+      "topicId": "3.6",
+      "topic": "Calculating Higher-Order Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Finding a Second Derivative",
+      "promptHtml": "\n\n<p>For <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo>,</mo></mrow></math> find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>″</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>First find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math></p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mrow><mo>(</mo><mrow><mn>2</mn><msup><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>3</mn><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>−</mo><mo stretchy=\"false\">(</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Substitute</mtext><mspace width=\"0.2em\"></mspace><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>and</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn><msup><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>3</mn><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>into</mtext><mspace width=\"0.2em\"></mspace><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac><mo>.</mo></mtd></mtr></mtable></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mn>4</mn><mi>x</mi><mi>h</mi><mo>+</mo><mn>2</mn><msup><mi>h</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>h</mi></mrow><mi>h</mi></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Simplify the numerator.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mrow><mo>(</mo><mrow><mn>4</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>h</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Factor out the</mtext><mspace width=\"0.2em\"></mspace><mi>h</mi><mspace width=\"0.2em\"></mspace><mtext>in the numerator</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>and cancel with the</mtext><mspace width=\"0.2em\"></mspace><mi>h</mi><mspace width=\"0.2em\"></mspace><mtext>in the</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>denominator.</mtext></mtd></mtr></mtable></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>4</mn><mi>x</mi><mo>−</mo><mn>3</mn></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Take the limit.</mtext></mtd></mtr></mtable></math></div>\n<p>Next, find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>″</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow></math> by taking the derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mi>x</mi><mo>−</mo><mn>3</mn><mo>.</mo></mrow></math></p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>f</mi><mo>″</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><msup><mi>f</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Use</mtext><mspace width=\"0.2em\"></mspace><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac><mspace width=\"0.2em\"></mspace><mtext>with</mtext><mspace width=\"0.2em\"></mspace><msup><mi>f</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mspace width=\"0.2em\"></mspace><mtext>in</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><mtext>place of</mtext><mspace width=\"0.2em\"></mspace><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>.</mo></mtd></mtr></mtable></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mrow><mo>(</mo><mrow><mn>4</mn><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>−</mo><mo stretchy=\"false\">(</mo><mn>4</mn><mi>x</mi><mo>−</mo><mn>3</mn><mo stretchy=\"false\">)</mo></mrow><mi>h</mi></mfrac></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtable><mtr><mtd columnalign=\"left\"><mtext>Substitute</mtext><mspace width=\"0.2em\"></mspace><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mn>3</mn><mspace width=\"0.2em\"></mspace><mtext>and</mtext></mtd></mtr><mtr><mtd columnalign=\"left\"><msup><mi>f</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mi>x</mi><mo>−</mo><mn>3.</mn></mtd></mtr></mtable></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><munder><mrow><mtext>lim</mtext></mrow><mrow><mi>h</mi><mo stretchy=\"false\">→</mo><mn>0</mn></mrow></munder><mn>4</mn></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Simplify.</mtext></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>4</mn></mtd><mtd></mtd><mtd></mtd><mtd columnalign=\"left\"><mtext>Take the limit.</mtext></mtd></mtr></mtable></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169738217348",
+        "collection": "3.2 The Derivative as a Function",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Calculating Higher-Order Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169738217348",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53573/index.cnxml#L226",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53573/index.cnxml#L231",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739298088",
+      "type": "embedded",
+      "topicId": "3.6",
+      "topic": "Calculating Higher-Order Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "Using the Pattern for Higher-Order Derivatives of y=sinx",
+      "promptHtml": "\n\n<p>Find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><msup><mi>d</mi><mrow><mn>74</mn></mrow></msup></mrow><mrow><mi>d</mi><msup><mi>x</mi><mrow><mn>74</mn></mrow></msup></mrow></mfrac><mrow><mo>(</mo><mrow><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>We can see right away that for the 74th derivative of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi><mo>,</mo><mn>74</mn><mo>=</mo><mn>4</mn><mrow><mo>(</mo><mrow><mn>18</mn></mrow><mo>)</mo></mrow><mo>+</mo><mn>2</mn><mo>,</mo></mrow></math> so</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><msup><mi>d</mi><mrow><mn>74</mn></mrow></msup></mrow><mrow><mi>d</mi><msup><mi>x</mi><mrow><mn>74</mn></mrow></msup></mrow></mfrac><mrow><mo>(</mo><mrow><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><msup><mi>d</mi><mrow><mn>72</mn><mo>+</mo><mn>2</mn></mrow></msup></mrow><mrow><mi>d</mi><msup><mi>x</mi><mrow><mn>72</mn><mo>+</mo><mn>2</mn></mrow></msup></mrow></mfrac><mrow><mo>(</mo><mrow><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><msup><mi>d</mi><mn>2</mn></msup></mrow><mrow><mi>d</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mrow><mo>(</mo><mrow><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mtext>−</mtext><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi><mo>.</mo></mrow></math></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739298088",
+        "collection": "3.5 Derivatives of Trigonometric Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Calculating Higher-Order Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739298088",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53578/index.cnxml#L291",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53578/index.cnxml#L296",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739301937",
+      "type": "embedded",
+      "topicId": "3.6",
+      "topic": "Calculating Higher-Order Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "3.6 · Section Exercise 3",
+      "promptHtml": "<p>For the following exercises, find the requested higher-order derivative for the given functions.</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><msup><mi>d</mi><mn>3</mn></msup><mi>y</mi></mrow><mrow><mi>d</mi><msup><mi>x</mi><mn>3</mn></msup></mrow></mfrac></mrow></math> of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mrow><mn>10</mn></mrow></msup><mo>−</mo><mtext>sec</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>720</mn><msup><mi>x</mi><mn>7</mn></msup><mo>−</mo><mn>5</mn><mspace width=\"0.1em\"></mspace><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><msup><mrow><mtext>sec</mtext></mrow><mn>3</mn></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>−</mo><msup><mrow><mtext>tan</mtext></mrow><mn>3</mn></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mtext>sec</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739301937",
+        "collection": "3.5 Derivatives of Trigonometric Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Calculating Higher-Order Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739301937",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53578/index.cnxml#L650",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53578/index.cnxml#L654",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1169739376127",
+      "type": "embedded",
+      "topicId": "3.6",
+      "topic": "Calculating Higher-Order Derivatives",
+      "unit": "Unit 3 · Differentiation: Composite, Implicit, and Inverse Functions",
+      "title": "An Application to Acceleration",
+      "promptHtml": "\n\n<p>A particle moves along a coordinate axis in such a way that its position at time <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>t</mi></math> is given by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>s</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mo>−</mo><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>t</mi><mo>.</mo></mrow></math> Find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mrow><mi>π</mi><mtext>/</mtext><mn>4</mn></mrow><mo>)</mo></mrow></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mrow><mo>(</mo><mrow><mi>π</mi><mtext>/</mtext><mn>4</mn></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math> Compare these values and decide whether the particle is speeding up or slowing down.</p>\n",
+      "answerHtml": "\n<p>First find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>s</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mtext>:</mtext></mrow></math></p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>s</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mtext>−</mtext><mtext>cos</mtext><mspace width=\"0.1em\"></mspace><mi>t</mi><mo>.</mo></mrow></math></div>\n<p>Thus,</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mrow><mfrac><mi>π</mi><mn>4</mn></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mrow><msqrt><mn>2</mn></msqrt></mrow></mfrac><mo>.</mo></mrow></math></div>\n<p>Next, find <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>v</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math> Thus, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>v</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>t</mi></mrow></math> and we have</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mrow><mo>(</mo><mrow><mfrac><mi>π</mi><mn>4</mn></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msqrt><mn>2</mn></msqrt></mrow></mfrac><mo>.</mo></mrow></math></div>\n<p>Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mrow><mfrac><mi>π</mi><mn>4</mn></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mrow><msqrt><mn>2</mn></msqrt></mrow></mfrac><mo>&lt;</mo><mn>0</mn></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mrow><mo>(</mo><mrow><mfrac><mi>π</mi><mn>4</mn></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msqrt><mn>2</mn></msqrt></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mo>,</mo></mrow></math> we see that velocity and acceleration are acting in opposite directions; that is, the object is being accelerated in the direction opposite to the direction in which it is travelling. Consequently, the particle is slowing down.</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+chain+rule+implicit+differentiation",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Chain_rule",
+      "metadata": {
+        "sourceQuestionId": "fs-id1169739376127",
+        "collection": "3.5 Derivatives of Trigonometric Functions",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Calculating Higher-Order Derivatives",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-1",
+      "locator": {
+        "exerciseId": "fs-id1169739376127",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53578/index.cnxml#L317",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53578/index.cnxml#L322",
+        "transcription": "format-only",
         "verifiedAt": "2026-08-23"
       }
     },
