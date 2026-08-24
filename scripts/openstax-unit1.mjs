@@ -35,7 +35,12 @@ const MODULES = {
   m53656: { title: '3.1 Integration by Parts', page: '3-1-integration-by-parts', volume: 2 },
   m53681: { title: '3.4 Partial Fractions', page: '3-4-partial-fractions', volume: 2 },
   m53684: { title: '3.5 Other Strategies for Integration', page: '3-5-other-strategies-for-integration', volume: 2 },
-  m53686: { title: '3.7 Improper Integrals', page: '3-7-improper-integrals', volume: 2 }
+  m53686: { title: '3.7 Improper Integrals', page: '3-7-improper-integrals', volume: 2 },
+  m53697: { title: '4.1 Basics of Differential Equations', page: '4-1-basics-of-differential-equations', volume: 2 },
+  m53701: { title: '4.2 Direction Fields and Numerical Methods', page: '4-2-direction-fields-and-numerical-methods', volume: 2 },
+  m53704: { title: '4.3 Separable Equations', page: '4-3-separable-equations', volume: 2 },
+  m53710: { title: '4.4 The Logistic Equation', page: '4-4-the-logistic-equation', volume: 2 },
+  m53713: { title: '4.5 First-Order Linear Equations', page: '4-5-first-order-linear-equations', volume: 2 }
 };
 
 // This is an editorial topic map only. The importer never changes the selected
@@ -105,14 +110,41 @@ export const TOPIC_EXERCISES = {
   '6.11': [['m53656','fs-id1165041816966'],['m53656','fs-id1165042127899'],['m53656','fs-id1165042015635'],['m53656','fs-id1165041899921'],['m53656','fs-id1165041948195']],
   '6.12': [['m53681','fs-id1165040755188'],['m53681','fs-id1165042048892'],['m53681','fs-id1165041952250'],['m53681','fs-id1165041892980'],['m53681','fs-id1165042235498']],
   '6.13': [['m53686','fs-id1165043109202'],['m53686','fs-id1165042608025'],['m53686','fs-id1165043096733'],['m53686','fs-id1165043257652'],['m53686','fs-id1165043423552']],
-  '6.14': [['m53656','fs-id1165040722280'],['m53656','fs-id1165042276432'],['m53656','fs-id1165040741668'],['m53656','fs-id1165040741825'],['m53684','fs-id1165041787566']]
+  '6.14': [['m53656','fs-id1165040722280'],['m53656','fs-id1165042276432'],['m53656','fs-id1165040741668'],['m53656','fs-id1165040741825'],['m53684','fs-id1165041787566']],
+  '7.1': [['m53697','fs-id1170571084137'],['m53697','fs-id1170573419498'],['m53697','fs-id1170571260273'],['m53704','fs-id1170571334905'],['m53704','fs-id1170573742107']],
+  '7.2': [['m53697','fs-id1170573412377'],['m53697','fs-id1170573391210'],['m53697','fs-id1170571027411'],['m53697','fs-id1170573715282'],['m53697','fs-id1170573529236']],
+  '7.3': [['m53701','fs-id1170571306965'],['m53701','fs-id1170571469115'],['m53701','fs-id1170571118948'],['m53701','fs-id1170571442800'],['m53701','fs-id1170571503006']],
+  '7.4': [['m53701','fs-id1170573569693'],['m53701','fs-id1170571349921'],['m53701','fs-id1170573742050'],['m53701','fs-id1170571246086'],['m53710','fs-id1170572547893']],
+  '7.5': [['m53701','fs-id1170573756805'],['m53701','fs-id1170571260263'],['m53701','fs-id1170571057294'],['m53701','fs-id1170571233748'],['m53701','fs-id1170571218252']],
+  '7.6': [['m53704','fs-id1170571130297'],['m53704','fs-id1170571244783'],['m53704','fs-id1170571086082'],['m53704','fs-id1170571086134'],['m53704','fs-id1170573742502']],
+  '7.7': [['m53704','fs-id1170571069529'],['m53704','fs-id1170573436521'],['m53704','fs-id1170571074905'],['m53704','fs-id1170571023995'],['m53704','fs-id1170571346512']],
+  '7.8': [['m53704','fs-id1170571198016'],['m53704','fs-id1170571110824'],['m53704','fs-id1170571146758'],['m53704','fs-id1170571074882'],['m53704','fs-id1170570991542']],
+  '7.9': [['m53713','fs-id1170571642098'],['m53710','fs-id1170572480690'],['m53710','fs-id1170571775807'],['m53710','fs-id1170571558918'],['m53710','fs-id1170572420405']]
 };
 
 const escapeHtml = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const localName = (node) => node?.localName?.replace(/^m:/, '') ?? '';
 const FORCE_GROUP_INSTRUCTIONS = new Set([
   'fs-id1169739275301',
-  'fs-id1169739303722'
+  'fs-id1169739303722',
+  'fs-id1170573742050',
+  'fs-id1170571246086'
+]);
+const NO_GROUP_INSTRUCTIONS = new Set([
+  'fs-id1170571027411',
+  'fs-id1170573715282',
+  'fs-id1170573742107',
+  'fs-id1170571558918'
+]);
+const GROUP_INSTRUCTION_OVERRIDES = new Map([
+  ['fs-id1170571306965', 'fs-id1170571423080'],
+  ['fs-id1170571469115', 'fs-id1170571423080'],
+  ['fs-id1170571118948', 'fs-id1170571469180'],
+  ['fs-id1170571442800', 'fs-id1170571469180'],
+  ['fs-id1170571503006', 'fs-id1170571469180'],
+  ['fs-id1170571057294', 'fs-id1170571503040'],
+  ['fs-id1170571233748', 'fs-id1170571503040'],
+  ['fs-id1170571218252', 'fs-id1170571503040']
 ]);
 
 export async function mineOpenStaxPractice(topicIndex) {
@@ -192,9 +224,14 @@ export async function mineOpenStaxPractice(topicIndex) {
       suppliedTitle?.remove();
       let instructionNodes = [];
       if (exercise.parentElement?.getAttribute('class')?.includes('section-exercises')) {
+        const instructionOverride = GROUP_INSTRUCTION_OVERRIDES.get(exerciseId);
         const problemText = problemClone.textContent.replace(/\s+/g, ' ').trim();
-        const isStandalone = !FORCE_GROUP_INSTRUCTIONS.has(exerciseId) && /^(?:\[T\]\s*)?(?:A\b|An\b|The\b|Two\b|Find\b|Use\b|For\b|Let\b|Suppose\b|Consider\b|Determine\b|Evaluate\b|Sketch\b|Calculate\b)/i.test(problemText);
-        if (!isStandalone) {
+        const isStandalone = NO_GROUP_INSTRUCTIONS.has(exerciseId) || (!FORCE_GROUP_INSTRUCTIONS.has(exerciseId) && /^(?:\[T\]\s*)?(?:A\b|An\b|The\b|Two\b|Find\b|Use\b|For\b|Let\b|Suppose\b|Consider\b|Determine\b|Evaluate\b|Sketch\b|Calculate\b)/i.test(problemText));
+        if (instructionOverride) {
+          const instruction = document.getElementById(instructionOverride);
+          if (!instruction) throw new Error(`Missing OpenStax instruction ${instructionOverride} for ${exerciseId}`);
+          instructionNodes.push(instruction);
+        } else if (!isStandalone) {
           let instructionStart = exercise.previousElementSibling;
           while (instructionStart && !(localName(instructionStart) === 'para' && /(?:for|in) the following/i.test(instructionStart.textContent))) instructionStart = instructionStart.previousElementSibling;
           if (instructionStart) {
@@ -221,7 +258,7 @@ export async function mineOpenStaxPractice(topicIndex) {
         type: 'embedded', topicId, title,
         promptHtml, answerHtml,
         metadata: { sourceQuestionId: exerciseId, collection: MODULES[moduleId].title, course: 'AB + BC', format: 'textbook exercise', difficulty: position <= 2 ? 'easy' : position <= 4 ? 'medium' : 'hard', estimatedMinutes: 10, calculator: 'varies', answerKind: 'publisher solution', tags: [topicIndex.get(topicId).title, 'Textbook', 'Embedded'] },
-        source: { sourceId: `openstax-calculus-volume-${volume}`, title: `OpenStax Calculus Volume ${volume} · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-${volume}/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume ${volume}, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: /^(5|6)\./.test(topicId) ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
+        source: { sourceId: `openstax-calculus-volume-${volume}`, title: `OpenStax Calculus Volume ${volume} · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-${volume}/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume ${volume}, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: /^(5|6|7)\./.test(topicId) ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
       });
     }
   }

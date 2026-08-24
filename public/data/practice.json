@@ -1,10 +1,10 @@
 {
   "schemaVersion": 5,
-  "revision": "8ab73575b58c5d6c",
-  "generatedAt": "2026-08-24T16:08:55.938Z",
+  "revision": "16df5f632ac35668",
+  "generatedAt": "2026-08-24T16:24:55.787Z",
   "licenseNotice": "CalcPath links to publisher-hosted problems and answers without reproducing them. Embedded questions may be added only as source-faithful, format-only transcriptions with exact question and answer locators.",
   "catalogStats": {
-    "questionCount": 934,
+    "questionCount": 979,
     "sourceCount": 6,
     "sources": [
       "Matthew Boelkins et al.",
@@ -15,13 +15,13 @@
       "OpenStax"
     ],
     "difficultyCounts": {
-      "easy": 153,
-      "medium": 352,
-      "hard": 322,
+      "easy": 171,
+      "medium": 370,
+      "hard": 331,
       "ridiculous": 107
     },
     "deliveryCounts": {
-      "embedded": 325,
+      "embedded": 370,
       "external": 609
     },
     "unit1EmbeddedCounts": {
@@ -26649,6 +26649,706 @@
       }
     },
     {
+      "id": "openstax-fs-id1170571084137",
+      "type": "embedded",
+      "topicId": "7.1",
+      "topic": "Modeling Situations with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "Velocity of a Moving Baseball",
+      "promptHtml": "\n\n<p>A baseball is thrown upward from a height of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3</mn></math> meters above Earth’s surface with an initial velocity of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>10</mn><mspace width=\"0.2em\"></mspace><mtext>m/s</mtext><mo>,</mo></mrow></math> and the only force acting on it is gravity. The ball has a mass of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.15</mn><mspace width=\"0.2em\"></mspace><mtext>kg</mtext></mrow></math>.</p>\n<ol>\n<li>Find the velocity <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mrow></math> of the baseball at time <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>.</mo></mrow></math></li>\n<li>What is its velocity after <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>2</mn></math> seconds?</li>\n</ol>\n",
+      "answerHtml": "\n<ol>\n<li>From the preceding discussion, the differential equation that applies in this situation is<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>v</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mtext>−</mtext><mi>g</mi><mo>,</mo></mrow></math></div><br>\nwhere <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mo>=</mo><mn>9.8</mn><msup><mrow><mspace width=\"0.2em\"></mspace><mtext>m/s</mtext></mrow><mn>2</mn></msup><mo>.</mo></mrow></math> The initial condition is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><msub><mi>v</mi><mn>0</mn></msub><mo>,</mo></mrow></math> where <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>v</mi><mn>0</mn></msub><mo>=</mo><mn>10</mn><mspace width=\"0.2em\"></mspace><mtext>m/s</mtext><mtext>.</mtext></mrow></math> Therefore the initial-value problem is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>v</mi><mo>′</mo></msup><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−9.8</mn><msup><mrow><mspace width=\"0.2em\"></mspace><mtext>m/s</mtext></mrow><mn>2</mn></msup><mo>,</mo><mi>v</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>10</mn><mspace width=\"0.2em\"></mspace><mtext>m/s</mtext><mtext>.</mtext></mrow></math><br>\nThe first step in solving this initial-value problem is to take the antiderivative of both sides of the differential equation. This gives<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mstyle displaystyle=\"true\"><mrow><mo>∫</mo><mrow><msup><mi>v</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mi>d</mi><mi>t</mi></mrow></mrow></mstyle></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mstyle displaystyle=\"true\"><mrow><mo>∫</mo><mrow><mn>−9.8</mn><mi>d</mi><mi>t</mi></mrow></mrow></mstyle></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>v</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>−9.8</mn><mi>t</mi><mo>+</mo><mi>C</mi><mo>.</mo></mtd></mtr></mtable></math></div><br>\nThe next step is to solve for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>C</mi><mo>.</mo></mrow></math> To do this, substitute <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>10</mn><mtext>:</mtext></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mi>v</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>−9.8</mn><mi>t</mi><mo>+</mo><mi>C</mi></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>v</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>−9.8</mn><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>+</mo><mi>C</mi></mtd></mtr><mtr><mtd columnalign=\"right\"><mn>10</mn></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mi>C</mi><mo>.</mo></mtd></mtr></mtable></math></div><br>\nTherefore <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>C</mi><mo>=</mo><mn>10</mn></mrow></math> and the velocity function is given by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−9.8</mn><mi>t</mi><mo>+</mo><mn>10</mn><mo>.</mo></mrow></math></li>\n<li>To find the velocity after <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>2</mn></math> seconds, substitute <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>=</mo><mn>2</mn></mrow></math> into <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>.</mo></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mi>v</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>−9.8</mn><mi>t</mi><mo>+</mo><mn>10</mn></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>v</mi><mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>−9.8</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>+</mo><mn>10</mn></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>v</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>−9.6.</mn></mtd></mtr></mtable></math></div><br>\nThe units of velocity are meters per second. Since the answer is negative, the object is falling at a speed of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>9.6</mn><mspace width=\"0.2em\"></mspace><mtext>m/s</mtext><mtext>.</mtext></mrow></math></li>\n</ol>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571084137",
+        "collection": "4.1 Basics of Differential Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Modeling Situations with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571084137",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L265",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L274",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571260273",
+      "type": "embedded",
+      "topicId": "7.1",
+      "topic": "Modeling Situations with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.1 · Section Exercise 3",
+      "promptHtml": "\n<p>Find the general solution to describe the velocity of a ball of mass <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1</mn><mspace width=\"0.2em\"></mspace><mtext>lb</mtext></mrow></math> that is thrown upward at a rate <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi></math> ft/sec.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−32</mn><mi>t</mi><mo>+</mo><mi>a</mi></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571260273",
+        "collection": "4.1 Basics of Differential Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Modeling Situations with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571260273",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L673",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L677",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573419498",
+      "type": "embedded",
+      "topicId": "7.1",
+      "topic": "Modeling Situations with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.1 · Check Your Understanding 2",
+      "promptHtml": "\n<p>Suppose a rock falls from rest from a height of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>100</mn></mrow></math> meters and the only force acting on it is gravity. Find an equation for the velocity <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mrow></math> as a function of time, measured in meters per second.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>v</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−9.8</mn><mi>t</mi></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573419498",
+        "collection": "4.1 Basics of Differential Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Modeling Situations with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573419498",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L292",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L296",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571334905",
+      "type": "embedded",
+      "topicId": "7.1",
+      "topic": "Modeling Situations with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.1 · Section Exercise 4",
+      "promptHtml": "\n<p>A drug is administered intravenously to a patient at a rate <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>r</mi></math> mg/h and is cleared from the body at a rate proportional to the amount of drug still present in the body, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>d</mi></math>. Set up and solve the differential equation, assuming there is no drug initially present in the body.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mi>r</mi><mi>d</mi></mfrac><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mtext>−</mtext><mi>d</mi><mi>t</mi></mrow></msup></mrow><mo>)</mo></mrow></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571334905",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Modeling Situations with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571334905",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L510",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L514",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573742107",
+      "type": "embedded",
+      "topicId": "7.1",
+      "topic": "Modeling Situations with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.1 · Section Exercise 5",
+      "promptHtml": "\n<p>Leaves accumulate on the forest floor at a rate of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>4</mn></math> g/cm<sup>2</sup>/yr. These leaves decompose at a rate of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>10</mn><mtext>%</mtext></mrow></math> per year. Write a differential equation governing the number of grams of leaf litter per square centimeter of forest floor. Does this amount approach a steady value? What is that value?</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>40</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mn>−0.1</mn><mi>t</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>,</mo><mn>40</mn></mrow></math> g/cm<sup>2</sup></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573742107",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Modeling Situations with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573742107",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L629",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L633",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571027411",
+      "type": "embedded",
+      "topicId": "7.2",
+      "topic": "Verifying Solutions for Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.2 · Section Exercise 3",
+      "promptHtml": "\n<p>Substitute <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mi>B</mi><msup><mi>e</mi><mrow><mn>3</mn><mi>t</mi></mrow></msup></mrow></math> into <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>−</mo><mi>y</mi><mo>=</mo><mn>8</mn><msup><mi>e</mi><mrow><mn>3</mn><mi>t</mi></mrow></msup></mrow></math> to find a particular solution.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>4</mn><msup><mi>e</mi><mrow><mn>3</mn><mi>t</mi></mrow></msup></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571027411",
+        "collection": "4.1 Basics of Differential Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Verifying Solutions for Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571027411",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L725",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L729",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573391210",
+      "type": "embedded",
+      "topicId": "7.2",
+      "topic": "Verifying Solutions for Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "Verifying a Solution to an Initial-Value Problem",
+      "promptHtml": "\n\n<p>Verify that the function <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>2</mn><msup><mi>e</mi><mrow><mn>−2</mn><mi>t</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mi>t</mi></msup></mrow></math> is a solution to the initial-value problem</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>3</mn><msup><mi>e</mi><mi>t</mi></msup><mo>,</mo><mspace width=\"1em\"></mspace><mi>y</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>3</mn><mo>.</mo></mrow></math></div>\n",
+      "answerHtml": "\n<p>For a function to satisfy an initial-value problem, it must satisfy both the differential equation and the initial condition. To show that <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math> satisfies the differential equation, we start by calculating <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>.</mo></mrow></math> This gives <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><mn>−4</mn><msup><mi>e</mi><mrow><mn>−2</mn><mi>t</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mi>t</mi></msup><mo>.</mo></mrow></math> Next we substitute both <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>y</mi><mo>′</mo></msup></math> into the left-hand side of the differential equation and simplify:</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"left\"><msup><mi>y</mi><mo>′</mo></msup><mo>+</mo><mn>2</mn><mi>y</mi></mtd><mtd columnalign=\"left\"><mo>=</mo><mrow><mo>(</mo><mrow><mn>−4</mn><msup><mi>e</mi><mrow><mn>−2</mn><mi>t</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mi>t</mi></msup></mrow><mo>)</mo></mrow><mo>+</mo><mn>2</mn><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>e</mi><mrow><mn>−2</mn><mi>t</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mi>t</mi></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>−4</mn><msup><mi>e</mi><mrow><mn>−2</mn><mi>t</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mi>t</mi></msup><mo>+</mo><mn>4</mn><msup><mi>e</mi><mrow><mn>−2</mn><mi>t</mi></mrow></msup><mo>+</mo><mn>2</mn><msup><mi>e</mi><mi>t</mi></msup></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>3</mn><msup><mi>e</mi><mi>t</mi></msup><mo>.</mo></mtd></mtr></mtable></math></div>\n<p>This is equal to the right-hand side of the differential equation, so <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>2</mn><msup><mi>e</mi><mrow><mn>−2</mn><mi>t</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mi>t</mi></msup></mrow></math> solves the differential equation. Next we calculate <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mtext>:</mtext></mrow></math></p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"left\"><mi>y</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>2</mn><msup><mi>e</mi><mrow><mn>−2</mn><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></msup><mo>+</mo><msup><mi>e</mi><mn>0</mn></msup></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>2</mn><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd></mtd><mtd columnalign=\"left\"><mo>=</mo><mn>3</mn><mo>.</mo></mtd></mtr></mtable></math></div>\n<p>This result verifies the initial value. Therefore the given function satisfies the initial-value problem.</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573391210",
+        "collection": "4.1 Basics of Differential Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Verifying Solutions for Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573391210",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L170",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L176",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573412377",
+      "type": "embedded",
+      "topicId": "7.2",
+      "topic": "Verifying Solutions for Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "Verifying Solutions of Differential Equations",
+      "promptHtml": "\n\n<p>Verify that the function <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mn>−3</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow></math> is a solution to the differential equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>+</mo><mn>3</mn><mi>y</mi><mo>=</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>11</mn><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>To verify the solution, we first calculate <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>y</mi><mo>′</mo></msup></math> using the chain rule for derivatives. This gives <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><mn>−3</mn><msup><mi>e</mi><mrow><mn>−3</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>2</mn><mo>.</mo></mrow></math> Next we substitute <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>y</mi><mo>′</mo></msup></math> into the left-hand side of the differential equation:</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(</mo><mn>−3</mn><msup><mi>e</mi><mrow><mn>−3</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo>+</mo><mn>3</mn><mo stretchy=\"false\">(</mo><msup><mi>e</mi><mrow><mn>−3</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math></div>\n<p>The resulting expression can be simplified by first distributing to eliminate the parentheses, giving</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>−3</mn><msup><mi>e</mi><mrow><mn>−3</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>2</mn><mo>+</mo><mn>3</mn><msup><mi>e</mi><mrow><mn>−3</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>.</mo></mrow></math></div>\n<p>Combining like terms leads to the expression <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>6</mn><mi>x</mi><mo>+</mo><mn>11</mn><mo>,</mo></mrow></math> which is equal to the right-hand side of the differential equation. This result verifies that <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mn>−3</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow></math> is a solution of the differential equation.</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573412377",
+        "collection": "4.1 Basics of Differential Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Verifying Solutions for Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573412377",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L60",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L65",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573529236",
+      "type": "embedded",
+      "topicId": "7.2",
+      "topic": "Verifying Solutions for Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.2 · Section Exercise 5",
+      "promptHtml": "<p>For the following problems, find the general solution to the differential equation.</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><mfrac><mi>y</mi><mi>x</mi></mfrac></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mi>C</mi><mi>x</mi></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573529236",
+        "collection": "4.1 Basics of Differential Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Verifying Solutions for Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573529236",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L566",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L570",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573715282",
+      "type": "embedded",
+      "topicId": "7.2",
+      "topic": "Verifying Solutions for Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.2 · Section Exercise 4",
+      "promptHtml": "\n<p>Substitute <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>t</mi><mo>+</mo><mi>c</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></math> into <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>+</mo><mi>y</mi><mo>=</mo><mn>1</mn><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></math> to find a particular solution.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>3</mn><mo>−</mo><mn>2</mn><mi>t</mi><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573715282",
+        "collection": "4.1 Basics of Differential Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Verifying Solutions for Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573715282",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L738",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53697/index.cnxml#L742",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571118948",
+      "type": "embedded",
+      "topicId": "7.3",
+      "topic": "Sketching Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.3 · Section Exercise 3",
+      "promptHtml": "<p>Match the direction field with the given differential equations. Explain your selections.<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220a.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants one and three, the arrows point up, and in quadrants two and four, they point down.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220b.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants one and three, the arrows point up and to the right, and in quadrants two and four, the arrows point down and to the right.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220c.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants two and three, the arrows point down, and in quadrants one and four, the arrows point up.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220d.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x axis. The arrows point up and to the right in all quadrants. The closer the arrows are to the x axis, the more horizontal the arrows are, and the further away they are, the more vertical they are.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220e.jpg\" alt=\"A direction field with horizontal arrows on the y axis. The arrows are also more horizontal closer to y = 1.5, y = -1.5, and the y axis. For y &gt; 1.5 and x &lt; 0, for y &lt; -1.5 and x &lt; 0, and for -1.5 &lt; y &lt; 1.5 and x &gt; 0-, the arrows point down. For y&gt; 1.5 and x &gt; 0, for y &lt; -1.5, for y &lt; -1.5 and x &gt; 0, and for -1.5 &lt; y &lt; 1.5 and x &lt; 0, the arrows point up.\">\n</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mi>t</mi><mspace width=\"0.1em\"></mspace><mtext>sin</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mrow></math></p>\n",
+      "answerHtml": "\n<p>B</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571118948",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Sketching Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571118948",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L679",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L683",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571306965",
+      "type": "embedded",
+      "topicId": "7.3",
+      "topic": "Sketching Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.3 · Section Exercise 1",
+      "promptHtml": "<p>Match the direction field with the given differential equations. Explain your selections.<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219a.jpg\" alt=\"A direction field with arrows pointing down and to the right in quadrants two and three. After crossing the y axis, the arrows change direction and point up to the right.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219b.jpg\" alt=\"A direction field with horizontal arrows pointing to the left in quadrants two and three. In crossing the y axis, the arrows switch and point upward in quadrants one and four.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219c.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x axis. Above, the arrows point down and to the right, and below, the arrows point up and to the right. The further from the x axis, the more vertical the arrows become.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219d.jpg\" alt=\"A direction field with horizontal arrows on the x and y axes. The arrows point down and to the right in quadrants one and three. They point up and to the right in quadrants two and four.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219e.jpg\" alt=\"A direction field with arrows pointing up in quadrants two and three, to the right on the y axis, and down in quadrants one and four.\">\n</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mn>−3</mn><mi>t</mi></mrow></math></p>\n",
+      "answerHtml": "\n<p>E</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571306965",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Sketching Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571306965",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L637",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L641",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571442800",
+      "type": "embedded",
+      "topicId": "7.3",
+      "topic": "Sketching Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.3 · Section Exercise 4",
+      "promptHtml": "<p>Match the direction field with the given differential equations. Explain your selections.<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220a.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants one and three, the arrows point up, and in quadrants two and four, they point down.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220b.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants one and three, the arrows point up and to the right, and in quadrants two and four, the arrows point down and to the right.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220c.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants two and three, the arrows point down, and in quadrants one and four, the arrows point up.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220d.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x axis. The arrows point up and to the right in all quadrants. The closer the arrows are to the x axis, the more horizontal the arrows are, and the further away they are, the more vertical they are.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220e.jpg\" alt=\"A direction field with horizontal arrows on the y axis. The arrows are also more horizontal closer to y = 1.5, y = -1.5, and the y axis. For y &gt; 1.5 and x &lt; 0, for y &lt; -1.5 and x &lt; 0, and for -1.5 &lt; y &lt; 1.5 and x &gt; 0-, the arrows point down. For y&gt; 1.5 and x &gt; 0, for y &lt; -1.5, for y &lt; -1.5 and x &gt; 0, and for -1.5 &lt; y &lt; 1.5 and x &lt; 0, the arrows point up.\">\n</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mi>t</mi><mspace width=\"0.1em\"></mspace><mtext>tan</mtext><mspace width=\"0.1em\"></mspace><mi>y</mi></mrow></math></p>\n",
+      "answerHtml": "\n<p>A</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571442800",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Sketching Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571442800",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L692",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L696",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571469115",
+      "type": "embedded",
+      "topicId": "7.3",
+      "topic": "Sketching Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.3 · Section Exercise 2",
+      "promptHtml": "<p>Match the direction field with the given differential equations. Explain your selections.<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219a.jpg\" alt=\"A direction field with arrows pointing down and to the right in quadrants two and three. After crossing the y axis, the arrows change direction and point up to the right.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219b.jpg\" alt=\"A direction field with horizontal arrows pointing to the left in quadrants two and three. In crossing the y axis, the arrows switch and point upward in quadrants one and four.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219c.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x axis. Above, the arrows point down and to the right, and below, the arrows point up and to the right. The further from the x axis, the more vertical the arrows become.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219d.jpg\" alt=\"A direction field with horizontal arrows on the x and y axes. The arrows point down and to the right in quadrants one and three. They point up and to the right in quadrants two and four.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_219e.jpg\" alt=\"A direction field with arrows pointing up in quadrants two and three, to the right on the y axis, and down in quadrants one and four.\">\n</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>y</mi><mo>+</mo><mi>t</mi></mrow></math></p>\n",
+      "answerHtml": "\n<p>A</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571469115",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Sketching Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571469115",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L650",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L654",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571503006",
+      "type": "embedded",
+      "topicId": "7.3",
+      "topic": "Sketching Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.3 · Section Exercise 5",
+      "promptHtml": "<p>Match the direction field with the given differential equations. Explain your selections.<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220a.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants one and three, the arrows point up, and in quadrants two and four, they point down.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220b.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants one and three, the arrows point up and to the right, and in quadrants two and four, the arrows point down and to the right.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220c.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x and y axes. In quadrants two and three, the arrows point down, and in quadrants one and four, the arrows point up.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220d.jpg\" alt=\"A direction field with horizontal arrows pointing to the right on the x axis. The arrows point up and to the right in all quadrants. The closer the arrows are to the x axis, the more horizontal the arrows are, and the further away they are, the more vertical they are.\">\n<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_220e.jpg\" alt=\"A direction field with horizontal arrows on the y axis. The arrows are also more horizontal closer to y = 1.5, y = -1.5, and the y axis. For y &gt; 1.5 and x &lt; 0, for y &lt; -1.5 and x &lt; 0, and for -1.5 &lt; y &lt; 1.5 and x &gt; 0-, the arrows point down. For y&gt; 1.5 and x &gt; 0, for y &lt; -1.5, for y &lt; -1.5 and x &gt; 0, and for -1.5 &lt; y &lt; 1.5 and x &lt; 0, the arrows point up.\">\n</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup><msup><mi>t</mi><mn>3</mn></msup></mrow></math></p>\n",
+      "answerHtml": "\n<p>C</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571503006",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Sketching Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571503006",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L705",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L709",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571246086",
+      "type": "embedded",
+      "topicId": "7.4",
+      "topic": "Reasoning Using Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.4 · Section Exercise 4",
+      "promptHtml": "<p>For the following problems, use the direction field below from the differential equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>y</mi><mo>.</mo></mrow></math> Sketch the graph of the solution for the given initial conditions.<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_205.jpg\" alt=\"A direction field with horizontal arrows at y = 0 and y = 2. The arrows point up for y &gt; 2 and for y &lt; 0. The arrows point down for 0 &lt; y &lt; 2. The closer the arrows are to these lines, the more horizontal they are, and the further away, the more vertical the arrows are.\">\n</p>\n<p>Are there any equilibria? What are their stabilities?</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> is a stable equilibrium and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>2</mn></mrow></math> is unstable</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571246086",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Reasoning Using Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571246086",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L531",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L535",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571349921",
+      "type": "embedded",
+      "topicId": "7.4",
+      "topic": "Reasoning Using Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.4 · Check Your Understanding 2",
+      "promptHtml": "\n<p>Create a direction field for the differential equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mn>5</mn><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">(</mo><mi>y</mi><mo>+</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">(</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>y</mi><mo>+</mo><mn>4</mn><mo stretchy=\"false\">)</mo></mrow></math> and identify any equilibrium solutions. Classify each of the equilibrium solutions as stable, unstable, or semi-stable.</p>\n",
+      "answerHtml": "<p><br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_008.jpg\" alt=\"A direction field with arrows pointing to the right at y = -4 and y = 4. The arrows point up for y &gt; -4 and down for y &lt; -4. Close to y = 4, the arrows are more horizontal, but the further away, the more vertical they become.\">\n<br>\nThe equilibrium solutions are <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>−2</mn></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mo>.</mo></mrow></math> For this equation, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>−2</mn></mrow></math> is an unstable equilibrium solution, and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>2</mn></mrow></math> is a semi-stable equilibrium solution.</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571349921",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Reasoning Using Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571349921",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L150",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L154",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573569693",
+      "type": "embedded",
+      "topicId": "7.4",
+      "topic": "Reasoning Using Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "Stability of an Equilibrium Solution",
+      "promptHtml": "\n\n<p>Create a direction field for the differential equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><msup><mrow><mo stretchy=\"false\">(</mo><mi>y</mi><mo>−</mo><mn>3</mn><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></msup><mo stretchy=\"false\">(</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mi>y</mi><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow></math> and identify any equilibrium solutions. Classify each of the equilibrium solutions as stable, unstable, or semi-stable.</p>\n",
+      "answerHtml": "\n<p>The direction field is shown in <span class=\"source-reference\">source figure below</span>.</p>\n<figure>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_007.jpg\" alt=\"A graph of a direction field with arrows pointing to the right at y = -4, y = 2, and y = 6. For y &lt; -4, the arrows point up. For -4 &lt; y &lt; 2, the arrows point down. For 2 &lt; y &lt;6, the arrows point up, becoming flatter and flatter as they approach y = 6. For y &gt; 6, the arrows point up and become more and more vertical the further they get from y = 6.\">\n\n<figcaption>Direction field for the differential equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><msup><mrow><mo stretchy=\"false\">(</mo><mi>y</mi><mo>−</mo><mn>3</mn><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></msup><mo stretchy=\"false\">(</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mi>y</mi><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math></figcaption>\n</figure>\n<p>The equilibrium solutions are <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>−2</mn><mo>,</mo><mi>y</mi><mo>=</mo><mn>1</mn><mo>,</mo></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>3</mn><mo>.</mo></mrow></math> To classify each of the solutions, look at an arrow directly above or below each of these values. For example, at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>−2</mn></mrow></math> the arrows directly below this solution point up, and the arrows directly above the solution point down. Therefore all initial conditions close to <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>−2</mn></mrow></math> approach <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>−2</mn><mo>,</mo></mrow></math> and the solution is stable. For the solution <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>1</mn><mo>,</mo></mrow></math> all initial conditions above and below <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math> are repelled (pushed away) from <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>1</mn><mo>,</mo></mrow></math> so this solution is unstable. The solution <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>3</mn></mrow></math> is semi-stable, because for initial conditions slightly greater than <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>3</mn><mo>,</mo></mrow></math> the solution approaches infinity, and for initial conditions slightly less than <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>3</mn><mo>,</mo></mrow></math> the solution approaches <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>3</mn><mo>.</mo></mrow></math></p>",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573569693",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Reasoning Using Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573569693",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L129",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L134",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573742050",
+      "type": "embedded",
+      "topicId": "7.4",
+      "topic": "Reasoning Using Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.4 · Section Exercise 3",
+      "promptHtml": "<p>For the following problems, use the direction field below from the differential equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mn>−2</mn><mi>y</mi><mo>.</mo></mrow></math> Sketch the graph of the solution for the given initial conditions.<br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_02_201.jpg\" alt=\"A direction field with horizontal arrows pointing to the right at 0. The arrows above the x axis point down and to the right. The further away from the x axis, the steeper the arrows are, and the closer to the x axis, the flatter the arrows are. Likewise, the arrows below the x axis point up and to the right. The further away from the x axis, the steeper the arrows are, and the closer to the x axis, the flatter the arrows are.\">\n</p>\n<p>Are there any equilibria? What are their stabilities?</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> is a stable equilibrium</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573742050",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Reasoning Using Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573742050",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L499",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L503",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170572547893",
+      "type": "embedded",
+      "topicId": "7.4",
+      "topic": "Reasoning Using Slope Fields",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.4 · Section Exercise 5",
+      "promptHtml": "<p>For the following problems, consider the logistic equation in the form <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>P</mi><mo>′</mo><mo>=</mo><mi>C</mi><mi>P</mi><mo>−</mo><msup><mi>P</mi><mn>2</mn></msup><mo>.</mo></mrow></math> Draw the directional field and find the stability of the equilibria.</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>C</mi><mo>=</mo><mn>0</mn></mrow></math></p>\n",
+      "answerHtml": "<p><br>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_04_202.jpg\" alt=\"A direction field with arrows pointing to the right. The arrows are horizontal along the x axis. The arrows point down above the x axis and below the x axis. The further away the arrows are from the x axis, the more vertical the lines become.\">\n<br>\n<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>P</mi><mo>=</mo><mn>0</mn></mrow></math> semi-stable</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170572547893",
+        "collection": "4.4 The Logistic Equation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Reasoning Using Slope Fields",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170572547893",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L261",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L265",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
       "id": "active-ez-7-3-6",
       "type": "external",
       "topicId": "7.5",
@@ -26783,6 +27483,181 @@
         "answerUrl": "https://apcentral.collegeboard.org/media/pdf/ap24-sg-calculus-bc.pdf",
         "transcription": "link-only",
         "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571057294",
+      "type": "embedded",
+      "topicId": "7.5",
+      "topic": "Approximating Solutions Using Euler’s Method",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.5 · Section Exercise 3",
+      "promptHtml": "<p>Estimate the following solutions using Euler’s method with <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow></math> steps over the interval <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo><mo>.</mo></mrow></math> If you are able to solve the initial-value problem exactly, compare your solution with the exact solution. If you are unable to solve the initial-value problem, the exact solution will be provided for you to compare with Euler’s method. How accurate is Euler’s method?</p>\n<p><strong>[T]</strong> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><msup><mi>e</mi><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy=\"false\">)</mo></mrow></msup><mo>,</mo><mi>y</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−1</mn><mo>.</mo></mrow></math> Exact solution is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mtext>−</mtext><mtext>ln</mtext><mo stretchy=\"false\">(</mo><mi>e</mi><mo>+</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mi>x</mi></msup><mo stretchy=\"false\">)</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>−0.2535</mn></mrow></math> exact: <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>0</mn></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571057294",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Approximating Solutions Using Euler’s Method",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571057294",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L745",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L749",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571218252",
+      "type": "embedded",
+      "topicId": "7.5",
+      "topic": "Approximating Solutions Using Euler’s Method",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.5 · Section Exercise 5",
+      "promptHtml": "<p>Estimate the following solutions using Euler’s method with <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow></math> steps over the interval <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo><mo>.</mo></mrow></math> If you are able to solve the initial-value problem exactly, compare your solution with the exact solution. If you are unable to solve the initial-value problem, the exact solution will be provided for you to compare with Euler’s method. How accurate is Euler’s method?</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><msup><mn>2</mn><mi>x</mi></msup><mo>,</mo><mi>y</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn><mo>,</mo></mrow></math> Exact solution is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><msup><mn>2</mn><mi>x</mi></msup><mo>−</mo><mn>1</mn></mrow><mrow><mtext>ln</mtext><mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow></mfrac></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.345</mn><mo>,</mo></mrow></math> exact: <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mn>1</mn><mrow><mtext>ln</mtext><mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571218252",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Approximating Solutions Using Euler’s Method",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571218252",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L758",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L762",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571233748",
+      "type": "embedded",
+      "topicId": "7.5",
+      "topic": "Approximating Solutions Using Euler’s Method",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.5 · Section Exercise 4",
+      "promptHtml": "<p>Estimate the following solutions using Euler’s method with <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow></math> steps over the interval <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo><mo>.</mo></mrow></math> If you are able to solve the initial-value problem exactly, compare your solution with the exact solution. If you are unable to solve the initial-value problem, the exact solution will be provided for you to compare with Euler’s method. How accurate is Euler’s method?</p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><mi>y</mi><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo>,</mo><mi>y</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>3</mn><mo>.</mo></mrow></math> Exact solution is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>5</mn><msup><mi>e</mi><mi>t</mi></msup><mo>−</mo><mn>2</mn><mo>−</mo><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>t</mi></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>7.739264</mn><mo>,</mo></mrow></math> exact: <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>5</mn><mo stretchy=\"false\">(</mo><mi>e</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571233748",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Approximating Solutions Using Euler’s Method",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571233748",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L732",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L736",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571260263",
+      "type": "embedded",
+      "topicId": "7.5",
+      "topic": "Approximating Solutions Using Euler’s Method",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.5 · Check Your Understanding 2",
+      "promptHtml": "\n<p>Consider the initial-value problem</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>,</mo><mspace width=\"1em\"></mspace><mi>y</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−2</mn><mo>.</mo></mrow></math></div>\n<p>Using a step size of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.1</mn><mo>,</mo></mrow></math> generate a table with approximate values for the solution to the initial-value problem for values of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math> between <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2</mn><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<div class=\"source-table-wrap\"><table>\n\n\n\n\n\n<thead>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>n</mi></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>x</mi><mi>n</mi></msub></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>=</mo><msub><mi>y</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>y</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy=\"false\">)</mo></mrow></math></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>0</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>−2</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.1</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−1.5</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>2</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.2</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>2</mn></msub><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−1.1419</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.3</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>3</mn></msub><mo>=</mo><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−0.8387</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>4</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.4</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>4</mn></msub><mo>=</mo><msub><mi>y</mi><mn>3</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>3</mn></msub><mo>,</mo><msub><mi>y</mi><mn>3</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−0.5487</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>5</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.5</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>5</mn></msub><mo>=</mo><msub><mi>y</mi><mn>4</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>4</mn></msub><mo>,</mo><msub><mi>y</mi><mn>4</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>−0.2442</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>6</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.6</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>6</mn></msub><mo>=</mo><msub><mi>y</mi><mn>5</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>5</mn></msub><mo>,</mo><msub><mi>y</mi><mn>5</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0.0993</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>7</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.7</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>7</mn></msub><mo>=</mo><msub><mi>y</mi><mn>6</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>6</mn></msub><mo>,</mo><msub><mi>y</mi><mn>6</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0.5099</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>8</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.8</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>8</mn></msub><mo>=</mo><msub><mi>y</mi><mn>7</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>7</mn></msub><mo>,</mo><msub><mi>y</mi><mn>7</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>1.0272</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>9</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.9</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>9</mn></msub><mo>=</mo><msub><mi>y</mi><mn>8</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>8</mn></msub><mo>,</mo><msub><mi>y</mi><mn>8</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>1.7159</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>10</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>2</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mrow><mn>10</mn></mrow></msub><mo>=</mo><msub><mi>y</mi><mn>9</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>9</mn></msub><mo>,</mo><msub><mi>y</mi><mn>9</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2.6962</mn></mrow></math></td>\n</tr>\n</tbody>\n\n</table></div>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571260263",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Approximating Solutions Using Euler’s Method",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571260263",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L365",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L371",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573756805",
+      "type": "embedded",
+      "topicId": "7.5",
+      "topic": "Approximating Solutions Using Euler’s Method",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "Using Euler’s Method",
+      "promptHtml": "\n\n<p>Consider the initial-value problem</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>,</mo><mspace width=\"1em\"></mspace><mi>y</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mo>.</mo></mrow></math></div>\n<p>Use Euler’s method with a step size of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.1</mn></mrow></math> to generate a table of values for the solution for values of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math> between <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>0</mn></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1</mn><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p>We are given <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mo>=</mo><mn>0.1</mn></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>.</mo></mrow></math> Furthermore, the initial condition <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></math> gives <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn><mo>.</mo></mrow></math> Using <span class=\"source-reference\">source equation</span> with <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>n</mi><mo>=</mo><mn>0</mn><mo>,</mo></mrow></math> we can generate <span class=\"source-reference\">source table below</span>.</p>\n<div class=\"source-table-wrap\"><table>\n<caption>Using Euler’s Method to Approximate Solutions to a Differential Equation</caption>\n\n\n\n\n<tbody>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>n</mi></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>x</mi><mi>n</mi></msub></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>=</mo><msub><mi>y</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>y</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy=\"false\">)</mo></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>0</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>0</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>2</mn></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.1</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.7</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>2</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.2</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>2</mn></msub><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.514</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.3</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>3</mn></msub><mo>=</mo><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.3968</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>4</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.4</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>4</mn></msub><mo>=</mo><msub><mi>y</mi><mn>3</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>3</mn></msub><mo>,</mo><msub><mi>y</mi><mn>3</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.3287</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>5</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.5</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>5</mn></msub><mo>=</mo><msub><mi>y</mi><mn>4</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>4</mn></msub><mo>,</mo><msub><mi>y</mi><mn>4</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.3001</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>6</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.6</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>6</mn></msub><mo>=</mo><msub><mi>y</mi><mn>5</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>5</mn></msub><mo>,</mo><msub><mi>y</mi><mn>5</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.3061</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>7</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.7</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>7</mn></msub><mo>=</mo><msub><mi>y</mi><mn>6</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>6</mn></msub><mo>,</mo><msub><mi>y</mi><mn>6</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.3435</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>8</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.8</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>8</mn></msub><mo>=</mo><msub><mi>y</mi><mn>7</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>7</mn></msub><mo>,</mo><msub><mi>y</mi><mn>7</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.4100</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>9</mn></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.9</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mn>9</mn></msub><mo>=</mo><msub><mi>y</mi><mn>8</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>8</mn></msub><mo>,</mo><msub><mi>y</mi><mn>8</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.5032</mn></mrow></math></td>\n</tr>\n<tr>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>10</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1.0</mn></mrow></math></td>\n<td><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>y</mi><mrow><mn>10</mn></mrow></msub><mo>=</mo><msub><mi>y</mi><mn>9</mn></msub><mo>+</mo><mi>h</mi><mi>f</mi><mrow><mo>(</mo><mrow><msub><mi>x</mi><mn>9</mn></msub><mo>,</mo><msub><mi>y</mi><mn>9</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.6202</mn></mrow></math></td>\n</tr>\n</tbody>\n\n</table></div>\n<p>With ten calculations, we are able to approximate the values of the solution to the initial-value problem for values of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math> between <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>0</mn></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn><mo>.</mo></math></p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"left\"><msub><mi>x</mi><mi>n</mi></msub><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><mi>n</mi><mi>h</mi></mtd></mtr><mtr><mtd columnalign=\"left\"><msub><mi>y</mi><mi>n</mi></msub><mo>=</mo><msub><mi>y</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>h</mi><mi>f</mi><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>y</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy=\"false\">)</mo><mo>.</mo></mtd></mtr></mtable></math></div>",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573756805",
+        "collection": "4.2 Direction Fields and Numerical Methods",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Approximating Solutions Using Euler’s Method",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573756805",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L279",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53701/index.cnxml#L286",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
       }
     },
     {
@@ -26992,6 +27867,531 @@
       }
     },
     {
+      "id": "openstax-fs-id1170571086082",
+      "type": "embedded",
+      "topicId": "7.6",
+      "topic": "Finding General Solutions Using Separation of Variables",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.6 · Section Exercise 3",
+      "promptHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi><mo>′</mo><mo>=</mo><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>y</mi></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mi>C</mi><mi>x</mi><msup><mi>e</mi><mrow><mn>−1</mn><mtext>/</mtext><mi>x</mi></mrow></msup></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571086082",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding General Solutions Using Separation of Variables",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571086082",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L330",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L334",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571086134",
+      "type": "embedded",
+      "topicId": "7.6",
+      "topic": "Finding General Solutions Using Separation of Variables",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.6 · Section Exercise 4",
+      "promptHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mn>2</mn><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mi>C</mi><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571086134",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding General Solutions Using Separation of Variables",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571086134",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L343",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L347",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571130297",
+      "type": "embedded",
+      "topicId": "7.6",
+      "topic": "Finding General Solutions Using Separation of Variables",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "Using Separation of Variables",
+      "promptHtml": "\n\n<p>Find a general solution to the differential equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math> using the method of separation of variables.</p>\n",
+      "answerHtml": "\n<p>Follow the five-step method of separation of variables.</p>\n<ol>\n<li>In this example, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mrow><mo>(</mo><mi>y</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mo>.</mo></mrow></math> Setting <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>y</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow></math> gives <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mo>−</mo><mfrac><mn>2</mn><mn>3</mn></mfrac></mrow></math> as a constant solution.</li>\n<li>Rewrite the differential equation in the form<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfrac><mo>=</mo><mo stretchy=\"false\">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mo stretchy=\"false\">)</mo><mi>d</mi><mi>x</mi><mo>.</mo></mrow></math></div></li>\n<li>Integrate both sides of the equation:<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mstyle displaystyle=\"true\"><mrow><mo stretchy=\"true\">∫</mo><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle=\"true\"><mrow><mo>∫</mo><mrow><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mi>d</mi><mi>x</mi></mrow></mrow></mstyle><mo>.</mo></mrow></math></div><br>\nLet <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>u</mi><mo>=</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mo>.</mo></mrow></math> Then <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>d</mi><mi>u</mi><mo>=</mo><mn>3</mn><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mi>d</mi><mi>x</mi><mo>,</mo></mrow></math> so the equation becomes<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mstyle displaystyle=\"true\"><mrow><mo stretchy=\"true\">∫</mo><mrow><mfrac><mn>1</mn><mi>u</mi></mfrac><mi>d</mi><mi>u</mi></mrow></mrow></mstyle></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mi>C</mi></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mspace width=\"0.1em\"></mspace><mtext>ln</mtext><mrow><mo>|</mo><mi>u</mi><mo>|</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mi>C</mi></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mspace width=\"0.1em\"></mspace><mtext>ln</mtext><mrow><mo>|</mo><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>|</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mi>C</mi><mo>.</mo></mtd></mtr></mtable></math></div></li>\n<li>To solve this equation for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>,</mo></mrow></math> first multiply both sides of the equation by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>3</mn><mo>.</mo></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mtext>ln</mtext><mrow><mo>|</mo><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>|</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>C</mi></mrow></math></div><br>\nNow we use some logic in dealing with the constant <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>C</mi><mo>.</mo></mrow></math> Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>C</mi></math> represents an arbitrary constant, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>3</mn><mi>C</mi></mrow></math> also represents an arbitrary constant. If we call the second arbitrary constant <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo></mrow></math> the equation becomes<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mtext>ln</mtext><mrow><mo>|</mo><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>|</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><mo>.</mo></mrow></math></div><br>\nNow exponentiate both sides of the equation (i.e., make each side of the equation the exponent for the base <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>e</mi><mo stretchy=\"false\">)</mo><mo>.</mo></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>e</mi><mrow><mtext>ln</mtext><mrow><mo>|</mo><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>|</mo></mrow></mrow></msup></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mrow><mo>|</mo><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>|</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msup><mi>e</mi><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></msup><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi></mrow></msup></mtd></mtr></mtable></math></div><br>\nAgain define a new constant <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><msup><mi>e</mi><mrow><msub><mi>c</mi><mn>1</mn></msub></mrow></msup></mrow></math> (note that <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>&gt;</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mtext>:</mtext></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo>|</mo><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>|</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi></mrow></msup><mo>.</mo></mrow></math></div><br>\nThis corresponds to two separate equations: <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mo>=</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mo>=</mo><mtext>−</mtext><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi></mrow></msup><mo>.</mo></mrow></math><br>\nThe solution to either equation can be written in the form <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mn>−2</mn><mo>±</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow><mn>3</mn></mfrac><mo>.</mo></mrow></math><br>\nSince <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>&gt;</mo><mn>0</mn><mo>,</mo></mrow></math> it does not matter whether we use plus or minus, so the constant can actually have either sign. Furthermore, the subscript on the constant <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>C</mi></math> is entirely arbitrary, and can be dropped. Therefore the solution can be written as<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mn>−2</mn><mo>+</mo><mi>C</mi><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow><mn>3</mn></mfrac><mo>.</mo></mrow></math></div></li>\n<li>No initial condition is imposed, so we are finished.</li>\n</ol>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571130297",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding General Solutions Using Separation of Variables",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571130297",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L37",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L42",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571244783",
+      "type": "embedded",
+      "topicId": "7.6",
+      "topic": "Finding General Solutions Using Separation of Variables",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.6 · Check Your Understanding 2",
+      "promptHtml": "\n<p>Use the method of separation of variables to find a general solution to the differential equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>x</mi><mo>−</mo><mn>6</mn><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mo>+</mo><mi>C</mi><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>x</mi></mrow></msup></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571244783",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding General Solutions Using Separation of Variables",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571244783",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L70",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L74",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573742502",
+      "type": "embedded",
+      "topicId": "7.6",
+      "topic": "Finding General Solutions Using Separation of Variables",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.6 · Section Exercise 5",
+      "promptHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2</mn><mi>x</mi><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mo>−</mo><mfrac><mn>2</mn><mrow><mi>C</mi><mo>+</mo><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mi>x</mi></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573742502",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding General Solutions Using Separation of Variables",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573742502",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L356",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L360",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571023995",
+      "type": "embedded",
+      "topicId": "7.7",
+      "topic": "Finding Particular Solutions Using Initial Conditions",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.7 · Section Exercise 4",
+      "promptHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><msup><mi>y</mi><mn>3</mn></msup><mi>x</mi><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mo>,</mo><mi>y</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>1</mn></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mrow><msqrt><mrow><mn>2</mn><mo>−</mo><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></msqrt></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571023995",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding Particular Solutions Using Initial Conditions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571023995",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L409",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L413",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571069529",
+      "type": "embedded",
+      "topicId": "7.7",
+      "topic": "Finding Particular Solutions Using Initial Conditions",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "Solving an Initial-Value Problem",
+      "promptHtml": "\n\n<p>Using the method of separation of variables, solve the initial-value problem</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mo stretchy=\"false\">(</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">(</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mo stretchy=\"false\">)</mo><mo>,</mo><mspace width=\"1em\"></mspace><mi>y</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>-1</mn><mo>.</mo></mrow></math></div>\n",
+      "answerHtml": "\n<p>Follow the five-step method of separation of variables.</p>\n<ol>\n<li>In this example, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>y</mi><mo stretchy=\"false\">)</mo><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mo>.</mo></mrow></math> Setting <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>y</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow></math> gives <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mo>±</mo><mn>2</mn></mrow></math> as constant solutions.</li>\n<li>Divide both sides of the equation by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow></math> and multiply by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>d</mi><mi>x</mi><mo>.</mo></mrow></math> This gives the equation<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow></mfrac><mo>=</mo><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mi>d</mi><mi>x</mi><mo>.</mo></mrow></math></div></li>\n<li>Next integrate both sides:<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mstyle displaystyle=\"true\"><mrow><mo stretchy=\"true\">∫</mo><mrow><mfrac><mn>1</mn><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow></mfrac><mspace width=\"0.2em\"></mspace><mi>d</mi><mi>y</mi></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle=\"true\"><mrow><mo>∫</mo><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mi>d</mi><mi>x</mi></mrow></mrow></mstyle><mo>.</mo></mrow></math></div><br>\nTo evaluate the left-hand side, use the method of partial fraction decomposition. This leads to the identity<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mn>1</mn><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mrow><mi>y</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mo>−</mo><mfrac><mn>1</mn><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>.</mo></mrow></math></div><br>\nThen <span class=\"source-reference\">source equation</span> becomes<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mfrac><mn>1</mn><mn>4</mn></mfrac><mstyle displaystyle=\"true\"><mrow><mo stretchy=\"true\">∫</mo><mrow><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mrow><mi>y</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mo>−</mo><mfrac><mn>1</mn><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mi>d</mi><mi>y</mi></mrow></mrow></mstyle></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mstyle displaystyle=\"true\"><mrow><mo>∫</mo><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mi>d</mi><mi>x</mi></mrow></mrow></mstyle></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mn>1</mn><mn>4</mn></mfrac><mrow><mo>(</mo><mrow><mtext>ln</mtext><mrow><mo>|</mo><mrow><mi>y</mi><mo>−</mo><mn>2</mn></mrow><mo>|</mo></mrow><mo>−</mo><mtext>ln</mtext><mrow><mo>|</mo><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>x</mi><mo>+</mo><mi>C</mi><mo>.</mo></mtd></mtr></mtable></math></div><br>\nMultiplying both sides of this equation by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>4</mn></math> and replacing <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>4</mn><mi>C</mi></mrow></math> with <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></math> gives<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mtext>ln</mtext><mrow><mo>|</mo><mrow><mi>y</mi><mo>−</mo><mn>2</mn></mrow><mo>|</mo></mrow><mo>−</mo><mtext>ln</mtext><mrow><mo>|</mo><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>|</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign=\"right\"><mtext>ln</mtext><mrow><mo>|</mo><mrow><mfrac><mrow><mi>y</mi><mo>−</mo><mn>2</mn></mrow><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mrow><mo>|</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><mo>.</mo></mtd></mtr></mtable></math></div></li>\n<li>It is possible to solve this equation for <em>y</em>. First exponentiate both sides of the equation and define <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><msup><mi>e</mi><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></msup><mtext>:</mtext></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo>|</mo><mrow><mfrac><mrow><mi>y</mi><mo>−</mo><mn>2</mn></mrow><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mrow><mo>|</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup><mo>.</mo></mrow></math></div><br>\nNext we can remove the absolute value and let <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>2</mn></msub></mrow></math> be either positive or negative. Then multiply both sides by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>+</mo><mn>2</mn><mo>.</mo></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr></mtr><mtr></mtr><mtr><mtd columnalign=\"left\"><mi>y</mi><mo>−</mo><mn>2</mn><mo>=</mo><msub><mi>C</mi><mn>2</mn></msub><mrow><mo>(</mo><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"left\"><mi>y</mi><mo>−</mo><mn>2</mn><mo>=</mo><msub><mi>C</mi><mn>2</mn></msub><mi>y</mi><msup><mi>e</mi><mrow><msup><mrow></mrow><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow></msup><mo>+</mo><mn>2</mn><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msup><mrow></mrow><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow></msup><mo>.</mo></mtd></mtr></mtable></math></div><br>\nNow collect all terms involving <em>y</em> on one side of the equation, and solve for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mtext>:</mtext></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mi>y</mi><mo>−</mo><msub><mi>C</mi><mn>2</mn></msub><mi>y</mi><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>2</mn><mo>+</mo><mn>2</mn><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>y</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup><mo stretchy=\"false\">)</mo></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>2</mn><mo>+</mo><mn>2</mn><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>y</mi></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mfrac><mrow><mn>2</mn><mo>+</mo><mn>2</mn><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>−</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow></mfrac><mo>.</mo></mtd></mtr></mtable></math></div></li>\n<li>To determine the value of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>,</mo></mrow></math> substitute <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mn>−1</mn></mrow></math> into the general solution. Alternatively, we can put the same values into an earlier equation, namely the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>y</mi><mo>−</mo><mn>2</mn></mrow><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfrac><mo>=</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn></mrow></msup><mo>.</mo></mrow></math> This is much easier to solve for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>2</mn></msub><mtext>:</mtext></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mfrac><mrow><mi>y</mi><mo>−</mo><mn>2</mn></mrow><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mfrac><mrow><mn>−1</mn><mo>−</mo><mn>2</mn></mrow><mrow><mn>−1</mn><mo>+</mo><mn>2</mn></mrow></mfrac></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>4</mn><msup><mrow><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mn>2</mn></msup><mo>+</mo><mn>12</mn><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><msub><mi>C</mi><mn>2</mn></msub></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>−3</mn><mo>.</mo></mtd></mtr></mtable></math></div><br>\nTherefore the solution to the initial-value problem is<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mo>−</mo><mn>6</mn><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>+</mo><mn>3</mn><msup><mi>e</mi><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi></mrow></msup></mrow></mfrac><mo>.</mo></mrow></math></div><br>\nA graph of this solution appears in <span class=\"source-reference\">source figure below</span>.<br>\n<figure>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_03_001.jpg\" alt=\"A graph of the solution over [-5, 3] for x and [-3, 2] for y. It begins as a horizontal line at y = -2 from x = -5 to just before -3, almost immediately steps up to y = 2 from just after x = -3 to just before x = 0, and almost immediately steps back down to y = -2 just after x = 0 to x = 3.\">\n\n<figcaption>Graph of the solution to the initial-value problem <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow><mo>,</mo><mspace width=\"1em\"></mspace><mi>y</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>−1</mn><mo>.</mo></mrow></math></figcaption>\n</figure></li>\n</ol>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571069529",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding Particular Solutions Using Initial Conditions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571069529",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L84",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L90",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571074905",
+      "type": "embedded",
+      "topicId": "7.7",
+      "topic": "Finding Particular Solutions Using Initial Conditions",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.7 · Section Exercise 3",
+      "promptHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><msup><mi>e</mi><mrow><mi>y</mi><mo>−</mo><mi>x</mi></mrow></msup><mo>,</mo><mi>y</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mtext>−</mtext><mtext>ln</mtext><mo stretchy=\"false\">(</mo><msup><mi>e</mi><mrow><mtext>−</mtext><mi>x</mi></mrow></msup><mo stretchy=\"false\">)</mo></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571074905",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding Particular Solutions Using Initial Conditions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571074905",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L396",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L400",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571346512",
+      "type": "embedded",
+      "topicId": "7.7",
+      "topic": "Finding Particular Solutions Using Initial Conditions",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.7 · Section Exercise 5",
+      "promptHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>′</mo><mo>=</mo><mfrac><mi>x</mi><mrow><msup><mrow><mtext>sech</mtext></mrow><mn>2</mn></msup><mi>y</mi></mrow></mfrac><mo>,</mo><mi>y</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><msup><mrow><mtext>tanh</mtext></mrow><mrow><mn>−1</mn></mrow></msup><mrow><mo>(</mo><mrow><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571346512",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding Particular Solutions Using Initial Conditions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571346512",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L422",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L426",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170573436521",
+      "type": "embedded",
+      "topicId": "7.7",
+      "topic": "Finding Particular Solutions Using Initial Conditions",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.7 · Check Your Understanding 2",
+      "promptHtml": "\n<p>Find the solution to the initial-value problem</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>6</mn><mi>y</mi><mo>′</mo><mo>=</mo><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>8</mn></mrow><mo>)</mo></mrow><mo>,</mo><mspace width=\"1em\"></mspace><mi>y</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>−3</mn></mrow></math></div>\n<p>using the method of separation of variables.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mn>4</mn><mo>+</mo><mn>14</mn><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>−</mo><mn>7</mn><msup><mi>e</mi><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170573436521",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Finding Particular Solutions Using Initial Conditions",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170573436521",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L126",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L132",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170570991542",
+      "type": "embedded",
+      "topicId": "7.8",
+      "topic": "Exponential Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.8 · Section Exercise 5",
+      "promptHtml": "<p>For the following problems, use Newton’s law of cooling.</p>\n<p>You have a cup of coffee at temperature <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>70</mn><mtext>°</mtext><mtext>C</mtext></mrow></math> and you immediately pour in <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math> part milk to <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>5</mn></math> parts coffee. The milk is initially at temperature <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1</mn><mtext>°</mtext><mtext>C</mtext><mtext>.</mtext></mrow></math> Write and solve the differential equation that governs the temperature of this coffee.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>20</mn><mo>+</mo><mn>38.5</mn><msup><mi>e</mi><mrow><mn>−0.125</mn><mi>t</mi></mrow></msup></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170570991542",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Exponential Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170570991542",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L590",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L594",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571074882",
+      "type": "embedded",
+      "topicId": "7.8",
+      "topic": "Exponential Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.8 · Section Exercise 4",
+      "promptHtml": "<p>For the following problems, use Newton’s law of cooling.</p>\n<p>You have a cup of coffee at temperature <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>70</mn><mtext>°</mtext><mtext>C</mtext></mrow></math> and the ambient temperature in the room is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>20</mn><mtext>°</mtext><mtext>C</mtext><mtext>.</mtext></mrow></math> Assuming a cooling rate <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>k</mi><mspace width=\"0.2em\"></mspace><mtext>of</mtext><mspace width=\"0.2em\"></mspace><mn>0.125</mn><mo>,</mo></mrow></math> write and solve the differential equation to describe the temperature of the coffee with respect to time.</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>20</mn><mo>+</mo><mn>50</mn><msup><mi>e</mi><mrow><mn>−0.125</mn><mi>t</mi></mrow></msup></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571074882",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Exponential Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571074882",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L577",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L581",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571110824",
+      "type": "embedded",
+      "topicId": "7.8",
+      "topic": "Exponential Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.8 · Check Your Understanding 2",
+      "promptHtml": "\n<p>A cake is removed from the oven after baking thoroughly, and the temperature of the cake when it comes out of the oven is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>450</mn><mtext>°</mtext><mtext>F</mtext><mtext>.</mtext></mrow></math> The temperature of the kitchen is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>70</mn><mtext>°</mtext><mtext>F</mtext><mo>,</mo></mrow></math> and after <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>10</mn></mrow></math> minutes the temperature of the cake is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>330</mn><mtext>°</mtext><mtext>F</mtext><mtext>.</mtext></mrow></math></p>\n<ol>\n<li>Write the appropriate initial-value problem to describe this situation.</li>\n<li>Solve the initial-value problem for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>.</mo></mrow></math></li>\n<li>How long will it take until the temperature of the cake is within <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>5</mn><mtext>°</mtext><mtext>F</mtext></mrow></math> of room temperature?</li>\n</ol>\n",
+      "answerHtml": "\n<ol>\n<li>Initial value problem<br>\n<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>T</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>k</mi><mrow><mo>(</mo><mrow><mi>T</mi><mo>−</mo><mn>70</mn></mrow><mo>)</mo></mrow><mo>,</mo><mspace width=\"1em\"></mspace><mi>T</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>450</mn></mrow></math></li>\n<li><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>70</mn><mo>+</mo><mn>380</mn><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mrow></math></li>\n<li>Approximately <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>114</mn></mrow></math> minutes.</li>\n</ol>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571110824",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Exponential Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571110824",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L249",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L258",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571146758",
+      "type": "embedded",
+      "topicId": "7.8",
+      "topic": "Exponential Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.8 · Section Exercise 3",
+      "promptHtml": "\n<p><strong>[T]</strong> The liquid base of an ice cream has an initial temperature of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>210</mn><mtext>°</mtext><mtext>F</mtext></mrow></math> before it is placed in a freezer with a constant temperature of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>20</mn><mtext>°</mtext><mtext>F</mtext><mtext>.</mtext></mrow></math> After <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>2</mn></math> hours, the temperature of the ice-cream base has decreased to <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>170</mn><mtext>°</mtext><mtext>F</mtext><mtext>.</mtext></mrow></math> At what time will the ice cream be ready to eat? (Assume <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>30</mn><mtext>°</mtext><mtext>F</mtext></mrow></math> is the optimal eating temperature.)</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>24</mn></mrow></math> hours <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>57</mn></mrow></math> minutes</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571146758",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Exponential Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571146758",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L563",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L567",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571198016",
+      "type": "embedded",
+      "topicId": "7.8",
+      "topic": "Exponential Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "Waiting for a Pizza to Cool",
+      "promptHtml": "\n\n<p>A pizza is removed from the oven after baking thoroughly, and the temperature of the pizza when it comes out of the oven is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>200</mn><mtext>°</mtext><mtext>F</mtext><mtext>.</mtext></mrow></math> The temperature of the kitchen is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>75</mn><mtext>°</mtext><mtext>F</mtext><mo>,</mo></mrow></math> and after <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math> minute the temperature of the pizza is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>190</mn><mtext>°</mtext><mtext>F</mtext><mtext>.</mtext></mrow></math> We would like to wait until the temperature of the pizza reaches <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>150</mn><mtext>°</mtext><mtext>F</mtext></mrow></math> before cutting and serving it (<span class=\"source-reference\">source figure below</span>). How much longer will we have to wait?</p>\n<figure>\n\n<img src=\"media/openstax/CNX_Calc_Figure_08_03_003.jpg\" alt=\"An image of a pizza is shown. Above the pizza is labeled “Room temperature is 75 degrees” and below the pizza is labeled “Pizza temperature is 200 degrees”.\">\n\n<figcaption>From Newton’s law of cooling, if the pizza cools <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>10</mn><mtext>°</mtext><mtext>F</mtext></mrow></math> in <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math> minute, how long before it cools to <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>150</mn><mtext>°</mtext><mtext>F?</mtext></mrow></math></figcaption>\n</figure>\n",
+      "answerHtml": "\n<p>The ambient temperature (surrounding temperature) is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>75</mn><mtext>°</mtext><mtext>F</mtext><mo>,</mo></mrow></math> so <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>T</mi><mi>s</mi></msub><mo>=</mo><mn>75</mn><mo>.</mo></mrow></math> The temperature of the pizza when it comes out of the oven is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>200</mn><mtext>°</mtext><mtext>F</mtext><mo>,</mo></mrow></math> which is the initial temperature (i.e., initial value), so <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>T</mi><mn>0</mn></msub><mo>=</mo><mn>200</mn><mo>.</mo></mrow></math> Therefore <span class=\"source-reference\">source equation</span> becomes</p>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>T</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>k</mi><mrow><mo>(</mo><mrow><mi>T</mi><mo>−</mo><mn>75</mn></mrow><mo>)</mo></mrow><mo>,</mo><mspace width=\"1em\"></mspace><mi>T</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>200</mn><mo>.</mo></mrow></math></div>\n<p>To solve the differential equation, we use the five-step technique for solving separable equations.</p>\n<ol>\n<li>Setting the right-hand side equal to zero gives <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mo>=</mo><mn>75</mn></mrow></math> as a constant solution. Since the pizza starts at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>200</mn><mtext>°</mtext><mtext>F</mtext><mo>,</mo></mrow></math> this is not the solution we are seeking.</li>\n<li>Rewrite the differential equation by multiplying both sides by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>d</mi><mi>t</mi></mrow></math> and dividing both sides by <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mo>−</mo><mn>75</mn><mtext>:</mtext></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi>d</mi><mi>T</mi></mrow><mrow><mi>T</mi><mo>−</mo><mn>75</mn></mrow></mfrac><mo>=</mo><mi>k</mi><mi>d</mi><mi>t</mi><mo>.</mo></mrow></math></div></li>\n<li>Integrate both sides:<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mstyle displaystyle=\"true\"><mrow><mo stretchy=\"true\">∫</mo><mrow><mfrac><mrow><mi>d</mi><mi>T</mi></mrow><mrow><mi>T</mi><mo>−</mo><mn>75</mn></mrow></mfrac></mrow></mrow></mstyle></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mstyle displaystyle=\"true\"><mrow><mo>∫</mo><mrow><mi>k</mi><mi>d</mi><mi>t</mi></mrow></mrow></mstyle></mtd></mtr><mtr><mtd columnalign=\"right\"><mtext>ln</mtext><mrow><mo>|</mo><mrow><mi>T</mi><mo>−</mo><mn>75</mn></mrow><mo>|</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mi>k</mi><mi>t</mi><mo>+</mo><mi>C</mi><mo>.</mo></mtd></mtr></mtable></math></div></li>\n<li>Solve for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>T</mi></math> by first exponentiating both sides:<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><msup><mi>e</mi><mrow><mtext>ln</mtext><mrow><mo>|</mo><mrow><mi>T</mi><mo>−</mo><mn>75</mn></mrow><mo>|</mo></mrow></mrow></msup></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi><mo>+</mo><mi>C</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mrow><mo>|</mo><mrow><mi>T</mi><mo>−</mo><mn>75</mn></mrow><mo>|</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>T</mi><mo>−</mo><mn>75</mn></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>T</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>75</mn><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup><mo>.</mo></mtd></mtr></mtable></math></div></li>\n<li>Solve for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></math> by using the initial condition <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>200</mn><mtext>:</mtext></mrow></math><br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd columnalign=\"right\"><mi>T</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>75</mn><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mi>T</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>75</mn><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"right\"><mn>200</mn></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>75</mn><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign=\"right\"><msub><mi>C</mi><mn>1</mn></msub></mtd><mtd columnalign=\"left\"><mo>=</mo></mtd><mtd columnalign=\"left\"><mn>125</mn><mo>.</mo></mtd></mtr></mtable></math></div><br>\nTherefore the solution to the initial-value problem is<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>75</mn><mo>+</mo><mn>125</mn><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup><mo>.</mo></mrow></math></div><br>\nTo determine the value of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>k</mi><mo>,</mo></mrow></math> we need to use the fact that after <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math> minute the temperature of the pizza is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>190</mn><mtext>°</mtext><mtext>F</mtext><mtext>.</mtext></mrow></math> Therefore <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>190</mn><mo>.</mo></mrow></math> Substituting this information into the solution to the initial-value problem, we have<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd><mi>T</mi><mo>(</mo><mi>t</mi><mo>)</mo></mtd><mtd><mo>=</mo></mtd><mtd><mn>75</mn><mo>+</mo><mn>125</mn><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd><mi>T</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mn>190</mn><mo>=</mo><mn>75</mn><mo>+</mo><mn>125</mn><msup><mi>e</mi><mi>k</mi></msup></mtd></mtr><mtr><mtd><mn>115</mn></mtd><mtd><mo>=</mo></mtd><mtd><mn>125</mn><msup><mi>e</mi><mi>k</mi></msup></mtd></mtr><mtr><mtd><mfrac><mn>115</mn><mn>125</mn></mfrac></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mn>23</mn><mn>25</mn></mfrac><mo>=</mo><msup><mi>e</mi><mi>k</mi></msup></mtd></mtr><mtr><mtd><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><msup><mi>e</mi><mrow><mi>k</mi></mrow></msup></mtd><mtd><mo>=</mo></mtd><mtd><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mfrac><mn>23</mn><mn>25</mn></mfrac><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mi>k</mi></mtd><mtd><mo>=</mo></mtd><mtd><mspace width=\"0.1em\"></mspace><mtext>ln</mtext><mspace width=\"0.1em\"></mspace><mrow><mo>(</mo><mfrac><mn>23</mn><mn>25</mn></mfrac><mo>)</mo></mrow><mo>≈</mo><mo>−</mo><mo>.</mo><mn>08338</mn></mtd></mtr></mtable></math></div><br>\nSo now we have <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>T</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>75</mn><mo>+</mo><mn>125</mn><msup><mi>e</mi><mrow><mo>-</mo><mo>.</mo><mn>08338</mn><mi>t</mi></mrow></msup><mo>.</mo></mrow></math> When is the temperature <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>150</mn><mtext>°</mtext><mtext>F?</mtext></mrow></math> Solving for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>,</mo></mrow></math> we find<br>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd><mi>T</mi><mo>(</mo><mi>t</mi><mo>)</mo></mtd><mtd><mo>=</mo></mtd><mtd><mn>75</mn><mo>+</mo><mn>125</mn><msup><mi>e</mi><mrow><mo>−</mo><mo>.</mo><mn>08338</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd><mn>150</mn></mtd><mtd><mo>=</mo></mtd><mtd><mn>75</mn><mo>+</mo><mn>125</mn><msup><mi>e</mi><mrow><mo>−</mo><mo>.</mo><mn>08338</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd><mn>75</mn></mtd><mtd><mo>=</mo></mtd><mtd><mn>125</mn><msup><mi>e</mi><mrow><mo>−</mo><mo>.</mo><mn>08338</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd><mfrac><mn>75</mn><mn>125</mn></mfrac></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mn>3</mn><mn>5</mn></mfrac><mo>=</mo><msup><mi>e</mi><mrow><mo>-</mo><mo>.</mo><mn>08338</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd><mo>-</mo><mo>.</mo><mn>08338</mn><mi>t</mi></mtd><mtd><mo>=</mo></mtd><mtd><mtext>ln</mtext><mspace width=\"0.2em\"></mspace><mfrac><mn>3</mn><mn>5</mn></mfrac></mtd></mtr><mtr><mtd><mi>t</mi></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mtext>ln</mtext><mfenced><mstyle displaystyle=\"true\"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle></mfenced></mrow><mrow><mo>-</mo><mo>.</mo><mn>08338</mn></mrow></mfrac><mo>≈</mo><mn>6</mn><mo>.</mo><mn>12</mn><mo>.</mo></mtd></mtr></mtable></math></div><br>\nTherefore we need to wait an additional <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>6.12</mn></mrow></math> minutes (after the temperature of the pizza reached <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>200</mn><mtext>°</mtext><mtext>F</mtext><mo stretchy=\"false\">)</mo><mo>.</mo></mrow></math> That should be just enough time to finish this calculation.</li>\n</ol>\n<div class=\"source-equation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mstyle displaystyle=\"true\"><mrow><mo stretchy=\"true\">∫</mo><mrow><mfrac><mn>1</mn><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow></mfrac><mspace width=\"0.2em\"></mspace><mi>d</mi><mi>y</mi></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle=\"true\"><mrow><mo>∫</mo><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mspace width=\"0.1em\"></mspace><mi>d</mi><mi>x</mi></mrow></mrow></mstyle><mo>.</mo></mrow></math></div>",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571198016",
+        "collection": "4.3 Separable Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Exponential Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571198016",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L212",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53704/index.cnxml#L223",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
       "id": "college-board-2023-ab-frq-3",
       "type": "external",
       "topicId": "7.9",
@@ -27059,6 +28459,181 @@
         "answerUrl": "https://apcentral.collegeboard.org/media/pdf/ap23-sg-calculus-bc.pdf",
         "transcription": "link-only",
         "verifiedAt": "2026-08-23"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571558918",
+      "type": "embedded",
+      "topicId": "7.9",
+      "topic": "Logistic Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.9 · Section Exercise 4",
+      "promptHtml": "\n<p><strong>[T]</strong> Bacteria grow at a rate of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>20</mn><mtext>%</mtext></mrow></math> per hour in a petri dish. If there is initially one bacterium and a carrying capacity of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math> million cells, how long does it take to reach <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>500,000</mn></mrow></math> cells?</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>69</mn></mrow></math> hours <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>5</mn></math> minutes</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571558918",
+        "collection": "4.4 The Logistic Equation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Logistic Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571558918",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L303",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L307",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571775807",
+      "type": "embedded",
+      "topicId": "7.9",
+      "topic": "Logistic Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.9 · Section Exercise 3",
+      "promptHtml": "\n<p>A population of deer inside a park has a carrying capacity of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>200</mn></mrow></math> and a growth rate of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2</mn><mtext>%</mtext><mo>.</mo></mrow></math> If the initial population is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>50</mn></mrow></math> deer, what is the population of deer at any given time?</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>10000</mn><msup><mi>e</mi><mrow><mn>0.02</mn><mi>t</mi></mrow></msup></mrow><mrow><mn>150</mn><mo>+</mo><mn>50</mn><msup><mi>e</mi><mrow><mn>0.02</mn><mi>t</mi></mrow></msup></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571775807",
+        "collection": "4.4 The Logistic Equation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "medium",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Logistic Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571775807",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L290",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L294",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170572420405",
+      "type": "embedded",
+      "topicId": "7.9",
+      "topic": "Logistic Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.9 · Section Exercise 5",
+      "promptHtml": "\n<p><strong>[T]</strong> Two monkeys are placed on an island. After <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>5</mn></math> years, there are <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>8</mn></math> monkeys, and the estimated carrying capacity is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>25</mn></mrow></math> monkeys. When does the population of monkeys reach <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>16</mn></mrow></math> monkeys?</p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>8</mn></math> years <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>11</mn></math> months</p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170572420405",
+        "collection": "4.4 The Logistic Equation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "hard",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Logistic Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170572420405",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L316",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L320",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170572480690",
+      "type": "embedded",
+      "topicId": "7.9",
+      "topic": "Logistic Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.9 · Section Exercise 2",
+      "promptHtml": "<p>For the following problems, consider the logistic equation in the form <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>P</mi><mo>′</mo><mo>=</mo><mi>C</mi><mi>P</mi><mo>−</mo><msup><mi>P</mi><mn>2</mn></msup><mo>.</mo></mrow></math> Draw the directional field and find the stability of the equilibria.</p>\n<p>Solve the logistic equation for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>C</mi><mo>=</mo><mn>10</mn></mrow></math> and an initial condition of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>P</mi><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mo>.</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>P</mi><mo>=</mo><mfrac><mrow><mn>10</mn><msup><mi>e</mi><mrow><mn>10</mn><mi>x</mi></mrow></msup></mrow><mrow><msup><mi>e</mi><mrow><mn>10</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>4</mn></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170572480690",
+        "collection": "4.4 The Logistic Equation",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Logistic Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170572480690",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L277",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53710/index.cnxml#L281",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
+      }
+    },
+    {
+      "id": "openstax-fs-id1170571642098",
+      "type": "embedded",
+      "topicId": "7.9",
+      "topic": "Logistic Models with Differential Equations",
+      "unit": "Unit 7 · Differential Equations",
+      "title": "7.9 · Practice Example 1",
+      "promptHtml": "\n<p>The human population (in thousands) of Nevada in <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1950</mn></mrow></math> was roughly <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>160</mn><mo>.</mo></mrow></math> If the carrying capacity is estimated at <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>10</mn></mrow></math> million individuals, and assuming a growth rate of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2</mn><mtext>%</mtext></mrow></math> per year, develop a logistic growth model and solve for the population in Nevada at any time (use <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1950</mn></mrow></math> as time = 0). What population does your model predict for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2000</mn><mo>?</mo></mrow></math> How close is your prediction to the true value of <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1,998,257</mn><mo>?</mo></mrow></math></p>\n",
+      "answerHtml": "\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>P</mi><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mfrac><mrow><mn>1600000</mn><msup><mi>e</mi><mrow><mn>0.02</mn><mi>t</mi></mrow></msup></mrow><mrow><mn>9840</mn><mo>+</mo><mn>160</mn><msup><mi>e</mi><mrow><mn>0.02</mn><mi>t</mi></mrow></msup></mrow></mfrac></mrow></math></p>\n",
+      "videoUrl": "https://www.youtube.com/results?search_query=The+Organic+Chemistry+Tutor+differential+equations+separation+of+variables",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Differential_equation",
+      "metadata": {
+        "sourceQuestionId": "fs-id1170571642098",
+        "collection": "4.5 First-Order Linear Equations",
+        "course": "AB + BC",
+        "format": "textbook exercise",
+        "difficulty": "easy",
+        "estimatedMinutes": 10,
+        "calculator": "varies",
+        "answerKind": "publisher solution",
+        "tags": [
+          "Logistic Models with Differential Equations",
+          "Textbook",
+          "Embedded"
+        ]
+      },
+      "sourceId": "openstax-calculus-volume-2",
+      "locator": {
+        "exerciseId": "fs-id1170571642098",
+        "promptUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53713/index.cnxml#L926",
+        "answerUrl": "https://github.com/openstax/osbooks-calculus-bundle/blob/8dbc2ce19e804924b2517b89ac72ee45be949d15/modules/m53713/index.cnxml#L930",
+        "transcription": "format-only",
+        "verifiedAt": "2026-08-24"
       }
     },
     {
