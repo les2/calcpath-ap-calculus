@@ -220,6 +220,15 @@ answer. Link-only questions remain on the publisher's site. The complete rules
 for people and coding agents are in [AGENTS.md](AGENTS.md), and the data
 validator enforces the required provenance fields.
 
+The beta practice catalog currently contains more than 600 link-only question
+records spanning four publisher groups: University of Michigan Mathematics,
+Active Calculus, College Board released free-response questions, and Paul’s
+Online Math Notes. Each record includes its roadmap topic, exact publisher
+question and answer links, course, format, difficulty, calculator policy,
+estimated time, collection or year, and skill tags. Run `npm run mine:practice`
+to refresh the reproducible catalog from the curated source map; review the
+result before committing it.
+
 ## Curriculum source
 
 Topic organization and exam weighting follow the [College Board AP Calculus AB and BC Course and Exam Description](https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-and-bc-course-and-exam-description.pdf).

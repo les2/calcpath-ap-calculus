@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { completionCount, gradePoints, reconcileSessionQuestions, sessionScore, type StudySession } from './grade-maxxing.page';
+import { completionCount, gradePoints, reconcileSessionQuestions, selectBalancedQuestions, sessionScore, type PracticeQuestion, type StudySession } from './grade-maxxing.page';
 
 const session = (results: StudySession['results']): Pick<StudySession, 'results'> => ({ results });
 
@@ -14,5 +14,10 @@ describe('Grade Maxxing study sessions', () => {
   it('drops a saved run when all of its questions were withdrawn', () => {
     const value: StudySession = { id: 's1', name: 'Test', topicIds: ['1.6'], questionIds: ['withdrawn'], currentIndex: 0, totalSeconds: 0, results: {}, revealed: [], status: 'open', createdAt: '2026-01-01', updatedAt: '2026-01-01' };
     expect(reconcileSessionQuestions(value, new Set(['kept']))).toBeNull();
+  });
+  it('caps every selected topic and rotates between publishers', () => {
+    const question = (id: string, topicId: string, author: string) => ({ id, topicId, source: { author } }) as PracticeQuestion;
+    const values = [question('a1', '1.6', 'A'), question('a2', '1.6', 'A'), question('b1', '1.6', 'B'), question('c1', '3.1', 'C'), question('c2', '3.1', 'C')];
+    expect(selectBalancedQuestions(values, ['1.6', '3.1'], 2).map((item) => item.id)).toEqual(['a1', 'b1', 'c1', 'c2']);
   });
 });

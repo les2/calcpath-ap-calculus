@@ -9,14 +9,15 @@ import { MathFormulaComponent } from './math-formula.component';
 export type PracticeGrade = 'cooked' | 'close' | 'reps';
 export type QuestionLicense = { code: string; name: string; url: string; usage: 'embedded' | 'link-only' };
 export type QuestionSource = { title: string; author: string; url: string; attribution: string; license: QuestionLicense; exerciseId?: string; promptUrl?: string; answerUrl?: string; transcription?: 'format-only' | 'link-only'; verifiedAt?: string };
+export type QuestionMetadata = { sourceQuestionId: string; collection: string; course: string; format: string; difficulty: string; estimatedMinutes: number; calculator: string; answerKind: string; publishedYear?: number; tags: string[] };
 export type PracticeQuestion = {
   id: string; type: 'embedded' | 'external'; topicId: string; topic: string; unit: string; title: string;
   promptText?: string; promptTex?: string; answerText?: string; answerTex?: string; problemUrl?: string; solutionUrl?: string;
-  videoUrl: string; referenceUrl: string; source: QuestionSource;
+  videoUrl: string; referenceUrl: string; metadata: QuestionMetadata; source: QuestionSource;
 };
 export type StudySession = {
   id: string; name: string; topicIds: string[]; questionIds: string[]; currentIndex: number; totalSeconds: number;
-  results: Record<string, PracticeGrade>; revealed: string[]; status: 'open' | 'dismissed'; createdAt: string; updatedAt: string;
+  results: Record<string, PracticeGrade>; revealed: string[]; status: 'open' | 'dismissed'; createdAt: string; updatedAt: string; questionLimitPerTopic?: number; selectionSeed?: number;
 };
 
 export function gradePoints(grade: PracticeGrade): number { return grade === 'cooked' ? 1 : grade === 'close' ? 0.5 : 0; }
@@ -31,6 +32,28 @@ export function reconcileSessionQuestions(session: StudySession, validQuestionId
   const results = Object.fromEntries(Object.entries(session.results).filter(([id]) => validQuestionIds.has(id)));
   const revealed = session.revealed.filter((id) => validQuestionIds.has(id));
   return { ...session, questionIds, results, revealed, currentIndex: Math.min(session.currentIndex, questionIds.length - 1) };
+}
+export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds: string[], limitPerTopic: number, selectionSeed = 0): PracticeQuestion[] {
+  const selected: PracticeQuestion[] = [];
+  for (const topicId of topicIds) {
+    const groups = new Map<string, PracticeQuestion[]>();
+    for (const question of questions.filter((item) => item.topicId === topicId)) {
+      const group = groups.get(question.source.author) ?? [];
+      group.push(question);
+      groups.set(question.source.author, group);
+    }
+    const queues = [...groups.values()].map((queue) => queue.length ? [...queue.slice(selectionSeed % queue.length), ...queue.slice(0, selectionSeed % queue.length)] : queue);
+    const target = Math.min(Math.max(1, Math.floor(limitPerTopic)), queues.reduce((sum, queue) => sum + queue.length, 0));
+    for (let round = 0; selected.filter((item) => item.topicId === topicId).length < target; round += 1) {
+      let added = false;
+      for (const queue of queues) {
+        const question = queue[round];
+        if (question && selected.filter((item) => item.topicId === topicId).length < target) { selected.push(question); added = true; }
+      }
+      if (!added) break;
+    }
+  }
+  return selected;
 }
 
 @Component({
@@ -72,13 +95,13 @@ export function reconcileSessionQuestions(session: StudySession, validQuestionId
 
             @if (currentQuestion(); as question) {
               <article class="question-sheet">
-                <header><div><span class="format-badge" [class.external]="question.type === 'external'">{{question.type === 'embedded' ? 'IN-APP QUESTION' : 'EXTERNAL PRACTICE'}}</span><small>{{question.unit}} · {{question.topicId}}</small><h2>{{question.title}}</h2></div><strong>{{study.currentIndex + 1}} / {{study.questionIds.length}}</strong></header>
+                <header><div><span class="format-badge" [class.external]="question.type === 'external'">{{question.type === 'embedded' ? 'IN-APP QUESTION' : 'EXTERNAL PRACTICE'}}</span><small>{{question.unit}} · {{question.topicId}}</small><h2>{{question.title}}</h2><div class="question-tags"><span>{{question.metadata.format}}</span><span>{{question.metadata.difficulty}}</span><span>{{question.metadata.calculator === 'varies' ? 'Calculator varies' : 'Calculator ' + question.metadata.calculator}}</span><span>~{{question.metadata.estimatedMinutes}} min</span></div></div><strong>{{study.currentIndex + 1}} / {{study.questionIds.length}}</strong></header>
                 <section class="question-body">
                   @if (question.type === 'embedded') {
                     @if (question.promptText) { <p>{{question.promptText}}</p> }
                     @if (question.promptTex) { <calc-math class="practice-math" [tex]="question.promptTex" /> }
                   } @else {
-                    <div class="external-question"><span>↗</span><div><h3>This problem lives on the source site.</h3><p>Open the exact problem, work it there or on paper, then return here to log how it went. Your session timer keeps running.</p><a class="source-button" [href]="question.problemUrl" target="_blank" rel="noopener noreferrer">Open {{question.title}} ↗</a></div></div>
+                    <div class="external-question"><span>↗</span><div><h3>This problem lives on the source site.</h3><p>Open the publisher’s problem, use the source question ID shown below to locate it when needed, then return here to log how it went. Your session timer keeps running.</p><a class="source-button" [href]="question.problemUrl" target="_blank" rel="noopener noreferrer">Open publisher problem ↗</a></div></div>
                   }
                 </section>
 
@@ -89,7 +112,7 @@ export function reconcileSessionQuestions(session: StudySession, validQuestionId
                   <div class="grade-actions" aria-label="Log your result"><button class="grade-correct" type="button" (click)="recordGrade('cooked')"><b>Cooked it</b><small>Correct</small></button><button class="grade-partial" type="button" (click)="recordGrade('close')"><b>Close</b><small>Partial</small></button><button class="grade-wrong" type="button" (click)="recordGrade('reps')"><b>Need reps</b><small>Wrong / skipped</small></button></div>
                 }
 
-                <div class="question-source"><div><b>{{question.source.title}}</b><span>{{question.source.attribution}}</span></div><div><a [href]="question.source.url" target="_blank" rel="noopener noreferrer">Source ↗</a><a [href]="question.source.license.url" target="_blank" rel="noopener noreferrer">{{question.source.license.name}} ↗</a></div></div>
+                <div class="question-source"><div><b>{{question.source.title}}</b><span>{{question.metadata.sourceQuestionId}} · {{question.metadata.answerKind}}</span><span>{{question.source.attribution}}</span></div><div><a [href]="question.source.url" target="_blank" rel="noopener noreferrer">Source ↗</a><a [href]="question.source.license.url" target="_blank" rel="noopener noreferrer">{{question.source.license.name}} ↗</a></div></div>
                 <nav class="question-nav" aria-label="Question navigation"><button class="secondary-action" type="button" [disabled]="study.currentIndex === 0" (click)="moveQuestion(-1)">← Previous</button><a [href]="question.videoUrl" target="_blank" rel="noopener noreferrer">Watch lesson</a><a [href]="question.referenceUrl" target="_blank" rel="noopener noreferrer">Reference</a><button class="maxxing-primary" type="button" [disabled]="study.currentIndex === study.questionIds.length - 1" (click)="moveQuestion(1)">Next →</button></nav>
               </article>
             }
@@ -100,7 +123,8 @@ export function reconcileSessionQuestions(session: StudySession, validQuestionId
         <section class="session-builder" aria-labelledby="builder-title">
           <div class="practice-heading"><div><p class="eyebrow">NEW STUDY RUN</p><h2 id="builder-title">What’s the test?</h2></div><p>Name it so you can find it later. Then choose the exact roadmap topics you want in the set.</p></div>
           <label class="session-name">Session name <input type="text" maxlength="60" placeholder="Unit 1 test" [ngModel]="draftName()" (ngModelChange)="draftName.set($event)"></label>
-          <div class="topic-bank">@for (topic of availableTopics(); track topic.id) { <label class="topic-choice" [class.selected]="selectedTopics().includes(topic.id)" [style.--challenge-accent]="accentFor(topic.id)"><input type="checkbox" [checked]="selectedTopics().includes(topic.id)" (change)="toggleTopic(topic.id)"><span class="choice-check">✓</span><div><small>{{topic.unit}}</small><b>{{topic.id}} · {{topic.title}}</b><em>{{topic.count}} {{topic.count === 1 ? 'question' : 'questions'}} · {{topic.embedded}} in app</em></div></label> }</div>
+          <section class="session-size"><label>Maximum questions per topic <input type="number" min="1" max="25" step="1" [ngModel]="questionLimit()" (ngModelChange)="setQuestionLimit($event)"></label><div><b>{{plannedQuestionCount()}} questions in this run</b><span>We rotate between publishers when a topic has multiple sources.</span></div></section>
+          <div class="topic-bank">@for (topic of availableTopics(); track topic.id) { <label class="topic-choice" [class.selected]="selectedTopics().includes(topic.id)" [style.--challenge-accent]="accentFor(topic.id)"><input type="checkbox" [checked]="selectedTopics().includes(topic.id)" (change)="toggleTopic(topic.id)"><span class="choice-check">✓</span><div><small>{{topic.unit}}</small><b>{{topic.id}} · {{topic.title}}</b><em>{{topic.count}} available · {{topic.sources}} {{topic.sources === 1 ? 'source' : 'sources'}}</em></div></label> }</div>
           <div class="setup-actions"><button class="secondary-action" type="button" (click)="cancelCreate()">Cancel</button><button class="maxxing-primary" type="button" [disabled]="!draftName().trim() || !selectedTopics().length" (click)="createSession()">Start study run →</button></div>
         </section>
       } @else {
@@ -122,6 +146,7 @@ export class GradeMaxxingPage {
   readonly creating = signal(this.sessions().filter((session) => session.status === 'open').length === 0);
   readonly draftName = signal('Unit 1 test');
   readonly selectedTopics = signal<string[]>([]);
+  readonly questionLimit = signal(5);
   readonly running = signal(false);
   readonly editingTimer = signal(false);
   readonly questionListVisible = signal(false);
@@ -130,10 +155,11 @@ export class GradeMaxxingPage {
   readonly openSessions = computed(() => this.sessions().filter((session) => session.status === 'open').sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
   readonly dismissedSessions = computed(() => this.sessions().filter((session) => session.status === 'dismissed').sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
   readonly availableTopics = computed(() => {
-    const topics = new Map<string, {id: string; title: string; unit: string; count: number; embedded: number}>();
-    for (const question of this.questions()) { const topic = topics.get(question.topicId) ?? { id: question.topicId, title: question.topic, unit: question.unit, count: 0, embedded: 0 }; topic.count += 1; if (question.type === 'embedded') topic.embedded += 1; topics.set(question.topicId, topic); }
+    const topics = new Map<string, {id: string; title: string; unit: string; count: number; sourceNames: Set<string>; sources: number}>();
+    for (const question of this.questions()) { const topic = topics.get(question.topicId) ?? { id: question.topicId, title: question.topic, unit: question.unit, count: 0, sourceNames: new Set<string>(), sources: 0 }; topic.count += 1; topic.sourceNames.add(question.source.author); topic.sources = topic.sourceNames.size; topics.set(question.topicId, topic); }
     return [...topics.values()].sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
   });
+  readonly plannedQuestionCount = computed(() => selectBalancedQuestions(this.questions(), this.selectedTopics(), this.questionLimit()).length);
   readonly sessionQuestions = computed(() => { const session = this.activeSession(); return session ? session.questionIds.map((id) => this.questions().find((question) => question.id === id)).filter((question): question is PracticeQuestion => Boolean(question)) : []; });
   readonly currentQuestion = computed(() => this.sessionQuestions()[this.activeSession()?.currentIndex ?? 0] ?? null);
 
@@ -150,13 +176,14 @@ export class GradeMaxxingPage {
   }
 
   toggleTopic(id: string) { this.selectedTopics.update((items) => items.includes(id) ? items.filter((item) => item !== id) : [...items, id]); }
+  setQuestionLimit(value: number) { this.questionLimit.set(Math.max(1, Math.min(25, Math.floor(Number(value) || 1)))); }
   openCreate() { this.draftName.set(`Test ${this.openSessions().length + 1}`); this.selectedTopics.set([]); this.creating.set(true); }
   cancelCreate() { this.creating.set(false); }
   createSession() {
-    const name = this.draftName().trim(), topicIds = this.selectedTopics(), questionIds = this.questions().filter((question) => topicIds.includes(question.topicId)).map((question) => question.id);
+    const name = this.draftName().trim(), topicIds = this.selectedTopics(), selectionSeed = crypto.getRandomValues(new Uint32Array(1))[0], questionIds = selectBalancedQuestions(this.questions(), topicIds, this.questionLimit(), selectionSeed).map((question) => question.id);
     if (!name || !questionIds.length) return;
     const now = new Date().toISOString();
-    const session: StudySession = { id: crypto.randomUUID(), name, topicIds, questionIds, currentIndex: 0, totalSeconds: 0, results: {}, revealed: [], status: 'open', createdAt: now, updatedAt: now };
+    const session: StudySession = { id: crypto.randomUUID(), name, topicIds, questionIds, currentIndex: 0, totalSeconds: 0, results: {}, revealed: [], status: 'open', createdAt: now, updatedAt: now, questionLimitPerTopic: this.questionLimit(), selectionSeed };
     this.sessions.update((sessions) => [session, ...sessions]); this.persist(); this.creating.set(false); this.openSession(session.id);
   }
   openSession(id: string) { this.activeSessionId.set(id); this.running.set(true); this.editingTimer.set(false); this.questionListVisible.set(false); void this.router.navigate([], { queryParams: { session: id }, queryParamsHandling: 'merge' }); }

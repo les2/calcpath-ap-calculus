@@ -38,7 +38,7 @@ for (const group of groups) {
 }
 
 const { schemaVersion, questions } = practice;
-assert(schemaVersion === 3, 'Practice data must use schema version 3.');
+assert(schemaVersion === 4, 'Practice data must use schema version 4.');
 assert(Array.isArray(questions) && questions.length > 0, 'At least one practice question is required.');
 assert(new Set(questions.map((question) => question.id)).size === questions.length, 'Practice question IDs must be unique.');
 const topicIds = new Set(topics.map((topic) => topic.id));
@@ -48,6 +48,10 @@ for (const question of questions) {
   for (const field of ['videoUrl', 'referenceUrl']) assert(isHttpsUrl(question[field]), `${question.id} ${field} must use HTTPS.`);
   assert(question.source?.title && question.source?.author && isHttpsUrl(question.source?.url), `${question.id} needs complete source attribution.`);
   assert(question.source?.license?.code && question.source?.license?.name && isHttpsUrl(question.source?.license?.url), `${question.id} needs complete license metadata.`);
+  assert(question.metadata?.sourceQuestionId && question.metadata?.collection && question.metadata?.course && question.metadata?.format, `${question.id} needs useful source and format metadata.`);
+  assert(question.metadata?.difficulty && Number.isInteger(question.metadata?.estimatedMinutes) && question.metadata.estimatedMinutes > 0, `${question.id} needs difficulty and estimated-time metadata.`);
+  assert(question.metadata?.calculator && question.metadata?.answerKind && Array.isArray(question.metadata?.tags) && question.metadata.tags.length > 0, `${question.id} needs calculator, answer, and skill tags.`);
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(question.source.verifiedAt ?? ''), `${question.id} needs a source verification date.`);
   assert(!/adapted|variant|fixed parameters/i.test(`${question.id} ${question.source.attribution}`), `${question.id} appears to be adapted or generated; CalcPath only accepts source-faithful transcriptions or links.`);
   if (question.type === 'embedded') {
     assert(question.promptTex && question.answerTex, `${question.id} needs embedded question and answer TeX.`);
@@ -67,4 +71,6 @@ for (const question of questions) {
   }
 }
 
-console.log(`Validated ${units.length} units, ${topics.length} topics, ${tools.length} tools, ${groups.length} formula groups, and ${questions.length} licensed practice questions.`);
+assert(practice.catalogStats?.questionCount === questions.length, 'Practice catalog stats must match the question count.');
+assert(practice.catalogStats?.sourceCount >= 3, 'Practice catalog should include at least three reliable publisher groups.');
+console.log(`Validated ${units.length} units, ${topics.length} topics, ${tools.length} tools, ${groups.length} formula groups, and ${questions.length} sourced practice questions from ${practice.catalogStats.sourceCount} publisher groups.`);
