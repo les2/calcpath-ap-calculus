@@ -42,7 +42,13 @@ const MODULES = {
   m53701: { title: '4.2 Direction Fields and Numerical Methods', page: '4-2-direction-fields-and-numerical-methods', volume: 2 },
   m53704: { title: '4.3 Separable Equations', page: '4-3-separable-equations', volume: 2 },
   m53710: { title: '4.4 The Logistic Equation', page: '4-4-the-logistic-equation', volume: 2 },
-  m53713: { title: '4.5 First-Order Linear Equations', page: '4-5-first-order-linear-equations', volume: 2 }
+  m53713: { title: '4.5 First-Order Linear Equations', page: '4-5-first-order-linear-equations', volume: 2 },
+  m53850: { title: '7.2 Calculus of Parametric Curves', page: '7-2-calculus-of-parametric-curves', volume: 2 },
+  m53852: { title: '7.3 Polar Coordinates', page: '7-3-polar-coordinates', volume: 2 },
+  m53840: { title: '7.4 Area and Arc Length in Polar Coordinates', page: '7-4-area-and-arc-length-in-polar-coordinates', volume: 2 },
+  m53913: { title: '3.1 Vector-Valued Functions and Space Curves', page: '3-1-vector-valued-functions-and-space-curves', volume: 3 },
+  m53916: { title: '3.2 Calculus of Vector-Valued Functions', page: '3-2-calculus-of-vector-valued-functions', volume: 3 },
+  m53930: { title: '3.4 Motion in Space', page: '3-4-motion-in-space', volume: 3 }
 };
 
 // This is an editorial topic map only. The importer never changes the selected
@@ -134,7 +140,16 @@ export const TOPIC_EXERCISES = {
   '8.10': [['m53642','fs-id1167794167925'],['m53642','fs-id1167794122074'],['m53642','fs-id1167794069008'],['m53642','fs-id1167794329497'],['m53642','fs-id1167793959415']],
   '8.11': [['m53642','fs-id1167794209452'],['m53642','fs-id1167794324566'],['m53642','fs-id1167793499099'],['m53642','fs-id1167793959012'],['m53642','fs-id1167793636189']],
   '8.12': [['m53642','fs-id1167793912721'],['m53642','fs-id1167793571152'],['m53642','fs-id1167793829846'],['m53642','fs-id1167794122093'],['m53642','fs-id1167793355014']],
-  '8.13': [['m53642','fs-id1167793705379'],['m53642','fs-id1167794060772'],['m53642','fs-id1167793372594'],['m53642','fs-id1167793567013'],['m53642','fs-id1167793479896']]
+  '8.13': [['m53642','fs-id1167793705379'],['m53642','fs-id1167794060772'],['m53642','fs-id1167793372594'],['m53642','fs-id1167793567013'],['m53642','fs-id1167793479896']],
+  '9.1': [['m53850','fs-id1167794071769'],['m53850','fs-id1167794031036'],['m53850','fs-id1167794042395'],['m53850','fs-id1167794011461'],['m53850','fs-id1167794045650']],
+  '9.2': [['m53850','fs-id1167794040116'],['m53850','fs-id1167793984347'],['m53850','fs-id1167794045835'],['m53850','fs-id1167794039169'],['m53850','fs-id1167794048836']],
+  '9.3': [['m53850','fs-id1167794100417'],['m53850','fs-id1167794051290'],['m53850','fs-id1167794047341'],['m53850','fs-id1167794047528'],['m53850','fs-id1167794028905']],
+  '9.4': [['m53913','fs-id1169737162133'],['m53913','fs-id1169737795579'],['m53916','fs-id1169739004256'],['m53916','fs-id1169739231027'],['m53916','fs-id1169739251264']],
+  '9.5': [['m53916','fs-id1169738935682'],['m53916','fs-id1169736972921'],['m53916','fs-id1169736992700'],['m53930','fs-id1169737383319'],['m53930','fs-id1169737446397']],
+  '9.6': [['m53930','fs-id1169738184590'],['m53930','fs-id1169738215904'],['m53930','fs-id1169737894430'],['m53930','fs-id1169737301248'],['m53930','fs-id1169737207562']],
+  '9.7': [['m53852','fs-id1167794003809'],['m53852','fs-id1167793901807'],['m53840','fs-id1167793372320'],['m53840','fs-id1167793370884'],['m53840','fs-id1167793371455']],
+  '9.8': [['m53840','fs-id1167793905656'],['m53840','fs-id1167793268934'],['m53840','fs-id1167793361414'],['m53840','fs-id1167793363740'],['m53840','fs-id1167793366455']],
+  '9.9': [['m53840','fs-id1167793260217'],['m53840','fs-id1167793361540'],['m53840','fs-id1167793292298'],['m53840','fs-id1167793278043'],['m53840','fs-id1167793363296']]
 };
 
 const escapeHtml = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -156,7 +171,8 @@ const NO_GROUP_INSTRUCTIONS = new Set([
   'fs-id1170571027411',
   'fs-id1170573715282',
   'fs-id1170573742107',
-  'fs-id1170571558918'
+  'fs-id1170571558918',
+  'fs-id1169737894430'
 ]);
 const GROUP_INSTRUCTION_OVERRIDES = new Map([
   ['fs-id1170571306965', 'fs-id1170571423080'],
@@ -166,7 +182,8 @@ const GROUP_INSTRUCTION_OVERRIDES = new Map([
   ['fs-id1170571503006', 'fs-id1170571469180'],
   ['fs-id1170571057294', 'fs-id1170571503040'],
   ['fs-id1170571233748', 'fs-id1170571503040'],
-  ['fs-id1170571218252', 'fs-id1170571503040']
+  ['fs-id1170571218252', 'fs-id1170571503040'],
+  ['fs-id1169736992700', 'fs-id1169736626801']
 ]);
 
 export async function mineOpenStaxPractice(topicIndex) {
@@ -280,7 +297,7 @@ export async function mineOpenStaxPractice(topicIndex) {
         type: 'embedded', topicId, title,
         promptHtml, answerHtml,
         metadata: { sourceQuestionId: exerciseId, collection: MODULES[moduleId].title, course: 'AB + BC', format: 'textbook exercise', difficulty: position <= 2 ? 'easy' : position <= 4 ? 'medium' : 'hard', estimatedMinutes: 10, calculator: 'varies', answerKind: 'publisher solution', tags: [topicIndex.get(topicId).title, 'Textbook', 'Embedded'] },
-        source: { sourceId: `openstax-calculus-volume-${volume}`, title: `OpenStax Calculus Volume ${volume} · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-${volume}/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume ${volume}, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: /^(5|6|7|8)\./.test(topicId) ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
+        source: { sourceId: `openstax-calculus-volume-${volume}`, title: `OpenStax Calculus Volume ${volume} · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-${volume}/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume ${volume}, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: /^(5|6|7|8|9)\./.test(topicId) ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
       });
     }
   }
