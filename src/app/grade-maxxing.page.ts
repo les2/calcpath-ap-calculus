@@ -159,7 +159,7 @@ export function toggleExpandedUnitIds(unitId: string, expandedUnitIds: string[])
                     <div><small>Select all topics</small><b>{{unit.title}}</b><em>{{unitSelectedCount(unit.topicIds)}} of {{unit.topicIds.length}} topics selected</em></div>
                   </label>
                   <button class="unit-disclosure" type="button" [attr.aria-expanded]="isUnitExpanded(unit.id)" [attr.aria-controls]="'unit-topics-' + unit.id" (click)="toggleUnitExpanded(unit.id)">
-                    <span>{{isUnitExpanded(unit.id) ? 'Hide topics' : 'Choose topics'}}</span><b aria-hidden="true">⌄</b>
+                    <span>{{isUnitExpanded(unit.id) ? 'Hide topics' : 'Choose topics'}}</span><i class="unit-disclosure-icon" aria-hidden="true"></i>
                   </button>
                 </div>
                 @if (isUnitExpanded(unit.id)) {
