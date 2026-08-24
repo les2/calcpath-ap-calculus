@@ -49,7 +49,7 @@ for (const question of questions) {
   assert(question.source?.title && question.source?.author && isHttpsUrl(question.source?.url), `${question.id} needs complete source attribution.`);
   assert(question.source?.license?.code && question.source?.license?.name && isHttpsUrl(question.source?.license?.url), `${question.id} needs complete license metadata.`);
   assert(question.metadata?.sourceQuestionId && question.metadata?.collection && question.metadata?.course && question.metadata?.format, `${question.id} needs useful source and format metadata.`);
-  assert(question.metadata?.difficulty && Number.isInteger(question.metadata?.estimatedMinutes) && question.metadata.estimatedMinutes > 0, `${question.id} needs difficulty and estimated-time metadata.`);
+  assert(['easy', 'medium', 'hard', 'ridiculous'].includes(question.metadata?.difficulty) && Number.isInteger(question.metadata?.estimatedMinutes) && question.metadata.estimatedMinutes > 0, `${question.id} needs a supported difficulty and estimated-time metadata.`);
   assert(question.metadata?.calculator && question.metadata?.answerKind && Array.isArray(question.metadata?.tags) && question.metadata.tags.length > 0, `${question.id} needs calculator, answer, and skill tags.`);
   assert(/^\d{4}-\d{2}-\d{2}$/.test(question.source.verifiedAt ?? ''), `${question.id} needs a source verification date.`);
   assert(!/adapted|variant|fixed parameters/i.test(`${question.id} ${question.source.attribution}`), `${question.id} appears to be adapted or generated; CalcPath only accepts source-faithful transcriptions or links.`);
@@ -70,6 +70,7 @@ for (const question of questions) {
     assert(question.source.transcription === 'link-only', `${question.id} must be marked link-only.`);
   }
 }
+assert(new Set(practice.questions.map((question) => question.metadata.difficulty)).size === 4, 'Practice data must exercise all four difficulty filters.');
 
 assert(practice.catalogStats?.questionCount === questions.length, 'Practice catalog stats must match the question count.');
 assert(practice.catalogStats?.sourceCount >= 3, 'Practice catalog should include at least three reliable publisher groups.');

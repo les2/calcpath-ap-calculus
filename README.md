@@ -229,6 +229,13 @@ estimated time, collection or year, and skill tags. Run `npm run mine:practice`
 to refresh the reproducible catalog from the curated source map; review the
 result before committing it.
 
+The Grade Maxxing builder can filter that catalog by publisher site, broad
+problem type, and four beta difficulty bands: easy, medium, hard, and
+ridiculous. Difficulty is CalcPath editorial metadata, not a rating supplied by
+the publishers. The reproducible catalog script assigns it from each problem’s
+source context and relative placement within its published set; it never edits
+or attempts to reinterpret the mathematics.
+
 ## Curriculum source
 
 Topic organization and exam weighting follow the [College Board AP Calculus AB and BC Course and Exam Description](https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-and-bc-course-and-exam-description.pdf).

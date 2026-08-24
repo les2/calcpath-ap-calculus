@@ -12,6 +12,13 @@ const decode = (value) => value
 const slug = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const questions = [];
 const seenIds = new Set();
+const relativeDifficulty = (position, total, floor = 'easy') => {
+  const ratio = position / Math.max(total, 1);
+  if (ratio <= 0.3) return floor;
+  if (ratio <= 0.65) return 'medium';
+  if (ratio <= 0.9) return 'hard';
+  return 'ridiculous';
+};
 
 function addQuestion(record) {
   if (seenIds.has(record.id)) return;
@@ -56,7 +63,7 @@ for (const [collection, coursePath, page, solutionPath, topicId, count] of pauls
     title: `Paul’s ${collection} · Problem ${number}`,
     problemUrl,
     solutionUrl: `https://tutorial.math.lamar.edu/solutions/${solutionPath}/prob${number}.aspx`,
-    metadata: { sourceQuestionId: `Problem ${number}`, collection, course: coursePath === 'CalcI' ? 'AB + BC' : 'BC emphasis', format: 'worked practice', difficulty: 'mixed', estimatedMinutes: 10, calculator: 'varies', answerKind: 'worked solution', tags: [collection] },
+    metadata: { sourceQuestionId: `Problem ${number}`, collection, course: coursePath === 'CalcI' ? 'AB + BC' : 'BC emphasis', format: 'worked practice', difficulty: relativeDifficulty(number, count), estimatedMinutes: 10, calculator: 'varies', answerKind: 'worked solution', tags: [collection, 'Worked practice'] },
     source: { title: `Paul’s Online Math Notes · ${collection}`, author: 'Paul Dawkins · Lamar University', url: problemUrl, attribution: `Linked to publisher problem ${number}; question text is not reproduced`, transcription: 'link-only', verifiedAt: '2026-08-23', license: linkLicense('https://tutorial.math.lamar.edu/Terms.aspx') }
   });
 }
@@ -112,7 +119,7 @@ for (const page of michiganPages) {
         title: `${category} · ${label}`,
         problemUrl,
         solutionUrl,
-        metadata: { sourceQuestionId: label, collection: `Math ${page.startsWith('115') ? '115' : '116'} exam archive`, course: page.startsWith('115') ? 'AB + BC' : 'BC emphasis', format: 'university exam problem', difficulty: 'exam-level', estimatedMinutes: 12, calculator: 'varies', answerKind: 'worked solution PDF', publishedYear: year, tags: [category, 'University exam'] },
+        metadata: { sourceQuestionId: label, collection: `Math ${page.startsWith('115') ? '115' : '116'} exam archive`, course: page.startsWith('115') ? 'AB + BC' : 'BC emphasis', format: 'university exam problem', difficulty: Number(match[2]) <= 3 ? 'medium' : Number(match[2]) <= 8 ? 'hard' : 'ridiculous', estimatedMinutes: 12, calculator: 'varies', answerKind: 'worked solution PDF', publishedYear: year, tags: [category, 'University exam'] },
         source: { title: `University of Michigan · ${category}`, author: 'University of Michigan Mathematics', url: sourceUrl, attribution: `Linked to the publisher’s ${label} problem PDF and matching solution PDF`, transcription: 'link-only', verifiedAt: '2026-08-23', license: linkLicense('https://dhsp.math.lsa.umich.edu/examshops.html') }
       });
     }
@@ -141,7 +148,7 @@ for (const [section, topicId] of activeSections) {
   const exerciseHtml = html.slice(exerciseStart);
   const matches = [...exerciseHtml.matchAll(/<article class="exercise exercise-like" id="(ez-[^"]+)"><h4 class="heading"><span class="codenumber">([\s\S]*?)<\/span><\/h4>/gi)];
   const sectionNumber = section.replace(/-/g, '.').match(/^\d+\.\d+/)?.[0] ?? section;
-  for (const match of matches) {
+  for (const [matchIndex, match] of matches.entries()) {
     const number = decode(match[2]).replace(/\.$/, '');
     const exerciseId = `${sectionNumber} exercise ${number}`;
     addQuestion({
@@ -150,7 +157,7 @@ for (const [section, topicId] of activeSections) {
       title: `Active Calculus ${sectionNumber} · Exercise ${number}`,
       problemUrl: `${sourceUrl}#${match[1]}`,
       solutionUrl: activeAnswerUrl,
-      metadata: { sourceQuestionId: exerciseId, collection: 'Active Calculus exercises', course: Number(topicId.split('.')[0]) >= 9 ? 'BC' : 'AB + BC', format: 'textbook exercise', difficulty: 'mixed', estimatedMinutes: 15, calculator: 'varies', answerKind: 'publisher answer appendix', tags: [topicIndex.get(topicId).title, 'Textbook'] },
+      metadata: { sourceQuestionId: exerciseId, collection: 'Active Calculus exercises', course: Number(topicId.split('.')[0]) >= 9 ? 'BC' : 'AB + BC', format: 'textbook exercise', difficulty: relativeDifficulty(matchIndex + 1, matches.length, 'medium'), estimatedMinutes: 15, calculator: 'varies', answerKind: 'publisher answer appendix', tags: [topicIndex.get(topicId).title, 'Textbook'] },
       source: { title: `Active Calculus · Section ${sectionNumber}`, author: 'Matthew Boelkins et al.', url: sourceUrl, attribution: `Linked to ${exerciseId} and the publisher’s answer appendix; question text is not reproduced`, transcription: 'link-only', verifiedAt: '2026-08-23', license: { code: 'CC-BY-SA-4.0', name: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/', usage: 'link-only' } }
     });
   }
@@ -176,7 +183,7 @@ for (const [exam, topicIds] of Object.entries(apTopics)) {
       title: `${year} AP Calculus ${course.toUpperCase()} · FRQ ${number}`,
       problemUrl,
       solutionUrl,
-      metadata: { sourceQuestionId: `${year} ${course.toUpperCase()} Question ${number}`, collection: 'Released AP free-response questions', course: course.toUpperCase(), format: 'free response', difficulty: 'AP exam', estimatedMinutes: 15, calculator: number <= 2 ? 'required' : 'not permitted', answerKind: 'official scoring guidelines', publishedYear: year, tags: [topicIndex.get(topicId).title, 'Released AP exam'] },
+      metadata: { sourceQuestionId: `${year} ${course.toUpperCase()} Question ${number}`, collection: 'Released AP free-response questions', course: course.toUpperCase(), format: 'free response', difficulty: number <= 4 ? 'hard' : 'ridiculous', estimatedMinutes: 15, calculator: number <= 2 ? 'required' : 'not permitted', answerKind: 'official scoring guidelines', publishedYear: year, tags: [topicIndex.get(topicId).title, 'Released AP exam'] },
       source: { title: `College Board · ${year} AP Calculus ${course.toUpperCase()}`, author: 'College Board', url: problemUrl, attribution: `Linked to released Question ${number} and its official scoring guidelines; question text is not reproduced`, transcription: 'link-only', verifiedAt: '2026-08-23', license: linkLicense('https://privacy.collegeboard.org/terms-of-use') }
     });
   });
@@ -184,11 +191,12 @@ for (const [exam, topicIds] of Object.entries(apTopics)) {
 
 questions.sort((a, b) => a.topicId.localeCompare(b.topicId, undefined, { numeric: true }) || a.source.title.localeCompare(b.source.title) || a.id.localeCompare(b.id));
 const sources = [...new Set(questions.map((question) => question.source.author))];
+const difficultyCounts = Object.fromEntries(['easy', 'medium', 'hard', 'ridiculous'].map((difficulty) => [difficulty, questions.filter((question) => question.metadata.difficulty === difficulty).length]));
 const output = {
   schemaVersion: 4,
   generatedAt: new Date().toISOString(),
   licenseNotice: 'CalcPath links to publisher-hosted problems and answers without reproducing them. Embedded questions may be added only as source-faithful, format-only transcriptions with exact question and answer locators.',
-  catalogStats: { questionCount: questions.length, sourceCount: sources.length, sources },
+  catalogStats: { questionCount: questions.length, sourceCount: sources.length, sources, difficultyCounts },
   questions
 };
 await writeFile(new URL('../public/data/practice.json', import.meta.url), `${JSON.stringify(output, null, 2)}\n`);

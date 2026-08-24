@@ -7,9 +7,12 @@ import { interval } from 'rxjs';
 import { MathFormulaComponent } from './math-formula.component';
 
 export type PracticeGrade = 'cooked' | 'close' | 'reps';
+export type PracticeDifficulty = 'easy' | 'medium' | 'hard' | 'ridiculous';
+export const PRACTICE_DIFFICULTIES: PracticeDifficulty[] = ['easy', 'medium', 'hard', 'ridiculous'];
+export const PRACTICE_FILTER_TAGS = ['University exam', 'Released AP exam', 'Textbook', 'Worked practice'];
 export type QuestionLicense = { code: string; name: string; url: string; usage: 'embedded' | 'link-only' };
 export type QuestionSource = { title: string; author: string; url: string; attribution: string; license: QuestionLicense; exerciseId?: string; promptUrl?: string; answerUrl?: string; transcription?: 'format-only' | 'link-only'; verifiedAt?: string };
-export type QuestionMetadata = { sourceQuestionId: string; collection: string; course: string; format: string; difficulty: string; estimatedMinutes: number; calculator: string; answerKind: string; publishedYear?: number; tags: string[] };
+export type QuestionMetadata = { sourceQuestionId: string; collection: string; course: string; format: string; difficulty: PracticeDifficulty; estimatedMinutes: number; calculator: string; answerKind: string; publishedYear?: number; tags: string[] };
 export type PracticeQuestion = {
   id: string; type: 'embedded' | 'external'; topicId: string; topic: string; unit: string; title: string;
   promptText?: string; promptTex?: string; answerText?: string; answerTex?: string; problemUrl?: string; solutionUrl?: string;
@@ -32,6 +35,11 @@ export function reconcileSessionQuestions(session: StudySession, validQuestionId
   const results = Object.fromEntries(Object.entries(session.results).filter(([id]) => validQuestionIds.has(id)));
   const revealed = session.revealed.filter((id) => validQuestionIds.has(id));
   return { ...session, questionIds, results, revealed, currentIndex: Math.min(session.currentIndex, questionIds.length - 1) };
+}
+export function filterPracticeQuestions(questions: PracticeQuestion[], sources: string[], tags: string[], difficulties: PracticeDifficulty[]): PracticeQuestion[] {
+  return questions.filter((question) => sources.includes(question.source.author)
+    && difficulties.includes(question.metadata.difficulty)
+    && tags.some((tag) => question.metadata.tags.includes(tag)));
 }
 export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds: string[], limitPerTopic: number, selectionSeed = 0): PracticeQuestion[] {
   const selected: PracticeQuestion[] = [];
@@ -95,7 +103,7 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
 
             @if (currentQuestion(); as question) {
               <article class="question-sheet">
-                <header><div><span class="format-badge" [class.external]="question.type === 'external'">{{question.type === 'embedded' ? 'IN-APP QUESTION' : 'EXTERNAL PRACTICE'}}</span><small>{{question.unit}} · {{question.topicId}}</small><h2>{{question.title}}</h2><div class="question-tags"><span>{{question.metadata.format}}</span><span>{{question.metadata.difficulty}}</span><span>{{question.metadata.calculator === 'varies' ? 'Calculator varies' : 'Calculator ' + question.metadata.calculator}}</span><span>~{{question.metadata.estimatedMinutes}} min</span></div></div><strong>{{study.currentIndex + 1}} / {{study.questionIds.length}}</strong></header>
+                <header><div><span class="format-badge" [class.external]="question.type === 'external'">{{question.type === 'embedded' ? 'IN-APP QUESTION' : 'EXTERNAL PRACTICE'}}</span><small>{{question.unit}} · {{question.topicId}}</small><h2>{{question.title}}</h2><div class="question-tags"><span>{{question.metadata.format}}</span><span class="difficulty-pill" [attr.data-level]="question.metadata.difficulty">{{question.metadata.difficulty}}</span><span>{{question.metadata.calculator === 'varies' ? 'Calculator varies' : 'Calculator ' + question.metadata.calculator}}</span><span>~{{question.metadata.estimatedMinutes}} min</span></div></div><strong>{{study.currentIndex + 1}} / {{study.questionIds.length}}</strong></header>
                 <section class="question-body">
                   @if (question.type === 'embedded') {
                     @if (question.promptText) { <p>{{question.promptText}}</p> }
@@ -123,9 +131,18 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
         <section class="session-builder" aria-labelledby="builder-title">
           <div class="practice-heading"><div><p class="eyebrow">NEW STUDY RUN</p><h2 id="builder-title">What’s the test?</h2></div><p>Name it so you can find it later. Then choose the exact roadmap topics you want in the set.</p></div>
           <label class="session-name">Session name <input type="text" maxlength="60" placeholder="Unit 1 test" [ngModel]="draftName()" (ngModelChange)="draftName.set($event)"></label>
+          <details class="question-filters" open>
+            <summary><span>Shape your question mix</span><b>{{filteredQuestions().length}} matching questions</b></summary>
+            <div class="filter-grid">
+              <fieldset><legend>Source sites</legend><div class="filter-options">@for (source of sourceSites(); track source) { <label class="filter-choice"><input type="checkbox" [checked]="selectedSources().includes(source)" (change)="toggleSource(source)"><span aria-hidden="true">✓</span>{{sourceLabel(source)}}</label> }</div></fieldset>
+              <fieldset><legend>Problem type</legend><div class="filter-options">@for (tag of filterTags; track tag) { <label class="filter-choice"><input type="checkbox" [checked]="selectedFilterTags().includes(tag)" (change)="toggleFilterTag(tag)"><span aria-hidden="true">✓</span>{{tag}}</label> }</div></fieldset>
+              <fieldset><legend>Difficulty</legend><div class="filter-options">@for (difficulty of difficulties; track difficulty) { <label class="filter-choice difficulty-choice" [attr.data-level]="difficulty"><input type="checkbox" [checked]="selectedDifficulties().includes(difficulty)" (change)="toggleDifficulty(difficulty)"><span aria-hidden="true">✓</span>{{difficulty}}</label> }</div></fieldset>
+            </div>
+            <footer><p><b>Beta difficulty estimate.</b> We classify by source and placement; publishers do not supply these labels.</p><button class="text-action" type="button" (click)="resetQuestionFilters()">Use all questions</button></footer>
+          </details>
           <section class="session-size"><label>Maximum questions per topic <input type="number" min="1" max="25" step="1" [ngModel]="questionLimit()" (ngModelChange)="setQuestionLimit($event)"></label><div><b>{{plannedQuestionCount()}} questions in this run</b><span>We rotate between publishers when a topic has multiple sources.</span></div></section>
           <div class="topic-bank">@for (topic of availableTopics(); track topic.id) { <label class="topic-choice" [class.selected]="selectedTopics().includes(topic.id)" [style.--challenge-accent]="accentFor(topic.id)"><input type="checkbox" [checked]="selectedTopics().includes(topic.id)" (change)="toggleTopic(topic.id)"><span class="choice-check">✓</span><div><small>{{topic.unit}}</small><b>{{topic.id}} · {{topic.title}}</b><em>{{topic.count}} available · {{topic.sources}} {{topic.sources === 1 ? 'source' : 'sources'}}</em></div></label> }</div>
-          <div class="setup-actions"><button class="secondary-action" type="button" (click)="cancelCreate()">Cancel</button><button class="maxxing-primary" type="button" [disabled]="!draftName().trim() || !selectedTopics().length" (click)="createSession()">Start study run →</button></div>
+          <div class="setup-actions"><button class="secondary-action" type="button" (click)="cancelCreate()">Cancel</button><button class="maxxing-primary" type="button" [disabled]="!draftName().trim() || !selectedTopics().length || !plannedQuestionCount()" (click)="createSession()">Start study run →</button></div>
         </section>
       } @else {
         <section class="sessions-home">
@@ -147,6 +164,11 @@ export class GradeMaxxingPage {
   readonly draftName = signal('Unit 1 test');
   readonly selectedTopics = signal<string[]>([]);
   readonly questionLimit = signal(5);
+  readonly selectedSources = signal<string[]>([]);
+  readonly selectedFilterTags = signal<string[]>([...PRACTICE_FILTER_TAGS]);
+  readonly selectedDifficulties = signal<PracticeDifficulty[]>([...PRACTICE_DIFFICULTIES]);
+  readonly filterTags = PRACTICE_FILTER_TAGS;
+  readonly difficulties = PRACTICE_DIFFICULTIES;
   readonly running = signal(false);
   readonly editingTimer = signal(false);
   readonly questionListVisible = signal(false);
@@ -154,18 +176,21 @@ export class GradeMaxxingPage {
   readonly activeSession = computed(() => this.sessions().find((session) => session.id === this.activeSessionId()) ?? null);
   readonly openSessions = computed(() => this.sessions().filter((session) => session.status === 'open').sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
   readonly dismissedSessions = computed(() => this.sessions().filter((session) => session.status === 'dismissed').sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
+  readonly sourceSites = computed(() => [...new Set(this.questions().map((question) => question.source.author))].sort());
+  readonly filteredQuestions = computed(() => filterPracticeQuestions(this.questions(), this.selectedSources(), this.selectedFilterTags(), this.selectedDifficulties()));
   readonly availableTopics = computed(() => {
     const topics = new Map<string, {id: string; title: string; unit: string; count: number; sourceNames: Set<string>; sources: number}>();
-    for (const question of this.questions()) { const topic = topics.get(question.topicId) ?? { id: question.topicId, title: question.topic, unit: question.unit, count: 0, sourceNames: new Set<string>(), sources: 0 }; topic.count += 1; topic.sourceNames.add(question.source.author); topic.sources = topic.sourceNames.size; topics.set(question.topicId, topic); }
+    for (const question of this.filteredQuestions()) { const topic = topics.get(question.topicId) ?? { id: question.topicId, title: question.topic, unit: question.unit, count: 0, sourceNames: new Set<string>(), sources: 0 }; topic.count += 1; topic.sourceNames.add(question.source.author); topic.sources = topic.sourceNames.size; topics.set(question.topicId, topic); }
     return [...topics.values()].sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
   });
-  readonly plannedQuestionCount = computed(() => selectBalancedQuestions(this.questions(), this.selectedTopics(), this.questionLimit()).length);
+  readonly plannedQuestionCount = computed(() => selectBalancedQuestions(this.filteredQuestions(), this.selectedTopics(), this.questionLimit()).length);
   readonly sessionQuestions = computed(() => { const session = this.activeSession(); return session ? session.questionIds.map((id) => this.questions().find((question) => question.id === id)).filter((question): question is PracticeQuestion => Boolean(question)) : []; });
   readonly currentQuestion = computed(() => this.sessionQuestions()[this.activeSession()?.currentIndex ?? 0] ?? null);
 
   constructor(http: HttpClient, route: ActivatedRoute, private readonly router: Router, destroyRef: DestroyRef) {
     http.get<{questions: PracticeQuestion[]}>(new URL('data/practice.json', document.baseURI).toString()).subscribe((data) => {
       this.questions.set(data.questions);
+      this.selectedSources.set([...new Set(data.questions.map((question) => question.source.author))].sort());
       const validIds = new Set(data.questions.map((question) => question.id));
       this.sessions.update((sessions) => sessions.map((session) => reconcileSessionQuestions(session, validIds)).filter((session): session is StudySession => Boolean(session)));
       this.persist();
@@ -176,11 +201,15 @@ export class GradeMaxxingPage {
   }
 
   toggleTopic(id: string) { this.selectedTopics.update((items) => items.includes(id) ? items.filter((item) => item !== id) : [...items, id]); }
+  toggleSource(source: string) { this.selectedSources.update((items) => items.includes(source) ? items.filter((item) => item !== source) : [...items, source]); }
+  toggleFilterTag(tag: string) { this.selectedFilterTags.update((items) => items.includes(tag) ? items.filter((item) => item !== tag) : [...items, tag]); }
+  toggleDifficulty(difficulty: PracticeDifficulty) { this.selectedDifficulties.update((items) => items.includes(difficulty) ? items.filter((item) => item !== difficulty) : [...items, difficulty]); }
+  resetQuestionFilters() { this.selectedSources.set([...this.sourceSites()]); this.selectedFilterTags.set([...PRACTICE_FILTER_TAGS]); this.selectedDifficulties.set([...PRACTICE_DIFFICULTIES]); }
   setQuestionLimit(value: number) { this.questionLimit.set(Math.max(1, Math.min(25, Math.floor(Number(value) || 1)))); }
   openCreate() { this.draftName.set(`Test ${this.openSessions().length + 1}`); this.selectedTopics.set([]); this.creating.set(true); }
   cancelCreate() { this.creating.set(false); }
   createSession() {
-    const name = this.draftName().trim(), topicIds = this.selectedTopics(), selectionSeed = crypto.getRandomValues(new Uint32Array(1))[0], questionIds = selectBalancedQuestions(this.questions(), topicIds, this.questionLimit(), selectionSeed).map((question) => question.id);
+    const name = this.draftName().trim(), topicIds = this.selectedTopics(), selectionSeed = crypto.getRandomValues(new Uint32Array(1))[0], questionIds = selectBalancedQuestions(this.filteredQuestions(), topicIds, this.questionLimit(), selectionSeed).map((question) => question.id);
     if (!name || !questionIds.length) return;
     const now = new Date().toISOString();
     const session: StudySession = { id: crypto.randomUUID(), name, topicIds, questionIds, currentIndex: 0, totalSeconds: 0, results: {}, revealed: [], status: 'open', createdAt: now, updatedAt: now, questionLimitPerTopic: this.questionLimit(), selectionSeed };
@@ -212,6 +241,7 @@ export class GradeMaxxingPage {
   formatTime(seconds: number) { const hours = Math.floor(seconds / 3600), minutes = Math.floor(seconds % 3600 / 60), secs = seconds % 60; return hours ? `${hours}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}` : `${minutes}:${String(secs).padStart(2, '0')}`; }
   formatDate(value: string) { return new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric' }).format(new Date(value)); }
   accentFor(topicId: string) { return ['#ff6b35','#5d3fd3','#2478d4','#e65050','#b35bce','#008f7a','#b57812','#1b879c','#d6622a','#d73964'][Number(topicId.split('.')[0]) - 1]; }
+  sourceLabel(source: string) { return ({ 'Matthew Boelkins et al.': 'Active Calculus', 'Paul Dawkins · Lamar University': 'Paul’s Math Notes', 'University of Michigan Mathematics': 'University of Michigan', 'College Board': 'College Board' } as Record<string, string>)[source] ?? source; }
   private updateSession(id: string, update: (session: StudySession) => StudySession) { this.sessions.update((sessions) => sessions.map((session) => session.id === id ? update(session) : session)); this.persist(); }
   private persist() { localStorage.setItem('calcpath-study-sessions-v2', JSON.stringify(this.sessions())); }
   private readSessions(): StudySession[] { try { const value = JSON.parse(localStorage.getItem('calcpath-study-sessions-v2') ?? '[]'); return Array.isArray(value) ? value : []; } catch { return []; } }
