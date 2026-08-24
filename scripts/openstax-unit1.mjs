@@ -46,6 +46,16 @@ const MODULES = {
   m53850: { title: '7.2 Calculus of Parametric Curves', page: '7-2-calculus-of-parametric-curves', volume: 2 },
   m53852: { title: '7.3 Polar Coordinates', page: '7-3-polar-coordinates', volume: 2 },
   m53840: { title: '7.4 Area and Arc Length in Polar Coordinates', page: '7-4-area-and-arc-length-in-polar-coordinates', volume: 2 },
+  m53758: { title: '5.1 Sequences', page: '5-1-sequences', volume: 2 },
+  m53739: { title: '5.2 Infinite Series', page: '5-2-infinite-series', volume: 2 },
+  m53754: { title: '5.3 The Divergence and Integral Tests', page: '5-3-the-divergence-and-integral-tests', volume: 2 },
+  m53751: { title: '5.4 Comparison Tests', page: '5-4-comparison-tests', volume: 2 },
+  m53743: { title: '5.5 Alternating Series', page: '5-5-alternating-series', volume: 2 },
+  m53747: { title: '5.6 Ratio and Root Tests', page: '5-6-ratio-and-root-tests', volume: 2 },
+  m53761: { title: '6.1 Power Series and Functions', page: '6-1-power-series-and-functions', volume: 2 },
+  m53762: { title: '6.2 Properties of Power Series', page: '6-2-properties-of-power-series', volume: 2 },
+  m53817: { title: '6.3 Taylor and Maclaurin Series', page: '6-3-taylor-and-maclaurin-series', volume: 2 },
+  m53769: { title: '6.4 Working with Taylor Series', page: '6-4-working-with-taylor-series', volume: 2 },
   m53913: { title: '3.1 Vector-Valued Functions and Space Curves', page: '3-1-vector-valued-functions-and-space-curves', volume: 3 },
   m53916: { title: '3.2 Calculus of Vector-Valued Functions', page: '3-2-calculus-of-vector-valued-functions', volume: 3 },
   m53930: { title: '3.4 Motion in Space', page: '3-4-motion-in-space', volume: 3 }
@@ -149,7 +159,22 @@ export const TOPIC_EXERCISES = {
   '9.6': [['m53930','fs-id1169738184590'],['m53930','fs-id1169738215904'],['m53930','fs-id1169737894430'],['m53930','fs-id1169737301248'],['m53930','fs-id1169737207562']],
   '9.7': [['m53852','fs-id1167794003809'],['m53852','fs-id1167793901807'],['m53840','fs-id1167793372320'],['m53840','fs-id1167793370884'],['m53840','fs-id1167793371455']],
   '9.8': [['m53840','fs-id1167793905656'],['m53840','fs-id1167793268934'],['m53840','fs-id1167793361414'],['m53840','fs-id1167793363740'],['m53840','fs-id1167793366455']],
-  '9.9': [['m53840','fs-id1167793260217'],['m53840','fs-id1167793361540'],['m53840','fs-id1167793292298'],['m53840','fs-id1167793278043'],['m53840','fs-id1167793363296']]
+  '9.9': [['m53840','fs-id1167793260217'],['m53840','fs-id1167793361540'],['m53840','fs-id1167793292298'],['m53840','fs-id1167793278043'],['m53840','fs-id1167793363296']],
+  '10.1': [['m53739','fs-id1169738148826'],['m53739','fs-id1169737822602'],['m53739','fs-id1169737383334'],['m53739','fs-id1169737987528'],['m53739','fs-id1169737202979']],
+  '10.2': [['m53739','fs-id1169738194431'],['m53739','fs-id1169737168532'],['m53739','fs-id1169737195149'],['m53739','fs-id1169737985373'],['m53739','fs-id1169737221173']],
+  '10.3': [['m53754','fs-id1169737739872'],['m53754','fs-id1169738044696'],['m53754','fs-id1169737254368'],['m53754','fs-id1169737429525'],['m53754','fs-id1169738082449']],
+  '10.4': [['m53754','fs-id1169737903731'],['m53754','fs-id1169737284932'],['m53754','fs-id1169737436180'],['m53754','fs-id1169737261994'],['m53754','fs-id1169738080307']],
+  '10.5': [['m53754','fs-id1169737151884'],['m53754','fs-id1169738055554'],['m53754','fs-id1169737930830'],['m53754','fs-id1169737433513'],['m53739','fs-id1169738235166']],
+  '10.6': [['m53751','fs-id1169738905678'],['m53751','fs-id1169739096544'],['m53751','fs-id1169738980862'],['m53751','fs-id1169736587954'],['m53751','fs-id1169739169541']],
+  '10.7': [['m53743','fs-id1169737949836'],['m53743','fs-id1169737814736'],['m53743','fs-id1169737162038'],['m53743','fs-id1169738234461'],['m53743','fs-id1169737298487']],
+  '10.8': [['m53747','fs-id1169739301472'],['m53747','fs-id1169736850672'],['m53747','fs-id1169736790226'],['m53747','fs-id1169736694683'],['m53747','fs-id1169736635046']],
+  '10.9': [['m53743','fs-id1169738153897'],['m53743','fs-id1169737262016'],['m53743','fs-id1169737214974'],['m53743','fs-id1169737227792'],['m53743','fs-id1169737234379']],
+  '10.10': [['m53743','fs-id1169737939432'],['m53743','fs-id1169738057296'],['m53743','fs-id1169737160514'],['m53743','fs-id1169737248635'],['m53743','fs-id1169737286637']],
+  '10.11': [['m53817','fs-id1167025228654'],['m53817','fs-id1167025019199'],['m53817','fs-id1167025118489'],['m53817','fs-id1167025235548'],['m53817','fs-id1167025131374']],
+  '10.12': [['m53817','fs-id1167024999616'],['m53817','fs-id1167024969439'],['m53817','fs-id1167025090549'],['m53817','fs-id1167024996140'],['m53817','fs-id1167025240362']],
+  '10.13': [['m53761','fs-id1170572554747'],['m53761','fs-id1170572582282'],['m53761','fs-id1170572553490'],['m53761','fs-id1170572218394'],['m53761','fs-id1170572517582']],
+  '10.14': [['m53817','fs-id1167025009068'],['m53817','fs-id1167024969273'],['m53817','fs-id1167024991698'],['m53817','fs-id1167024999408'],['m53769','fs-id1167024047399']],
+  '10.15': [['m53761','fs-id1170572180137'],['m53761','fs-id1170572481630'],['m53762','fs-id1167023806691'],['m53762','fs-id1167023922304'],['m53762','fs-id1167023772608']]
 };
 
 const escapeHtml = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -183,7 +208,34 @@ const GROUP_INSTRUCTION_OVERRIDES = new Map([
   ['fs-id1170571057294', 'fs-id1170571503040'],
   ['fs-id1170571233748', 'fs-id1170571503040'],
   ['fs-id1170571218252', 'fs-id1170571503040'],
-  ['fs-id1169736992700', 'fs-id1169736626801']
+  ['fs-id1169736992700', 'fs-id1169736626801'],
+  ['fs-id1169737202979', 'fs-id1169737202974'],
+  ['fs-id1169737195149', 'fs-id1169738235163'],
+  ['fs-id1169737985373', 'fs-id1169738235163'],
+  ['fs-id1169737221173', 'fs-id1169737221114'],
+  ['fs-id1169737254368', 'fs-id1169737430009'],
+  ['fs-id1169737429525', 'fs-id1169737430009'],
+  ['fs-id1169738082449', 'fs-id1169737430009'],
+  ['fs-id1169737436180', 'fs-id1169737162464'],
+  ['fs-id1169737261994', 'fs-id1169737162464'],
+  ['fs-id1169738080307', 'fs-id1169737162464'],
+  ['fs-id1169738235166', 'fs-id1169738235163'],
+  ['fs-id1169737930830', 'fs-id1169738170070'],
+  ['fs-id1169737433513', 'fs-id1169738170070'],
+  ['fs-id1169739169541', 'fs-id1169736727058'],
+  ['fs-id1169737162038', 'fs-id1169737927679'],
+  ['fs-id1169738234461', 'fs-id1169737927679'],
+  ['fs-id1169737298487', 'fs-id1169737927679'],
+  ['fs-id1169736790226', 'fs-id1169736790190'],
+  ['fs-id1169736694683', 'fs-id1169736790190'],
+  ['fs-id1169736635046', 'fs-id1169736790190'],
+  ['fs-id1169737214974', 'fs-id1169737927679'],
+  ['fs-id1169737227792', 'fs-id1169737927679'],
+  ['fs-id1169737234379', 'fs-id1169737927679'],
+  ['fs-id1169737160514', 'fs-id1169737201482'],
+  ['fs-id1169737248635', 'fs-id1169737201482'],
+  ['fs-id1169737286637', 'fs-id1169737201482'],
+  ['fs-id1167024991698', 'fs-id1167024988664']
 ]);
 
 export async function mineOpenStaxPractice(topicIndex) {
@@ -297,7 +349,7 @@ export async function mineOpenStaxPractice(topicIndex) {
         type: 'embedded', topicId, title,
         promptHtml, answerHtml,
         metadata: { sourceQuestionId: exerciseId, collection: MODULES[moduleId].title, course: 'AB + BC', format: 'textbook exercise', difficulty: position <= 2 ? 'easy' : position <= 4 ? 'medium' : 'hard', estimatedMinutes: 10, calculator: 'varies', answerKind: 'publisher solution', tags: [topicIndex.get(topicId).title, 'Textbook', 'Embedded'] },
-        source: { sourceId: `openstax-calculus-volume-${volume}`, title: `OpenStax Calculus Volume ${volume} · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-${volume}/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume ${volume}, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: /^(5|6|7|8|9)\./.test(topicId) ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
+        source: { sourceId: `openstax-calculus-volume-${volume}`, title: `OpenStax Calculus Volume ${volume} · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-${volume}/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume ${volume}, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: /^(5|6|7|8|9|10)\./.test(topicId) ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
       });
     }
   }
