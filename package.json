@@ -28,6 +28,7 @@
     "@angular/platform-browser": "^22.1.0",
     "@angular/router": "^22.1.0",
     "@angular/service-worker": "^22.1.0",
+    "dexie": "^4.4.5",
     "katex": "^0.18.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -37,6 +38,7 @@
     "@angular/cli": "^22.1.5",
     "@angular/compiler-cli": "^22.1.0",
     "@openai/sites-vite-plugin": "0.1.0",
+    "fake-indexeddb": "^6.2.5",
     "jsdom": "^30.0.1",
     "typescript": "~6.0.2",
     "vite": "^8.0.0",

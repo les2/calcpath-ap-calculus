@@ -193,6 +193,7 @@ worker/                  Clean-route fallback for the primary hosted Site
 There is intentionally no `db/`, `drizzle/`, or D1 example code. The app does
 not use a server database. Its versioned JSON catalog is the canonical published
 copy; the browser normalizes that catalog into [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+through [Dexie](https://dexie.org/docs/Tutorial/Angular), a typed IndexedDB wrapper,
 for fast structured queries and offline access. Study sessions live in a
 separate IndexedDB object store and are never uploaded. Existing sessions are
 migrated automatically from the earlier `localStorage` format. The service
