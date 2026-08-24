@@ -8,8 +8,10 @@ import { MathFormulaComponent } from './math-formula.component';
 
 export type PracticeGrade = 'cooked' | 'close' | 'reps';
 export type PracticeDifficulty = 'easy' | 'medium' | 'hard' | 'ridiculous';
+export type PracticeDisplay = 'embedded' | 'external';
 export const PRACTICE_DIFFICULTIES: PracticeDifficulty[] = ['easy', 'medium', 'hard', 'ridiculous'];
 export const PRACTICE_FILTER_TAGS = ['University exam', 'Released AP exam', 'Textbook', 'Worked practice'];
+export const PRACTICE_DISPLAYS: PracticeDisplay[] = ['embedded', 'external'];
 export type QuestionLicense = { code: string; name: string; url: string; usage: 'embedded' | 'link-only' };
 export type QuestionSource = { title: string; author: string; url: string; attribution: string; license: QuestionLicense; exerciseId?: string; promptUrl?: string; answerUrl?: string; transcription?: 'format-only' | 'link-only'; verifiedAt?: string };
 export type QuestionMetadata = { sourceQuestionId: string; collection: string; course: string; format: string; difficulty: PracticeDifficulty; estimatedMinutes: number; calculator: string; answerKind: string; publishedYear?: number; tags: string[] };
@@ -36,9 +38,10 @@ export function reconcileSessionQuestions(session: StudySession, validQuestionId
   const revealed = session.revealed.filter((id) => validQuestionIds.has(id));
   return { ...session, questionIds, results, revealed, currentIndex: Math.min(session.currentIndex, questionIds.length - 1) };
 }
-export function filterPracticeQuestions(questions: PracticeQuestion[], sources: string[], tags: string[], difficulties: PracticeDifficulty[]): PracticeQuestion[] {
+export function filterPracticeQuestions(questions: PracticeQuestion[], sources: string[], tags: string[], difficulties: PracticeDifficulty[], displays: PracticeDisplay[] = PRACTICE_DISPLAYS): PracticeQuestion[] {
   return questions.filter((question) => sources.includes(question.source.author)
     && difficulties.includes(question.metadata.difficulty)
+    && displays.includes(question.type)
     && tags.some((tag) => question.metadata.tags.includes(tag)));
 }
 export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds: string[], limitPerTopic: number, selectionSeed = 0): PracticeQuestion[] {
@@ -136,6 +139,7 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
             <div class="filter-grid">
               <fieldset><legend>Source sites</legend><div class="filter-options">@for (source of sourceSites(); track source) { <label class="filter-choice"><input type="checkbox" [checked]="selectedSources().includes(source)" (change)="toggleSource(source)"><span aria-hidden="true">✓</span>{{sourceLabel(source)}}</label> }</div></fieldset>
               <fieldset><legend>Problem type</legend><div class="filter-options">@for (tag of filterTags; track tag) { <label class="filter-choice"><input type="checkbox" [checked]="selectedFilterTags().includes(tag)" (change)="toggleFilterTag(tag)"><span aria-hidden="true">✓</span>{{tag}}</label> }</div></fieldset>
+              <fieldset><legend>Where it opens</legend><div class="filter-options">@for (display of displays; track display) { <label class="filter-choice"><input type="checkbox" [checked]="selectedDisplays().includes(display)" (change)="toggleDisplay(display)"><span aria-hidden="true">✓</span>{{displayLabel(display)}}</label> }</div></fieldset>
               <fieldset><legend>Difficulty</legend><div class="filter-options">@for (difficulty of difficulties; track difficulty) { <label class="filter-choice difficulty-choice" [attr.data-level]="difficulty"><input type="checkbox" [checked]="selectedDifficulties().includes(difficulty)" (change)="toggleDifficulty(difficulty)"><span aria-hidden="true">✓</span>{{difficulty}}</label> }</div></fieldset>
             </div>
             <footer><p><b>Beta difficulty estimate.</b> We classify by source and placement; publishers do not supply these labels.</p><button class="text-action" type="button" (click)="resetQuestionFilters()">Use all questions</button></footer>
@@ -167,8 +171,10 @@ export class GradeMaxxingPage {
   readonly selectedSources = signal<string[]>([]);
   readonly selectedFilterTags = signal<string[]>([...PRACTICE_FILTER_TAGS]);
   readonly selectedDifficulties = signal<PracticeDifficulty[]>([...PRACTICE_DIFFICULTIES]);
+  readonly selectedDisplays = signal<PracticeDisplay[]>([...PRACTICE_DISPLAYS]);
   readonly filterTags = PRACTICE_FILTER_TAGS;
   readonly difficulties = PRACTICE_DIFFICULTIES;
+  readonly displays = PRACTICE_DISPLAYS;
   readonly running = signal(false);
   readonly editingTimer = signal(false);
   readonly questionListVisible = signal(false);
@@ -177,7 +183,8 @@ export class GradeMaxxingPage {
   readonly openSessions = computed(() => this.sessions().filter((session) => session.status === 'open').sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
   readonly dismissedSessions = computed(() => this.sessions().filter((session) => session.status === 'dismissed').sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
   readonly sourceSites = computed(() => [...new Set(this.questions().map((question) => question.source.author))].sort());
-  readonly filteredQuestions = computed(() => filterPracticeQuestions(this.questions(), this.selectedSources(), this.selectedFilterTags(), this.selectedDifficulties()));
+  readonly displayCounts = computed(() => ({ embedded: this.questions().filter((question) => question.type === 'embedded').length, external: this.questions().filter((question) => question.type === 'external').length }));
+  readonly filteredQuestions = computed(() => filterPracticeQuestions(this.questions(), this.selectedSources(), this.selectedFilterTags(), this.selectedDifficulties(), this.selectedDisplays()));
   readonly availableTopics = computed(() => {
     const topics = new Map<string, {id: string; title: string; unit: string; count: number; sourceNames: Set<string>; sources: number}>();
     for (const question of this.filteredQuestions()) { const topic = topics.get(question.topicId) ?? { id: question.topicId, title: question.topic, unit: question.unit, count: 0, sourceNames: new Set<string>(), sources: 0 }; topic.count += 1; topic.sourceNames.add(question.source.author); topic.sources = topic.sourceNames.size; topics.set(question.topicId, topic); }
@@ -204,7 +211,8 @@ export class GradeMaxxingPage {
   toggleSource(source: string) { this.selectedSources.update((items) => items.includes(source) ? items.filter((item) => item !== source) : [...items, source]); }
   toggleFilterTag(tag: string) { this.selectedFilterTags.update((items) => items.includes(tag) ? items.filter((item) => item !== tag) : [...items, tag]); }
   toggleDifficulty(difficulty: PracticeDifficulty) { this.selectedDifficulties.update((items) => items.includes(difficulty) ? items.filter((item) => item !== difficulty) : [...items, difficulty]); }
-  resetQuestionFilters() { this.selectedSources.set([...this.sourceSites()]); this.selectedFilterTags.set([...PRACTICE_FILTER_TAGS]); this.selectedDifficulties.set([...PRACTICE_DIFFICULTIES]); }
+  toggleDisplay(display: PracticeDisplay) { this.selectedDisplays.update((items) => items.includes(display) ? items.filter((item) => item !== display) : [...items, display]); }
+  resetQuestionFilters() { this.selectedSources.set([...this.sourceSites()]); this.selectedFilterTags.set([...PRACTICE_FILTER_TAGS]); this.selectedDifficulties.set([...PRACTICE_DIFFICULTIES]); this.selectedDisplays.set([...PRACTICE_DISPLAYS]); }
   setQuestionLimit(value: number) { this.questionLimit.set(Math.max(1, Math.min(25, Math.floor(Number(value) || 1)))); }
   openCreate() { this.draftName.set(`Test ${this.openSessions().length + 1}`); this.selectedTopics.set([]); this.creating.set(true); }
   cancelCreate() { this.creating.set(false); }
@@ -242,6 +250,7 @@ export class GradeMaxxingPage {
   formatDate(value: string) { return new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric' }).format(new Date(value)); }
   accentFor(topicId: string) { return ['#ff6b35','#5d3fd3','#2478d4','#e65050','#b35bce','#008f7a','#b57812','#1b879c','#d6622a','#d73964'][Number(topicId.split('.')[0]) - 1]; }
   sourceLabel(source: string) { return ({ 'Matthew Boelkins et al.': 'Active Calculus', 'Paul Dawkins · Lamar University': 'Paul’s Math Notes', 'University of Michigan Mathematics': 'University of Michigan', 'College Board': 'College Board' } as Record<string, string>)[source] ?? source; }
+  displayLabel(display: PracticeDisplay) { return `${display === 'embedded' ? 'Show in CalcPath' : 'Open source site'} (${this.displayCounts()[display]})`; }
   private updateSession(id: string, update: (session: StudySession) => StudySession) { this.sessions.update((sessions) => sessions.map((session) => session.id === id ? update(session) : session)); this.persist(); }
   private persist() { localStorage.setItem('calcpath-study-sessions-v2', JSON.stringify(this.sessions())); }
   private readSessions(): StudySession[] { try { const value = JSON.parse(localStorage.getItem('calcpath-study-sessions-v2') ?? '[]'); return Array.isArray(value) ? value : []; } catch { return []; } }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { completionCount, filterPracticeQuestions, gradePoints, reconcileSessionQuestions, selectBalancedQuestions, sessionScore, type PracticeDifficulty, type PracticeQuestion, type StudySession } from './grade-maxxing.page';
+import { completionCount, filterPracticeQuestions, gradePoints, reconcileSessionQuestions, selectBalancedQuestions, sessionScore, type PracticeDifficulty, type PracticeDisplay, type PracticeQuestion, type StudySession } from './grade-maxxing.page';
 
 const session = (results: StudySession['results']): Pick<StudySession, 'results'> => ({ results });
 
@@ -21,9 +21,10 @@ describe('Grade Maxxing study sessions', () => {
     expect(selectBalancedQuestions(values, ['1.6', '3.1'], 2).map((item) => item.id)).toEqual(['a1', 'b1', 'c1', 'c2']);
   });
   it('filters with OR inside a group and AND across groups', () => {
-    const question = (id: string, author: string, difficulty: PracticeDifficulty, tags: string[]) => ({ id, source: { author }, metadata: { difficulty, tags } }) as PracticeQuestion;
-    const values = [question('exam', 'Michigan', 'hard', ['University exam']), question('book', 'Active', 'medium', ['Textbook']), question('easy-exam', 'Michigan', 'easy', ['University exam'])];
-    expect(filterPracticeQuestions(values, ['Michigan'], ['University exam', 'Textbook'], ['hard'])).toEqual([values[0]]);
+    const question = (id: string, author: string, difficulty: PracticeDifficulty, tags: string[], type: PracticeDisplay = 'external') => ({ id, type, source: { author }, metadata: { difficulty, tags } }) as PracticeQuestion;
+    const values = [question('exam', 'Michigan', 'hard', ['University exam']), question('book', 'Active', 'medium', ['Textbook'], 'embedded'), question('easy-exam', 'Michigan', 'easy', ['University exam'])];
+    expect(filterPracticeQuestions(values, ['Michigan'], ['University exam', 'Textbook'], ['hard'], ['external'])).toEqual([values[0]]);
     expect(filterPracticeQuestions(values, [], ['University exam'], ['hard'])).toEqual([]);
+    expect(filterPracticeQuestions(values, ['Active'], ['Textbook'], ['medium'], ['embedded'])).toEqual([values[1]]);
   });
 });
