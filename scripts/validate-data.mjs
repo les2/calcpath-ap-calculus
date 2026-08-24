@@ -61,11 +61,14 @@ for (const question of questions) {
   assert(/^\d{4}-\d{2}-\d{2}$/.test(question.locator?.verifiedAt ?? ''), `${question.id} needs a source verification date.`);
   assert(!/adapted|variant|fixed parameters/i.test(`${question.id} ${source.attribution}`), `${question.id} appears to be adapted or generated; CalcPath only accepts source-faithful transcriptions or links.`);
   if (question.type === 'embedded') {
+    assert(!/^fs-id\d+$/i.test(question.title), `${question.id} exposes an internal publisher ID as its title.`);
     assert((question.promptTex || question.promptHtml) && (question.answerTex || question.answerHtml), `${question.id} needs embedded question and answer content.`);
     assert(source.license.usage === 'embedded' && source.license.code.startsWith('CC-'), `${question.id} must be covered by an embeddable Creative Commons license.`);
     assert(question.locator.transcription === 'format-only', `${question.id} must be marked as a format-only transcription.`);
     const embeddedMarkup = `${question.promptHtml ?? ''}\n${question.answerHtml ?? ''}`;
     assert(!/<\/?m:/i.test(embeddedMarkup), `${question.id} contains unresolved namespaced source markup.`);
+    assert(!/<\/?(?:script|iframe|object|embed|style|link|meta)\b/i.test(embeddedMarkup), `${question.id} contains executable or document-level markup.`);
+    assert(!/\son[a-z]+\s*=|javascript\s*:/i.test(embeddedMarkup), `${question.id} contains an executable HTML attribute or URL.`);
     for (const match of embeddedMarkup.matchAll(/<img\s+[^>]*src="([^"]+)"/gi)) {
       assert(!match[1].includes('..') && !match[1].startsWith('/'), `${question.id} contains an unsafe local media path.`);
       try { await access(new URL(`../public/${match[1]}`, import.meta.url)); }

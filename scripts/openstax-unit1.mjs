@@ -14,8 +14,8 @@ const MODULES = {
 
 // This is an editorial topic map only. The importer never changes the selected
 // publisher problem or solution; it serializes the pinned CNXML mechanically.
-const TOPIC_EXERCISES = {
-  '1.1': [['m53485','fs-id1170573426580'],['m53485','fs-id1170571257812'],['m53485','fs-id1170573570896'],['m53485','fs-id1170573409999'],['m53485','fs-id1170570997908']],
+export const TOPIC_EXERCISES = {
+  '1.1': [['m53485','fs-id1170573426580'],['m53485','fs-id1170573371452'],['m53485','fs-id1170573570896'],['m53485','fs-id1170573409999'],['m53485','fs-id1170570997908']],
   '1.2': [['m53491','fs-id1170572286630'],['m53491','fs-id1170572224892'],['m53491','fs-id1170571656078'],['m53491','fs-id1170571614882'],['m53491','fs-id1170571612128']],
   '1.3': [['m53491','fs-id1170572337209'],['m53491','fs-id1170571656653'],['m53491','fs-id1170572642386'],['m53491','fs-id1170572624470'],['m53491','fs-id1170572128792']],
   '1.4': [['m53491','fs-id1170572403273'],['m53491','fs-id1170572232003'],['m53491','fs-id1170571599593'],['m53491','fs-id1170572174644'],['m53491','fs-id1170572480427']],
@@ -65,16 +65,25 @@ export async function mineOpenStaxUnit1(topicIndex) {
     if (name === 'item') return `<li>${children()}</li>`;
     if (name === 'equation') return `<div class="source-equation">${children()}</div>`;
     if (name === 'newline') return '<br>';
-    if (name === 'title') return `<h4>${children()}</h4>`;
+    if (name === 'title') return localName(node.parentElement) === 'table' ? `<caption>${children()}</caption>` : `<h4>${children()}</h4>`;
     if (name === 'table') return `<div class="source-table-wrap"><table>${children()}</table></div>`;
-    if (name === 'tgroup' || name === 'row') return children();
+    if (name === 'tgroup') return children();
+    if (name === 'row') return `<tr>${children()}</tr>`;
     if (name === 'thead' || name === 'tbody') return `<${name}>${children()}</${name}>`;
     if (name === 'entry') return `<td>${children()}</td>`;
+    if (name === 'sub' || name === 'sup') return `<${name}>${children()}</${name}>`;
     if (name === 'figure') return `<figure>${children()}</figure>`;
     if (name === 'media') return children();
     if (name === 'caption') return `<figcaption>${children()}</figcaption>`;
     if (name === 'image') { const filename = (node.getAttribute('src') ?? '').split('/').pop(); if (!filename) return ''; mediaFiles.add(filename); return `<img src="media/openstax/${escapeHtml(filename)}" alt="${escapeHtml(node.parentElement?.getAttribute('alt') ?? '')}">`; }
-    if (name === 'link') return children();
+    if (name === 'link') {
+      const content = children();
+      if (content.trim()) return content;
+      const target = node.ownerDocument.getElementById(node.getAttribute('target-id'));
+      const targetType = localName(target);
+      const label = targetType === 'figure' ? 'source figure below' : targetType === 'table' ? 'source table below' : targetType === 'equation' ? 'source equation' : targetType === 'example' ? 'source example' : targetType === 'exercise' ? 'source exercise' : 'referenced source item';
+      return `<span class="source-reference">${label}</span>`;
+    }
     return children();
   };
 
@@ -89,7 +98,10 @@ export async function mineOpenStaxUnit1(topicIndex) {
       if (!problem || !solution) throw new Error(`${exerciseId} lacks a publisher problem or solution`);
       const problemClone = problem.cloneNode(true);
       const suppliedTitle = [...problemClone.children].find((child) => localName(child) === 'title');
-      const title = suppliedTitle?.textContent?.trim() || exerciseId;
+      const position = selections.findIndex((selection) => selection[1] === exerciseId) + 1;
+      const parentClass = exercise.parentElement?.getAttribute('class') ?? '';
+      const sourceKind = parentClass.includes('checkpoint') ? 'Check Your Understanding' : parentClass.includes('section-exercises') ? 'Section Exercise' : 'Practice Example';
+      const title = suppliedTitle?.textContent?.trim() || `${topicId} · ${sourceKind} ${position}`;
       suppliedTitle?.remove();
       let instruction = '';
       if (exercise.parentElement?.getAttribute('class')?.includes('section-exercises')) {
@@ -104,7 +116,6 @@ export async function mineOpenStaxUnit1(topicIndex) {
       const solutionId = solution.id;
       const solutionLine = xml.slice(0, xml.indexOf(`<solution id="${solutionId}"`)).split('\n').length;
       const blob = `${REPOSITORY}/blob/${COMMIT}/modules/${moduleId}/index.cnxml`;
-      const position = selections.findIndex((selection) => selection[1] === exerciseId) + 1;
       records.push({
         id: `openstax-${exerciseId}`,
         type: 'embedded', topicId, title,

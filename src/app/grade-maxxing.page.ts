@@ -5,12 +5,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { interval } from 'rxjs';
 import { MathFormulaComponent } from './math-formula.component';
 import { PracticeCatalogService, type PracticeDifficulty, type PracticeDisplay, type PracticeGrade, type PracticeQuestion, type StudySession } from './practice-catalog.service';
+import { TrustedSourceHtmlPipe } from './trusted-source-html.pipe';
 
 export type { PracticeDifficulty, PracticeDisplay, PracticeGrade, PracticeQuestion, StudySession } from './practice-catalog.service';
 
 export const PRACTICE_DIFFICULTIES: PracticeDifficulty[] = ['easy', 'medium', 'hard', 'ridiculous'];
 export const PRACTICE_FILTER_TAGS = ['University exam', 'Released AP exam', 'Textbook', 'Worked practice'];
 export const PRACTICE_DISPLAYS: PracticeDisplay[] = ['embedded', 'external'];
+export type AvailableTopic = { id: string; title: string; unit: string; count: number; sourceNames: Set<string>; sources: number };
 
 export function gradePoints(grade: PracticeGrade): number { return grade === 'cooked' ? 1 : grade === 'close' ? 0.5 : 0; }
 export function completionCount(session: Pick<StudySession, 'results'>): number { return Object.keys(session.results).length; }
@@ -53,10 +55,21 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
   }
   return selected;
 }
+export type UnitSelectionState = 'none' | 'partial' | 'all';
+export function unitSelectionState(topicIds: string[], selectedTopicIds: string[]): UnitSelectionState {
+  const selectedCount = topicIds.filter((id) => selectedTopicIds.includes(id)).length;
+  return selectedCount === 0 ? 'none' : selectedCount === topicIds.length ? 'all' : 'partial';
+}
+export function toggleUnitSelection(topicIds: string[], selectedTopicIds: string[]): string[] {
+  const selected = new Set(selectedTopicIds);
+  if (unitSelectionState(topicIds, selectedTopicIds) === 'all') topicIds.forEach((id) => selected.delete(id));
+  else topicIds.forEach((id) => selected.add(id));
+  return [...selected];
+}
 
 @Component({
   standalone: true,
-  imports: [FormsModule, MathFormulaComponent],
+  imports: [FormsModule, MathFormulaComponent, TrustedSourceHtmlPipe],
   template: `
     <section class="maxxing-hero">
       <div><p class="eyebrow"><span>BETA</span> GRADE MAXXING</p><h1>Lock in.<br><em>Level up.</em></h1><p>Build a study run for your next test. Pick the topics, put in reps, and come back whenever you want.</p></div>
@@ -98,7 +111,7 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
                   @if (question.type === 'embedded') {
                     @if (question.promptText) { <p>{{question.promptText}}</p> }
                     @if (question.promptTex) { <calc-math class="practice-math" [tex]="question.promptTex" /> }
-                    @if (question.promptHtml) { <div class="source-faithful-content" [innerHTML]="question.promptHtml"></div> }
+                    @if (question.promptHtml) { <div class="source-faithful-content" [innerHTML]="question.promptHtml | trustedSourceHtml"></div> }
                   } @else {
                     <div class="external-question"><span>↗</span><div><h3>This problem lives on the source site.</h3><p>Open the publisher’s problem, use the source question ID shown below to locate it when needed, then return here to log how it went. Your session timer keeps running.</p><a class="source-button" [href]="question.problemUrl" target="_blank" rel="noopener noreferrer">Open publisher problem ↗</a></div></div>
                   }
@@ -107,7 +120,7 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
                 @if (!isRevealed(question.id)) {
                   <button class="reveal-button" type="button" (click)="reveal(question.id)">{{question.type === 'embedded' ? 'Show answer' : 'I’m ready to check'}}</button>
                 } @else {
-                  <section class="solution-panel"><div class="solution-heading"><p class="eyebrow">CHECK IT</p><button type="button" (click)="hideAnswer(question.id)">Hide answer</button></div>@if (question.type === 'embedded') { @if (question.answerText) { <p>{{question.answerText}}</p> } @if (question.answerTex) { <calc-math class="practice-math answer-math" [tex]="question.answerTex" /> } @if (question.answerHtml) { <div class="source-faithful-content" [innerHTML]="question.answerHtml"></div> } } @else { <p>The worked answer stays with the publisher.</p><a [href]="question.solutionUrl" target="_blank" rel="noopener noreferrer">Open the official solution ↗</a> }</section>
+                  <section class="solution-panel"><div class="solution-heading"><p class="eyebrow">CHECK IT</p><button type="button" (click)="hideAnswer(question.id)">Hide answer</button></div>@if (question.type === 'embedded') { @if (question.answerText) { <p>{{question.answerText}}</p> } @if (question.answerTex) { <calc-math class="practice-math answer-math" [tex]="question.answerTex" /> } @if (question.answerHtml) { <div class="source-faithful-content" [innerHTML]="question.answerHtml | trustedSourceHtml"></div> } } @else { <p>The worked answer stays with the publisher.</p><a [href]="question.solutionUrl" target="_blank" rel="noopener noreferrer">Open the official solution ↗</a> }</section>
                   <div class="grade-actions" aria-label="Log your result"><button class="grade-correct" type="button" (click)="recordGrade('cooked')"><b>Cooked it</b><small>Correct</small></button><button class="grade-partial" type="button" (click)="recordGrade('close')"><b>Close</b><small>Partial</small></button><button class="grade-wrong" type="button" (click)="recordGrade('reps')"><b>Need reps</b><small>Wrong / skipped</small></button></div>
                 }
 
@@ -133,7 +146,22 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
             <footer><p><b>Beta difficulty estimate.</b> We classify by source and placement; publishers do not supply these labels.</p><button class="text-action" type="button" (click)="resetQuestionFilters()">Use all questions</button></footer>
           </details>
           <section class="session-size"><label>Maximum questions per topic <input type="number" min="1" max="25" step="1" [ngModel]="questionLimit()" (ngModelChange)="setQuestionLimit($event)"></label><div><b>{{plannedQuestionCount()}} questions in this run</b><span>We rotate between publishers when a topic has multiple sources.</span></div></section>
-          <div class="topic-bank">@for (topic of availableTopics(); track topic.id) { <label class="topic-choice" [class.selected]="selectedTopics().includes(topic.id)" [style.--challenge-accent]="accentFor(topic.id)"><input type="checkbox" [checked]="selectedTopics().includes(topic.id)" (change)="toggleTopic(topic.id)"><span class="choice-check">✓</span><div><small>{{topic.unit}}</small><b>{{topic.id}} · {{topic.title}}</b><em>{{topic.count}} available · {{topic.sources}} {{topic.sources === 1 ? 'source' : 'sources'}}</em></div></label> }</div>
+          <div class="unit-bank">
+            @for (unit of availableUnits(); track unit.id) {
+              <section class="unit-group" [style.--challenge-accent]="accentFor(unit.id)">
+                <label class="unit-choice" [class.selected]="unitSelectionState(unit.topicIds) === 'all'" [class.partial]="unitSelectionState(unit.topicIds) === 'partial'">
+                  <input type="checkbox" [checked]="unitSelectionState(unit.topicIds) === 'all'" [indeterminate]="unitSelectionState(unit.topicIds) === 'partial'" (change)="toggleUnit(unit.topicIds)">
+                  <span class="choice-check" aria-hidden="true">{{unitSelectionState(unit.topicIds) === 'partial' ? '–' : '✓'}}</span>
+                  <div><small>Select every topic</small><b>{{unit.title}}</b><em>{{unitSelectedCount(unit.topicIds)}} of {{unit.topicIds.length}} topics selected</em></div>
+                </label>
+                <div class="unit-topics">
+                  @for (topic of unit.topics; track topic.id) {
+                    <label class="topic-choice" [class.selected]="selectedTopics().includes(topic.id)"><input type="checkbox" [checked]="selectedTopics().includes(topic.id)" (change)="toggleTopic(topic.id)"><span class="choice-check">✓</span><div><small>Topic</small><b>{{topic.id}} · {{topic.title}}</b><em>{{topic.count}} available · {{topic.sources}} {{topic.sources === 1 ? 'source' : 'sources'}}</em></div></label>
+                  }
+                </div>
+              </section>
+            }
+          </div>
           <div class="setup-actions"><button class="secondary-action" type="button" (click)="cancelCreate()">Cancel</button><button class="maxxing-primary" type="button" [disabled]="!draftName().trim() || !selectedTopics().length || !plannedQuestionCount()" (click)="createSession()">Start study run →</button></div>
         </section>
       } @else {
@@ -174,9 +202,18 @@ export class GradeMaxxingPage {
   readonly displayCounts = computed(() => ({ embedded: this.questions().filter((question) => question.type === 'embedded').length, external: this.questions().filter((question) => question.type === 'external').length }));
   readonly filteredQuestions = computed(() => filterPracticeQuestions(this.questions(), this.selectedSources(), this.selectedFilterTags(), this.selectedDifficulties(), this.selectedDisplays()));
   readonly availableTopics = computed(() => {
-    const topics = new Map<string, {id: string; title: string; unit: string; count: number; sourceNames: Set<string>; sources: number}>();
+    const topics = new Map<string, AvailableTopic>();
     for (const question of this.filteredQuestions()) { const topic = topics.get(question.topicId) ?? { id: question.topicId, title: question.topic, unit: question.unit, count: 0, sourceNames: new Set<string>(), sources: 0 }; topic.count += 1; topic.sourceNames.add(question.source.author); topic.sources = topic.sourceNames.size; topics.set(question.topicId, topic); }
     return [...topics.values()].sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+  });
+  readonly availableUnits = computed(() => {
+    const units = new Map<string, { id: string; title: string; topicIds: string[]; topics: AvailableTopic[] }>();
+    for (const topic of this.availableTopics()) {
+      const id = topic.id.split('.')[0];
+      const unit = units.get(id) ?? { id, title: topic.unit, topicIds: [], topics: [] };
+      unit.topicIds.push(topic.id); unit.topics.push(topic); units.set(id, unit);
+    }
+    return [...units.values()].sort((a, b) => Number(a.id) - Number(b.id));
   });
   readonly plannedQuestionCount = computed(() => selectBalancedQuestions(this.filteredQuestions(), this.selectedTopics(), this.questionLimit()).length);
   readonly sessionQuestions = computed(() => { const session = this.activeSession(); return session ? session.questionIds.map((id) => this.questions().find((question) => question.id === id)).filter((question): question is PracticeQuestion => Boolean(question)) : []; });
@@ -190,6 +227,9 @@ export class GradeMaxxingPage {
   }
 
   toggleTopic(id: string) { this.selectedTopics.update((items) => items.includes(id) ? items.filter((item) => item !== id) : [...items, id]); }
+  toggleUnit(topicIds: string[]) { this.selectedTopics.update((items) => toggleUnitSelection(topicIds, items)); }
+  unitSelectionState(topicIds: string[]) { return unitSelectionState(topicIds, this.selectedTopics()); }
+  unitSelectedCount(topicIds: string[]) { return topicIds.filter((id) => this.selectedTopics().includes(id)).length; }
   toggleSource(source: string) { this.selectedSources.update((items) => items.includes(source) ? items.filter((item) => item !== source) : [...items, source]); }
   toggleFilterTag(tag: string) { this.selectedFilterTags.update((items) => items.includes(tag) ? items.filter((item) => item !== tag) : [...items, tag]); }
   toggleDifficulty(difficulty: PracticeDifficulty) { this.selectedDifficulties.update((items) => items.includes(difficulty) ? items.filter((item) => item !== difficulty) : [...items, difficulty]); }

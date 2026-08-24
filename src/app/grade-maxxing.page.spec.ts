@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { completionCount, filterPracticeQuestions, gradePoints, reconcileSessionQuestions, selectBalancedQuestions, sessionScore, type PracticeDifficulty, type PracticeDisplay, type PracticeQuestion, type StudySession } from './grade-maxxing.page';
+import { completionCount, filterPracticeQuestions, gradePoints, reconcileSessionQuestions, selectBalancedQuestions, sessionScore, toggleUnitSelection, unitSelectionState, type PracticeDifficulty, type PracticeDisplay, type PracticeQuestion, type StudySession } from './grade-maxxing.page';
 
 const session = (results: StudySession['results']): Pick<StudySession, 'results'> => ({ results });
 
@@ -26,5 +26,12 @@ describe('Grade Maxxing study sessions', () => {
     expect(filterPracticeQuestions(values, ['Michigan'], ['University exam', 'Textbook'], ['hard'], ['external'])).toEqual([values[0]]);
     expect(filterPracticeQuestions(values, [], ['University exam'], ['hard'])).toEqual([]);
     expect(filterPracticeQuestions(values, ['Active'], ['Textbook'], ['medium'], ['embedded'])).toEqual([values[1]]);
+  });
+  it('supports select-all, partial, and select-none unit states', () => {
+    const topics = ['1.1', '1.2', '1.3'];
+    expect(unitSelectionState(topics, [])).toBe('none');
+    expect(unitSelectionState(topics, ['1.2'])).toBe('partial');
+    expect(toggleUnitSelection(topics, ['1.2', '2.1'])).toEqual(['1.2', '2.1', '1.1', '1.3']);
+    expect(toggleUnitSelection(topics, ['1.1', '1.2', '1.3', '2.1'])).toEqual(['2.1']);
   });
 });
