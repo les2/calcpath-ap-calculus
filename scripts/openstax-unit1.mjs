@@ -32,6 +32,8 @@ const MODULES = {
   m53632: { title: '5.3 The Fundamental Theorem of Calculus', page: '5-3-the-fundamental-theorem-of-calculus' },
   m53633: { title: '5.4 Integration Formulas and the Net Change Theorem', page: '5-4-integration-formulas-and-the-net-change-theorem' },
   m53634: { title: '5.5 Substitution', page: '5-5-substitution' },
+  m53640: { title: '6.1 Areas between Curves', page: '6-1-areas-between-curves' },
+  m53642: { title: '6.2 Determining Volumes by Slicing', page: '6-2-determining-volumes-by-slicing' },
   m53656: { title: '3.1 Integration by Parts', page: '3-1-integration-by-parts', volume: 2 },
   m53681: { title: '3.4 Partial Fractions', page: '3-4-partial-fractions', volume: 2 },
   m53684: { title: '3.5 Other Strategies for Integration', page: '3-5-other-strategies-for-integration', volume: 2 },
@@ -119,7 +121,20 @@ export const TOPIC_EXERCISES = {
   '7.6': [['m53704','fs-id1170571130297'],['m53704','fs-id1170571244783'],['m53704','fs-id1170571086082'],['m53704','fs-id1170571086134'],['m53704','fs-id1170573742502']],
   '7.7': [['m53704','fs-id1170571069529'],['m53704','fs-id1170573436521'],['m53704','fs-id1170571074905'],['m53704','fs-id1170571023995'],['m53704','fs-id1170571346512']],
   '7.8': [['m53704','fs-id1170571198016'],['m53704','fs-id1170571110824'],['m53704','fs-id1170571146758'],['m53704','fs-id1170571074882'],['m53704','fs-id1170570991542']],
-  '7.9': [['m53713','fs-id1170571642098'],['m53710','fs-id1170572480690'],['m53710','fs-id1170571775807'],['m53710','fs-id1170571558918'],['m53710','fs-id1170572420405']]
+  '7.9': [['m53713','fs-id1170571642098'],['m53710','fs-id1170572480690'],['m53710','fs-id1170571775807'],['m53710','fs-id1170571558918'],['m53710','fs-id1170572420405']],
+  '8.1': [['m53631','fs-id1170571712595'],['m53631','fs-id1170571678849'],['m53631','fs-id1170571542810'],['m53631','fs-id1170571624145'],['m53631','fs-id1170572309560']],
+  '8.2': [['m53633','fs-id1170571655282'],['m53633','fs-id1170572373389'],['m53633','fs-id1170571734079'],['m53633','fs-id1170572480525'],['m53633','fs-id1170572235269']],
+  '8.3': [['m53633','fs-id1170571542387'],['m53633','fs-id1170571638194'],['m53633','fs-id1170572643190'],['m53633','fs-id1170571613601'],['m53633','fs-id1170572293468']],
+  '8.4': [['m53640','fs-id1167793361764'],['m53640','fs-id1167793940237'],['m53640','fs-id1167793479817'],['m53640','fs-id1167794076151'],['m53640','fs-id1167793637355']],
+  '8.5': [['m53640','fs-id1167793469835'],['m53640','fs-id1167794054213'],['m53640','fs-id1167793463068'],['m53640','fs-id1167793956299'],['m53640','fs-id1167793394824']],
+  '8.6': [['m53640','fs-id1167793263974'],['m53640','fs-id1167794121633'],['m53640','fs-id1167793637971'],['m53640','fs-id1167793455122'],['m53640','fs-id1167793473545']],
+  '8.7': [['m53642','fs-id1167793510162'],['m53642','fs-id1167793950924'],['m53642','fs-id1167794171464'],['m53642','fs-id1167794163652'],['m53642','fs-id1167793278422']],
+  '8.8': [['m53642','fs-id1167793948074'],['m53642','fs-id1167793926080'],['m53642','fs-id1167793950255'],['m53642','fs-id1167794075571'],['m53642','fs-id1167793261382']],
+  '8.9': [['m53642','fs-id1167793618941'],['m53642','fs-id1167793730425'],['m53642','fs-id1167793271609'],['m53642','fs-id1167793455066'],['m53642','fs-id1167794028814']],
+  '8.10': [['m53642','fs-id1167794167925'],['m53642','fs-id1167794122074'],['m53642','fs-id1167794069008'],['m53642','fs-id1167794329497'],['m53642','fs-id1167793959415']],
+  '8.11': [['m53642','fs-id1167794209452'],['m53642','fs-id1167794324566'],['m53642','fs-id1167793499099'],['m53642','fs-id1167793959012'],['m53642','fs-id1167793636189']],
+  '8.12': [['m53642','fs-id1167793912721'],['m53642','fs-id1167793571152'],['m53642','fs-id1167793829846'],['m53642','fs-id1167794122093'],['m53642','fs-id1167793355014']],
+  '8.13': [['m53642','fs-id1167793705379'],['m53642','fs-id1167794060772'],['m53642','fs-id1167793372594'],['m53642','fs-id1167793567013'],['m53642','fs-id1167793479896']]
 };
 
 const escapeHtml = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -128,7 +143,14 @@ const FORCE_GROUP_INSTRUCTIONS = new Set([
   'fs-id1169739275301',
   'fs-id1169739303722',
   'fs-id1170573742050',
-  'fs-id1170571246086'
+  'fs-id1170571246086',
+  'fs-id1167793950924',
+  'fs-id1167793948074',
+  'fs-id1167793261382',
+  'fs-id1167793926080',
+  'fs-id1167794171464',
+  'fs-id1167793950255',
+  'fs-id1167794075571'
 ]);
 const NO_GROUP_INSTRUCTIONS = new Set([
   'fs-id1170571027411',
@@ -258,7 +280,7 @@ export async function mineOpenStaxPractice(topicIndex) {
         type: 'embedded', topicId, title,
         promptHtml, answerHtml,
         metadata: { sourceQuestionId: exerciseId, collection: MODULES[moduleId].title, course: 'AB + BC', format: 'textbook exercise', difficulty: position <= 2 ? 'easy' : position <= 4 ? 'medium' : 'hard', estimatedMinutes: 10, calculator: 'varies', answerKind: 'publisher solution', tags: [topicIndex.get(topicId).title, 'Textbook', 'Embedded'] },
-        source: { sourceId: `openstax-calculus-volume-${volume}`, title: `OpenStax Calculus Volume ${volume} · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-${volume}/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume ${volume}, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: /^(5|6|7)\./.test(topicId) ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
+        source: { sourceId: `openstax-calculus-volume-${volume}`, title: `OpenStax Calculus Volume ${volume} · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-${volume}/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume ${volume}, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: /^(5|6|7|8)\./.test(topicId) ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
       });
     }
   }
