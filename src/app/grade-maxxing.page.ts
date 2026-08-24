@@ -1,29 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, DestroyRef, computed, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { interval } from 'rxjs';
 import { MathFormulaComponent } from './math-formula.component';
+import { PracticeCatalogService, type PracticeDifficulty, type PracticeDisplay, type PracticeGrade, type PracticeQuestion, type StudySession } from './practice-catalog.service';
 
-export type PracticeGrade = 'cooked' | 'close' | 'reps';
-export type PracticeDifficulty = 'easy' | 'medium' | 'hard' | 'ridiculous';
-export type PracticeDisplay = 'embedded' | 'external';
+export type { PracticeDifficulty, PracticeDisplay, PracticeGrade, PracticeQuestion, StudySession } from './practice-catalog.service';
+
 export const PRACTICE_DIFFICULTIES: PracticeDifficulty[] = ['easy', 'medium', 'hard', 'ridiculous'];
 export const PRACTICE_FILTER_TAGS = ['University exam', 'Released AP exam', 'Textbook', 'Worked practice'];
 export const PRACTICE_DISPLAYS: PracticeDisplay[] = ['embedded', 'external'];
-export type QuestionLicense = { code: string; name: string; url: string; usage: 'embedded' | 'link-only' };
-export type QuestionSource = { title: string; author: string; url: string; attribution: string; license: QuestionLicense; exerciseId?: string; promptUrl?: string; answerUrl?: string; transcription?: 'format-only' | 'link-only'; verifiedAt?: string };
-export type QuestionMetadata = { sourceQuestionId: string; collection: string; course: string; format: string; difficulty: PracticeDifficulty; estimatedMinutes: number; calculator: string; answerKind: string; publishedYear?: number; tags: string[] };
-export type PracticeQuestion = {
-  id: string; type: 'embedded' | 'external'; topicId: string; topic: string; unit: string; title: string;
-  promptText?: string; promptTex?: string; answerText?: string; answerTex?: string; problemUrl?: string; solutionUrl?: string;
-  videoUrl: string; referenceUrl: string; metadata: QuestionMetadata; source: QuestionSource;
-};
-export type StudySession = {
-  id: string; name: string; topicIds: string[]; questionIds: string[]; currentIndex: number; totalSeconds: number;
-  results: Record<string, PracticeGrade>; revealed: string[]; status: 'open' | 'dismissed'; createdAt: string; updatedAt: string; questionLimitPerTopic?: number; selectionSeed?: number;
-};
 
 export function gradePoints(grade: PracticeGrade): number { return grade === 'cooked' ? 1 : grade === 'close' ? 0.5 : 0; }
 export function completionCount(session: Pick<StudySession, 'results'>): number { return Object.keys(session.results).length; }
@@ -111,6 +98,7 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
                   @if (question.type === 'embedded') {
                     @if (question.promptText) { <p>{{question.promptText}}</p> }
                     @if (question.promptTex) { <calc-math class="practice-math" [tex]="question.promptTex" /> }
+                    @if (question.promptHtml) { <div class="source-faithful-content" [innerHTML]="question.promptHtml"></div> }
                   } @else {
                     <div class="external-question"><span>↗</span><div><h3>This problem lives on the source site.</h3><p>Open the publisher’s problem, use the source question ID shown below to locate it when needed, then return here to log how it went. Your session timer keeps running.</p><a class="source-button" [href]="question.problemUrl" target="_blank" rel="noopener noreferrer">Open publisher problem ↗</a></div></div>
                   }
@@ -119,11 +107,11 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
                 @if (!isRevealed(question.id)) {
                   <button class="reveal-button" type="button" (click)="reveal(question.id)">{{question.type === 'embedded' ? 'Show answer' : 'I’m ready to check'}}</button>
                 } @else {
-                  <section class="solution-panel"><div class="solution-heading"><p class="eyebrow">CHECK IT</p><button type="button" (click)="hideAnswer(question.id)">Hide answer</button></div>@if (question.type === 'embedded') { @if (question.answerText) { <p>{{question.answerText}}</p> } @if (question.answerTex) { <calc-math class="practice-math answer-math" [tex]="question.answerTex" /> } } @else { <p>The worked answer stays with the publisher.</p><a [href]="question.solutionUrl" target="_blank" rel="noopener noreferrer">Open the official solution ↗</a> }</section>
+                  <section class="solution-panel"><div class="solution-heading"><p class="eyebrow">CHECK IT</p><button type="button" (click)="hideAnswer(question.id)">Hide answer</button></div>@if (question.type === 'embedded') { @if (question.answerText) { <p>{{question.answerText}}</p> } @if (question.answerTex) { <calc-math class="practice-math answer-math" [tex]="question.answerTex" /> } @if (question.answerHtml) { <div class="source-faithful-content" [innerHTML]="question.answerHtml"></div> } } @else { <p>The worked answer stays with the publisher.</p><a [href]="question.solutionUrl" target="_blank" rel="noopener noreferrer">Open the official solution ↗</a> }</section>
                   <div class="grade-actions" aria-label="Log your result"><button class="grade-correct" type="button" (click)="recordGrade('cooked')"><b>Cooked it</b><small>Correct</small></button><button class="grade-partial" type="button" (click)="recordGrade('close')"><b>Close</b><small>Partial</small></button><button class="grade-wrong" type="button" (click)="recordGrade('reps')"><b>Need reps</b><small>Wrong / skipped</small></button></div>
                 }
 
-                <div class="question-source"><div><b>{{question.source.title}}</b><span>{{question.metadata.sourceQuestionId}} · {{question.metadata.answerKind}}</span><span>{{question.source.attribution}}</span></div><div><a [href]="question.source.url" target="_blank" rel="noopener noreferrer">Source ↗</a><a [href]="question.source.license.url" target="_blank" rel="noopener noreferrer">{{question.source.license.name}} ↗</a></div></div>
+                <div class="question-source"><div><b>{{question.source.title}}</b><span>{{question.metadata.sourceQuestionId}} · {{question.metadata.answerKind}}</span><span>{{question.source.attribution}}</span></div><div><a [href]="question.source.promptUrl" target="_blank" rel="noopener noreferrer">Exact question ↗</a><a [href]="question.source.answerUrl" target="_blank" rel="noopener noreferrer">Exact answer ↗</a><a [href]="question.source.url" target="_blank" rel="noopener noreferrer">Source ↗</a><a [href]="question.source.license.url" target="_blank" rel="noopener noreferrer">{{question.source.license.name}} ↗</a></div></div>
                 <nav class="question-nav" aria-label="Question navigation"><button class="secondary-action" type="button" [disabled]="study.currentIndex === 0" (click)="moveQuestion(-1)">← Previous</button><a [href]="question.videoUrl" target="_blank" rel="noopener noreferrer">Watch lesson</a><a [href]="question.referenceUrl" target="_blank" rel="noopener noreferrer">Reference</a><button class="maxxing-primary" type="button" [disabled]="study.currentIndex === study.questionIds.length - 1" (click)="moveQuestion(1)">Next →</button></nav>
               </article>
             }
@@ -162,9 +150,9 @@ export function selectBalancedQuestions(questions: PracticeQuestion[], topicIds:
 })
 export class GradeMaxxingPage {
   readonly questions = signal<PracticeQuestion[]>([]);
-  readonly sessions = signal<StudySession[]>(this.readSessions());
+  readonly sessions = signal<StudySession[]>([]);
   readonly activeSessionId = signal<string | null>(null);
-  readonly creating = signal(this.sessions().filter((session) => session.status === 'open').length === 0);
+  readonly creating = signal(false);
   readonly draftName = signal('Unit 1 test');
   readonly selectedTopics = signal<string[]>([]);
   readonly questionLimit = signal(5);
@@ -194,15 +182,9 @@ export class GradeMaxxingPage {
   readonly sessionQuestions = computed(() => { const session = this.activeSession(); return session ? session.questionIds.map((id) => this.questions().find((question) => question.id === id)).filter((question): question is PracticeQuestion => Boolean(question)) : []; });
   readonly currentQuestion = computed(() => this.sessionQuestions()[this.activeSession()?.currentIndex ?? 0] ?? null);
 
-  constructor(http: HttpClient, route: ActivatedRoute, private readonly router: Router, destroyRef: DestroyRef) {
-    http.get<{questions: PracticeQuestion[]}>(new URL('data/practice.json', document.baseURI).toString()).subscribe((data) => {
-      this.questions.set(data.questions);
-      this.selectedSources.set([...new Set(data.questions.map((question) => question.source.author))].sort());
-      const validIds = new Set(data.questions.map((question) => question.id));
-      this.sessions.update((sessions) => sessions.map((session) => reconcileSessionQuestions(session, validIds)).filter((session): session is StudySession => Boolean(session)));
-      this.persist();
-    });
-    route.queryParamMap.pipe(takeUntilDestroyed(destroyRef)).subscribe((params) => { const id = params.get('session'); this.activeSessionId.set(this.sessions().some((session) => session.id === id && session.status === 'open') ? id : null); });
+  constructor(private readonly catalog: PracticeCatalogService, route: ActivatedRoute, private readonly router: Router, destroyRef: DestroyRef) {
+    route.queryParamMap.pipe(takeUntilDestroyed(destroyRef)).subscribe((params) => this.activeSessionId.set(params.get('session')));
+    void this.initialize();
     interval(1000).pipe(takeUntilDestroyed(destroyRef)).subscribe(() => { const id = this.activeSessionId(); if (this.running() && id) this.updateSession(id, (session) => ({ ...session, totalSeconds: session.totalSeconds + 1, updatedAt: new Date().toISOString() })); });
     destroyRef.onDestroy(() => this.running.set(false));
   }
@@ -252,6 +234,20 @@ export class GradeMaxxingPage {
   sourceLabel(source: string) { return ({ 'Matthew Boelkins et al.': 'Active Calculus', 'Paul Dawkins · Lamar University': 'Paul’s Math Notes', 'University of Michigan Mathematics': 'University of Michigan', 'College Board': 'College Board' } as Record<string, string>)[source] ?? source; }
   displayLabel(display: PracticeDisplay) { return `${display === 'embedded' ? 'Embedded' : 'External'} (${this.displayCounts()[display]})`; }
   private updateSession(id: string, update: (session: StudySession) => StudySession) { this.sessions.update((sessions) => sessions.map((session) => session.id === id ? update(session) : session)); this.persist(); }
-  private persist() { localStorage.setItem('calcpath-study-sessions-v2', JSON.stringify(this.sessions())); }
-  private readSessions(): StudySession[] { try { const value = JSON.parse(localStorage.getItem('calcpath-study-sessions-v2') ?? '[]'); return Array.isArray(value) ? value : []; } catch { return []; } }
+  private async initialize() {
+    const [questions, savedSessions] = await Promise.all([
+      this.catalog.load(new URL('data/practice.json', document.baseURI).toString()),
+      this.catalog.loadSessions()
+    ]);
+    this.questions.set(questions);
+    this.selectedSources.set([...new Set(questions.map((question) => question.source.author))].sort());
+    const validIds = new Set(questions.map((question) => question.id));
+    const sessions = savedSessions.map((session) => reconcileSessionQuestions(session, validIds)).filter((session): session is StudySession => Boolean(session));
+    this.sessions.set(sessions);
+    const requestedId = this.activeSessionId();
+    if (!sessions.some((session) => session.id === requestedId && session.status === 'open')) this.activeSessionId.set(null);
+    this.creating.set(!this.activeSessionId() && sessions.every((session) => session.status !== 'open'));
+    this.persist();
+  }
+  private persist() { void this.catalog.saveSessions(this.sessions()); }
 }

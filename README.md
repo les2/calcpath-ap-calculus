@@ -190,7 +190,14 @@ worker/                  Clean-route fallback for the primary hosted Site
 .openai/hosting.json     Link to the ChatGPT Sites project
 ```
 
-There is intentionally no `db/`, `drizzle/`, or D1 example code. The app does not use a server database.
+There is intentionally no `db/`, `drizzle/`, or D1 example code. The app does
+not use a server database. Its versioned JSON catalog is the canonical published
+copy; the browser normalizes that catalog into [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+for fast structured queries and offline access. Study sessions live in a
+separate IndexedDB object store and are never uploaded. Existing sessions are
+migrated automatically from the earlier `localStorage` format. The service
+worker still caches the application shell and transport responses; IndexedDB
+stores the app’s structured records.
 
 ## Application routes
 
@@ -220,14 +227,20 @@ answer. Link-only questions remain on the publisher's site. The complete rules
 for people and coding agents are in [AGENTS.md](AGENTS.md), and the data
 validator enforces the required provenance fields.
 
-The beta practice catalog currently contains more than 600 link-only question
-records spanning four publisher groups: University of Michigan Mathematics,
-Active Calculus, College Board released free-response questions, and Paul’s
-Online Math Notes. Each record includes its roadmap topic, exact publisher
-question and answer links, course, format, difficulty, calculator policy,
-estimated time, collection or year, and skill tags. Run `npm run mine:practice`
-to refresh the reproducible catalog from the curated source map; review the
-result before committing it.
+The beta practice catalog currently contains 689 records from five publisher
+groups: University of Michigan Mathematics, Active Calculus, College Board
+released free-response questions, Paul’s Online Math Notes, and OpenStax. The
+80 embedded OpenStax records provide five publisher-authored questions and
+publisher-supplied answers for every Unit 1 roadmap topic. They are mechanically
+converted from a pinned revision of the openly licensed source CNXML, including
+tables and referenced figures; CalcPath does not rewrite the mathematics.
+
+The JSON data model stores publishers once in a normalized `sources` registry.
+Each compact question stores a `sourceId` plus its exact exercise, problem, and
+answer locators. Records also include roadmap topic, course, format, difficulty,
+calculator policy, estimated time, collection or year, and skill tags. Run
+`npm run mine:practice` to refresh the reproducible catalog from the curated
+source map; review the result before committing it.
 
 The Grade Maxxing builder can filter that catalog by publisher site, broad
 problem type, content delivery (`Embedded` or `External`), and four beta

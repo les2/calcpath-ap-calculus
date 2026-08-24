@@ -1,4 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { mineOpenStaxUnit1 } from './openstax-unit1.mjs';
 
 const topicsData = JSON.parse(await readFile(new URL('../public/data/topics.json', import.meta.url), 'utf8'));
 const topicIndex = new Map();
@@ -27,11 +29,17 @@ function addQuestion(record) {
   seenIds.add(record.id);
   questions.push({
     id: record.id,
-    type: 'external',
+    type: record.type ?? 'external',
     topicId: record.topicId,
     topic: info.title,
     unit: `Unit ${info.unit.id} · ${info.unit.title}`,
     title: record.title,
+    promptText: record.promptText,
+    promptTex: record.promptTex,
+    promptHtml: record.promptHtml,
+    answerText: record.answerText,
+    answerTex: record.answerTex,
+    answerHtml: record.answerHtml,
     problemUrl: record.problemUrl,
     solutionUrl: record.solutionUrl,
     videoUrl: info.unit.video,
@@ -189,15 +197,47 @@ for (const [exam, topicIds] of Object.entries(apTopics)) {
   });
 }
 
+for (const record of await mineOpenStaxUnit1(topicIndex)) addQuestion(record);
+
 questions.sort((a, b) => a.topicId.localeCompare(b.topicId, undefined, { numeric: true }) || a.source.title.localeCompare(b.source.title) || a.id.localeCompare(b.id));
-const sources = [...new Set(questions.map((question) => question.source.author))];
+const sourceIds = new Map([
+  ['Matthew Boelkins et al.', 'active-calculus'],
+  ['Paul Dawkins · Lamar University', 'pauls-math-notes'],
+  ['University of Michigan Mathematics', 'umich-exam-archive'],
+  ['College Board', 'college-board-ap-frq']
+  ,['OpenStax', 'openstax-calculus-volume-1']
+]);
+const sourceRecords = [
+  { id: 'active-calculus', title: 'Active Calculus Single Variable', author: 'Matthew Boelkins et al.', url: 'https://activecalculus.org/single-alt/', attribution: 'Active Calculus by Matthew Boelkins et al.; exact linked exercise identified on each question.', license: { code: 'CC-BY-SA-4.0', name: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/', usage: 'link-only' } },
+  { id: 'pauls-math-notes', title: 'Paul’s Online Math Notes', author: 'Paul Dawkins · Lamar University', url: 'https://tutorial.math.lamar.edu/', attribution: 'Linked to the publisher’s exact problem and worked solution; question text is not reproduced.', license: linkLicense('https://tutorial.math.lamar.edu/Terms.aspx') },
+  { id: 'umich-exam-archive', title: 'University of Michigan Calculus Exam Archive', author: 'University of Michigan Mathematics', url: 'https://dhsp.math.lsa.umich.edu/examshops.html', attribution: 'Linked to the publisher’s exact problem PDF and matching solution PDF; question text is not reproduced.', license: linkLicense('https://dhsp.math.lsa.umich.edu/examshops.html') },
+  { id: 'college-board-ap-frq', title: 'College Board Released AP Calculus FRQs', author: 'College Board', url: 'https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam/past-exam-questions', attribution: 'Linked to the released question and official scoring guidelines; question text is not reproduced.', license: linkLicense('https://privacy.collegeboard.org/terms-of-use') }
+  ,{ id: 'openstax-calculus-volume-1', title: 'OpenStax Calculus Volume 1', author: 'OpenStax', url: 'https://openstax.org/details/books/calculus-volume-1', attribution: 'Transcribed from OpenStax Calculus Volume 1; each question records its exact pinned exercise and publisher solution.', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
+];
+const normalizedQuestions = questions.map(({ source, ...question }) => ({
+  ...question,
+  sourceId: sourceIds.get(source.author),
+  locator: {
+    exerciseId: source.exerciseId ?? question.metadata.sourceQuestionId,
+    promptUrl: source.promptUrl ?? question.problemUrl,
+    answerUrl: source.answerUrl ?? question.solutionUrl,
+    transcription: source.transcription,
+    verifiedAt: source.verifiedAt
+  }
+}));
+const sources = sourceRecords.map((source) => source.author);
 const difficultyCounts = Object.fromEntries(['easy', 'medium', 'hard', 'ridiculous'].map((difficulty) => [difficulty, questions.filter((question) => question.metadata.difficulty === difficulty).length]));
+const deliveryCounts = Object.fromEntries(['embedded', 'external'].map((type) => [type, normalizedQuestions.filter((question) => question.type === type).length]));
+const unit1EmbeddedCounts = Object.fromEntries([...topicIndex.keys()].filter((topicId) => topicId.startsWith('1.')).map((topicId) => [topicId, normalizedQuestions.filter((question) => question.topicId === topicId && question.type === 'embedded').length]));
+const revision = createHash('sha256').update(JSON.stringify({ sources: sourceRecords, questions: normalizedQuestions })).digest('hex').slice(0, 16);
 const output = {
-  schemaVersion: 4,
+  schemaVersion: 5,
+  revision,
   generatedAt: new Date().toISOString(),
   licenseNotice: 'CalcPath links to publisher-hosted problems and answers without reproducing them. Embedded questions may be added only as source-faithful, format-only transcriptions with exact question and answer locators.',
-  catalogStats: { questionCount: questions.length, sourceCount: sources.length, sources, difficultyCounts },
-  questions
+  catalogStats: { questionCount: normalizedQuestions.length, sourceCount: sourceRecords.length, sources, difficultyCounts, deliveryCounts, unit1EmbeddedCounts },
+  sources: sourceRecords,
+  questions: normalizedQuestions
 };
 await writeFile(new URL('../public/data/practice.json', import.meta.url), `${JSON.stringify(output, null, 2)}\n`);
-console.log(`Mined ${questions.length} link-only questions from ${sources.length} publisher groups.`);
+console.log(`Mined ${normalizedQuestions.length} questions from ${sourceRecords.length} publisher groups.`);

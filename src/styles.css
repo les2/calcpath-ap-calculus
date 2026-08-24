@@ -254,6 +254,17 @@ footer { flex-wrap: wrap; gap: 22px; }
 .practice-math { padding: 18px 0; overflow-x: auto; }
 .practice-math .katex { font-size: clamp(1.35em, 3vw, 2em); }
 .practice-math .katex-display { text-align: center; }
+.source-faithful-content { min-width: 0; color: var(--ink); font-size: 15px; line-height: 1.65; }
+.source-faithful-content p { margin: 0 0 16px; }
+.source-faithful-content math { font-size: 1.18em; }
+.source-faithful-content .source-equation { margin: 18px 0; overflow-x: auto; text-align: center; }
+.source-faithful-content ol, .source-faithful-content ul { display: grid; gap: 9px; padding-left: 25px; }
+.source-faithful-content figure { margin: 24px auto; text-align: center; }
+.source-faithful-content figure img { max-width: min(100%, 680px); height: auto; background: #fff; }
+.source-faithful-content figcaption { max-width: 680px; margin: 10px auto 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.source-table-wrap { max-width: 100%; overflow-x: auto; }
+.source-faithful-content table { width: 100%; border-collapse: collapse; }
+.source-faithful-content td { padding: 7px 9px; border: 1px solid var(--line); text-align: center; }
 .external-question { display: grid; grid-template-columns: 70px 1fr; gap: 22px; align-items: start; }
 .external-question > span { width: 64px; height: 64px; display: grid; place-items: center; background: #c5b8ff; color: #172022; font-size: 30px; font-weight: 900; }
 .external-question h3 { margin: 0 0 10px; font-size: 25px; }

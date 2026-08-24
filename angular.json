@@ -23,7 +23,7 @@
             "serviceWorker": "ngsw-config.json"
           },
           "configurations": {
-            "production": { "outputHashing": "all", "budgets": [{ "type": "initial", "maximumWarning": "750kB", "maximumError": "1.5MB" }] },
+            "production": { "outputHashing": "all", "budgets": [{ "type": "initial", "maximumWarning": "800kB", "maximumError": "1.5MB" }] },
             "development": { "optimization": false, "extractLicenses": false, "sourceMap": true }
           },
           "defaultConfiguration": "production"
