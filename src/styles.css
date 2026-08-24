@@ -218,6 +218,10 @@ footer { flex-wrap: wrap; gap: 22px; }
 .external-question h3 { margin: 0 0 10px; font-size: 25px; }
 .external-question p { max-width: 580px; color: var(--muted); line-height: 1.55; }
 .solution-panel { padding: 30px 40px; background: color-mix(in srgb, var(--lime) 13%, var(--paper)); border-top: 1px solid var(--line); }
+.solution-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.solution-heading .eyebrow { margin: 0; }
+.solution-heading button { padding: 0; border: 0; background: transparent; color: var(--ink); cursor: pointer; font-size: 11px; font-weight: 900; text-decoration: underline; text-underline-offset: 4px; }
+.solution-heading button:hover { color: var(--orange); }
 .solution-panel > p:not(.eyebrow) { color: var(--muted); }
 .solution-panel > a { color: var(--orange); font-weight: 900; text-decoration: underline; text-underline-offset: 4px; }
 .answer-math .katex { color: color-mix(in srgb, var(--ink) 86%, #008f7a); }

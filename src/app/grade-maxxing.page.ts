@@ -71,7 +71,7 @@ export function sessionScore(session: Pick<StudySession, 'results'>): number {
                 @if (!isRevealed(question.id)) {
                   <button class="reveal-button" type="button" (click)="reveal(question.id)">{{question.type === 'embedded' ? 'Show answer' : 'I’m ready to check'}}</button>
                 } @else {
-                  <section class="solution-panel"><p class="eyebrow">CHECK IT</p>@if (question.type === 'embedded') { @if (question.answerText) { <p>{{question.answerText}}</p> } @if (question.answerTex) { <calc-math class="practice-math answer-math" [tex]="question.answerTex" /> } } @else { <p>The worked answer stays with the publisher.</p><a [href]="question.solutionUrl" target="_blank" rel="noopener noreferrer">Open the official solution ↗</a> }</section>
+                  <section class="solution-panel"><div class="solution-heading"><p class="eyebrow">CHECK IT</p><button type="button" (click)="hideAnswer(question.id)">Hide answer</button></div>@if (question.type === 'embedded') { @if (question.answerText) { <p>{{question.answerText}}</p> } @if (question.answerTex) { <calc-math class="practice-math answer-math" [tex]="question.answerTex" /> } } @else { <p>The worked answer stays with the publisher.</p><a [href]="question.solutionUrl" target="_blank" rel="noopener noreferrer">Open the official solution ↗</a> }</section>
                   <div class="grade-actions" aria-label="Log your result"><button class="grade-correct" type="button" (click)="recordGrade('cooked')"><b>Cooked it</b><small>Correct</small></button><button class="grade-partial" type="button" (click)="recordGrade('close')"><b>Close</b><small>Partial</small></button><button class="grade-wrong" type="button" (click)="recordGrade('reps')"><b>Need reps</b><small>Wrong / skipped</small></button></div>
                 }
 
@@ -148,6 +148,7 @@ export class GradeMaxxingPage {
   goToQuestion(index: number) { const id = this.activeSessionId(); if (id) this.updateSession(id, (session) => ({ ...session, currentIndex: index, updatedAt: new Date().toISOString() })); }
   moveQuestion(change: number) { const session = this.activeSession(); if (session) this.goToQuestion(Math.max(0, Math.min(session.questionIds.length - 1, session.currentIndex + change))); }
   reveal(questionId: string) { const id = this.activeSessionId(); if (id) this.updateSession(id, (session) => ({ ...session, revealed: session.revealed.includes(questionId) ? session.revealed : [...session.revealed, questionId], updatedAt: new Date().toISOString() })); }
+  hideAnswer(questionId: string) { const id = this.activeSessionId(); if (id) this.updateSession(id, (session) => ({ ...session, revealed: session.revealed.filter((item) => item !== questionId), updatedAt: new Date().toISOString() })); }
   isRevealed(questionId: string) { return this.activeSession()?.revealed.includes(questionId) ?? false; }
   recordGrade(grade: PracticeGrade) {
     const session = this.activeSession(), question = this.currentQuestion(); if (!session || !question) return;
