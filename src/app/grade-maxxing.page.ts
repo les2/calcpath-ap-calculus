@@ -8,7 +8,7 @@ import { MathFormulaComponent } from './math-formula.component';
 
 export type PracticeGrade = 'cooked' | 'close' | 'reps';
 export type QuestionLicense = { code: string; name: string; url: string; usage: 'embedded' | 'link-only' };
-export type QuestionSource = { title: string; author: string; url: string; attribution: string; license: QuestionLicense; modified?: boolean; modificationNote?: string };
+export type QuestionSource = { title: string; author: string; url: string; attribution: string; license: QuestionLicense; exerciseId?: string; promptUrl?: string; answerUrl?: string; transcription?: 'format-only' | 'link-only'; verifiedAt?: string };
 export type PracticeQuestion = {
   id: string; type: 'embedded' | 'external'; topicId: string; topic: string; unit: string; title: string;
   promptText?: string; promptTex?: string; answerText?: string; answerTex?: string; problemUrl?: string; solutionUrl?: string;
@@ -24,6 +24,13 @@ export function completionCount(session: Pick<StudySession, 'results'>): number 
 export function sessionScore(session: Pick<StudySession, 'results'>): number {
   const grades = Object.values(session.results);
   return grades.length ? Math.round(grades.reduce((sum, grade) => sum + gradePoints(grade), 0) / grades.length * 100) : 0;
+}
+export function reconcileSessionQuestions(session: StudySession, validQuestionIds: Set<string>): StudySession | null {
+  const questionIds = session.questionIds.filter((id) => validQuestionIds.has(id));
+  if (!questionIds.length) return null;
+  const results = Object.fromEntries(Object.entries(session.results).filter(([id]) => validQuestionIds.has(id)));
+  const revealed = session.revealed.filter((id) => validQuestionIds.has(id));
+  return { ...session, questionIds, results, revealed, currentIndex: Math.min(session.currentIndex, questionIds.length - 1) };
 }
 
 @Component({
@@ -49,12 +56,19 @@ export function sessionScore(session: Pick<StudySession, 'results'>): number {
 
           <p class="own-work-note"><b>Using your teacher’s study guide?</b> Keep the timer running and work from that. The clock belongs to you, not the cards.</p>
 
-          <div class="study-layout">
-            <aside class="question-rail" aria-label="Questions in this study run">
-              @for (question of sessionQuestions(); track question.id; let index = $index) {
-                <button type="button" [class.current]="index === study.currentIndex" [class.done]="study.results[question.id]" (click)="goToQuestion(index)"><span>{{index + 1}}</span><div><b>{{question.title}}</b><small>{{question.type === 'embedded' ? 'On this page' : 'Opens source'}} · {{resultLabel(study.results[question.id])}}</small></div></button>
-              }
-            </aside>
+          <div class="question-list-control">
+            <span>Question {{study.currentIndex + 1}} of {{study.questionIds.length}}</span>
+            <button type="button" [attr.aria-expanded]="questionListVisible()" aria-controls="study-question-list" (click)="questionListVisible.update(value => !value)">{{questionListVisible() ? 'Hide question list' : 'Show all questions'}}</button>
+          </div>
+
+          <div class="study-layout" [class.with-question-list]="questionListVisible()">
+            @if (questionListVisible()) {
+              <aside id="study-question-list" class="question-rail" aria-label="Questions in this study run">
+                @for (question of sessionQuestions(); track question.id; let index = $index) {
+                  <button type="button" [class.current]="index === study.currentIndex" [class.done]="study.results[question.id]" (click)="goToQuestion(index)"><span>{{index + 1}}</span><div><b>{{question.title}}</b><small>{{question.type === 'embedded' ? 'On this page' : 'Opens source'}} · {{resultLabel(study.results[question.id])}}</small></div></button>
+                }
+              </aside>
+            }
 
             @if (currentQuestion(); as question) {
               <article class="question-sheet">
@@ -75,7 +89,7 @@ export function sessionScore(session: Pick<StudySession, 'results'>): number {
                   <div class="grade-actions" aria-label="Log your result"><button class="grade-correct" type="button" (click)="recordGrade('cooked')"><b>Cooked it</b><small>Correct</small></button><button class="grade-partial" type="button" (click)="recordGrade('close')"><b>Close</b><small>Partial</small></button><button class="grade-wrong" type="button" (click)="recordGrade('reps')"><b>Need reps</b><small>Wrong / skipped</small></button></div>
                 }
 
-                <div class="question-source"><div><b>{{question.source.title}}</b><span>{{question.source.attribution}}</span>@if (question.source.modified) { <em>{{question.source.modificationNote}}</em> }</div><div><a [href]="question.source.url" target="_blank" rel="noopener noreferrer">Source ↗</a><a [href]="question.source.license.url" target="_blank" rel="noopener noreferrer">{{question.source.license.name}} ↗</a></div></div>
+                <div class="question-source"><div><b>{{question.source.title}}</b><span>{{question.source.attribution}}</span></div><div><a [href]="question.source.url" target="_blank" rel="noopener noreferrer">Source ↗</a><a [href]="question.source.license.url" target="_blank" rel="noopener noreferrer">{{question.source.license.name}} ↗</a></div></div>
                 <nav class="question-nav" aria-label="Question navigation"><button class="secondary-action" type="button" [disabled]="study.currentIndex === 0" (click)="moveQuestion(-1)">← Previous</button><a [href]="question.videoUrl" target="_blank" rel="noopener noreferrer">Watch lesson</a><a [href]="question.referenceUrl" target="_blank" rel="noopener noreferrer">Reference</a><button class="maxxing-primary" type="button" [disabled]="study.currentIndex === study.questionIds.length - 1" (click)="moveQuestion(1)">Next →</button></nav>
               </article>
             }
@@ -110,6 +124,7 @@ export class GradeMaxxingPage {
   readonly selectedTopics = signal<string[]>([]);
   readonly running = signal(false);
   readonly editingTimer = signal(false);
+  readonly questionListVisible = signal(false);
   readonly timerMinutes = signal(0);
   readonly activeSession = computed(() => this.sessions().find((session) => session.id === this.activeSessionId()) ?? null);
   readonly openSessions = computed(() => this.sessions().filter((session) => session.status === 'open').sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
@@ -123,7 +138,12 @@ export class GradeMaxxingPage {
   readonly currentQuestion = computed(() => this.sessionQuestions()[this.activeSession()?.currentIndex ?? 0] ?? null);
 
   constructor(http: HttpClient, route: ActivatedRoute, private readonly router: Router, destroyRef: DestroyRef) {
-    http.get<{questions: PracticeQuestion[]}>(new URL('data/practice.json', document.baseURI).toString()).subscribe((data) => this.questions.set(data.questions));
+    http.get<{questions: PracticeQuestion[]}>(new URL('data/practice.json', document.baseURI).toString()).subscribe((data) => {
+      this.questions.set(data.questions);
+      const validIds = new Set(data.questions.map((question) => question.id));
+      this.sessions.update((sessions) => sessions.map((session) => reconcileSessionQuestions(session, validIds)).filter((session): session is StudySession => Boolean(session)));
+      this.persist();
+    });
     route.queryParamMap.pipe(takeUntilDestroyed(destroyRef)).subscribe((params) => { const id = params.get('session'); this.activeSessionId.set(this.sessions().some((session) => session.id === id && session.status === 'open') ? id : null); });
     interval(1000).pipe(takeUntilDestroyed(destroyRef)).subscribe(() => { const id = this.activeSessionId(); if (this.running() && id) this.updateSession(id, (session) => ({ ...session, totalSeconds: session.totalSeconds + 1, updatedAt: new Date().toISOString() })); });
     destroyRef.onDestroy(() => this.running.set(false));
@@ -139,8 +159,8 @@ export class GradeMaxxingPage {
     const session: StudySession = { id: crypto.randomUUID(), name, topicIds, questionIds, currentIndex: 0, totalSeconds: 0, results: {}, revealed: [], status: 'open', createdAt: now, updatedAt: now };
     this.sessions.update((sessions) => [session, ...sessions]); this.persist(); this.creating.set(false); this.openSession(session.id);
   }
-  openSession(id: string) { this.activeSessionId.set(id); this.running.set(true); this.editingTimer.set(false); void this.router.navigate([], { queryParams: { session: id }, queryParamsHandling: 'merge' }); }
-  endForNow() { this.running.set(false); this.editingTimer.set(false); this.activeSessionId.set(null); void this.router.navigate([], { queryParams: { session: null }, queryParamsHandling: 'merge' }); }
+  openSession(id: string) { this.activeSessionId.set(id); this.running.set(true); this.editingTimer.set(false); this.questionListVisible.set(false); void this.router.navigate([], { queryParams: { session: id }, queryParamsHandling: 'merge' }); }
+  endForNow() { this.running.set(false); this.editingTimer.set(false); this.questionListVisible.set(false); this.activeSessionId.set(null); void this.router.navigate([], { queryParams: { session: null }, queryParamsHandling: 'merge' }); }
   toggleTimer() { this.running.update((value) => !value); }
   openTimerEditor() { const session = this.activeSession(); if (session) { this.running.set(false); this.timerMinutes.set(Math.round(session.totalSeconds / 60)); this.editingTimer.set(true); } }
   saveTimer() { const id = this.activeSessionId(); if (id) { const seconds = Math.max(0, Math.round(Number(this.timerMinutes() || 0) * 60)); this.updateSession(id, (session) => ({ ...session, totalSeconds: seconds, updatedAt: new Date().toISOString() })); this.editingTimer.set(false); } }

@@ -211,6 +211,15 @@ There is intentionally no `db/`, `drizzle/`, or D1 example code. The app does no
 
 The **Validate** GitHub workflow runs on every push and pull request. The **Deploy GitHub Pages** workflow repeats the checks and publishes only a successful `main` build.
 
+## Practice-question sourcing
+
+CalcPath does not allow AI-authored or AI-modified practice questions. Embedded
+questions must be faithful, format-only transcriptions of openly licensed
+material with exact publisher locators for both the problem and its published
+answer. Link-only questions remain on the publisher's site. The complete rules
+for people and coding agents are in [AGENTS.md](AGENTS.md), and the data
+validator enforces the required provenance fields.
+
 ## Curriculum source
 
 Topic organization and exam weighting follow the [College Board AP Calculus AB and BC Course and Exam Description](https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-and-bc-course-and-exam-description.pdf).

@@ -38,7 +38,7 @@ for (const group of groups) {
 }
 
 const { schemaVersion, questions } = practice;
-assert(schemaVersion === 2, 'Practice data must use schema version 2.');
+assert(schemaVersion === 3, 'Practice data must use schema version 3.');
 assert(Array.isArray(questions) && questions.length > 0, 'At least one practice question is required.');
 assert(new Set(questions.map((question) => question.id)).size === questions.length, 'Practice question IDs must be unique.');
 const topicIds = new Set(topics.map((topic) => topic.id));
@@ -48,9 +48,14 @@ for (const question of questions) {
   for (const field of ['videoUrl', 'referenceUrl']) assert(isHttpsUrl(question[field]), `${question.id} ${field} must use HTTPS.`);
   assert(question.source?.title && question.source?.author && isHttpsUrl(question.source?.url), `${question.id} needs complete source attribution.`);
   assert(question.source?.license?.code && question.source?.license?.name && isHttpsUrl(question.source?.license?.url), `${question.id} needs complete license metadata.`);
+  assert(!/adapted|variant|fixed parameters/i.test(`${question.id} ${question.source.attribution}`), `${question.id} appears to be adapted or generated; CalcPath only accepts source-faithful transcriptions or links.`);
   if (question.type === 'embedded') {
     assert(question.promptTex && question.answerTex, `${question.id} needs embedded question and answer TeX.`);
     assert(question.source.license.usage === 'embedded' && question.source.license.code.startsWith('CC-'), `${question.id} must be covered by an embeddable Creative Commons license.`);
+    assert(question.source.exerciseId, `${question.id} needs the publisher's exact exercise identifier.`);
+    assert(isHttpsUrl(question.source.promptUrl) && isHttpsUrl(question.source.answerUrl), `${question.id} needs exact publisher question and answer locators.`);
+    assert(question.source.transcription === 'format-only', `${question.id} must be marked as a format-only transcription.`);
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(question.source.verifiedAt ?? ''), `${question.id} needs a source verification date.`);
     for (const [label, formula] of [['prompt', question.promptTex], ['answer', question.answerTex]]) {
       try { katex.renderToString(formula, { strict: 'error', throwOnError: true }); }
       catch (error) { throw new Error(`Invalid ${label} TeX for ${question.id}: ${error.message}`); }
@@ -58,6 +63,7 @@ for (const question of questions) {
   } else {
     assert(isHttpsUrl(question.problemUrl) && isHttpsUrl(question.solutionUrl), `${question.id} external links must use HTTPS.`);
     assert(question.source.license.usage === 'link-only', `${question.id} must identify link-only source usage.`);
+    assert(question.source.transcription === 'link-only', `${question.id} must be marked link-only.`);
   }
 }
 
