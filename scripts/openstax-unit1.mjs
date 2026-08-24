@@ -21,6 +21,10 @@ const MODULES = {
   m53576: { title: '3.4 Derivatives as Rates of Change', page: '3-4-derivatives-as-rates-of-change' },
   m53604: { title: '4.1 Related Rates', page: '4-1-related-rates' },
   m53605: { title: '4.2 Linear Approximations and Differentials', page: '4-2-linear-approximations-and-differentials' },
+  m53611: { title: '4.3 Maxima and Minima', page: '4-3-maxima-and-minima' },
+  m53612: { title: '4.4 The Mean Value Theorem', page: '4-4-the-mean-value-theorem' },
+  m53613: { title: '4.5 Derivatives and the Shape of a Graph', page: '4-5-derivatives-and-the-shape-of-a-graph' },
+  m53614: { title: '4.7 Applied Optimization Problems', page: '4-7-applied-optimization-problems' },
   m53619: { title: '4.8 L’Hôpital’s Rule', page: '4-8-lhopitals-rule' }
 };
 
@@ -65,7 +69,19 @@ export const TOPIC_EXERCISES = {
   '4.4': [['m53604','fs-id1165042978641'],['m53604','fs-id1165043098631'],['m53604','fs-id1165043123744'],['m53604','fs-id1165043116333'],['m53604','fs-id1165043114873']],
   '4.5': [['m53604','fs-id1165043105134'],['m53604','fs-id1165043116554'],['m53604','fs-id1165043112991'],['m53604','fs-id1165043109828'],['m53604','fs-id1165043109911']],
   '4.6': [['m53605','fs-id1165043094190'],['m53605','fs-id1165043051505'],['m53605','fs-id1165042979291'],['m53605','fs-id1165043039141'],['m53605','fs-id1165042354636']],
-  '4.7': [['m53619','fs-id1165043104016'],['m53619','fs-id1165043427625'],['m53619','fs-id1165043219076'],['m53619','fs-id1165042368497'],['m53619','fs-id1165043323877']]
+  '4.7': [['m53619','fs-id1165043104016'],['m53619','fs-id1165043427625'],['m53619','fs-id1165043219076'],['m53619','fs-id1165042368497'],['m53619','fs-id1165043323877']],
+  '5.1': [['m53612','fs-id1165042367594'],['m53612','fs-id1165042478873'],['m53612','fs-id1165042332064'],['m53612','fs-id1165042707212'],['m53612','fs-id1165042710334']],
+  '5.2': [['m53611','fs-id1165041979121'],['m53611','fs-id1165040757544'],['m53611','fs-id1165042199447'],['m53611','fs-id1165042278260'],['m53611','fs-id1165042065906']],
+  '5.3': [['m53613','fs-id1165042970465'],['m53613','fs-id1165043395896'],['m53613','fs-id1165043183805'],['m53613','fs-id1165042373655'],['m53613','fs-id1165042331804']],
+  '5.4': [['m53613','fs-id1165042973802'],['m53613','fs-id1165043317506'],['m53613','fs-id1165042640287'],['m53613','fs-id1165043428512'],['m53613','fs-id1165042709552']],
+  '5.5': [['m53611','fs-id1165042035519'],['m53611','fs-id1165042108871'],['m53611','fs-id1165041865041'],['m53611','fs-id1165042051306'],['m53611','fs-id1165042062070']],
+  '5.6': [['m53613','fs-id1165042558995'],['m53613','fs-id1165043321427'],['m53613','fs-id1165043395336'],['m53613','fs-id1165043431030'],['m53613','fs-id1165042364601']],
+  '5.7': [['m53613','fs-id1165042710829'],['m53613','fs-id1165042373296'],['m53613','fs-id1165042705948'],['m53613','fs-id1165042474277'],['m53613','fs-id1165043286677']],
+  '5.8': [['m53573','fs-id1169737966985'],['m53573','fs-id1169738223960'],['m53573','fs-id1169738189260'],['m53573','fs-id1169737927662'],['m53573','fs-id1169738187055']],
+  '5.9': [['m53613','fs-id1165043430810'],['m53613','fs-id1165043430751'],['m53613','fs-id1165043248713'],['m53613','fs-id1165042708313'],['m53613','fs-id1165043390836']],
+  '5.10': [['m53614','fs-id1165043107418'],['m53614','fs-id1165042713670'],['m53614','fs-id1165042369580'],['m53614','fs-id1165042552153'],['m53614','fs-id1165043251103']],
+  '5.11': [['m53614','fs-id1165043092414'],['m53614','fs-id1165042515877'],['m53614','fs-id1165043392360'],['m53614','fs-id1165043113003'],['m53614','fs-id1165042327675']],
+  '5.12': [['m53585','fs-id1169737906658'],['m53585','fs-id1169737935219'],['m53585','fs-id1169738184892'],['m53585','fs-id1169738244350'],['m53585','fs-id1169738211822']]
 };
 
 const escapeHtml = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -180,7 +196,7 @@ export async function mineOpenStaxPractice(topicIndex) {
         type: 'embedded', topicId, title,
         promptHtml, answerHtml,
         metadata: { sourceQuestionId: exerciseId, collection: MODULES[moduleId].title, course: 'AB + BC', format: 'textbook exercise', difficulty: position <= 2 ? 'easy' : position <= 4 ? 'medium' : 'hard', estimatedMinutes: 10, calculator: 'varies', answerKind: 'publisher solution', tags: [topicIndex.get(topicId).title, 'Textbook', 'Embedded'] },
-        source: { title: `OpenStax Calculus Volume 1 · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-1/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume 1, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
+        source: { title: `OpenStax Calculus Volume 1 · ${MODULES[moduleId].title}`, author: 'OpenStax', url: `https://openstax.org/books/calculus-volume-1/pages/${MODULES[moduleId].page}`, attribution: `Transcribed from OpenStax Calculus Volume 1, exact exercise ${exerciseId}.`, exerciseId, promptUrl: `${blob}#L${problemLine}`, answerUrl: `${blob}#L${solutionLine}`, transcription: 'format-only', verifiedAt: topicId.startsWith('5.') ? '2026-08-24' : '2026-08-23', license: { code: 'CC-BY-NC-SA-4.0', name: 'CC BY-NC-SA 4.0', url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', usage: 'embedded' } }
       });
     }
   }
