@@ -46,7 +46,6 @@ const MODULES = {
   m53850: { title: '7.2 Calculus of Parametric Curves', page: '7-2-calculus-of-parametric-curves', volume: 2 },
   m53852: { title: '7.3 Polar Coordinates', page: '7-3-polar-coordinates', volume: 2 },
   m53840: { title: '7.4 Area and Arc Length in Polar Coordinates', page: '7-4-area-and-arc-length-in-polar-coordinates', volume: 2 },
-  m53758: { title: '5.1 Sequences', page: '5-1-sequences', volume: 2 },
   m53739: { title: '5.2 Infinite Series', page: '5-2-infinite-series', volume: 2 },
   m53754: { title: '5.3 The Divergence and Integral Tests', page: '5-3-the-divergence-and-integral-tests', volume: 2 },
   m53751: { title: '5.4 Comparison Tests', page: '5-4-comparison-tests', volume: 2 },
