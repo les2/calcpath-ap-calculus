@@ -64,7 +64,7 @@ const DEFAULT_APP: AppConfig = {
   $schema: '../schemas/app.schema.json',
   schemaVersion: 1,
   brand: { name: 'Full Dive AP', shortName: 'Full Dive', mark: 'FD', tagline: 'Farm XP. Max the course.' },
-  repository: { label: 'GitHub', url: 'https://github.com/les2/calcpath-ap-calculus' },
+  repository: { label: 'GitHub', url: 'https://github.com/les2/full-dive-ap' },
   support: { enabled: true, label: 'Leave a tip', icon: '☕', url: 'https://ko-fi.com/5reason' },
   catalogPage: { eyebrow: 'YOUR AP LOADOUT', heading: 'Pick your course.', emphasis: 'Start farming XP.', description: 'Roadmaps, trusted resources, reference guides, and focused training sessions.', sectionEyebrow: 'COURSE SELECT', sectionHeading: 'Ready to max', sectionDescription: 'Choose a course, lock in, and keep leveling.', openLabel: 'Grade max', comingSoonLabel: 'Next drop' },
   footer: { message: 'Built for course maxxing. Your progress stays on your device.' }

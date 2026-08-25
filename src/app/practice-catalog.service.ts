@@ -52,13 +52,13 @@ export class PracticeCatalogService {
   }
 
   async loadSessions(courseId: string): Promise<StudySession[]> {
-    const legacy = this.readLegacySessions(courseId);
+    const stored = this.readStoredSessions(courseId);
     try {
       const sessions = await fullDiveDatabase.studySessions.where('courseId').equals(courseId).toArray();
       if (sessions.length) return sessions;
-      if (legacy.length) { await this.saveSessions(courseId, legacy); }
-      return legacy;
-    } catch { return legacy; }
+      if (stored.length) { await this.saveSessions(courseId, stored); }
+      return stored;
+    } catch { return stored; }
   }
 
   async saveSessions(courseId: string, sessions: StudySession[]): Promise<void> {
@@ -116,12 +116,10 @@ export class PracticeCatalogService {
 
   private sessionStorageKey(courseId: string) { return `full-dive-ap:${courseId}:study-sessions`; }
 
-  private readLegacySessions(courseId: string): StudySession[] {
+  private readStoredSessions(courseId: string): StudySession[] {
     try {
       const current = localStorage.getItem(this.sessionStorageKey(courseId));
-      const priorBrand = localStorage.getItem(`studypath:${courseId}:study-sessions`);
-      const legacy = courseId === 'ap-calculus' ? localStorage.getItem('calcpath-study-sessions-v2') : null;
-      const value = JSON.parse(current ?? priorBrand ?? legacy ?? '[]');
+      const value = JSON.parse(current ?? '[]');
       return Array.isArray(value) ? value.map((session) => ({ ...session, courseId })) : [];
     } catch { return []; }
   }

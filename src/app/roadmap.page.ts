@@ -60,7 +60,7 @@ export class RoadmapPage {
   setUnit(unit: number) { this.navigate({ unit: this.expanded() === unit ? null : unit }); }
   toggleTopic(id: string) { this.completed.update((items) => toggleCompleted(items, id)); localStorage.setItem(this.progressKey(), JSON.stringify(this.completed())); }
   private progressKey() { return `full-dive-ap:${this.courseId}:progress`; }
-  private readProgress(): string[] { try { const current = localStorage.getItem(this.progressKey()); const priorBrand = localStorage.getItem(`studypath:${this.courseId}:progress`); const legacy = this.courseId === 'ap-calculus' ? localStorage.getItem('calcpath-progress') : null; return JSON.parse(current ?? priorBrand ?? legacy ?? '[]') as string[]; } catch { return []; } }
+  private readProgress(): string[] { try { return JSON.parse(localStorage.getItem(this.progressKey()) ?? '[]') as string[]; } catch { return []; } }
   private navigate(queryParams: Record<string, string | number | null>) {
     const urlTree = this.router.createUrlTree([], { relativeTo: this.route, queryParams, queryParamsHandling: 'merge' });
     this.location.replaceState(this.router.serializeUrl(urlTree));

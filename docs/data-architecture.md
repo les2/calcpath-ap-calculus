@@ -30,7 +30,7 @@ public/schemas/                      # JSON Schema 2020-12 contracts
 5. The service worker caches `/data/**` and `/schemas/**` with the application shell for offline use.
 6. Practice data is normalized into IndexedDB through Dexie. Study runs and roadmap progress are namespaced by course ID and never uploaded.
 
-The IndexedDB database intentionally keeps its historical `calcpath` name so an existing AP Calculus install can migrate its local study sessions. New browser keys use `full-dive-ap:<course-id>:`; reads also recognize the earlier `studypath:` keys. New records carry `courseId`, and catalog record keys include the course ID to prevent collisions between packages.
+The IndexedDB database is named `full-dive-ap`. Browser keys use `full-dive-ap:<course-id>:`, records carry `courseId`, and catalog record keys include the course ID to prevent collisions between packages.
 
 ## Routes
 

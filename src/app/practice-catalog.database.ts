@@ -5,17 +5,14 @@ export type PracticeCatalogMeta = Omit<PracticeCatalog, 'sources' | 'questions'>
 export type CachedPracticeSource = PracticeSource & { cacheKey: string; courseId: string };
 export type CachedPracticeQuestion = StoredPracticeQuestion & { cacheKey: string; courseId: string };
 
-/**
- * Device-local Full Dive AP data. The legacy `calcpath` database name is retained
- * so existing AP Calculus training sessions survive the multi-course migration.
- */
+/** Device-local Full Dive AP data, namespaced by course. */
 export class FullDiveDatabase extends Dexie {
   readonly catalogMeta!: Table<PracticeCatalogMeta, string>;
   readonly practiceSources!: Table<CachedPracticeSource, string>;
   readonly practiceQuestions!: Table<CachedPracticeQuestion, string>;
   readonly studySessions!: Table<StudySession, string>;
 
-  constructor(databaseName = 'calcpath') {
+  constructor(databaseName = 'full-dive-ap') {
     super(databaseName);
     this.version(1).stores({
       'catalog-meta': '&key',

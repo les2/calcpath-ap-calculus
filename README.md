@@ -1,12 +1,12 @@
 # Full Dive AP — offline-ready course guides
 
-[![Validate](https://github.com/les2/calcpath-ap-calculus/actions/workflows/ci.yml/badge.svg)](https://github.com/les2/calcpath-ap-calculus/actions/workflows/ci.yml)
-[![Deploy GitHub Pages](https://github.com/les2/calcpath-ap-calculus/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/les2/calcpath-ap-calculus/actions/workflows/deploy-pages.yml)
+[![Validate](https://github.com/les2/full-dive-ap/actions/workflows/ci.yml/badge.svg)](https://github.com/les2/full-dive-ap/actions/workflows/ci.yml)
+[![Deploy GitHub Pages](https://github.com/les2/full-dive-ap/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/les2/full-dive-ap/actions/workflows/deploy-pages.yml)
 [![Support on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/5reason)
 
 Full Dive AP is a reusable framework for complete course roadmaps, trusted resources, printable references, and private training sessions. One data-driven Angular PWA can host many courses without duplicating the application. AP Calculus AB + BC is the first course package.
 
-The existing repository and site URLs intentionally keep the CalcPath name for now. The currently published AP Calculus release is at [calcpath-ap-calculus.les2.chatgpt.site](https://calcpath-ap-calculus.les2.chatgpt.site/roadmap), and the source remains at [github.com/les2/calcpath-ap-calculus](https://github.com/les2/calcpath-ap-calculus). This Full Dive AP generalization should be tested locally before it replaces that release.
+Use Full Dive AP at [FullDiveAP.les2.chatgpt.site](https://fulldiveap.les2.chatgpt.site/courses), or explore and fork the public source at [github.com/les2/full-dive-ap](https://github.com/les2/full-dive-ap).
 
 ## What students get
 
@@ -58,7 +58,7 @@ Each available course gets the same top-level structure:
 - `/courses/:courseId/reference` — printable formula/reference guide
 - `/courses/:courseId/training` — private, persistent training sessions
 
-Course IDs also namespace roadmap progress, IndexedDB catalogs, and study sessions. The legacy IndexedDB database name is retained solely so existing AP Calculus sessions can migrate safely.
+Course IDs also namespace roadmap progress, IndexedDB catalogs, and training sessions.
 
 ## Add another course
 
@@ -125,7 +125,7 @@ The header's optional Ko-fi support control is an ordinary themed Angular link r
 ## Beginner setup: make your own
 
 1. Create a free [GitHub account](https://github.com/signup).
-2. Open the [Full Dive AP repository](https://github.com/les2/calcpath-ap-calculus) and choose **Fork**.
+2. Open the [Full Dive AP repository](https://github.com/les2/full-dive-ap) and choose **Fork**.
 3. Install [GitHub Desktop](https://desktop.github.com/download/), sign in, and clone your fork.
 4. Install the [ChatGPT desktop app](https://chatgpt.com/download/) and open the cloned folder in Codex.
 5. Ask ChatGPT to read `AGENTS.md`, `docs/course-authoring.md`, and the `add-study-course` skill before creating your subject package.

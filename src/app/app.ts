@@ -58,7 +58,7 @@ interface BuildInfo {
   `
 })
 export class App {
-  readonly dark = signal((localStorage.getItem('full-dive-ap-theme') ?? localStorage.getItem('studypath-theme') ?? localStorage.getItem('calcpath-theme')) === 'dark');
+  readonly dark = signal(localStorage.getItem('full-dive-ap-theme') === 'dark');
   readonly updateReady = signal(false);
   readonly updateTitle = signal('A fresh version is ready.');
   readonly buildInfo = signal<BuildInfo | null>(null);

@@ -30,7 +30,7 @@ afterEach(async () => {
 
 describe('Full Dive AP Dexie database', () => {
   it('opens the existing native IndexedDB schema without losing a study session', async () => {
-    const name = `calcpath-test-${crypto.randomUUID()}`;
+    const name = `full-dive-ap-test-${crypto.randomUUID()}`;
     const session: Omit<StudySession, 'courseId'> = {
       id: 'session-1', name: 'Unit 1 test', topicIds: ['1.1'], questionIds: ['q1'], currentIndex: 0,
       totalSeconds: 90, results: {}, revealed: [], status: 'open', createdAt: '2026-08-23T00:00:00Z', updatedAt: '2026-08-23T00:01:30Z'
