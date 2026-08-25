@@ -6,8 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { SwUpdate } from '@angular/service-worker';
 import { filter, first, fromEvent, interval, merge } from 'rxjs';
 import { SupportLinkComponent } from './support-link.component';
+import { CourseDataService } from './course-data.service';
 
 interface BuildInfo {
+  $schema: string;
   version: string;
   buildId: string;
   builtAt: string;
@@ -19,24 +21,28 @@ interface BuildInfo {
   imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule, SupportLinkComponent],
   template: `
     <header class="topbar">
-      <a class="brand" routerLink="/roadmap" aria-label="CalcPath home"><span class="brand-mark">∫</span><span>CalcPath</span></a>
+      <a class="brand" routerLink="/courses" [attr.aria-label]="courses.app().brand.name + ' home'"><span class="brand-mark">{{ courses.app().brand.mark }}</span><span>{{ courses.app().brand.name }}</span></a>
+      @if (courses.activeCourse(); as course) { <a class="course-chip" [routerLink]="['/courses', course.id, 'roadmap']">{{ course.shortTitle }}</a> }
       <nav aria-label="Main navigation">
-        <a class="nav-link" routerLink="/roadmap" routerLinkActive="active">Roadmap</a>
-        <a class="nav-link" routerLink="/tools" routerLinkActive="active">Tools</a>
-        <a class="nav-link" routerLink="/reference" routerLinkActive="active">Reference guide</a>
-        <a class="nav-link" routerLink="/grade-maxxing" routerLinkActive="active">Grade Maxxing</a>
-        <a class="github-link" href="https://github.com/les2/calcpath-ap-calculus" target="_blank" rel="noopener noreferrer" aria-label="View CalcPath on GitHub (opens in a new tab)">GitHub ↗</a>
+        @if (courses.activeCourse(); as course) {
+          @for (item of course.navigation; track item.id) { <a class="nav-link" [routerLink]="['/courses', course.id, item.path]" routerLinkActive="active">{{ item.label }}</a> }
+        }
+        <a class="nav-link courses-link" routerLink="/courses" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Courses</a>
+        <a class="github-link" [href]="courses.app().repository.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'View ' + courses.app().brand.name + ' on GitHub (opens in a new tab)'">{{ courses.app().repository.label }} ↗</a>
       </nav>
       <div class="header-actions">
-        <calc-support-link />
+        @if (courses.app().support.enabled) { <full-dive-support-link [href]="courses.app().support.url" [label]="courses.app().support.label" [icon]="courses.app().support.icon" [brandName]="courses.app().brand.name" /> }
         <button class="icon-button" (click)="toggleTheme()" aria-label="Toggle theme">{{ dark() ? '☀' : '◐' }}</button>
       </div>
     </header>
     <div class="route-shell"><router-outlet /></div>
     <footer>
-      <a class="brand" routerLink="/roadmap"><span class="brand-mark">∫</span><span>CalcPath</span></a>
-      <p>Built for focused learning. Not affiliated with College Board.</p>
-      <div class="footer-links"><a routerLink="/reference">Reference guide →</a><a href="https://github.com/les2/calcpath-ap-calculus" target="_blank" rel="noopener noreferrer">Fork or extend on GitHub ↗</a></div>
+      <a class="brand" routerLink="/courses"><span class="brand-mark">{{ courses.app().brand.mark }}</span><span>{{ courses.app().brand.name }}</span></a>
+      <p>
+        <span>{{ courses.app().footer.message }}</span>
+        @if (courses.activeCourse(); as course) { <span> {{ course.disclaimer }}</span> }
+      </p>
+      <div class="footer-links"><a routerLink="/courses">All courses →</a><a [href]="courses.app().repository.url" target="_blank" rel="noopener noreferrer">Fork or extend on GitHub ↗</a></div>
       <div class="version-panel">
         @if (buildInfo(); as build) {
           <span>Updated {{ formattedBuildTime() }}</span>
@@ -52,7 +58,7 @@ interface BuildInfo {
   `
 })
 export class App {
-  readonly dark = signal(localStorage.getItem('calcpath-theme') === 'dark');
+  readonly dark = signal((localStorage.getItem('full-dive-ap-theme') ?? localStorage.getItem('studypath-theme') ?? localStorage.getItem('calcpath-theme')) === 'dark');
   readonly updateReady = signal(false);
   readonly updateTitle = signal('A fresh version is ready.');
   readonly buildInfo = signal<BuildInfo | null>(null);
@@ -62,6 +68,7 @@ export class App {
   constructor(
     private readonly updates: SwUpdate,
     private readonly http: HttpClient,
+    readonly courses: CourseDataService,
     appRef: ApplicationRef,
     destroyRef: DestroyRef
   ) {
@@ -96,7 +103,7 @@ export class App {
     ).pipe(takeUntilDestroyed(destroyRef)).subscribe(() => void this.checkForUpdates(false));
   }
 
-  toggleTheme() { this.dark.update((value) => !value); const theme = this.dark() ? 'dark' : 'light'; document.documentElement.dataset['theme'] = theme; localStorage.setItem('calcpath-theme', theme); }
+  toggleTheme() { this.dark.update((value) => !value); const theme = this.dark() ? 'dark' : 'light'; document.documentElement.dataset['theme'] = theme; localStorage.setItem('full-dive-ap-theme', theme); }
 
   formattedBuildTime() {
     const info = this.buildInfo();

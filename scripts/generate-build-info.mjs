@@ -5,6 +5,7 @@ const builtAt = new Date();
 const compactTime = builtAt.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
 
 const buildInfo = {
+  $schema: 'schemas/build-info.schema.json',
   version: packageInfo.version,
   buildId: compactTime,
   builtAt: builtAt.toISOString()

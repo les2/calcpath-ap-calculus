@@ -1,4 +1,6 @@
 {
+  "$schema": "../../../schemas/reference.schema.json",
+  "schemaVersion": 1,
   "groups": [
     {
       "title": "Derivative rules",

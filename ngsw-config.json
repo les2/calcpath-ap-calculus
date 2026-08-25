@@ -3,6 +3,6 @@
   "index": "/index.html",
   "assetGroups": [
     { "name": "app", "installMode": "prefetch", "resources": { "files": ["/index.html", "/build-info.json", "/manifest.webmanifest", "/icon-192.png", "/icon-512.png", "/og.png", "/*.css", "/*.js", "/media/**"] } },
-    { "name": "study-data", "installMode": "prefetch", "updateMode": "prefetch", "resources": { "files": ["/data/**"] } }
+    { "name": "study-data", "installMode": "prefetch", "updateMode": "prefetch", "resources": { "files": ["/data/**", "/schemas/**"] } }
   ]
 }

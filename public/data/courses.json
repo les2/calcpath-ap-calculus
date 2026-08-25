@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/courses.schema.json",
+  "schemaVersion": 1,
+  "defaultCourseId": "ap-calculus",
+  "courses": [
+    {
+      "id": "ap-calculus",
+      "title": "AP Calculus AB + BC",
+      "shortTitle": "AP Calculus",
+      "eyebrow": "MATHEMATICS · ADVANCED PLACEMENT",
+      "description": "Grade max AP Calculus AB and BC with a complete roadmap, sourced practice, focused tools, and a printable reference guide.",
+      "manifest": "courses/ap-calculus/course.json",
+      "accent": "#a8e82d",
+      "status": "available"
+    }
+  ]
+}

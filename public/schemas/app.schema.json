@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://full-dive-ap.local/schemas/app.schema.json",
+  "title": "Full Dive AP application configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "brand", "repository", "support", "catalogPage", "footer"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "shortName", "mark", "tagline"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "shortName": { "type": "string", "minLength": 1 },
+        "mark": { "type": "string", "minLength": 1, "maxLength": 3 },
+        "tagline": { "type": "string", "minLength": 1 }
+      }
+    },
+    "repository": { "$ref": "#/$defs/link" },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "label", "icon", "url"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "label": { "type": "string", "minLength": 1 },
+        "icon": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" }
+      }
+    },
+    "catalogPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eyebrow", "heading", "emphasis", "description", "sectionEyebrow", "sectionHeading", "sectionDescription", "openLabel", "comingSoonLabel"],
+      "properties": {
+        "eyebrow": { "type": "string", "minLength": 1 },
+        "heading": { "type": "string", "minLength": 1 },
+        "emphasis": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "sectionEyebrow": { "type": "string", "minLength": 1 },
+        "sectionHeading": { "type": "string", "minLength": 1 },
+        "sectionDescription": { "type": "string", "minLength": 1 },
+        "openLabel": { "type": "string", "minLength": 1 },
+        "comingSoonLabel": { "type": "string", "minLength": 1 }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["message"],
+      "properties": { "message": { "type": "string", "minLength": 1 } }
+    }
+  },
+  "$defs": {
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "url"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" }
+      }
+    }
+  }
+}

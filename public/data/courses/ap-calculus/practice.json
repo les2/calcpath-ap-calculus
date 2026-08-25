@@ -1,8 +1,9 @@
 {
+  "$schema": "../../../schemas/practice.schema.json",
   "schemaVersion": 5,
   "revision": "ff64968cdd7a248b",
   "generatedAt": "2026-08-24T20:30:25.363Z",
-  "licenseNotice": "CalcPath links to publisher-hosted problems and answers without reproducing them. Embedded questions may be added only as source-faithful, format-only transcriptions with exact question and answer locators.",
+  "licenseNotice": "Full Dive AP links to publisher-hosted problems and answers without reproducing them. Embedded questions may be added only as source-faithful, format-only transcriptions with exact question and answer locators.",
   "catalogStats": {
     "questionCount": 1164,
     "sourceCount": 7,

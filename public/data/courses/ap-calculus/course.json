@@ -1,0 +1,83 @@
+{
+  "$schema": "../../../schemas/course.schema.json",
+  "schemaVersion": 1,
+  "id": "ap-calculus",
+  "title": "AP Calculus AB + BC",
+  "shortTitle": "AP Calculus",
+  "description": "An offline-ready study framework for every AP Calculus AB and BC topic.",
+  "accent": "#a8e82d",
+  "disclaimer": "Independent study aid. Not affiliated with or endorsed by College Board.",
+  "quality": {
+    "expectedUnitCount": 10,
+    "expectedTopicCount": 111,
+    "minimumEmbeddedQuestionsPerTopic": 5
+  },
+  "datasets": {
+    "roadmap": "roadmap.json",
+    "tools": "tools.json",
+    "reference": "reference.json",
+    "practice": "practice.json"
+  },
+  "navigation": [
+    { "id": "roadmap", "label": "Roadmap", "path": "roadmap" },
+    { "id": "tools", "label": "Tools", "path": "tools" },
+    { "id": "reference", "label": "Reference guide", "path": "reference" },
+    { "id": "training", "label": "Training Mode", "path": "training" }
+  ],
+  "pages": {
+    "roadmap": {
+      "heroEyebrow": "AB + BC",
+      "heading": "Grade max",
+      "emphasis": "AP Calculus.",
+      "description": "Farm XP topic by topic with clear explanations, trusted references, and the right tools for every unit.",
+      "sectionEyebrow": "THE ROADMAP",
+      "sectionHeading": "Ten units. Keep leveling.",
+      "sectionDescription": "Track every topic, focus your next rep, and share or bookmark the exact view you need.",
+      "searchPlaceholder": "Search 111 topics…",
+      "visuals": {
+        "graphLabel": "f′(x)",
+        "formula": "lim sin(x)/x as x→0",
+        "result": "= 1",
+        "miniFormula": "d/dx xⁿ = nxⁿ⁻¹"
+      },
+      "filters": [
+        { "id": "ALL", "label": "All topics", "unitCourses": [] },
+        { "id": "AB", "label": "AB", "unitCourses": ["AB + BC"] },
+        { "id": "BC", "label": "BC", "unitCourses": ["AB + BC", "BC only"] }
+      ]
+    },
+    "tools": {
+      "eyebrow": "FREE · NO ADS",
+      "heading": "The right tool",
+      "emphasis": "for the job.",
+      "description": "Purpose-built calculators and open-source systems for graphing, symbolic algebra, solving, and computation. External tools require an internet connection."
+    },
+    "reference": {
+      "eyebrow": "PRINTABLE REFERENCE",
+      "heading": "The formulas",
+      "emphasis": "you’ll reach for.",
+      "description": "A compact companion for homework and review. Learn what each formula means—then use this guide to keep the mechanics close.",
+      "printLabel": "Print reference guide ↗",
+      "noteTitle": "Exam reminder",
+      "noteText": "Calculator and non-calculator sections test different habits. Practice setting up your work, communicating units, and justifying conclusions—not only getting a decimal."
+    },
+    "practice": {
+      "eyebrow": "BETA · TRAINING MODE",
+      "heading": "Lock in.",
+      "emphasis": "Farm XP.",
+      "description": "Build a training session for your next test, put in focused reps, and grade max AP Calculus at your own pace.",
+      "modeLabel": "Training Mode",
+      "sessionLabel": "training session",
+      "sessionPlural": "training sessions",
+      "loadoutLabel": "loadout",
+      "filterTags": ["University exam", "Released AP exam", "Textbook", "Worked practice"],
+      "unitAccents": ["#ff6b35", "#5d3fd3", "#2478d4", "#e65050", "#b35bce", "#008f7a", "#b57812", "#1b879c", "#d6622a", "#d73964"],
+      "sourceLabels": {
+        "Matthew Boelkins et al.": "Active Calculus",
+        "Paul Dawkins · Lamar University": "Paul’s Math Notes",
+        "University of Michigan Mathematics": "University of Michigan",
+        "College Board": "College Board"
+      }
+    }
+  }
+}

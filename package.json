@@ -1,5 +1,5 @@
 {
-  "name": "calcpath-ap-calculus",
+  "name": "full-dive-ap",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -38,6 +38,8 @@
     "@angular/cli": "^22.1.5",
     "@angular/compiler-cli": "^22.1.0",
     "@openai/sites-vite-plugin": "0.1.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "fake-indexeddb": "^6.2.5",
     "jsdom": "^30.0.1",
     "typescript": "~6.0.2",

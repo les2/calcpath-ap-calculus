@@ -1,7 +1,7 @@
 {
-  "name": "CalcPath — AP Calculus Roadmap",
-  "short_name": "CalcPath",
-  "description": "An offline-ready AP Calculus AB and BC study roadmap.",
+  "name": "Full Dive AP — Course Maxxing",
+  "short_name": "Full Dive AP",
+  "description": "Farm XP, build focused reps, and grade max your AP courses.",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://full-dive-ap.local/schemas/courses.schema.json",
+  "title": "Full Dive AP course catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "defaultCourseId", "courses"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "defaultCourseId": { "$ref": "#/$defs/id" },
+    "courses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "shortTitle", "eyebrow", "description", "manifest", "accent", "status"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "title": { "type": "string", "minLength": 1 },
+          "shortTitle": { "type": "string", "minLength": 1 },
+          "eyebrow": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "manifest": { "type": "string", "pattern": "^[a-z0-9][a-z0-9/_-]*\\.json$" },
+          "accent": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+          "status": { "enum": ["available", "coming-soon"] }
+        }
+      }
+    }
+  },
+  "$defs": { "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } }
+}

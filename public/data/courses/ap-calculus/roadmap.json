@@ -1,4 +1,6 @@
 {
+  "$schema": "../../../schemas/roadmap.schema.json",
+  "schemaVersion": 1,
   "source": "College Board AP Calculus AB and BC Course and Exam Description",
   "sourceUrl": "https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-and-bc-course-and-exam-description.pdf",
   "units": [

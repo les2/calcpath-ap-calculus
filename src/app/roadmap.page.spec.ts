@@ -23,6 +23,11 @@ const units: Unit[] = [
     topics: [{ id: '9.1', title: 'Differentiating Parametric Equations' }]
   }
 ];
+const courseFilters = [
+  { id: 'ALL', label: 'All topics', unitCourses: [] },
+  { id: 'AB', label: 'AB', unitCourses: ['AB + BC'] },
+  { id: 'BC', label: 'BC', unitCourses: ['AB + BC', 'BC only'] }
+];
 
 describe('roadmap helpers', () => {
   it('calculates rounded completion progress', () => {
@@ -38,8 +43,8 @@ describe('roadmap helpers', () => {
   });
 
   it('keeps AB topics in BC mode and excludes BC-only topics in AB mode', () => {
-    expect(filterUnits(units, '', 'BC').map((unit) => unit.id)).toEqual([1, 9]);
-    expect(filterUnits(units, '', 'AB').map((unit) => unit.id)).toEqual([1]);
+    expect(filterUnits(units, '', 'BC', courseFilters).map((unit) => unit.id)).toEqual([1, 9]);
+    expect(filterUnits(units, '', 'AB', courseFilters).map((unit) => unit.id)).toEqual([1]);
   });
 
   it('toggles completed topic IDs immutably', () => {

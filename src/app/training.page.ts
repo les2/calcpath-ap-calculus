@@ -6,6 +6,7 @@ import { interval } from 'rxjs';
 import { MathFormulaComponent } from './math-formula.component';
 import { PracticeCatalogService, type PracticeDifficulty, type PracticeDisplay, type PracticeGrade, type PracticeQuestion, type StudySession } from './practice-catalog.service';
 import { TrustedSourceHtmlPipe } from './trusted-source-html.pipe';
+import { CourseDataService, type CourseManifest } from './course-data.service';
 
 export type { PracticeDifficulty, PracticeDisplay, PracticeGrade, PracticeQuestion, StudySession } from './practice-catalog.service';
 
@@ -74,16 +75,16 @@ export function toggleExpandedUnitIds(unitId: string, expandedUnitIds: string[])
   standalone: true,
   imports: [FormsModule, MathFormulaComponent, TrustedSourceHtmlPipe],
   template: `
-    <section class="maxxing-hero">
-      <div><p class="eyebrow"><span>BETA</span> GRADE MAXXING</p><h1>Lock in.<br><em>Level up.</em></h1><p>Build a study run for your next test. Pick the topics, put in reps, and come back whenever you want.</p></div>
+    @if (course(); as activeCourse) { <section class="maxxing-hero">
+      <div><p class="eyebrow"><span>{{activeCourse.shortTitle}}</span> {{activeCourse.pages.practice.eyebrow}}</p><h1>{{activeCourse.pages.practice.heading}}<br><em>{{activeCourse.pages.practice.emphasis}}</em></h1><p>{{activeCourse.pages.practice.description}}</p></div>
       <div class="maxxing-score" aria-hidden="true"><span>+1</span><b>REP</b><small>one problem at a time</small></div>
-    </section>
+    </section> }
 
     <main class="maxxing-page">
       @if (activeSession(); as study) {
         <section class="study-workspace">
           <header class="study-toolbar">
-            <div><button class="text-action" type="button" (click)="endForNow()">← Your study runs</button><p class="eyebrow">{{study.name}}</p><h2>{{questionCountLabel(study)}}</h2></div>
+            <div><button class="text-action" type="button" (click)="endForNow()">← Your {{sessionPlural()}}</button><p class="eyebrow">{{study.name}}</p><h2>{{questionCountLabel(study)}}</h2></div>
             <div class="study-clock" [class.running]="running()"><small>{{running() ? 'LOCKED IN' : 'PAUSED'}}</small><b>{{formatTime(study.totalSeconds)}}</b><div><button type="button" (click)="toggleTimer()">{{running() ? 'Pause' : 'Start timer'}}</button><button type="button" (click)="openTimerEditor()">Edit</button></div></div>
           </header>
 
@@ -100,7 +101,7 @@ export function toggleExpandedUnitIds(unitId: string, expandedUnitIds: string[])
 
           <div class="study-layout" [class.with-question-list]="questionListVisible()">
             @if (questionListVisible()) {
-              <aside id="study-question-list" class="question-rail" aria-label="Questions in this study run">
+              <aside id="study-question-list" class="question-rail" [attr.aria-label]="'Questions in this ' + sessionLabel()">
                 @for (question of sessionQuestions(); track question.id; let index = $index) {
                   <button type="button" [class.current]="index === study.currentIndex" [class.done]="study.results[question.id]" (click)="goToQuestion(index)"><span>{{index + 1}}</span><div><b>{{question.title}}</b><small>{{question.type === 'embedded' ? 'On this page' : 'Opens source'}} · {{resultLabel(study.results[question.id])}}</small></div></button>
                 }
@@ -132,17 +133,17 @@ export function toggleExpandedUnitIds(unitId: string, expandedUnitIds: string[])
               </article>
             }
           </div>
-          <section class="end-session-bar"><div><p class="eyebrow">DONE FOR TODAY?</p><h3>Your place, results, and {{formatTime(study.totalSeconds)}} total time are saved on this device.</h3></div><button class="maxxing-primary" type="button" (click)="endForNow()">End for now</button></section>
+          <section class="end-session-bar"><div><p class="eyebrow">DONE FOR TODAY?</p><h3>Your place, results, and {{formatTime(study.totalSeconds)}} total training time are saved on this device.</h3></div><button class="maxxing-primary" type="button" (click)="endForNow()">End for now</button></section>
         </section>
       } @else if (creating()) {
         <section class="session-builder" aria-labelledby="builder-title">
-          <div class="practice-heading"><div><p class="eyebrow">NEW STUDY RUN</p><h2 id="builder-title">What’s the test?</h2></div><p>Name it so you can find it later. Then choose the exact roadmap topics you want in the set.</p></div>
-          <label class="session-name">Session name <input type="text" maxlength="60" placeholder="Unit 1 test" [ngModel]="draftName()" (ngModelChange)="draftName.set($event)"></label>
+          <div class="practice-heading"><div><p class="eyebrow">NEW {{sessionLabel()}}</p><h2 id="builder-title">Build your {{loadoutLabel()}}.</h2></div><p>Name your {{sessionLabel()}}, then choose the sources, difficulty, and exact roadmap topics that belong in its {{loadoutLabel()}}.</p></div>
+          <label class="session-name">Training session name <input type="text" maxlength="60" placeholder="Unit 1 test" [ngModel]="draftName()" (ngModelChange)="draftName.set($event)"></label>
           <details class="question-filters" open>
-            <summary><span>Shape your question mix</span><b>{{filteredQuestions().length}} matching questions</b></summary>
+            <summary><span>Tune your question mix</span><b>{{filteredQuestions().length}} matching questions</b></summary>
             <div class="filter-grid">
               <fieldset><legend>Source sites</legend><div class="filter-options">@for (source of sourceSites(); track source) { <label class="filter-choice"><input type="checkbox" [checked]="selectedSources().includes(source)" (change)="toggleSource(source)"><span aria-hidden="true">✓</span>{{sourceLabel(source)}}</label> }</div></fieldset>
-              <fieldset><legend>Problem type</legend><div class="filter-options">@for (tag of filterTags; track tag) { <label class="filter-choice"><input type="checkbox" [checked]="selectedFilterTags().includes(tag)" (change)="toggleFilterTag(tag)"><span aria-hidden="true">✓</span>{{tag}}</label> }</div></fieldset>
+              <fieldset><legend>Problem type</legend><div class="filter-options">@for (tag of filterTags(); track tag) { <label class="filter-choice"><input type="checkbox" [checked]="selectedFilterTags().includes(tag)" (change)="toggleFilterTag(tag)"><span aria-hidden="true">✓</span>{{tag}}</label> }</div></fieldset>
               <fieldset><legend>Content delivery</legend><div class="filter-options">@for (display of displays; track display) { <label class="filter-choice"><input type="checkbox" [checked]="selectedDisplays().includes(display)" (change)="toggleDisplay(display)"><span aria-hidden="true">✓</span>{{displayLabel(display)}}</label> }</div><small class="filter-helper">Embedded displays here · External opens the source</small></fieldset>
               <fieldset><legend>Difficulty</legend><div class="filter-options">@for (difficulty of difficulties; track difficulty) { <label class="filter-choice difficulty-choice" [attr.data-level]="difficulty"><input type="checkbox" [checked]="selectedDifficulties().includes(difficulty)" (change)="toggleDifficulty(difficulty)"><span aria-hidden="true">✓</span>{{difficulty}}</label> }</div></fieldset>
             </div>
@@ -172,21 +173,22 @@ export function toggleExpandedUnitIds(unitId: string, expandedUnitIds: string[])
               </section>
             }
           </div>
-          <div class="setup-actions"><button class="secondary-action" type="button" (click)="cancelCreate()">Cancel</button><button class="maxxing-primary" type="button" [disabled]="!draftName().trim() || !selectedTopics().length || !plannedQuestionCount()" (click)="createSession()">Start study run →</button></div>
+          <div class="setup-actions"><button class="secondary-action" type="button" (click)="cancelCreate()">Cancel</button><button class="maxxing-primary" type="button" [disabled]="!draftName().trim() || !selectedTopics().length || !plannedQuestionCount()" (click)="createSession()">Start training →</button></div>
         </section>
       } @else {
         <section class="sessions-home">
-          <div class="practice-heading"><div><p class="eyebrow">YOUR STUDY RUNS</p><h2>Pick up where you left off.</h2></div><button class="maxxing-primary" type="button" (click)="openCreate()">+ New study run</button></div>
+          <div class="practice-heading"><div><p class="eyebrow">YOUR {{sessionPlural()}}</p><h2>Pick up where you left off.</h2></div><button class="maxxing-primary" type="button" (click)="openCreate()">+ New {{sessionLabel()}}</button></div>
           @if (openSessions().length) {
             <div class="session-list">@for (study of openSessions(); track study.id) { <article><div class="session-card-top"><span>{{topicNames(study)}}</span><button class="text-action" type="button" (click)="dismissSession(study.id)">Dismiss</button></div><h3>{{study.name}}</h3><div class="session-metrics"><span><b>{{formatTime(study.totalSeconds)}}</b> studied</span><span><b>{{completionCount(study)}} / {{study.questionIds.length}}</b> logged</span><span><b>{{sessionScore(study)}}%</b> score</span></div><div class="session-card-actions"><small>Updated {{formatDate(study.updatedAt)}}</small><button class="maxxing-primary" type="button" (click)="openSession(study.id)">Resume →</button></div></article> }</div>
-          } @else { <div class="no-sessions"><span>01</span><h3>No active study runs.</h3><p>Start one for the next quiz, unit test, or exam.</p><button class="maxxing-primary" type="button" (click)="openCreate()">Start a study run →</button></div> }
+          } @else { <div class="no-sessions"><span>01</span><h3>No active {{sessionPlural()}}.</h3><p>Build a {{loadoutLabel()}} for the next quiz, unit test, or exam.</p><button class="maxxing-primary" type="button" (click)="openCreate()">Start a {{sessionLabel()}} →</button></div> }
           @if (dismissedSessions().length) { <details class="dismissed-sessions"><summary>Dismissed ({{dismissedSessions().length}})</summary>@for (study of dismissedSessions(); track study.id) { <div><span><b>{{study.name}}</b><small>{{formatTime(study.totalSeconds)}} studied</small></span><button type="button" (click)="restoreSession(study.id)">Restore</button><button type="button" (click)="deleteSession(study.id)">Delete forever</button></div> }</details> }
         </section>
       }
     </main>
   `
 })
-export class GradeMaxxingPage {
+export class TrainingPage {
+  readonly course = signal<CourseManifest | null>(null);
   readonly questions = signal<PracticeQuestion[]>([]);
   readonly sessions = signal<StudySession[]>([]);
   readonly activeSessionId = signal<string | null>(null);
@@ -199,7 +201,10 @@ export class GradeMaxxingPage {
   readonly selectedFilterTags = signal<string[]>([...PRACTICE_FILTER_TAGS]);
   readonly selectedDifficulties = signal<PracticeDifficulty[]>([...PRACTICE_DIFFICULTIES]);
   readonly selectedDisplays = signal<PracticeDisplay[]>([...PRACTICE_DISPLAYS]);
-  readonly filterTags = PRACTICE_FILTER_TAGS;
+  readonly filterTags = computed(() => this.course()?.pages.practice.filterTags ?? PRACTICE_FILTER_TAGS);
+  readonly sessionLabel = computed(() => this.course()?.pages.practice.sessionLabel ?? 'training session');
+  readonly sessionPlural = computed(() => this.course()?.pages.practice.sessionPlural ?? 'training sessions');
+  readonly loadoutLabel = computed(() => this.course()?.pages.practice.loadoutLabel ?? 'loadout');
   readonly difficulties = PRACTICE_DIFFICULTIES;
   readonly displays = PRACTICE_DISPLAYS;
   readonly running = signal(false);
@@ -230,7 +235,9 @@ export class GradeMaxxingPage {
   readonly sessionQuestions = computed(() => { const session = this.activeSession(); return session ? session.questionIds.map((id) => this.questions().find((question) => question.id === id)).filter((question): question is PracticeQuestion => Boolean(question)) : []; });
   readonly currentQuestion = computed(() => this.sessionQuestions()[this.activeSession()?.currentIndex ?? 0] ?? null);
 
-  constructor(private readonly catalog: PracticeCatalogService, route: ActivatedRoute, private readonly router: Router, destroyRef: DestroyRef) {
+  private readonly courseId: string;
+  constructor(private readonly catalog: PracticeCatalogService, route: ActivatedRoute, private readonly router: Router, destroyRef: DestroyRef, private readonly courses: CourseDataService) {
+    this.courseId = route.parent?.snapshot.paramMap.get('courseId') ?? '';
     route.queryParamMap.pipe(takeUntilDestroyed(destroyRef)).subscribe((params) => this.activeSessionId.set(params.get('session')));
     void this.initialize();
     interval(1000).pipe(takeUntilDestroyed(destroyRef)).subscribe(() => { const id = this.activeSessionId(); if (this.running() && id) this.updateSession(id, (session) => ({ ...session, totalSeconds: session.totalSeconds + 1, updatedAt: new Date().toISOString() })); });
@@ -247,7 +254,7 @@ export class GradeMaxxingPage {
   toggleFilterTag(tag: string) { this.selectedFilterTags.update((items) => items.includes(tag) ? items.filter((item) => item !== tag) : [...items, tag]); }
   toggleDifficulty(difficulty: PracticeDifficulty) { this.selectedDifficulties.update((items) => items.includes(difficulty) ? items.filter((item) => item !== difficulty) : [...items, difficulty]); }
   toggleDisplay(display: PracticeDisplay) { this.selectedDisplays.update((items) => items.includes(display) ? items.filter((item) => item !== display) : [...items, display]); }
-  resetQuestionFilters() { this.selectedSources.set([...this.sourceSites()]); this.selectedFilterTags.set([...PRACTICE_FILTER_TAGS]); this.selectedDifficulties.set([...PRACTICE_DIFFICULTIES]); this.selectedDisplays.set([...PRACTICE_DISPLAYS]); }
+  resetQuestionFilters() { this.selectedSources.set([...this.sourceSites()]); this.selectedFilterTags.set([...this.filterTags()]); this.selectedDifficulties.set([...PRACTICE_DIFFICULTIES]); this.selectedDisplays.set([...PRACTICE_DISPLAYS]); }
   setQuestionLimit(value: number) { this.questionLimit.set(Math.max(1, Math.min(25, Math.floor(Number(value) || 1)))); }
   openCreate() { this.draftName.set(`Test ${this.openSessions().length + 1}`); this.selectedTopics.set([]); this.expandedUnitIds.set([]); this.creating.set(true); }
   cancelCreate() { this.creating.set(false); }
@@ -255,7 +262,7 @@ export class GradeMaxxingPage {
     const name = this.draftName().trim(), topicIds = this.selectedTopics(), selectionSeed = crypto.getRandomValues(new Uint32Array(1))[0], questionIds = selectBalancedQuestions(this.filteredQuestions(), topicIds, this.questionLimit(), selectionSeed).map((question) => question.id);
     if (!name || !questionIds.length) return;
     const now = new Date().toISOString();
-    const session: StudySession = { id: crypto.randomUUID(), name, topicIds, questionIds, currentIndex: 0, totalSeconds: 0, results: {}, revealed: [], status: 'open', createdAt: now, updatedAt: now, questionLimitPerTopic: this.questionLimit(), selectionSeed };
+    const session: StudySession = { id: crypto.randomUUID(), courseId: this.courseId, name, topicIds, questionIds, currentIndex: 0, totalSeconds: 0, results: {}, revealed: [], status: 'open', createdAt: now, updatedAt: now, questionLimitPerTopic: this.questionLimit(), selectionSeed };
     this.sessions.update((sessions) => [session, ...sessions]); this.persist(); this.creating.set(false); this.openSession(session.id);
   }
   openSession(id: string) { this.activeSessionId.set(id); this.running.set(true); this.editingTimer.set(false); this.questionListVisible.set(false); void this.router.navigate([], { queryParams: { session: id }, queryParamsHandling: 'merge' }); }
@@ -263,7 +270,7 @@ export class GradeMaxxingPage {
   toggleTimer() { this.running.update((value) => !value); }
   openTimerEditor() { const session = this.activeSession(); if (session) { this.running.set(false); this.timerMinutes.set(Math.round(session.totalSeconds / 60)); this.editingTimer.set(true); } }
   saveTimer() { const id = this.activeSessionId(); if (id) { const seconds = Math.max(0, Math.round(Number(this.timerMinutes() || 0) * 60)); this.updateSession(id, (session) => ({ ...session, totalSeconds: seconds, updatedAt: new Date().toISOString() })); this.editingTimer.set(false); } }
-  resetTimer() { const id = this.activeSessionId(); if (id && confirm('Reset this study run’s timer to zero?')) { this.updateSession(id, (session) => ({ ...session, totalSeconds: 0, updatedAt: new Date().toISOString() })); this.timerMinutes.set(0); this.editingTimer.set(false); } }
+  resetTimer() { const id = this.activeSessionId(); if (id && confirm(`Reset this ${this.sessionLabel()}’s timer to zero?`)) { this.updateSession(id, (session) => ({ ...session, totalSeconds: 0, updatedAt: new Date().toISOString() })); this.timerMinutes.set(0); this.editingTimer.set(false); } }
   goToQuestion(index: number) { const id = this.activeSessionId(); if (id) this.updateSession(id, (session) => ({ ...session, currentIndex: index, updatedAt: new Date().toISOString() })); }
   moveQuestion(change: number) { const session = this.activeSession(); if (session) this.goToQuestion(Math.max(0, Math.min(session.questionIds.length - 1, session.currentIndex + change))); }
   reveal(questionId: string) { const id = this.activeSessionId(); if (id) this.updateSession(id, (session) => ({ ...session, revealed: session.revealed.includes(questionId) ? session.revealed : [...session.revealed, questionId], updatedAt: new Date().toISOString() })); }
@@ -274,23 +281,26 @@ export class GradeMaxxingPage {
     this.updateSession(session.id, (value) => ({ ...value, results: { ...value.results, [question.id]: grade }, updatedAt: new Date().toISOString() }));
     const current = this.activeSession(); const next = this.sessionQuestions().findIndex((item, index) => index > (current?.currentIndex ?? -1) && !current?.results[item.id]); if (next >= 0) this.goToQuestion(next);
   }
-  dismissSession(id: string) { if (confirm('Dismiss this study run? You can restore it later.')) this.updateSession(id, (session) => ({ ...session, status: 'dismissed', updatedAt: new Date().toISOString() })); }
+  dismissSession(id: string) { if (confirm(`Dismiss this ${this.sessionLabel()}? You can restore it later.`)) this.updateSession(id, (session) => ({ ...session, status: 'dismissed', updatedAt: new Date().toISOString() })); }
   restoreSession(id: string) { this.updateSession(id, (session) => ({ ...session, status: 'open', updatedAt: new Date().toISOString() })); }
-  deleteSession(id: string) { if (confirm('Delete this study run and its results forever?')) { this.sessions.update((sessions) => sessions.filter((session) => session.id !== id)); this.persist(); } }
+  deleteSession(id: string) { if (confirm(`Delete this ${this.sessionLabel()} and its results forever?`)) { this.sessions.update((sessions) => sessions.filter((session) => session.id !== id)); this.persist(); } }
   completionCount = completionCount; sessionScore = sessionScore;
   resultLabel(grade?: PracticeGrade) { return grade === 'cooked' ? 'Cooked it' : grade === 'close' ? 'Close' : grade === 'reps' ? 'Needs reps' : 'Not logged'; }
   questionCountLabel(session: StudySession) { return `${completionCount(session)} of ${session.questionIds.length} logged`; }
   topicNames(session: StudySession) { return session.topicIds.join(' · '); }
   formatTime(seconds: number) { const hours = Math.floor(seconds / 3600), minutes = Math.floor(seconds % 3600 / 60), secs = seconds % 60; return hours ? `${hours}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}` : `${minutes}:${String(secs).padStart(2, '0')}`; }
   formatDate(value: string) { return new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric' }).format(new Date(value)); }
-  accentFor(topicId: string) { return ['#ff6b35','#5d3fd3','#2478d4','#e65050','#b35bce','#008f7a','#b57812','#1b879c','#d6622a','#d73964'][Number(topicId.split('.')[0]) - 1]; }
-  sourceLabel(source: string) { return ({ 'Matthew Boelkins et al.': 'Active Calculus', 'Paul Dawkins · Lamar University': 'Paul’s Math Notes', 'University of Michigan Mathematics': 'University of Michigan', 'College Board': 'College Board' } as Record<string, string>)[source] ?? source; }
+  accentFor(topicId: string) { const accents = this.course()?.pages.practice.unitAccents ?? ['#ff6b35']; return accents[(Number(topicId.split('.')[0]) - 1) % accents.length]; }
+  sourceLabel(source: string) { return this.course()?.pages.practice.sourceLabels[source] ?? source; }
   displayLabel(display: PracticeDisplay) { return `${display === 'embedded' ? 'Embedded' : 'External'} (${this.displayCounts()[display]})`; }
   private updateSession(id: string, update: (session: StudySession) => StudySession) { this.sessions.update((sessions) => sessions.map((session) => session.id === id ? update(session) : session)); this.persist(); }
   private async initialize() {
+    const [course, catalogUrl] = await Promise.all([this.courses.loadCourse(this.courseId), this.courses.datasetUrl(this.courseId, 'practice')]);
+    this.course.set(course);
+    this.selectedFilterTags.set([...course.pages.practice.filterTags]);
     const [questions, savedSessions] = await Promise.all([
-      this.catalog.load(new URL('data/practice.json', document.baseURI).toString()),
-      this.catalog.loadSessions()
+      this.catalog.load(this.courseId, catalogUrl),
+      this.catalog.loadSessions(this.courseId)
     ]);
     this.questions.set(questions);
     this.selectedSources.set([...new Set(questions.map((question) => question.source.author))].sort());
@@ -302,5 +312,5 @@ export class GradeMaxxingPage {
     this.creating.set(!this.activeSessionId() && sessions.every((session) => session.status !== 'open'));
     this.persist();
   }
-  private persist() { void this.catalog.saveSessions(this.sessions()); }
+  private persist() { void this.catalog.saveSessions(this.courseId, this.sessions()); }
 }

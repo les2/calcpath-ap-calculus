@@ -1,259 +1,164 @@
-# CalcPath — AP Calculus Roadmap
+# Full Dive AP — offline-ready course guides
 
 [![Validate](https://github.com/les2/calcpath-ap-calculus/actions/workflows/ci.yml/badge.svg)](https://github.com/les2/calcpath-ap-calculus/actions/workflows/ci.yml)
 [![Deploy GitHub Pages](https://github.com/les2/calcpath-ap-calculus/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/les2/calcpath-ap-calculus/actions/workflows/deploy-pages.yml)
-[![Support CalcPath on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/5reason)
+[![Support on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/5reason)
 
-CalcPath is an installable, offline-ready study guide for AP Calculus AB and BC. It organizes all 111 curriculum topics into a searchable roadmap with video lessons, authoritative references, free math tools, local progress tracking, and a printable formula guide.
+Full Dive AP is a reusable framework for complete course roadmaps, trusted resources, printable references, and private training sessions. One data-driven Angular PWA can host many courses without duplicating the application. AP Calculus AB + BC is the first course package.
 
-## Try the app
+The existing repository and site URLs intentionally keep the CalcPath name for now. The currently published AP Calculus release is at [calcpath-ap-calculus.les2.chatgpt.site](https://calcpath-ap-calculus.les2.chatgpt.site/roadmap), and the source remains at [github.com/les2/calcpath-ap-calculus](https://github.com/les2/calcpath-ap-calculus). This Full Dive AP generalization should be tested locally before it replaces that release.
 
-**[Open CalcPath](https://calcpath-ap-calculus.les2.chatgpt.site/roadmap)**
+## What students get
 
-[GitHub Pages mirror](https://les2.github.io/calcpath-ap-calculus/) — rebuilt and published automatically after every push to `main`.
-
-The guide works offline after the first successful visit. Videos, references, and external calculator tools still require an internet connection.
-
-CalcPath is free to use and fork. If it helped you, you can optionally [leave a tip on Ko-fi](https://ko-fi.com/5reason).
-
-## What CalcPath includes
-
-- Every AP Calculus AB and BC curriculum topic
-- AB/BC filters and full-text search
-- Organic Chemistry Tutor lessons where suitable videos are available
-- Authoritative topic references
-- Progress saved privately on the student's device
-- An installable Progressive Web App with offline caching and update notifications
-- Free, ad-free graphing, symbolic algebra, solver, and scientific tools
+- A searchable, bookmarkable roadmap for each available course
+- Curated videos, authoritative references, and free tools
 - A print-optimized reference guide with real TeX mathematics and accessible MathML
-- Private, named Grade Maxxing study runs with a user-controlled timer, in-app Creative Commons questions, intentional external practice links, and local-only progress
-- Clean, shareable routes, responsive layouts, and dark mode
+- Private Training Mode sessions with sourced questions, timers, self-grading, filters, and resumable sessions
+- An installable PWA that keeps the application and course datasets available offline after the first successful load
+- Update detection, responsive layouts, dark mode, and clean history-based routes
 
-## How this was made with ChatGPT
+External videos, websites, and calculators still require internet access. Progress and study sessions stay on the student's device; Full Dive AP has no student accounts or analytics database.
 
-CalcPath was created collaboratively in the [ChatGPT desktop app](https://learn.chatgpt.com/docs/app) using ChatGPT Work, Codex, and [Sites](https://learn.chatgpt.com/docs/sites). The human supplied the product idea, audience, curriculum requirements, design direction, and ongoing feedback. ChatGPT helped turn that direction into a working Angular application, researched implementation choices, wrote and revised the source, added tests, connected GitHub, configured automated deployment, and published the live Site.
-
-The useful pattern was not “give AI one sentence and accept whatever appears.” It was a short loop:
-
-1. Describe the audience, purpose, constraints, and non-negotiable features.
-2. Ask ChatGPT to build the smallest recognizable version.
-3. Open it, try it, and report specific friction in ordinary language.
-4. Ask ChatGPT to verify important content and technical decisions against primary sources.
-5. Add tests and automatic deployment before inviting other people to rely on it.
-6. Keep refining the source and the live app together.
-
-### A condensed prompt you can reuse
-
-Copy this prompt into ChatGPT, replace the bracketed parts, and attach any source material you want the app to follow:
+## One shell, many course packages
 
 ```text
-Build a public, installable, offline-ready roadmap app for [subject or goal].
-The audience is [who it is for], so make it fast, welcoming, accessible, and
-easy for a non-expert to navigate.
+public/data/
+├── app.json
+├── courses.json
+└── courses/
+    └── ap-calculus/
+        ├── course.json
+        ├── roadmap.json
+        ├── tools.json
+        ├── reference.json
+        └── practice.json
 
-Use a modern web framework with clean URL routes and a responsive component
-system. Make it a PWA that works offline after the first visit, detects updates,
-and can be installed without a native app store. Keep editable curriculum and
-resource content in JSON. Save personal progress only on the user's device.
-
-Create these sections: [roadmap], [tools/resources], and [printable reference].
-Use authoritative sources and link to them. Render mathematical notation with
-real TeX/MathML, not plain text. Add tests, data validation, a public GitHub
-repository, and GitHub Actions that validate pull requests and deploy pushes to
-main. Include a beginner-friendly README explaining setup and customization.
-
-Use Sites to publish a public version. Show me the working app early, then keep
-iterating from my feedback. Do not stop at a mockup: build, test, publish, and
-give me the repository and live URLs.
+public/schemas/
+├── app.schema.json
+├── courses.schema.json
+├── course.schema.json
+├── roadmap.schema.json
+├── tools.schema.json
+├── reference.schema.json
+├── practice.schema.json
+└── build-info.schema.json
 ```
 
-You do not need to know the right programming vocabulary. Describe what people should be able to do, what should happen when the internet disappears, what information must be trustworthy, and what currently feels confusing. ChatGPT can translate those product requirements into technical work.
+The shell discovers courses through `courses.json`. Each catalog item points to a manifest that supplies its data files, navigation, headings, descriptions, filters, accents, quality targets, and course disclaimer. Angular pages contain shared behavior, not AP Calculus-specific branches.
 
-## Beginner setup: make your own version
+Read [the data architecture](docs/data-architecture.md) for the runtime and storage model. Follow [the course-authoring guide](docs/course-authoring.md) when adding a class. Coding agents can use the checked-in `.agents/skills/add-study-course/` skill, which encodes the same workflow and verification rules.
 
-There are two reasonable paths. The first is almost entirely conversational. The second gives you a local copy and is best if you want to learn, inspect every change, or accept contributions.
+## Course routes
 
-### Path A: start in ChatGPT
+Each available course gets the same top-level structure:
 
-1. Create or sign in to a [ChatGPT account](https://chatgpt.com/).
-2. Install the [ChatGPT desktop app](https://chatgpt.com/download/) or use ChatGPT on the web. The [official quickstart](https://learn.chatgpt.com/docs/quickstart) explains the available surfaces.
-3. In the desktop app, use **Work** for research and Sites, or choose **Codex** when you want ChatGPT to work directly with a local project folder.
-4. Start with the reusable prompt above. Mention `@Sites` or explicitly ask for a website when you want ChatGPT to build and host it.
-5. Review the preview, ask for changes in plain language, and test the important paths yourself.
-6. In Sites, choose the intended audience only after checking the content, links, and privacy implications.
+- `/courses` — data-driven course catalog
+- `/courses/:courseId/roadmap` — curriculum, search, filters, and progress
+- `/courses/:courseId/tools` — curated calculators and learning tools
+- `/courses/:courseId/reference` — printable formula/reference guide
+- `/courses/:courseId/training` — private, persistent training sessions
 
-Sites can create and host a project without requiring you to configure a traditional web server. It also keeps versions, deployments, sharing settings, and basic analytics together. Availability and limits can depend on your ChatGPT plan or workspace.
+Course IDs also namespace roadmap progress, IndexedDB catalogs, and study sessions. The legacy IndexedDB database name is retained solely so existing AP Calculus sessions can migrate safely.
 
-### Path B: fork CalcPath and customize it
+## Add another course
 
-1. Create a free [GitHub account](https://github.com/signup). GitHub stores the source, tracks every revision, and runs the automated checks.
-2. Open the [CalcPath repository](https://github.com/les2/calcpath-ap-calculus) and choose **Fork**. A fork is your own copy; changing it does not change the original project.
-3. Install [GitHub Desktop](https://desktop.github.com/download/) and sign in. GitHub's [beginner guide](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) explains cloning, commits, pushes, and branches without requiring terminal commands.
-4. Clone your fork to a folder on your computer.
-5. Open that folder in the ChatGPT desktop app under **Codex**. Ask: “Explain this project to a beginner, then help me replace the AP Calculus content with [my subject]. Preserve the offline PWA, tests, and deployment workflow.”
-6. Most content lives in `public/data/`. Ask ChatGPT to edit those JSON files and to update tests whenever the structure changes.
-7. Review the changes, commit them in GitHub Desktop, and push them to GitHub.
-8. In your repository, open **Settings → Pages**, choose **GitHub Actions** as the source, and run the included deployment workflow. Update the repository name in the `build:pages` script if your fork uses a different name.
+1. Choose a stable lowercase kebab-case ID such as `ap-physics-1`.
+2. Create `public/data/courses/<course-id>/` with a manifest and all four datasets.
+3. Point each file at its JSON Schema and keep course-specific copy/configuration in the manifest.
+4. Register the manifest in `public/data/courses.json`.
+5. Run `npm run validate:data`, `npm test`, and `npm run build`.
+6. Test every course route, printing, saved state, and offline behavior before publishing.
 
-GitHub's guides explain how to [fork and clone with GitHub Desktop](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) and [configure GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+The detailed checklist and field responsibilities live in [docs/course-authoring.md](docs/course-authoring.md).
 
-### Optional: run it on your computer
+## Practice-question trust rules
 
-Local development is useful but not required for changing simple content with ChatGPT.
+Full Dive AP does not allow AI-authored or AI-modified practice questions. Embedded questions are faithful, format-only transcriptions of openly licensed publisher material, with exact locators for the publisher's question and supplied answer. If republication or the answer cannot be verified, the item must remain an external link.
 
-1. Install the current supported [Node.js](https://nodejs.org/en/download) release. This project requires Node.js 22.22.3 or newer.
-2. Open a terminal in the cloned project folder.
-3. Install the project and start the development server:
+Publishers are normalized in a `sources` registry and questions refer to them by `sourceId`. Records also carry a course/topic mapping, license, source exercise ID, transcription status, verification date, format, difficulty, calculator policy, estimated time, and tags. The non-negotiable rules are in [AGENTS.md](AGENTS.md), and validation rejects incomplete provenance.
+
+The AP Calculus package currently contains 1,164 sourced practice records from seven collections, including 555 embedded OpenStax items: five publisher-authored questions with publisher-supplied answers for each of the 111 roadmap topics. Difficulty is Full Dive AP editorial metadata; it is not a publisher rating and never changes the mathematics.
+
+## Run it locally
+
+This project requires Node.js 22.22.3 or newer.
 
 ```bash
 npm install
 npm run dev
 ```
 
-4. Open the local address printed in the terminal. Changes appear while the server is running.
-5. Before pushing, run the same checks used by GitHub:
+Open the address printed by Angular, then start at `/courses`. Before committing a change, run:
 
 ```bash
 npm run build
 ```
 
-If a command fails, copy the complete error into ChatGPT and ask it to diagnose the cause before changing anything.
+The build runs unit tests, validates every registered course package and cross-dataset relationship, generates version information, produces the Angular PWA, and prepares the hosted Site worker.
 
-## Why these technologies were chosen
+Useful individual commands:
 
-The architecture starts with what the app should do, not with fashionable tools.
+```bash
+npm test                 # Angular/Vitest unit tests
+npm run validate:data    # all JSON Schemas and semantic data rules
+npm run mine:practice    # reproducible AP Calculus catalog refresh
+```
 
-| Product goal | Choice | Why it fits |
+## Why these technologies fit the product
+
+| Product need | Choice | Why |
 | --- | --- | --- |
-| Open instantly on phones and computers | Web application | One link works across modern browsers; there is no separate iOS, Android, Windows, or macOS codebase. |
-| Install without an app store | [Progressive Web App](https://www.w3.org/TR/appmanifest/) and web app manifest | Supporting browsers can add CalcPath to the home screen or app launcher while updates still come from the web. |
-| Keep the guide available during bad Wi-Fi or travel | [Angular service worker](https://angular.dev/ecosystem/service-workers) | It caches the application shell, curriculum JSON, formulas, icons, and math fonts after the first visit. External links remain online resources. |
-| Update safely | Versioned service-worker builds plus an in-app update notice | A newly published version downloads in the background; the student chooses when to reload, and locally saved progress remains intact. |
-| Make sections bookmarkable and shareable | [Angular Router](https://angular.dev/guide/routing) with clean history-based routes | `/roadmap`, `/tools`, and `/reference` behave as distinct pages, while search/filter state can live in the URL. |
-| Make content easy to replace | Plain JSON files | A teacher—or ChatGPT—can edit topics, tools, and formulas without redesigning the application. JSON is portable and easy to validate. |
-| Keep student progress private and simple | Browser local storage | Checks and theme preferences stay on that device. CalcPath does not need accounts, a remote database, or a student-data backend. |
-| Show mathematics as mathematics | [KaTeX](https://katex.org/) with TeX and MathML | Fractions, radicals, integrals, identities, and print output use professional mathematical typesetting with an accessible representation. |
-| Use a consistent, accessible interface | [Angular](https://angular.dev/) and [Angular Material](https://material.angular.dev/) | Angular supplies structured components, routing, forms, and testing; Material provides a maintained UI foundation. |
-| Catch mistakes before publishing | [Vitest](https://vitest.dev/) plus custom data checks | Unit tests cover roadmap behavior, while validation checks topic counts, unique IDs, HTTPS links, and every TeX expression. |
-| Let anyone inspect and improve it | Public [GitHub](https://github.com/) repository | The full history is visible, forks are easy to create, and contributions can be reviewed as pull requests. |
-| Publish every approved change automatically | [GitHub Actions](https://docs.github.com/en/actions) and [GitHub Pages](https://docs.github.com/en/pages) | Pull requests are checked automatically; pushes to `main` rebuild and publish the public mirror without manual file uploads. |
-| Provide a managed public home | [ChatGPT Sites](https://learn.chatgpt.com/docs/sites) | Sites handles the hosted project, public URL, versions, deployments, access settings, and analytics while the same source remains on GitHub. |
+| One app for many classes | JSON course catalog + manifests | New course content can be added without forking the UI. |
+| Install without native app stores | [Progressive Web App](https://www.w3.org/TR/appmanifest/) | Supporting browsers can add Full Dive AP to a home screen or launcher. |
+| Work through bad Wi-Fi | [Angular service worker](https://angular.dev/ecosystem/service-workers) | The shell and local course datasets are cached after the first visit. |
+| Share and resume a precise view | [Angular Router](https://angular.dev/guide/routing) | Course and page identity live in clean URLs; roadmap state can use query parameters. |
+| Make content portable and checkable | JSON + [JSON Schema 2020-12](https://json-schema.org/draft/2020-12) | Humans and tools can inspect the same explicit contracts before runtime. |
+| Save structured private study data | [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) through [Dexie](https://dexie.org/) | Large catalogs and training sessions remain queryable, offline, and local to the browser. |
+| Typeset math professionally | [KaTeX](https://katex.org/) | TeX renders quickly as readable HTML plus MathML and prints cleanly. |
+| Maintain an accessible app shell | [Angular](https://angular.dev/) + [Angular Material](https://material.angular.dev/) | Routing, components, forms, accessibility foundations, and testing share one supported stack. |
+| Reject broken data before release | [AJV](https://ajv.js.org/) + [Vitest](https://vitest.dev/) | Schemas, semantic checks, migrations, and interaction logic run in automated builds. |
+| Publish inspectable source | [GitHub](https://github.com/) + [GitHub Actions](https://docs.github.com/en/actions) | Forks, pull requests, validation, and GitHub Pages deployment remain public and repeatable. |
+| Offer a managed public home | [ChatGPT Sites](https://learn.chatgpt.com/docs/sites) | The app can be hosted without operating a custom application server. |
 
-### Optional creator support without a third-party widget
+The header's optional Ko-fi support control is an ordinary themed Angular link rather than a third-party script. Ko-fi loads only after a visitor deliberately follows it, so it does not add runtime tracking or weaken offline behavior.
 
-CalcPath's header includes a small **Leave a tip** link to [Ko-fi](https://ko-fi.com/5reason). Ko-fi supplies floating widgets and embedded panels, but it also explicitly supports creating a button in your own style and linking it directly to your Ko-fi page. CalcPath uses that simpler approach:
+## Beginner setup: make your own
 
-- No third-party JavaScript is loaded while students study.
-- The PWA shell remains fully available offline.
-- Ko-fi opens only when someone deliberately follows the link.
-- The control automatically matches CalcPath's light and dark themes.
-- The support link is isolated in a reusable Angular component.
+1. Create a free [GitHub account](https://github.com/signup).
+2. Open the [Full Dive AP repository](https://github.com/les2/calcpath-ap-calculus) and choose **Fork**.
+3. Install [GitHub Desktop](https://desktop.github.com/download/), sign in, and clone your fork.
+4. Install the [ChatGPT desktop app](https://chatgpt.com/download/) and open the cloned folder in Codex.
+5. Ask ChatGPT to read `AGENTS.md`, `docs/course-authoring.md`, and the `add-study-course` skill before creating your subject package.
+6. Run the local checks, review the app yourself, then commit and push with GitHub Desktop.
+7. If you want a GitHub Pages mirror, open **Settings → Pages**, choose **GitHub Actions**, and use the included workflow after updating the repository base path if your fork has a different name.
 
-The essential Angular template is ordinary accessible HTML:
+GitHub explains how to [fork and clone with GitHub Desktop](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) and [configure Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
-```html
-<a
-  class="support-link"
-  href="https://ko-fi.com/5reason"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Leave a tip for CalcPath on Ko-fi (opens in a new tab)"
->
-  <span aria-hidden="true">☕</span>
-  <span>Leave a tip</span>
-</a>
-```
+## How this was made with ChatGPT
 
-Replace `5reason` with your Ko-fi username and style the link like any other component. For a GitHub README, Ko-fi provides a hosted badge:
+The project was built collaboratively in the [ChatGPT desktop app](https://chatgpt.com/download/) with Codex and Sites. The human defined the audience, trust boundaries, content goals, product language, and interaction feedback. ChatGPT helped research implementation choices, change the Angular source, structure and validate data, add tests, configure deployment, and iterate from hands-on review.
 
-```markdown
-[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/yourusername)
-```
+The productive loop was: describe the outcome and constraints, build the smallest real version, use it, identify concrete friction, verify important content against primary sources, and repeat. The checked-in schemas, contributor rules, course documentation, and skill now preserve those decisions for future people and agents.
 
-See Ko-fi's official guides to its [tip widgets and custom buttons](https://help.ko-fi.com/hc/en-us/articles/360018381678-Ko-fi-tip-widget) and [brand assets](https://help.ko-fi.com/hc/en-us/articles/360007169493-Can-I-use-the-Ko-fi-logo-to-promote-my-page).
-
-### Why there is no database
-
-CalcPath does not have shared accounts, teacher dashboards, synced progress, comments, or user-generated records. Its durable content ships as files, and personal state belongs to the browser. A database would add cost, privacy questions, migrations, and failure modes without improving the current experience. If a future version genuinely needs progress shared across devices, that would be the point to design authentication and storage deliberately.
-
-## Project map
+### Condensed prompt to recreate the pattern
 
 ```text
-src/app/                 Angular pages, routing, and components
-public/data/             Curriculum, tools, and TeX formula content
-public/manifest.webmanifest
-                         Installable-app name, icons, scope, and colors
-ngsw-config.json         Offline cache policy
-scripts/                 Data checks and deployment preparation
-.github/workflows/       Pull-request validation and Pages deployment
-worker/                  Clean-route fallback for the primary hosted Site
-.openai/hosting.json     Link to the ChatGPT Sites project
+Build a public, installable, offline-ready study framework named [name]. It
+must support multiple courses through a top-level JSON catalog and one
+self-contained, schema-validated data package per course. Each package has a
+manifest, roadmap, tools, printable TeX reference, and sourced practice catalog.
+
+Use clean course-scoped routes, a responsive accessible UI, PWA updates, and
+IndexedDB for private course-scoped progress. Never upload student data. Cache
+the app and JSON for offline use; external resources can require internet.
+
+Do not invent or alter practice questions. Embed only faithful, format-only
+transcriptions whose license permits republication and whose publisher supplies
+an answer; store exact problem and answer locators. Otherwise link externally.
+
+Create JSON Schema contracts, semantic validation, tests, beginner-facing
+course-authoring documentation, and an agent skill for adding courses. Show me
+a local working version for review before pushing or deploying anything.
 ```
 
-There is intentionally no `db/`, `drizzle/`, or D1 example code. The app does
-not use a server database. Its versioned JSON catalog is the canonical published
-copy; the browser normalizes that catalog into [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
-through [Dexie](https://dexie.org/docs/Tutorial/Angular), a typed IndexedDB wrapper,
-for fast structured queries and offline access. Study sessions live in a
-separate IndexedDB object store and are never uploaded. Existing sessions are
-migrated automatically from the earlier `localStorage` format. The service
-worker still caches the application shell and transport responses; IndexedDB
-stores the app’s structured records.
-
-## Application routes
-
-- `/roadmap` — searchable curriculum with URL-backed `q`, `course`, and `unit` state
-- `/tools` — curated calculators, solvers, and computer algebra systems
-- `/reference` — standalone printable formula and identity guide
-- `/grade-maxxing` — persistent named study runs with a total timer, self-grading, licensed question attribution, and device-local progress
-
-## Automated quality checks
-
-`npm run build` runs the unit tests and validates the curriculum data before producing a production Site build. The checks currently verify:
-
-- Roadmap filtering, AB/BC selection, progress calculations, and completion toggles
-- Exactly 10 units and 111 unique curriculum topic IDs
-- Required unit metadata and HTTPS resource links
-- Tool names and HTTPS URLs
-- Non-empty formula groups and valid KaTeX/TeX expressions
-
-The **Validate** GitHub workflow runs on every push and pull request. The **Deploy GitHub Pages** workflow repeats the checks and publishes only a successful `main` build.
-
-## Practice-question sourcing
-
-CalcPath does not allow AI-authored or AI-modified practice questions. Embedded
-questions must be faithful, format-only transcriptions of openly licensed
-material with exact publisher locators for both the problem and its published
-answer. Link-only questions remain on the publisher's site. The complete rules
-for people and coding agents are in [AGENTS.md](AGENTS.md), and the data
-validator enforces the required provenance fields.
-
-The beta practice catalog currently contains 1,164 records from seven source
-collections published by University of Michigan Mathematics, Active Calculus,
-College Board, Paul’s Online Math Notes, and OpenStax. The 555 embedded OpenStax
-records provide five publisher-authored questions and publisher-supplied
-answers for every topic across all ten AP Calculus roadmap units.
-They are mechanically converted from a pinned revision of the openly licensed
-source CNXML, including tables and referenced figures; CalcPath does not
-rewrite the mathematics.
-
-The JSON data model stores publishers once in a normalized `sources` registry.
-Each compact question stores a `sourceId` plus its exact exercise, problem, and
-answer locators. Records also include roadmap topic, course, format, difficulty,
-calculator policy, estimated time, collection or year, and skill tags. Run
-`npm run mine:practice` to refresh the reproducible catalog from the curated
-source map; review the result before committing it.
-
-The Grade Maxxing builder can filter that catalog by publisher site, broad
-problem type, content delivery (`Embedded` or `External`), and four beta
-difficulty bands: easy, medium, hard, and ridiculous.
-Difficulty is CalcPath editorial metadata, not a rating supplied by
-the publishers. The reproducible catalog script assigns it from each problem’s
-source context and relative placement within its published set; it never edits
-or attempts to reinterpret the mathematics.
-
-## Curriculum source
-
-Topic organization and exam weighting follow the [College Board AP Calculus AB and BC Course and Exam Description](https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-and-bc-course-and-exam-description.pdf).
-
-CalcPath is an independent study aid and is not affiliated with or endorsed by College Board. External resources remain the property of their respective publishers.
+Full Dive AP is free to use and fork. If it helps, support is optional through [Ko-fi](https://ko-fi.com/5reason). AP Calculus is an independent study aid and is not affiliated with or endorsed by College Board.

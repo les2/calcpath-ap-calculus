@@ -1,5 +1,6 @@
 {
+  "$schema": "schemas/build-info.schema.json",
   "version": "1.0.0",
-  "buildId": "20260824T203519Z",
-  "builtAt": "2026-08-24T20:35:19.731Z"
+  "buildId": "20260825T170219Z",
+  "builtAt": "2026-08-25T17:02:19.716Z"
 }

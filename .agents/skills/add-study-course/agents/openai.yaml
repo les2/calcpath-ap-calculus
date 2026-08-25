@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Full Dive AP Course"
+  short_description: "Create and validate a Full Dive AP course package"
+  default_prompt: "Use $add-study-course to add a new course package to Full Dive AP."

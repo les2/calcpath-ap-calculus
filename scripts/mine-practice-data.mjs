@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { mineOpenStaxPractice } from './openstax-unit1.mjs';
 
-const topicsData = JSON.parse(await readFile(new URL('../public/data/topics.json', import.meta.url), 'utf8'));
+const topicsData = JSON.parse(await readFile(new URL('../public/data/courses/ap-calculus/roadmap.json', import.meta.url), 'utf8'));
 const topicIndex = new Map();
 for (const unit of topicsData.units) for (const topic of unit.topics) topicIndex.set(topic.id, { ...topic, unit });
 
@@ -233,13 +233,14 @@ const deliveryCounts = Object.fromEntries(['embedded', 'external'].map((type) =>
 const unit1EmbeddedCounts = Object.fromEntries([...topicIndex.keys()].filter((topicId) => topicId.startsWith('1.')).map((topicId) => [topicId, normalizedQuestions.filter((question) => question.topicId === topicId && question.type === 'embedded').length]));
 const revision = createHash('sha256').update(JSON.stringify({ sources: sourceRecords, questions: normalizedQuestions })).digest('hex').slice(0, 16);
 const output = {
+  $schema: '../../../schemas/practice.schema.json',
   schemaVersion: 5,
   revision,
   generatedAt: new Date().toISOString(),
-  licenseNotice: 'CalcPath links to publisher-hosted problems and answers without reproducing them. Embedded questions may be added only as source-faithful, format-only transcriptions with exact question and answer locators.',
+  licenseNotice: 'Full Dive AP links to publisher-hosted problems and answers without reproducing them. Embedded questions may be added only as source-faithful, format-only transcriptions with exact question and answer locators.',
   catalogStats: { questionCount: normalizedQuestions.length, sourceCount: sourceRecords.length, sources, difficultyCounts, deliveryCounts, unit1EmbeddedCounts },
   sources: sourceRecords,
   questions: normalizedQuestions
 };
-await writeFile(new URL('../public/data/practice.json', import.meta.url), `${JSON.stringify(output, null, 2)}\n`);
+await writeFile(new URL('../public/data/courses/ap-calculus/practice.json', import.meta.url), `${JSON.stringify(output, null, 2)}\n`);
 console.log(`Mined ${normalizedQuestions.length} questions from ${sourceRecords.length} source collections.`);

@@ -1,4 +1,4 @@
-{"tools":[
+{"$schema":"../../../schemas/tools.schema.json","schemaVersion":1,"tools":[
   {"name":"Desmos Graphing Calculator","category":"Graphing","url":"https://www.desmos.com/calculator","description":"Fast 2D graphing, tables, sliders, regressions, and numerical derivatives/integrals.","best":"Best everyday graphing"},
   {"name":"GeoGebra Graphing","category":"Graphing","url":"https://www.geogebra.org/graphing","description":"Graph functions, inequalities, parametric curves, and interactive geometry.","best":"Best geometry + graphs"},
   {"name":"GeoGebra CAS","category":"Symbolic algebra","url":"https://www.geogebra.org/cas","description":"Solve, factor, differentiate, and integrate symbolically in a clean worksheet.","best":"Best browser CAS"},

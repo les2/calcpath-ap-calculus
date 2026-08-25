@@ -3,9 +3,11 @@ import { describe, expect, it } from 'vitest';
 import { SupportLinkComponent } from './support-link.component';
 
 describe('SupportLinkComponent', () => {
-  it('links safely to the CalcPath Ko-fi page', async () => {
+  it('links safely to the configured Full Dive AP support page', async () => {
     await TestBed.configureTestingModule({ imports: [SupportLinkComponent] }).compileComponents();
-    const anchor = TestBed.createComponent(SupportLinkComponent).nativeElement.querySelector('a') as HTMLAnchorElement;
+    const fixture = TestBed.createComponent(SupportLinkComponent);
+    fixture.detectChanges();
+    const anchor = fixture.nativeElement.querySelector('a') as HTMLAnchorElement;
 
     expect(anchor.href).toBe('https://ko-fi.com/5reason');
     expect(anchor.target).toBe('_blank');

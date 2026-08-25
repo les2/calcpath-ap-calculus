@@ -1,20 +1,25 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
-  selector: 'calc-support-link',
+  selector: 'full-dive-support-link',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <a
       class="support-link"
-      href="https://ko-fi.com/5reason"
+      [href]="href()"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Leave a tip for CalcPath on Ko-fi (opens in a new tab)"
+      [attr.aria-label]="label() + ' for ' + brandName() + ' (opens in a new tab)'"
     >
-      <span class="support-icon" aria-hidden="true">☕</span>
-      <span>Leave a tip</span>
+      <span class="support-icon" aria-hidden="true">{{ icon() }}</span>
+      <span>{{ label() }}</span>
     </a>
   `
 })
-export class SupportLinkComponent {}
+export class SupportLinkComponent {
+  readonly href = input('https://ko-fi.com/5reason');
+  readonly label = input('Leave a tip');
+  readonly icon = input('☕');
+  readonly brandName = input('Full Dive AP');
+}

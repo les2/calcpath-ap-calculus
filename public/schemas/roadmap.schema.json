@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://full-dive-ap.local/schemas/roadmap.schema.json",
+  "title": "Full Dive AP roadmap dataset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "source", "sourceUrl", "units"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "source": { "type": "string", "minLength": 1 },
+    "sourceUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "units": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "title", "shortTitle", "course", "weight", "color", "reference", "video", "topics"],
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "shortTitle": { "type": "string", "minLength": 1 },
+          "course": { "type": "string", "minLength": 1 },
+          "weight": { "type": "string", "minLength": 1 },
+          "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+          "reference": { "type": "string", "format": "uri", "pattern": "^https://" },
+          "video": { "type": "string", "format": "uri", "pattern": "^https://" },
+          "topics": {
+            "type": "array", "minItems": 1,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["id", "title"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[0-9]+(?:\\.[0-9]+)+$" },
+                "title": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

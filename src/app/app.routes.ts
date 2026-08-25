@@ -2,12 +2,22 @@ import { Routes } from '@angular/router';
 import { RoadmapPage } from './roadmap.page';
 import { ToolsPage } from './tools.page';
 import { ReferencePage } from './reference.page';
+import { CourseShellComponent } from './course-shell.component';
+import { CoursesPage } from './courses.page';
 
 export const routes: Routes = [
-  { path: 'roadmap', component: RoadmapPage, title: 'Roadmap — CalcPath' },
-  { path: 'tools', component: ToolsPage, title: 'Free Calculus Tools — CalcPath' },
-  { path: 'reference', component: ReferencePage, title: 'Calculus Reference Guide — CalcPath' },
-  { path: 'grade-maxxing', loadComponent: () => import('./grade-maxxing.page').then((page) => page.GradeMaxxingPage), title: 'Grade Maxxing — CalcPath' },
-  { path: '', pathMatch: 'full', redirectTo: 'roadmap' },
-  { path: '**', redirectTo: 'roadmap' }
+  { path: 'courses', component: CoursesPage, title: 'Courses — Full Dive AP' },
+  {
+    path: 'courses/:courseId',
+    component: CourseShellComponent,
+    children: [
+      { path: 'roadmap', component: RoadmapPage, title: 'Roadmap — Full Dive AP' },
+      { path: 'tools', component: ToolsPage, title: 'Tools — Full Dive AP' },
+      { path: 'reference', component: ReferencePage, title: 'Reference Guide — Full Dive AP' },
+      { path: 'training', loadComponent: () => import('./training.page').then((page) => page.TrainingPage), title: 'Training Mode — Full Dive AP' },
+      { path: '', pathMatch: 'full', redirectTo: 'roadmap' }
+    ]
+  },
+  { path: '', pathMatch: 'full', redirectTo: 'courses' },
+  { path: '**', redirectTo: 'courses' }
 ];

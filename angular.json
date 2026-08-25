@@ -7,7 +7,7 @@
     "cache": { "enabled": false }
   },
   "projects": {
-    "calcpath": {
+    "full-dive-ap": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -31,8 +31,8 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": { "buildTarget": "calcpath:build:production" },
-            "development": { "buildTarget": "calcpath:build:development" }
+            "production": { "buildTarget": "full-dive-ap:build:production" },
+            "development": { "buildTarget": "full-dive-ap:build:development" }
           },
           "defaultConfiguration": "development"
         },
