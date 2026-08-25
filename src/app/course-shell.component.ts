@@ -13,7 +13,7 @@ export class CourseShellComponent {
     route.paramMap.pipe(takeUntilDestroyed(destroyRef)).subscribe((params) => {
       const courseId = params.get('courseId');
       if (!courseId) return;
-      void courses.loadCourse(courseId).catch(() => router.navigate(['/courses']));
+      void courses.loadCourse(courseId).catch(() => router.navigate(['/realms']));
     });
   }
 }

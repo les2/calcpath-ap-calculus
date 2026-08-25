@@ -8,7 +8,7 @@ export type AppConfig = {
   brand: { name: string; shortName: string; mark: string; tagline: string };
   repository: { label: string; url: string };
   support: { enabled: boolean; label: string; icon: string; url: string };
-  catalogPage: { eyebrow: string; heading: string; emphasis: string; description: string; sectionEyebrow: string; sectionHeading: string; sectionDescription: string; openLabel: string; comingSoonLabel: string };
+  catalogPage: { navigationLabel: string; allLabel: string; eyebrow: string; heading: string; emphasis: string; description: string; sectionEyebrow: string; sectionHeading: string; sectionDescription: string; openLabel: string; comingSoonLabel: string };
   footer: { message: string };
 };
 
@@ -66,7 +66,7 @@ const DEFAULT_APP: AppConfig = {
   brand: { name: 'Full Dive AP', shortName: 'Full Dive', mark: 'FD', tagline: 'Farm XP. Max the course.' },
   repository: { label: 'GitHub', url: 'https://github.com/les2/full-dive-ap' },
   support: { enabled: true, label: 'Leave a tip', icon: '☕', url: 'https://ko-fi.com/5reason' },
-  catalogPage: { eyebrow: 'YOUR AP LOADOUT', heading: 'Pick your course.', emphasis: 'Start farming XP.', description: 'Roadmaps, trusted resources, reference guides, and focused training sessions.', sectionEyebrow: 'COURSE SELECT', sectionHeading: 'Ready to max', sectionDescription: 'Choose a course, lock in, and keep leveling.', openLabel: 'Grade max', comingSoonLabel: 'Next drop' },
+  catalogPage: { navigationLabel: 'Realms', allLabel: 'All realms', eyebrow: 'REALM SELECT', heading: 'Choose your realm.', emphasis: 'Start farming XP.', description: 'World maps, trusted resources, reference guides, and focused training sessions.', sectionEyebrow: 'AVAILABLE REALMS', sectionHeading: 'Ready to enter', sectionDescription: 'Enter a realm, lock in, and keep leveling.', openLabel: 'Enter realm', comingSoonLabel: 'Next realm' },
   footer: { message: 'Built for course maxxing. Your progress stays on your device.' }
 };
 

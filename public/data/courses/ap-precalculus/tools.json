@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../schemas/tools.schema.json",
+  "schemaVersion": 1,
+  "tools": [
+    {"name":"Desmos Graphing Calculator","category":"Graphing + regression","url":"https://www.desmos.com/calculator","description":"Graph functions, build tables, fit regression models, use sliders, and inspect intersections.","best":"Best everyday graphing"},
+    {"name":"Desmos Scientific","category":"Scientific calculator","url":"https://www.desmos.com/scientific","description":"Evaluate expressions, trigonometric functions, logarithms, fractions, and statistics.","best":"Best quick calculator"},
+    {"name":"GeoGebra Graphing","category":"Graphing + geometry","url":"https://www.geogebra.org/graphing","description":"Explore transformations, conics, parametric curves, polar relationships, and dynamic geometry.","best":"Best geometry + graphs"},
+    {"name":"GeoGebra CAS","category":"Symbolic algebra","url":"https://www.geogebra.org/cas","description":"Factor, expand, solve, simplify, and work with exact symbolic expressions.","best":"Best browser CAS"},
+    {"name":"GeoGebra 3D Calculator","category":"Vectors","url":"https://www.geogebra.org/3d","description":"Visualize vectors, planes, and spatial relationships in an interactive 3D view.","best":"Best vector visualization"},
+    {"name":"SageMath Cell","category":"Matrices + computation","url":"https://sagecell.sagemath.org/","description":"Run free, open-source computations for matrices, determinants, systems, and symbolic algebra.","best":"Most powerful"}
+  ]
+}

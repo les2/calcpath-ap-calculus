@@ -1,0 +1,69 @@
+{
+  "$schema": "../../../schemas/reference.schema.json",
+  "schemaVersion": 1,
+  "groups": [
+    {"title":"Functions + rates of change","items":[
+      ["Average rate of change","\\frac{f(b)-f(a)}{b-a}"],
+      ["Composition","(f\\circ g)(x)=f(g(x))"],
+      ["Inverse relationship","f(f^{-1}(x))=x"],
+      ["Transformation","g(x)=a\\,f(b(x-h))+k"],
+      ["Difference quotient","\\frac{f(x+h)-f(x)}{h}"]
+    ]},
+    {"title":"Lines + quadratics","items":[
+      ["Slope-intercept form","y=mx+b"],
+      ["Point-slope form","y-y_1=m(x-x_1)"],
+      ["Quadratic formula","x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}"],
+      ["Vertex x-coordinate","x=-\\frac{b}{2a}"],
+      ["Discriminant","\\Delta=b^2-4ac"]
+    ]},
+    {"title":"Polynomial + rational functions","items":[
+      ["Remainder theorem","f(x)=(x-c)q(x)+f(c)"],
+      ["Complex conjugates","a+bi\\ \\Longrightarrow\\ a-bi"],
+      ["End behavior","f(x)\\sim a_nx^n\\quad (|x|\\to\\infty)"],
+      ["Vertical asymptote","q(c)=0\\text{ after common factors are removed}"],
+      ["Hole","\\frac{(x-c)p(x)}{(x-c)q(x)}=\\frac{p(x)}{q(x)},\\quad x\\ne c"]
+    ]},
+    {"title":"Exponents + logarithms","items":[
+      ["Exponent rules","a^ma^n=a^{m+n},\\quad (a^m)^n=a^{mn},\\quad a^{-n}=\\frac1{a^n}"],
+      ["Exponential model","f(x)=ab^x"],
+      ["Log definition","\\log_b x=y\\iff b^y=x"],
+      ["Log properties","\\log_b(MN)=\\log_bM+\\log_bN,\\quad \\log_b(M^p)=p\\log_bM"],
+      ["Change of base","\\log_bx=\\frac{\\ln x}{\\ln b}"]
+    ]},
+    {"title":"Sequences + finance","items":[
+      ["Arithmetic sequence","a_n=a_1+(n-1)d"],
+      ["Geometric sequence","a_n=a_1r^{n-1}"],
+      ["Arithmetic sum","S_n=\\frac n2(a_1+a_n)"],
+      ["Geometric sum","S_n=a_1\\frac{1-r^n}{1-r}"],
+      ["Compound interest","A=P\\left(1+\\frac rn\\right)^{nt}"]
+    ]},
+    {"title":"Trigonometry","items":[
+      ["Radians + arc length","\\theta=\\frac{s}{r},\\quad s=r\\theta"],
+      ["Pythagorean identities","\\sin^2\\theta+\\cos^2\\theta=1,\\quad 1+\\tan^2\\theta=\\sec^2\\theta"],
+      ["Angle addition","\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta"],
+      ["Double angle","\\sin(2\\theta)=2\\sin\\theta\\cos\\theta,\\quad \\cos(2\\theta)=\\cos^2\\theta-\\sin^2\\theta"],
+      ["Sinusoidal model","y=A\\sin(B(x-C))+D,\\quad \\text{period}=\\frac{2\\pi}{|B|}"]
+    ]},
+    {"title":"Triangles + polar coordinates","items":[
+      ["Law of sines","\\frac{a}{\\sin A}=\\frac{b}{\\sin B}=\\frac{c}{\\sin C}"],
+      ["Law of cosines","c^2=a^2+b^2-2ab\\cos C"],
+      ["Polar to rectangular","x=r\\cos\\theta,\\quad y=r\\sin\\theta"],
+      ["Rectangular to polar","r^2=x^2+y^2,\\quad \\tan\\theta=\\frac yx"],
+      ["Polar distance","d=\\sqrt{r_1^2+r_2^2-2r_1r_2\\cos(\\theta_2-\\theta_1)}"]
+    ]},
+    {"title":"Conics + parametric functions","items":[
+      ["Circle","(x-h)^2+(y-k)^2=r^2"],
+      ["Ellipse","\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1"],
+      ["Hyperbola","\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1"],
+      ["Parabola","(x-h)^2=4p(y-k)"],
+      ["Parametric circle","x=h+r\\cos t,\\quad y=k+r\\sin t"]
+    ]},
+    {"title":"Vectors + matrices","items":[
+      ["Vector magnitude","\\|\\mathbf v\\|=\\sqrt{v_1^2+v_2^2}"],
+      ["Dot product","\\mathbf u\\cdot\\mathbf v=u_1v_1+u_2v_2=\\|\\mathbf u\\|\\|\\mathbf v\\|\\cos\\theta"],
+      ["Two-by-two determinant","\\det\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}=ad-bc"],
+      ["Two-by-two inverse","\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}^{-1}=\\frac1{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}"],
+      ["Linear transformation","T(\\mathbf x)=A\\mathbf x"]
+    ]}
+  ]
+}

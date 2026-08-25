@@ -4,13 +4,13 @@
 [![Deploy GitHub Pages](https://github.com/les2/full-dive-ap/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/les2/full-dive-ap/actions/workflows/deploy-pages.yml)
 [![Support on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/5reason)
 
-Full Dive AP is a reusable framework for complete course roadmaps, trusted resources, printable references, and private training sessions. One data-driven Angular PWA can host many courses without duplicating the application. AP Calculus AB + BC is the first course package.
+Full Dive AP is a reusable framework for complete course World Maps, trusted resources, printable references, and private training sessions. One data-driven Angular PWA can host many realms without duplicating the application. AP Calculus AB + BC and AP Precalculus are the first two realm packages.
 
-Use Full Dive AP at [FullDiveAP.les2.chatgpt.site](https://fulldiveap.les2.chatgpt.site/courses), or explore and fork the public source at [github.com/les2/full-dive-ap](https://github.com/les2/full-dive-ap).
+Use Full Dive AP at [FullDiveAP.les2.chatgpt.site](https://fulldiveap.les2.chatgpt.site/realms), or explore and fork the public source at [github.com/les2/full-dive-ap](https://github.com/les2/full-dive-ap).
 
 ## What students get
 
-- A searchable, bookmarkable roadmap for each available course
+- A searchable, bookmarkable World Map for each available realm
 - Curated videos, authoritative references, and free tools
 - A print-optimized reference guide with real TeX mathematics and accessible MathML
 - Private Training Mode sessions with sourced questions, timers, self-grading, filters, and resumable sessions
@@ -26,12 +26,14 @@ public/data/
 ├── app.json
 ├── courses.json
 └── courses/
-    └── ap-calculus/
-        ├── course.json
-        ├── roadmap.json
-        ├── tools.json
-        ├── reference.json
-        └── practice.json
+    ├── ap-calculus/
+    │   ├── course.json
+    │   ├── roadmap.json
+    │   ├── tools.json
+    │   ├── reference.json
+    │   └── practice.json
+    └── ap-precalculus/
+        └── (the same five-file package surface)
 
 public/schemas/
 ├── app.schema.json
@@ -52,11 +54,11 @@ Read [the data architecture](docs/data-architecture.md) for the runtime and stor
 
 Each available course gets the same top-level structure:
 
-- `/courses` — data-driven course catalog
-- `/courses/:courseId/roadmap` — curriculum, search, filters, and progress
-- `/courses/:courseId/tools` — curated calculators and learning tools
-- `/courses/:courseId/reference` — printable formula/reference guide
-- `/courses/:courseId/training` — private, persistent training sessions
+- `/realms` — data-driven realm catalog
+- `/realms/:courseId/world-map` — curriculum, search, filters, and progress
+- `/realms/:courseId/tools` — curated calculators and learning tools
+- `/realms/:courseId/reference` — printable formula/reference guide
+- `/realms/:courseId/training` — private, persistent training sessions
 
 Course IDs also namespace roadmap progress, IndexedDB catalogs, and training sessions.
 
@@ -79,6 +81,8 @@ Publishers are normalized in a `sources` registry and questions refer to them by
 
 The AP Calculus package currently contains 1,164 sourced practice records from seven collections, including 555 embedded OpenStax items: five publisher-authored questions with publisher-supplied answers for each of the 111 roadmap topics. Difficulty is Full Dive AP editorial metadata; it is not a publisher rating and never changes the mathematics.
 
+The AP Precalculus package maps all 58 topics in the official four-unit course framework. Its beta Training Mode intentionally covers Unit 1 only: 70 embedded OpenStax Precalculus 2e exercises, five per topic, mechanically transcribed with publisher answers and pinned source locators.
+
 ## Run it locally
 
 This project requires Node.js 22.22.3 or newer.
@@ -88,7 +92,7 @@ npm install
 npm run dev
 ```
 
-Open the address printed by Angular, then start at `/courses`. Before committing a change, run:
+Open the address printed by Angular, then start at `/realms`. Before committing a change, run:
 
 ```bash
 npm run build
@@ -102,6 +106,7 @@ Useful individual commands:
 npm test                 # Angular/Vitest unit tests
 npm run validate:data    # all JSON Schemas and semantic data rules
 npm run mine:practice    # reproducible AP Calculus catalog refresh
+node scripts/build-precalculus-practice.mjs # reproducible AP Precalculus Unit 1 refresh
 ```
 
 ## Why these technologies fit the product

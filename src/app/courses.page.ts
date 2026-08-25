@@ -20,7 +20,7 @@ import { CourseDataService, type CourseCatalog } from './course-data.service';
             <p class="eyebrow">{{ course.eyebrow }}</p>
             <h2>{{ course.title }}</h2>
             <p>{{ course.description }}</p>
-            @if (course.status === 'available') { <a [routerLink]="['/courses', course.id, 'roadmap']">{{ courses.app().catalogPage.openLabel }} →</a> }
+            @if (course.status === 'available') { <a [routerLink]="['/realms', course.id, 'world-map']">{{ courses.app().catalogPage.openLabel }} →</a> }
             @else { <b>{{ courses.app().catalogPage.comingSoonLabel }}</b> }
           </article>
         }

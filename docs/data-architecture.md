@@ -24,8 +24,8 @@ public/schemas/                      # JSON Schema 2020-12 contracts
 ## Runtime flow
 
 1. The shell loads `app.json` and `courses.json`.
-2. `/courses` renders the catalog without hard-coded course cards.
-3. `/courses/:courseId/...` loads the selected manifest.
+2. `/realms` renders the catalog without hard-coded realm cards.
+3. `/realms/:courseId/...` loads the selected manifest.
 4. Each page asks for its named dataset through `CourseDataService`.
 5. The service worker caches `/data/**` and `/schemas/**` with the application shell for offline use.
 6. Practice data is normalized into IndexedDB through Dexie. Study runs and roadmap progress are namespaced by course ID and never uploaded.
@@ -37,11 +37,11 @@ The IndexedDB database is named `full-dive-ap`. Browser keys use `full-dive-ap:<
 Every course receives the same route family:
 
 ```text
-/courses
-/courses/:courseId/roadmap
-/courses/:courseId/tools
-/courses/:courseId/reference
-/courses/:courseId/training
+/realms
+/realms/:courseId/world-map
+/realms/:courseId/tools
+/realms/:courseId/reference
+/realms/:courseId/training
 ```
 
 The old route shape is not a compatibility requirement. Course identity is explicit in every content route, so bookmark, query-string, progress, and practice state can be scoped correctly.

@@ -1,0 +1,80 @@
+{
+  "$schema": "../../../schemas/course.schema.json",
+  "schemaVersion": 1,
+  "id": "ap-precalculus",
+  "title": "AP Precalculus",
+  "shortTitle": "AP Precalculus",
+  "description": "An offline-ready study framework for the complete AP Precalculus course.",
+  "accent": "#20c997",
+  "disclaimer": "Independent study aid. Not affiliated with or endorsed by College Board.",
+  "quality": {
+    "expectedUnitCount": 4,
+    "expectedTopicCount": 58,
+    "minimumEmbeddedQuestionsPerTopic": 0
+  },
+  "datasets": {
+    "roadmap": "roadmap.json",
+    "tools": "tools.json",
+    "reference": "reference.json",
+    "practice": "practice.json"
+  },
+  "navigation": [
+    { "id": "roadmap", "label": "World Map", "path": "world-map" },
+    { "id": "tools", "label": "Tools", "path": "tools" },
+    { "id": "reference", "label": "Reference guide", "path": "reference" },
+    { "id": "training", "label": "Training Mode", "path": "training" }
+  ],
+  "pages": {
+    "roadmap": {
+      "heroEyebrow": "FUNCTIONS · MODELING",
+      "heading": "Grade max",
+      "emphasis": "AP Precalculus.",
+      "description": "Farm XP across functions, trigonometry, polar coordinates, vectors, and matrices—with every official topic mapped.",
+      "sectionEyebrow": "THE WORLD MAP",
+      "sectionHeading": "Four units. One complete map.",
+      "sectionDescription": "Units 1–3 are assessed on the AP Exam. Unit 4 completes the course framework and is clearly marked as optional exam content.",
+      "searchPlaceholder": "Search 58 topics…",
+      "visuals": {
+        "graphLabel": "f(x)",
+        "formula": "f(x) = abˣ",
+        "result": "Δy / Δx",
+        "miniFormula": "sin²θ + cos²θ = 1"
+      },
+      "filters": [
+        { "id": "ALL", "label": "All topics", "unitCourses": [] },
+        { "id": "EXAM", "label": "Exam units", "unitCourses": ["Exam content"] },
+        { "id": "OPTIONAL", "label": "Optional unit", "unitCourses": ["Optional · not assessed"] }
+      ]
+    },
+    "tools": {
+      "eyebrow": "FREE · NO ADS",
+      "heading": "The right tool",
+      "emphasis": "for the job.",
+      "description": "Graph functions, run regressions, inspect transformations, and work with matrices using free browser tools. External tools require an internet connection."
+    },
+    "reference": {
+      "eyebrow": "PRINTABLE REFERENCE",
+      "heading": "The formulas",
+      "emphasis": "you’ll reach for.",
+      "description": "A compact reference for functions, algebra, trigonometry, polar coordinates, vectors, matrices, and modeling.",
+      "printLabel": "Print reference guide ↗",
+      "noteTitle": "Exam reminder",
+      "noteText": "Practice moving between equations, graphs, tables, and context. On the AP Exam, a calculator can support your reasoning—but your setup and interpretation still matter."
+    },
+    "practice": {
+      "eyebrow": "BETA · TRAINING MODE",
+      "heading": "Lock in.",
+      "emphasis": "Farm XP.",
+      "description": "Build a Unit 1 training session, put in focused reps, and grade max AP Precalculus at your own pace. More units are coming.",
+      "modeLabel": "Training Mode",
+      "sessionLabel": "training session",
+      "sessionPlural": "training sessions",
+      "loadoutLabel": "loadout",
+      "filterTags": ["Textbook", "Embedded", "Publisher solution"],
+      "unitAccents": ["#20c997", "#5d3fd3", "#2478d4", "#d6622a"],
+      "sourceLabels": {
+        "OpenStax": "OpenStax Precalculus 2e"
+      }
+    }
+  }
+}

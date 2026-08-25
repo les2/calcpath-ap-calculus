@@ -49,7 +49,7 @@ Do not weaken a schema or quality threshold merely to make incomplete data pass.
 
 ## 6. Test the course as a user
 
-Run `npm run dev`, open `/courses`, and verify:
+Run `npm run dev`, open `/realms`, and verify:
 
 - the card and accent come from the catalog;
 - all four course routes load directly and after refresh;
@@ -60,4 +60,3 @@ Run `npm run dev`, open `/courses`, and verify:
 - another course's progress or training sessions never appear.
 
 Only publish after the local review is accepted.
-

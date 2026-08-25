@@ -19,7 +19,7 @@
     "practice": "practice.json"
   },
   "navigation": [
-    { "id": "roadmap", "label": "Roadmap", "path": "roadmap" },
+    { "id": "roadmap", "label": "World Map", "path": "world-map" },
     { "id": "tools", "label": "Tools", "path": "tools" },
     { "id": "reference", "label": "Reference guide", "path": "reference" },
     { "id": "training", "label": "Training Mode", "path": "training" }
@@ -30,7 +30,7 @@
       "heading": "Grade max",
       "emphasis": "AP Calculus.",
       "description": "Farm XP topic by topic with clear explanations, trusted references, and the right tools for every unit.",
-      "sectionEyebrow": "THE ROADMAP",
+      "sectionEyebrow": "THE WORLD MAP",
       "sectionHeading": "Ten units. Keep leveling.",
       "sectionDescription": "Track every topic, focus your next rep, and share or bookmark the exact view you need.",
       "searchPlaceholder": "Search 111 topics…",

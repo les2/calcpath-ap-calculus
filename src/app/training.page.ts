@@ -137,7 +137,7 @@ export function toggleExpandedUnitIds(unitId: string, expandedUnitIds: string[])
         </section>
       } @else if (creating()) {
         <section class="session-builder" aria-labelledby="builder-title">
-          <div class="practice-heading"><div><p class="eyebrow">NEW {{sessionLabel()}}</p><h2 id="builder-title">Build your {{loadoutLabel()}}.</h2></div><p>Name your {{sessionLabel()}}, then choose the sources, difficulty, and exact roadmap topics that belong in its {{loadoutLabel()}}.</p></div>
+          <div class="practice-heading"><div><p class="eyebrow">NEW {{sessionLabel()}}</p><h2 id="builder-title">Build your {{loadoutLabel()}}.</h2></div><p>Name your {{sessionLabel()}}, then choose the sources, difficulty, and exact world map topics that belong in its {{loadoutLabel()}}.</p></div>
           <label class="session-name">Training session name <input type="text" maxlength="60" placeholder="Unit 1 test" [ngModel]="draftName()" (ngModelChange)="draftName.set($event)"></label>
           <details class="question-filters" open>
             <summary><span>Tune your question mix</span><b>{{filteredQuestions().length}} matching questions</b></summary>

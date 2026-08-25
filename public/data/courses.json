@@ -8,9 +8,19 @@
       "title": "AP Calculus AB + BC",
       "shortTitle": "AP Calculus",
       "eyebrow": "MATHEMATICS · ADVANCED PLACEMENT",
-      "description": "Grade max AP Calculus AB and BC with a complete roadmap, sourced practice, focused tools, and a printable reference guide.",
+      "description": "Grade max AP Calculus AB and BC with a complete world map, sourced practice, focused tools, and a printable reference guide.",
       "manifest": "courses/ap-calculus/course.json",
       "accent": "#a8e82d",
+      "status": "available"
+    },
+    {
+      "id": "ap-precalculus",
+      "title": "AP Precalculus",
+      "shortTitle": "AP Precalculus",
+      "eyebrow": "MATHEMATICS · ADVANCED PLACEMENT",
+      "description": "Enter AP Precalculus with a complete official World Map, Unit 1 Training Mode, focused tools, and a printable reference guide.",
+      "manifest": "courses/ap-precalculus/course.json",
+      "accent": "#20c997",
       "status": "available"
     }
   ]

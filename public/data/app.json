@@ -18,15 +18,17 @@
     "url": "https://ko-fi.com/5reason"
   },
   "catalogPage": {
-    "eyebrow": "YOUR AP LOADOUT",
-    "heading": "Pick your course.",
+    "navigationLabel": "Realms",
+    "allLabel": "All realms",
+    "eyebrow": "REALM SELECT",
+    "heading": "Choose your realm.",
     "emphasis": "Start farming XP.",
-    "description": "Roadmaps, trusted resources, reference guides, and focused training sessions—everything you need to put in reps and grade max your AP courses.",
-    "sectionEyebrow": "COURSE SELECT",
-    "sectionHeading": "Ready to max",
-    "sectionDescription": "Choose a course, lock in, and keep leveling. More AP courses can drop in as self-contained data packages.",
-    "openLabel": "Grade max",
-    "comingSoonLabel": "Next drop"
+    "description": "World maps, trusted resources, reference guides, and focused training sessions—everything you need to put in reps and grade max your AP realms.",
+    "sectionEyebrow": "AVAILABLE REALMS",
+    "sectionHeading": "Ready to enter",
+    "sectionDescription": "Enter a realm, lock in, and keep leveling. More AP realms can drop in as self-contained data packages.",
+    "openLabel": "Enter realm",
+    "comingSoonLabel": "Next realm"
   },
   "footer": {
     "message": "Built for course maxxing. Your progress stays on your device."

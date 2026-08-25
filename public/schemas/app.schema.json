@@ -34,8 +34,10 @@
     "catalogPage": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["eyebrow", "heading", "emphasis", "description", "sectionEyebrow", "sectionHeading", "sectionDescription", "openLabel", "comingSoonLabel"],
+      "required": ["navigationLabel", "allLabel", "eyebrow", "heading", "emphasis", "description", "sectionEyebrow", "sectionHeading", "sectionDescription", "openLabel", "comingSoonLabel"],
       "properties": {
+        "navigationLabel": { "type": "string", "minLength": 1 },
+        "allLabel": { "type": "string", "minLength": 1 },
         "eyebrow": { "type": "string", "minLength": 1 },
         "heading": { "type": "string", "minLength": 1 },
         "emphasis": { "type": "string", "minLength": 1 },

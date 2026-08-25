@@ -12,10 +12,10 @@ await copyFile(path.join(output, 'index.html'), path.join(output, '404.html'));
 // directory paths to a trailing slash and serves a real 200 response.
 const dataRoot = path.join(process.cwd(), 'public', 'data');
 const catalog = JSON.parse(await readFile(path.join(dataRoot, 'courses.json'), 'utf8'));
-const routes = ['courses'];
+const routes = ['realms'];
 for (const summary of catalog.courses.filter((course) => course.status === 'available')) {
   const manifest = JSON.parse(await readFile(path.join(dataRoot, summary.manifest), 'utf8'));
-  routes.push(...manifest.navigation.map((item) => `courses/${summary.id}/${item.path}`));
+  routes.push(...manifest.navigation.map((item) => `realms/${summary.id}/${item.path}`));
 }
 
 for (const route of routes) {

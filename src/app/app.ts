@@ -21,13 +21,13 @@ interface BuildInfo {
   imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule, SupportLinkComponent],
   template: `
     <header class="topbar">
-      <a class="brand" routerLink="/courses" [attr.aria-label]="courses.app().brand.name + ' home'"><span class="brand-mark">{{ courses.app().brand.mark }}</span><span>{{ courses.app().brand.name }}</span></a>
-      @if (courses.activeCourse(); as course) { <a class="course-chip" [routerLink]="['/courses', course.id, 'roadmap']">{{ course.shortTitle }}</a> }
+      <a class="brand" routerLink="/realms" [attr.aria-label]="courses.app().brand.name + ' home'"><span class="brand-mark">{{ courses.app().brand.mark }}</span><span>{{ courses.app().brand.name }}</span></a>
+      @if (courses.activeCourse(); as course) { <a class="course-chip" [routerLink]="['/realms', course.id, 'world-map']">{{ course.shortTitle }}</a> }
       <nav aria-label="Main navigation">
         @if (courses.activeCourse(); as course) {
-          @for (item of course.navigation; track item.id) { <a class="nav-link" [routerLink]="['/courses', course.id, item.path]" routerLinkActive="active">{{ item.label }}</a> }
+          @for (item of course.navigation; track item.id) { <a class="nav-link" [routerLink]="['/realms', course.id, item.path]" routerLinkActive="active">{{ item.label }}</a> }
         }
-        <a class="nav-link courses-link" routerLink="/courses" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Courses</a>
+        <a class="nav-link courses-link" routerLink="/realms" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ courses.app().catalogPage.navigationLabel }}</a>
         <a class="github-link" [href]="courses.app().repository.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'View ' + courses.app().brand.name + ' on GitHub (opens in a new tab)'">{{ courses.app().repository.label }} ↗</a>
       </nav>
       <div class="header-actions">
@@ -37,12 +37,12 @@ interface BuildInfo {
     </header>
     <div class="route-shell"><router-outlet /></div>
     <footer>
-      <a class="brand" routerLink="/courses"><span class="brand-mark">{{ courses.app().brand.mark }}</span><span>{{ courses.app().brand.name }}</span></a>
+      <a class="brand" routerLink="/realms"><span class="brand-mark">{{ courses.app().brand.mark }}</span><span>{{ courses.app().brand.name }}</span></a>
       <p>
         <span>{{ courses.app().footer.message }}</span>
         @if (courses.activeCourse(); as course) { <span> {{ course.disclaimer }}</span> }
       </p>
-      <div class="footer-links"><a routerLink="/courses">All courses →</a><a [href]="courses.app().repository.url" target="_blank" rel="noopener noreferrer">Fork or extend on GitHub ↗</a></div>
+      <div class="footer-links"><a routerLink="/realms">{{ courses.app().catalogPage.allLabel }} →</a><a [href]="courses.app().repository.url" target="_blank" rel="noopener noreferrer">Fork or extend on GitHub ↗</a></div>
       <div class="version-panel">
         @if (buildInfo(); as build) {
           <span>Updated {{ formattedBuildTime() }}</span>
