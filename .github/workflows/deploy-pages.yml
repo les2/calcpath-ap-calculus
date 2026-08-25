@@ -35,7 +35,7 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist/calcpath/browser
+          path: dist/full-dive-ap/browser
 
   deploy:
     environment:
